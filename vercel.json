@@ -14,6 +14,8 @@
         { "src": "/sitemap\\.xml$", "dest": "/sitemap.xml" },
         { "src": "/robots\\.txt$", "dest": "/robots.txt" },
         { "src": "/scaling-kit$", "dest": "/scaling-kit.html" },
+        { "src": "/blog/states/([^/]+)$", "dest": "/blog/states/$1.html" },
+        { "src": "/blog/states/?$", "dest": "/blog/states/index.html" },
         { "src": "/blog/([^/]+)$", "dest": "/blog/$1.html" },
         { "src": "/blog/?$", "dest": "/blog/index.html" },
         { "src": "/sops/([^/]+)\\.html$", "dest": "/sops/$1.html" },

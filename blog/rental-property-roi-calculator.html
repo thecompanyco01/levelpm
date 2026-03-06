@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Property ROI Calculator + Formula Guide [2026] | LevelPM</title>
+    <meta name="description" content="Free rental property ROI calculator. Learn how to calculate cash-on-cash return, cap rate, and total ROI for rental properties. Includes interactive calculator.">
+    <meta name="keywords" content="rental property ROI calculator, rental property return on investment, cash on cash return calculator, cap rate calculator, rental property analysis">
+    <link rel="canonical" href="https://levelpm.vercel.app/blog/rental-property-roi-calculator">
+    <meta property="og:type" content="article">
+    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.7;background:#fafafa}.nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.nav a{color:#f0c040;text-decoration:none;font-weight:700;font-size:1.2rem}.nav .nav-links a{color:#ccc;font-weight:400;font-size:.95rem;margin-left:1.5rem}.hero{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:4rem 2rem;text-align:center}.hero h1{font-size:2.2rem;max-width:800px;margin:0 auto 1rem;line-height:1.2}.hero .subtitle{color:#aaa;font-size:1.1rem;max-width:600px;margin:0 auto}.content{max-width:780px;margin:0 auto;padding:3rem 2rem}.content h2{font-size:1.6rem;margin:2.5rem 0 1rem;color:#1a1a2e;border-bottom:2px solid #f0c040;padding-bottom:.5rem}.content h3{font-size:1.25rem;margin:2rem 0 .75rem;color:#16213e}.content p{margin-bottom:1.2rem;font-size:1.05rem;color:#333}.content ul,.content ol{margin-bottom:1.2rem;padding-left:1.5rem}.content li{margin-bottom:.5rem;font-size:1.05rem;color:#333}table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}th{background:#1a1a2e;color:#fff;padding:.75rem;text-align:left}td{padding:.75rem;border-bottom:1px solid #e0e0e0}tr:nth-child(even){background:#f5f5f5}.callout{background:#fff8e1;border-left:4px solid #f0c040;padding:1.25rem 1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}.calc-box{background:#fff;border:2px solid #1a1a2e;border-radius:12px;padding:2rem;margin:2rem 0}.calc-box h3{margin-bottom:1rem;color:#1a1a2e}.calc-box label{display:block;margin-bottom:.25rem;font-weight:600;font-size:.95rem}.calc-box input{width:100%;padding:.6rem;border:1px solid #ccc;border-radius:6px;font-size:1rem;margin-bottom:1rem}.calc-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.8rem 2rem;border-radius:8px;font-weight:700;font-size:1.05rem;cursor:pointer}.calc-box button:hover{background:#e0b030}.calc-result{background:#e8f5e9;padding:1.5rem;border-radius:8px;margin-top:1rem;display:none}.calc-result h4{color:#2e7d32;margin-bottom:.5rem}.calc-result p{margin:0;font-size:1rem}.formula{background:#f5f5f5;padding:1.5rem;border-radius:8px;margin:1.5rem 0;font-family:'Courier New',monospace;font-size:1rem;border-left:4px solid #1a1a2e}.cta-box{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:2.5rem;border-radius:12px;text-align:center;margin:3rem 0}.cta-box h3{color:#f0c040;font-size:1.4rem;margin-bottom:1rem}.cta-box p{color:#ccc;margin-bottom:1.5rem}.cta-box .btn{display:inline-block;background:#f0c040;color:#1a1a2e;padding:.8rem 2rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:1.05rem}.breadcrumb{max-width:780px;margin:1rem auto 0;padding:0 2rem;font-size:.85rem;color:#999}.breadcrumb a{color:#2563eb;text-decoration:none}.footer{background:#1a1a2e;color:#999;padding:2rem;text-align:center;font-size:.9rem}.footer a{color:#f0c040;text-decoration:none}@media(max-width:600px){.hero h1{font-size:1.6rem}}</style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Rental Property ROI Calculator + Formula Guide","author":{"@type":"Organization","name":"LevelPM"},"datePublished":"2026-03-06"}</script>
+    <script defer src="https://va.vercel-scripts.com/v1/script.debug.js" data-endpoint="/_vercel/insights/event"></script>
+</head>
+<body>
+    <nav class="nav"><a href="/">LevelPM</a><div class="nav-links"><a href="/blog">Blog</a><a href="/sops/">Free SOPs</a><a href="/scaling-kit">Scaling Kit</a></div></nav>
+    <div class="hero"><h1>Rental Property ROI Calculator + Formula Guide [2026]</h1><p class="subtitle">Calculate cash-on-cash return, cap rate, and total ROI for any rental property. Interactive calculator + detailed formula breakdown.</p></div>
+    <div class="breadcrumb"><a href="/">Home</a> → <a href="/blog">Blog</a> → Rental Property ROI Calculator</div>
+
+    <article class="content">
+        <p>Understanding ROI is the difference between a profitable rental portfolio and a money pit. Whether you're a property manager analyzing deals for owners or an investor evaluating properties, these formulas and calculator will help you make data-driven decisions.</p>
+
+        <h2>Interactive ROI Calculator</h2>
+        <div class="calc-box">
+            <h3>🧮 Quick Rental Property Analysis</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div>
+                    <label>Purchase Price ($)</label>
+                    <input type="number" id="purchasePrice" value="250000">
+                    <label>Down Payment (%)</label>
+                    <input type="number" id="downPayment" value="20">
+                    <label>Interest Rate (%)</label>
+                    <input type="number" id="interestRate" value="7.0" step="0.1">
+                    <label>Loan Term (years)</label>
+                    <input type="number" id="loanTerm" value="30">
+                </div>
+                <div>
+                    <label>Monthly Rent ($)</label>
+                    <input type="number" id="monthlyRent" value="2000">
+                    <label>Monthly Expenses ($)</label>
+                    <input type="number" id="monthlyExpenses" value="500">
+                    <label>Vacancy Rate (%)</label>
+                    <input type="number" id="vacancyRate" value="5">
+                    <label>PM Fee (%)</label>
+                    <input type="number" id="pmFee" value="10">
+                </div>
+            </div>
+            <button onclick="calculateROI()">Calculate ROI →</button>
+            <div class="calc-result" id="calcResult">
+                <h4>Results</h4>
+                <p id="resultText"></p>
+            </div>
+        </div>
+
+        <script>
+        function calculateROI() {
+            const pp = parseFloat(document.getElementById('purchasePrice').value);
+            const dp = parseFloat(document.getElementById('downPayment').value) / 100;
+            const ir = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+            const lt = parseFloat(document.getElementById('loanTerm').value) * 12;
+            const mr = parseFloat(document.getElementById('monthlyRent').value);
+            const me = parseFloat(document.getElementById('monthlyExpenses').value);
+            const vr = parseFloat(document.getElementById('vacancyRate').value) / 100;
+            const pf = parseFloat(document.getElementById('pmFee').value) / 100;
+
+            const downPaymentAmt = pp * dp;
+            const loanAmt = pp - downPaymentAmt;
+            const monthlyMortgage = loanAmt * (ir * Math.pow(1 + ir, lt)) / (Math.pow(1 + ir, lt) - 1);
+            
+            const effectiveRent = mr * (1 - vr);
+            const pmCost = effectiveRent * pf;
+            const noi = (effectiveRent - me - pmCost) * 12;
+            const annualMortgage = monthlyMortgage * 12;
+            const cashFlow = noi - annualMortgage;
+            const cocReturn = (cashFlow / downPaymentAmt * 100).toFixed(2);
+            const capRate = (noi / pp * 100).toFixed(2);
+            const closingCosts = pp * 0.03;
+            const totalInvested = downPaymentAmt + closingCosts;
+
+            const resultDiv = document.getElementById('calcResult');
+            resultDiv.style.display = 'block';
+            document.getElementById('resultText').innerHTML = `
+                <strong>Monthly Cash Flow:</strong> $${(cashFlow/12).toFixed(0)}/mo<br>
+                <strong>Annual Cash Flow:</strong> $${cashFlow.toFixed(0)}/yr<br>
+                <strong>Cash-on-Cash Return:</strong> ${cocReturn}%<br>
+                <strong>Cap Rate:</strong> ${capRate}%<br>
+                <strong>Monthly Mortgage:</strong> $${monthlyMortgage.toFixed(0)}<br>
+                <strong>NOI (Annual):</strong> $${noi.toFixed(0)}<br>
+                <strong>Total Cash Invested:</strong> $${totalInvested.toFixed(0)} (down payment + ~3% closing costs)<br>
+                <hr style="margin:.75rem 0;border-color:#ccc">
+                <strong>Verdict:</strong> ${cocReturn > 10 ? '🟢 Strong investment' : cocReturn > 6 ? '🟡 Decent investment' : cocReturn > 0 ? '🟠 Marginal — look for better deals' : '🔴 Negative cash flow — avoid'}
+            `;
+        }
+        </script>
+
+        <h2>The 3 ROI Metrics Every PM Should Know</h2>
+
+        <h3>1. Cash-on-Cash Return (CoC)</h3>
+        <p>The most practical metric for leveraged investors. It measures annual cash flow as a percentage of actual cash invested.</p>
+        <div class="formula">
+            CoC Return = (Annual Cash Flow ÷ Total Cash Invested) × 100<br><br>
+            Where:<br>
+            Annual Cash Flow = NOI - Annual Debt Service<br>
+            Total Cash Invested = Down Payment + Closing Costs + Rehab
+        </div>
+        <p><strong>Good benchmark:</strong> 8-12% CoC return is considered strong. Below 5% is marginal. Above 15% is exceptional (verify the numbers — it might be too good to be true).</p>
+
+        <h3>2. Cap Rate (Capitalization Rate)</h3>
+        <p>Measures property performance independent of financing. Useful for comparing properties on an apples-to-apples basis.</p>
+        <div class="formula">
+            Cap Rate = (Net Operating Income ÷ Purchase Price) × 100<br><br>
+            Where:<br>
+            NOI = Gross Rental Income - Operating Expenses (no mortgage)
+        </div>
+        <p><strong>Good benchmark:</strong> 5-8% for most residential markets. Higher cap rates exist in lower-cost markets but often come with more management headaches. Lower cap rates (3-5%) are common in premium markets.</p>
+
+        <h3>3. Total Return on Investment</h3>
+        <p>The full picture including appreciation, principal paydown, and tax benefits.</p>
+        <div class="formula">
+            Total ROI = (Cash Flow + Appreciation + Principal Paydown + Tax Benefits) ÷ Total Investment × 100
+        </div>
+        <p>Total ROI is harder to calculate precisely because appreciation and tax benefits vary, but it's typically 2-3x higher than cash-on-cash return alone.</p>
+
+        <h2>Operating Expense Breakdown: What to Include</h2>
+        <table>
+            <tr><th>Expense Category</th><th>Typical % of Rent</th><th>Monthly (on $2,000 rent)</th></tr>
+            <tr><td>Property management fee</td><td>8-12%</td><td>$160-$240</td></tr>
+            <tr><td>Property taxes</td><td>Varies by location</td><td>$200-$600+</td></tr>
+            <tr><td>Insurance</td><td>~5%</td><td>$80-$150</td></tr>
+            <tr><td>Maintenance reserve</td><td>5-10%</td><td>$100-$200</td></tr>
+            <tr><td>Vacancy allowance</td><td>5-8%</td><td>$100-$160</td></tr>
+            <tr><td>CapEx reserve</td><td>5-10%</td><td>$100-$200</td></tr>
+            <tr><td>Utilities (if owner-paid)</td><td>0-10%</td><td>$0-$200</td></tr>
+            <tr><td>HOA (if applicable)</td><td>Varies</td><td>$0-$500+</td></tr>
+            <tr><td><strong>Total typical expenses</strong></td><td><strong>35-55%</strong></td><td><strong>$700-$1,100</strong></td></tr>
+        </table>
+        <div class="callout">
+            <strong>The 50% Rule:</strong> A quick rule of thumb — expect about 50% of gross rent to go to operating expenses (not including mortgage). So if rent is $2,000/mo, expect ~$1,000 in expenses. This is a rough guide, not a substitute for actual analysis.
+        </div>
+
+        <h2>How Property Managers Add ROI Value</h2>
+        <p>As a PM, here's how you justify your 8-12% fee and actually increase owner ROI:</p>
+        <ol>
+            <li><strong>Lower vacancy rates</strong> — Professional marketing and tenant retention reduce vacancy from 8%+ to under 5%</li>
+            <li><strong>Better tenant screening</strong> — Fewer evictions (each eviction costs $5,000-$10,000+ in lost rent, legal fees, and turnover)</li>
+            <li><strong>Maintenance cost control</strong> — Vendor relationships and volume discounts save 15-25% on repairs</li>
+            <li><strong>Market-rate rents</strong> — Annual rent analysis ensures properties aren't under-market (common with self-managing owners)</li>
+            <li><strong>Legal compliance</strong> — Avoiding fair housing violations and following eviction procedures properly prevents costly lawsuits</li>
+            <li><strong>Time savings</strong> — Owners recover 10-20 hours/month per property to focus on acquisition and strategy</li>
+        </ol>
+
+        <h2>Red Flags in Rental Property Analysis</h2>
+        <ul>
+            <li>🚩 <strong>Negative cash flow</strong> — Even with appreciation hopes, negative cash flow is risky</li>
+            <li>🚩 <strong>Cap rate below 3%</strong> — You're paying a premium for the location, not the income</li>
+            <li>🚩 <strong>CapEx needs exceeding 20% of purchase price</strong> — You're buying a renovation project, not a rental</li>
+            <li>🚩 <strong>Property taxes exceeding 2% of property value annually</strong> — Common in some markets, but it crushes returns</li>
+            <li>🚩 <strong>"Pro forma" numbers vs. actuals</strong> — Always use actual rent, actual expenses, actual vacancy. Never trust seller pro formas.</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3>Manage Properties Like a Pro</h3>
+            <p>Our PM Scaling Kit includes financial reporting templates, KPI dashboards, and owner-facing analysis tools that help you demonstrate ROI to property owners.</p>
+            <a href="/scaling-kit" class="btn">View the Scaling Kit →</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <ul>
+            <li><a href="/blog/property-management-kpis-metrics">Property Management KPIs & Metrics</a></li>
+            <li><a href="/blog/property-management-accounting-guide">Property Management Accounting Guide</a></li>
+            <li><a href="/blog/property-management-fee-structure-guide">Fee Structure Guide</a></li>
+            <li><a href="/blog/how-to-get-property-management-clients">How to Get PM Clients</a></li>
+        </ul>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 LevelPM. Built for property managers who want to scale.</p>
+        <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/sops/">Free SOPs</a> · <a href="/scaling-kit">Scaling Kit</a></p>
+    </footer>
+</body>
+</html>
