@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management KPIs: 12 Metrics That Drive Growth | LevelPM</title>
+    <meta name="description" content="The 12 most important property management KPIs: occupancy rate, days to lease, maintenance response time, owner retention, revenue per door, and more. With benchmarks.">
+    <meta name="keywords" content="property management KPIs, property management metrics, property management benchmarks, property management performance">
+    <link rel="canonical" href="https://levelpm.vercel.app/blog/property-management-kpis-metrics">
+    <meta property="og:title" content="Property Management KPIs: 12 Metrics That Drive Growth">
+    <meta property="og:description" content="The 12 KPIs every PM company should track, with industry benchmarks and how to improve each one.">
+    <meta property="og:type" content="article">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.7; background: #fafafa; }
+        .nav { background: #1a1a2e; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav a { color: #f0c040; text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+        .nav .nav-links a { color: #ccc; font-weight: 400; font-size: 0.95rem; margin-left: 1.5rem; }
+        .nav .nav-links a:hover { color: #f0c040; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.2rem; max-width: 800px; margin: 0 auto 1rem; line-height: 1.2; }
+        .hero .subtitle { color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .content { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
+        .content h2 { font-size: 1.6rem; margin: 2.5rem 0 1rem; color: #1a1a2e; border-bottom: 2px solid #f0c040; padding-bottom: 0.5rem; }
+        .content h3 { font-size: 1.25rem; margin: 2rem 0 0.75rem; color: #16213e; }
+        .content p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #333; }
+        .content ul, .content ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
+        .content li { margin-bottom: 0.5rem; font-size: 1.05rem; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+        th { background: #1a1a2e; color: white; padding: 0.75rem; text-align: left; }
+        td { padding: 0.75rem; border-bottom: 1px solid #e0e0e0; }
+        tr:nth-child(even) { background: #f5f5f5; }
+        .callout { background: #fff8e1; border-left: 4px solid #f0c040; padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .kpi-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid #f0c040; }
+        .kpi-card h3 { margin-top: 0; }
+        .kpi-card .benchmark { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .cta-box { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 2.5rem; border-radius: 12px; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { color: #f0c040; font-size: 1.4rem; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+        .cta-box input { padding: 0.75rem 1rem; border: none; border-radius: 6px; width: 260px; font-size: 1rem; margin-right: 0.5rem; }
+        .cta-box button { background: #f0c040; color: #1a1a2e; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+        .toc { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem 2rem; margin-bottom: 2rem; }
+        .toc h4 { margin-bottom: 0.75rem; color: #1a1a2e; }
+        .toc a { color: #2563eb; text-decoration: none; display: block; margin-bottom: 0.4rem; font-size: 0.95rem; }
+        .toc a:hover { text-decoration: underline; }
+        .footer { background: #1a1a2e; color: #999; padding: 2rem; text-align: center; font-size: 0.9rem; }
+        .footer a { color: #f0c040; text-decoration: none; }
+        .breadcrumb { max-width: 780px; margin: 1rem auto 0; padding: 0 2rem; font-size: 0.85rem; color: #999; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.6rem; } .cta-box input { width: 100%; margin-bottom: 0.5rem; } }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Property Management KPIs: 12 Metrics That Drive Growth",
+        "author": {"@type": "Organization", "name": "LevelPM"},
+        "datePublished": "2026-03-06",
+        "dateModified": "2026-03-06"
+    }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">LevelPM</a>
+        <div class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/sops/">Free SOPs</a>
+            <a href="/#waitlist">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Property Management KPIs: 12 Metrics That Actually Drive Growth</h1>
+        <p class="subtitle">What gets measured gets managed. Here are the only 12 numbers you need to track — with industry benchmarks.</p>
+    </div>
+
+    <div class="breadcrumb"><a href="/">Home</a> → <a href="/blog">Blog</a> → Property Management KPIs</div>
+
+    <article class="content">
+        <p>Most property management companies track zero KPIs. They know their door count and roughly what they collected last month. That's it. And then they wonder why they can't grow past 50 doors.</p>
+        <p><strong>The PM companies that scale to 200, 500, 1,000+ doors obsessively track a handful of metrics.</strong> Not 50 vanity metrics — just the 12 that actually correlate with growth and profitability.</p>
+        <p>Here they are, with industry benchmarks and actionable advice on improving each one.</p>
+
+        <h2>The 12 Essential Property Management KPIs</h2>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 94–97%</span>
+            <h3>1. Occupancy Rate</h3>
+            <p><strong>Formula:</strong> (Occupied units ÷ Total units) × 100</p>
+            <p>The single most important number in property management. Every vacant day costs the owner money and costs you management fees. A 95% occupancy rate means you're doing well. Below 92% and you have a leasing or pricing problem.</p>
+            <p><strong>How to improve:</strong> Price units to market within 48 hours of notice-to-vacate. Use rental comps (Rentometer, Zillow rent estimates) to price accurately. Pre-market units 30 days before vacancy.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 14–28 days</span>
+            <h3>2. Days to Lease (Vacancy Duration)</h3>
+            <p><strong>Formula:</strong> Average days from unit becoming available to new lease signed</p>
+            <p>This measures your leasing machine's efficiency. Top performers fill units in 14 days. The industry average is closer to 28. Every day over 14 is lost revenue.</p>
+            <p><strong>How to improve:</strong> Professional photos (not phone photos), list on 10+ platforms simultaneously, respond to inquiries within 1 hour, offer self-showing technology, pre-screen applicants before showings.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: < 24 hours</span>
+            <h3>3. Maintenance Response Time</h3>
+            <p><strong>Formula:</strong> Average time from maintenance request to first action taken</p>
+            <p>This is your tenant satisfaction engine. Slow maintenance is the #1 reason tenants don't renew. "First action" means acknowledgment + scheduling, not completion.</p>
+            <p><strong>How to improve:</strong> Use a <a href="/sops/maintenance-triage.html" style="color:#2563eb;">maintenance triage SOP</a> to categorize requests. Set auto-responses confirming receipt. Have vendor relationships pre-established for common issues.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 85–95%</span>
+            <h3>4. Owner Retention Rate</h3>
+            <p><strong>Formula:</strong> (Owners at end of period ÷ Owners at start) × 100, excluding new additions</p>
+            <p>Acquiring a new owner costs 5–10x more than retaining one. If your owner retention is below 85%, you're on a treadmill — growing the front door while losing out the back.</p>
+            <p><strong>How to improve:</strong> Monthly owner reports (use our <a href="/sops/owner-reporting-template.html" style="color:#2563eb;">template</a>), proactive communication about market trends, annual property reviews with recommendations, and never surprise an owner with a large expense.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 60–70%</span>
+            <h3>5. Tenant Renewal Rate</h3>
+            <p><strong>Formula:</strong> (Tenants who renewed ÷ Tenants eligible to renew) × 100</p>
+            <p>Turnovers cost $2,500–$5,000 per unit (vacancy loss + turnover costs). A 10% improvement in renewal rate at 100 doors saves $25,000–$50,000/year for your owners — which means happier owners and better retention for you.</p>
+            <p><strong>How to improve:</strong> Start renewal conversations 90 days before lease end. Offer small rent increases (3–5%) rather than market jumps. Fix maintenance issues promptly. Consider renewal incentives for long-term tenants.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 97–99%</span>
+            <h3>6. Rent Collection Rate</h3>
+            <p><strong>Formula:</strong> (Rent collected ÷ Rent charged) × 100</p>
+            <p>If you're below 97%, something is wrong with your screening, your lease enforcement, or both. Top PM companies collect 99%+ by day 5 of each month.</p>
+            <p><strong>How to improve:</strong> Strict, consistent screening criteria. Auto-pay enrollment (target 80%+ adoption). Clear late fee policy enforced without exception. Three-day notice filed on day 4, every time.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: $120–$180/door/month</span>
+            <h3>7. Revenue Per Door</h3>
+            <p><strong>Formula:</strong> Total PM revenue ÷ Total doors managed</p>
+            <p>This includes management fees, leasing fees, maintenance markups, and ancillary income. If you're below $120/door, you're either undercharging or missing revenue streams.</p>
+            <p><strong>How to improve:</strong> Review fee structure annually. Add ancillary revenue: lease renewal fees, admin fees, inspection fees, vendor coordination fees. Don't race to the bottom on price — compete on service quality.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: $1,500–$3,000</span>
+            <h3>8. Cost Per Turnover</h3>
+            <p><strong>Formula:</strong> Average total cost per unit turn (vacancy loss + make-ready + marketing)</p>
+            <p>The hidden profit killer. A $3,000 turnover at 100 doors with 30% annual turnover = $90,000/year in turnover costs. Reducing this to $2,000 saves $30,000.</p>
+            <p><strong>How to improve:</strong> Streamline make-ready with a turnover checklist (7-day target). Negotiate flat-rate vendor packages for paint + clean. Pre-market before move-out. Overlap repairs with marketing.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 3–8 doors/month</span>
+            <h3>9. New Doors Per Month (Growth Rate)</h3>
+            <p><strong>Formula:</strong> Net new doors added per month</p>
+            <p>This is your growth engine. Consistent monthly door growth is the path to scale. Track both gross additions and net (after lost doors).</p>
+            <p><strong>How to improve:</strong> Systematize owner acquisition. Agent referral program. Google reviews (aim for 50+). Content marketing. Track where every lead comes from and double down on what works.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: $200–$500</span>
+            <h3>10. Customer Acquisition Cost (per door)</h3>
+            <p><strong>Formula:</strong> Total marketing + sales costs ÷ New doors acquired</p>
+            <p>Know what it costs to get a new door. If you're paying $500/door in acquisition cost and making $150/door/month, you break even in 3.3 months. If CAC is $200, breakeven drops to 1.3 months.</p>
+            <p><strong>How to improve:</strong> Referral programs (cheapest acquisition channel), organic SEO (compounds over time), optimize Google Business Profile (free leads).</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 40–55%</span>
+            <h3>11. Operating Profit Margin</h3>
+            <p><strong>Formula:</strong> (Revenue - Operating Expenses) ÷ Revenue × 100</p>
+            <p>What percentage of your management revenue is actual profit? Top PM companies run at 45–55% margins. Below 35% and you're either overstaffed, undercharging, or operationally inefficient.</p>
+            <p><strong>How to improve:</strong> Automate everything possible (tenant portals, auto-pay, auto-reporting). Don't hire until you absolutely must. Use SOPs to maximize staff efficiency.</p>
+        </div>
+
+        <div class="kpi-card">
+            <span class="benchmark">📊 Benchmark: 50–80 doors</span>
+            <h3>12. Doors Per Employee</h3>
+            <p><strong>Formula:</strong> Total doors ÷ Total full-time employees</p>
+            <p>This measures operational efficiency. With good systems, one person can manage 60–80 doors. Without systems, they max out at 30. This KPI determines whether adding doors adds profit or just adds chaos.</p>
+            <p><strong>How to improve:</strong> SOPs for everything. Automate rent collection, maintenance requests, owner reporting. Use property management software fully (most companies use 20% of their software's features). Train staff on efficiency, not just compliance.</p>
+        </div>
+
+        <h2>How to Build Your KPI Dashboard</h2>
+        <p>Don't track all 12 from day one. Start with the Big 5:</p>
+        <ol>
+            <li><strong>Occupancy Rate</strong> — Is your core product working?</li>
+            <li><strong>Days to Lease</strong> — How fast is your leasing machine?</li>
+            <li><strong>Owner Retention Rate</strong> — Are you keeping your customers?</li>
+            <li><strong>Revenue Per Door</strong> — Are you monetizing effectively?</li>
+            <li><strong>New Doors Per Month</strong> — Are you growing?</li>
+        </ol>
+        <p>Review these 5 numbers every Monday morning. It takes 10 minutes. Once you're consistently hitting benchmarks on these, layer in the remaining 7.</p>
+
+        <div class="callout">
+            <strong>💡 Rule of thumb:</strong> If a KPI isn't leading to action, stop tracking it. The point of metrics isn't reports — it's decisions. Every number should answer a question you're actively managing.
+        </div>
+
+        <div class="cta-box">
+            <h3>📊 Get the KPI Dashboard Template</h3>
+            <p>Pre-built spreadsheet with formulas, benchmarks, and weekly review framework. Part of the PM Scaling Kit.</p>
+            <div>
+                <input type="email" id="blog-email" placeholder="you@company.com">
+                <button onclick="blogSignup()">Join the Waitlist →</button>
+            </div>
+            <p style="font-size:0.8rem; margin-top:0.75rem; color:#888;">Be the first to know when the Scaling Kit launches.</p>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>© 2026 LevelPM. Training & SOPs for property managers who want to grow.</p>
+        <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/sops/">Free SOPs</a></p>
+    </footer>
+
+    <script>
+    async function blogSignup() {
+        const email = document.getElementById('blog-email').value;
+        if (!email || !email.includes('@')) { alert('Please enter a valid email'); return; }
+        try {
+            await fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'blog-kpis' }) });
+            document.getElementById('blog-email').value = '';
+            alert('You\'re in! We\'ll notify you at launch.');
+        } catch(e) { alert('Something went wrong. Please try again.'); }
+    }
+    </script>
+</body>
+</html>

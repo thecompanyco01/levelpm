@@ -10,6 +10,10 @@
             "use": "@vercel/static"
         },
         {
+            "src": "blog/**/*.html",
+            "use": "@vercel/static"
+        },
+        {
             "src": "api/**/*.js",
             "use": "@vercel/node"
         }
@@ -20,7 +24,15 @@
             "dest": "/api/$1.js"
         },
         {
-            "src": "/sops/(.*)\\.html",
+            "src": "/blog/([^/]+)$",
+            "dest": "/blog/$1.html"
+        },
+        {
+            "src": "/blog/?$",
+            "dest": "/blog/index.html"
+        },
+        {
+            "src": "/sops/([^/]+)\\.html$",
             "dest": "/sops/$1.html"
         },
         {
