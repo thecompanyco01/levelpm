@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "sops/**/*.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "api/**/*.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/$1.js"
+        },
+        {
+            "src": "/sops/(.*)\\.html",
+            "dest": "/sops/$1.html"
+        },
+        {
+            "src": "/sops/?$",
+            "dest": "/sops/index.html"
+        },
+        {
+            "src": "^/$",
+            "dest": "/index.html"
+        }
+    ]
+}

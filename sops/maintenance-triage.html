@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Triage SOP — LevelPM</title>
+    <style>
+        @media print { .no-print { display: none; } body { font-size: 11pt; } }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 2rem; }
+        .header { border-bottom: 3px solid #302b63; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .header h1 { font-size: 1.8rem; color: #302b63; }
+        .header .subtitle { color: #666; font-size: 0.95rem; margin-top: 0.25rem; }
+        .brand { float: right; font-size: 0.8rem; color: #999; }
+        .brand a { color: #302b63; text-decoration: none; }
+        h2 { font-size: 1.3rem; color: #302b63; margin: 2rem 0 0.75rem; border-left: 4px solid #f7971e; padding-left: 0.75rem; }
+        h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; }
+        p, li { font-size: 0.95rem; }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.35rem; }
+        .priority-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+        .priority-table th, .priority-table td { border: 1px solid #ddd; padding: 0.6rem 0.8rem; text-align: left; font-size: 0.9rem; }
+        .priority-table th { background: #302b63; color: white; font-weight: 600; }
+        .priority-table tr:nth-child(even) { background: #f8f9fa; }
+        .emergency { background: #fee2e2 !important; }
+        .urgent { background: #fef3c7 !important; }
+        .routine { background: #d1fae5 !important; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .checklist li::before { content: "☐ "; font-size: 1.1rem; }
+        .tip { background: #f0f4ff; border-left: 4px solid #302b63; padding: 1rem; margin: 1rem 0; border-radius: 0 4px 4px 0; font-size: 0.9rem; }
+        .tip strong { color: #302b63; }
+        .footer { margin-top: 3rem; padding-top: 1rem; border-top: 2px solid #eee; font-size: 0.8rem; color: #999; text-align: center; }
+        .cta { background: linear-gradient(135deg, #302b63, #24243e); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 2rem 0; }
+        .cta h3 { color: white; margin-bottom: 0.5rem; }
+        .cta a { color: #ffd200; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="brand">Free SOP from <a href="https://levelpm.vercel.app">LevelPM</a></span>
+        <h1>🔧 Maintenance Request Triage SOP</h1>
+        <p class="subtitle">Standard Operating Procedure for classifying and routing maintenance requests</p>
+    </div>
+
+    <h2>Purpose</h2>
+    <p>This SOP ensures every maintenance request is classified, prioritized, and routed to the right person within the right timeframe. No request falls through the cracks. No emergency gets treated like a routine ticket.</p>
+
+    <h2>Priority Classification Matrix</h2>
+    <table class="priority-table">
+        <tr>
+            <th>Priority</th>
+            <th>Response Time</th>
+            <th>Examples</th>
+            <th>Who Handles</th>
+        </tr>
+        <tr class="emergency">
+            <td><strong>🔴 Emergency</strong></td>
+            <td>Immediately (within 1 hour)</td>
+            <td>Gas leak, flooding, fire damage, no heat in winter (<40°F), sewage backup, electrical hazard, broken locks/security breach</td>
+            <td>On-call emergency vendor → notify PM immediately</td>
+        </tr>
+        <tr class="urgent">
+            <td><strong>🟡 Urgent</strong></td>
+            <td>Within 24 hours</td>
+            <td>No hot water, AC failure in summer (>90°F), refrigerator not working, toilet (only one in unit) not flushing, roof leak (active)</td>
+            <td>Preferred vendor → PM reviews next business morning</td>
+        </tr>
+        <tr class="routine">
+            <td><strong>🟢 Routine</strong></td>
+            <td>Within 3-5 business days</td>
+            <td>Dripping faucet, running toilet (still functional), minor appliance issues, cosmetic damage, pest control (non-emergency), light fixtures</td>
+            <td>Scheduled with preferred vendor → batch when possible</td>
+        </tr>
+        <tr>
+            <td><strong>⚪ Scheduled</strong></td>
+            <td>Within 30 days / next turnover</td>
+            <td>Cosmetic updates, carpet replacement, paint touch-ups, weatherstripping, caulking, non-urgent upgrades</td>
+            <td>Add to property maintenance schedule</td>
+        </tr>
+    </table>
+
+    <h2>Step-by-Step Triage Process</h2>
+
+    <h3>Step 1: Receive the Request</h3>
+    <ul class="checklist">
+        <li>Log request in property management software (AppFolio/Buildium/RentManager)</li>
+        <li>Record: tenant name, unit, date/time, description, photos if provided</li>
+        <li>Auto-acknowledge receipt to tenant (within 15 minutes during business hours)</li>
+    </ul>
+
+    <h3>Step 2: Classify Priority</h3>
+    <ul class="checklist">
+        <li>Use the Priority Matrix above to classify</li>
+        <li>If unsure, escalate to 🟡 Urgent (over-classify, don't under-classify)</li>
+        <li>Check: Does this affect habitability? → Emergency or Urgent</li>
+        <li>Check: Is this a life/safety issue? → Emergency</li>
+        <li>Check: Does the lease require specific response times? → Follow lease terms</li>
+    </ul>
+
+    <h3>Step 3: Route to Vendor</h3>
+    <ul class="checklist">
+        <li>🔴 Emergency: Call emergency vendor immediately. Do NOT just email.</li>
+        <li>🟡 Urgent: Submit work order to preferred vendor. Confirm ETA within 4 hours.</li>
+        <li>🟢 Routine: Submit work order. Batch with other routine items at same property when possible.</li>
+        <li>⚪ Scheduled: Add to maintenance calendar. Review at next property inspection.</li>
+    </ul>
+
+    <h3>Step 4: Communicate</h3>
+    <ul class="checklist">
+        <li>Notify tenant of classification, expected timeline, and vendor info</li>
+        <li>For emergencies: provide emergency vendor contact directly to tenant</li>
+        <li>If owner approval needed (>$___): get approval BEFORE dispatching (except emergencies)</li>
+        <li>Document all communications in the work order</li>
+    </ul>
+
+    <h3>Step 5: Follow Up</h3>
+    <ul class="checklist">
+        <li>Confirm vendor completed work (get photos of completed repair)</li>
+        <li>Contact tenant to confirm issue is resolved</li>
+        <li>Review invoice against approved amount</li>
+        <li>Close work order in system</li>
+        <li>If recurring issue: flag for capital improvement review</li>
+    </ul>
+
+    <div class="tip">
+        <strong>💡 Pro Tip:</strong> Set a spending threshold with each owner upfront (e.g., "We handle anything under $500 without approval"). This eliminates 80% of your approval bottleneck and lets you resolve issues faster. Document it in the management agreement.
+    </div>
+
+    <h2>Owner Notification Thresholds</h2>
+    <table class="priority-table">
+        <tr><th>Situation</th><th>Notify Owner?</th><th>When</th></tr>
+        <tr><td>Emergency repair</td><td>Yes — after dispatching</td><td>Within 2 hours of dispatch</td></tr>
+        <tr><td>Repair under threshold</td><td>No (include in monthly report)</td><td>Monthly owner report</td></tr>
+        <tr><td>Repair over threshold</td><td>Yes — before dispatching</td><td>Before work begins</td></tr>
+        <tr><td>Recurring issue at property</td><td>Yes — with recommendation</td><td>After 3rd occurrence</td></tr>
+        <tr><td>Capital improvement needed</td><td>Yes — with ROI analysis</td><td>Next owner review</td></tr>
+    </table>
+
+    <h2>After-Hours Protocol</h2>
+    <ol>
+        <li>Tenant calls after-hours line</li>
+        <li>Answering service classifies using simplified script (life/safety → emergency, everything else → next business day)</li>
+        <li>Emergencies: answering service dispatches on-call vendor AND texts on-call PM</li>
+        <li>Non-emergencies: logged for next business day processing</li>
+        <li>On-call PM reviews all after-hours requests by 9am next business day</li>
+    </ol>
+
+    <div class="tip">
+        <strong>💡 Pro Tip:</strong> Track your maintenance data monthly. Average cost per door, most common request types, vendor response times. After 6 months, you'll have the data to renegotiate vendor rates and identify properties that need capital improvements.
+    </div>
+
+    <div class="cta no-print">
+        <h3>Want the full PM Scaling Kit?</h3>
+        <p>This is 1 of 15+ SOPs in the complete LevelPM system. Get the full scaling playbook — SOPs, templates, checklists, and video training.</p>
+        <p><a href="https://levelpm.vercel.app">Join the waitlist →</a></p>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 LevelPM. Free to use and customize for your PM company. Share with attribution.</p>
+    </div>
+</body>
+</html>

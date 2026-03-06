@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelPM — Scale Your Property Management Business</title>
+    <meta name="description" content="Practical courses, SOPs, and templates for property managers who want to go from 50 units to 500+. Stop guessing. Start scaling.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a2e;
+            background: #fafafa;
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .cta-form input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .cta-form input:focus {
+            border-color: #ffd200;
+        }
+
+        .cta-form button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .cta-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(247, 151, 30, 0.4);
+        }
+
+        .social-proof {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .pain-points {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+        }
+
+        .pain-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pain-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .what-you-get {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .check-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .check-list li {
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: #f7971e;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .bottom-cta {
+            padding: 5rem 2rem;
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+        }
+
+        .bottom-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-cta p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .bottom-cta .cta-form input {
+            background: rgba(255,255,255,0.1);
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            background: #111;
+        }
+
+        .success-msg {
+            display: none;
+            color: #ffd200;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .cta-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🏢 Coming Soon</div>
+            <h1>Stop Managing Properties.<br><span>Start Scaling a Business.</span></h1>
+            <p class="subtitle">
+                Practical courses, ready-to-use SOPs, and proven systems for property managers 
+                who want to go from 50 doors to 500+. No fluff. No $800 association seminars. 
+                Just the playbook that works.
+            </p>
+            <form class="cta-form" id="waitlist-top" onsubmit="handleSubmit(event, this)">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Join the Waitlist</button>
+            </form>
+            <div class="success-msg" id="success-top">🎉 You're on the list. We'll be in touch.</div>
+            <p class="social-proof">Join 0 property managers waiting for launch</p>
+        </div>
+    </section>
+
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">Sound Familiar?</h2>
+            <p class="section-subtitle">The problems that keep PM companies stuck at 50-100 doors</p>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="icon">🔥</div>
+                    <h3>You're the Bottleneck</h3>
+                    <p>Every decision runs through you. Maintenance calls at midnight. Owner complaints at 6am. You're not running a business — you're trapped in one.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">📋</div>
+                    <h3>No Systems, Just Chaos</h3>
+                    <p>Your processes live in your head. New hires take months to ramp up. Every tenant turnover feels like starting from scratch.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">💸</div>
+                    <h3>Training Costs a Fortune</h3>
+                    <p>NARPM courses at $500+. Conferences that eat a week. YouTube videos that are either too basic or trying to sell you coaching at $2K/month.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">📊</div>
+                    <h3>Can't Prove Your Value</h3>
+                    <p>Owners ask "what am I paying you for?" and you don't have clean reports, benchmarks, or data to show them. So they leave.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">🚪</div>
+                    <h3>Losing Doors, Not Gaining Them</h3>
+                    <p>You know you need more owners but you're too busy putting out fires to market your business. Growth is an afterthought.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Tech Stack is a Mess</h3>
+                    <p>AppFolio, Buildium, Rent Manager — you're using 10% of your software's capability and drowning in manual work that should be automated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="free-sops" style="padding: 3rem 2rem; background: linear-gradient(135deg, #f7971e, #ffd200); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: #1a1a2e; margin-bottom: 0.5rem;">🆓 Free: 3 SOP Templates You Can Use Today</h2>
+            <p style="color: rgba(26,26,46,0.8); font-size: 1.1rem; margin-bottom: 1.5rem;">Maintenance Triage SOP • Move-In/Out Checklist • Monthly Owner Report Template</p>
+            <a href="/sops/" style="display: inline-block; background: #1a1a2e; color: white; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s;">Download Free Templates →</a>
+        </div>
+    </section>
+
+    <section class="what-you-get">
+        <div class="container">
+            <h2 class="section-title">What You'll Get</h2>
+            <p class="section-subtitle">Everything you need to scale from overwhelmed operator to professional PM company</p>
+            <ul class="check-list">
+                <li>Step-by-step courses on scaling from 50 to 500+ doors</li>
+                <li>Ready-to-use SOPs for every part of your operation — just customize and deploy</li>
+                <li>Tenant screening frameworks that actually reduce evictions</li>
+                <li>Owner reporting templates that prove your value and reduce churn</li>
+                <li>Maintenance vendor management systems that cut costs 20-30%</li>
+                <li>Marketing playbooks specifically for winning new management contracts</li>
+                <li>Financial analysis templates — know your true cost per door</li>
+                <li>Hiring and training systems so new team members produce in weeks, not months</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bottom-cta">
+        <h2>Ready to Scale?</h2>
+        <p>Get early access pricing and be first to know when we launch.</p>
+        <form class="cta-form" id="waitlist-bottom" onsubmit="handleSubmit(event, this)">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Join the Waitlist</button>
+        </form>
+        <div class="success-msg" id="success-bottom">🎉 You're on the list. We'll be in touch.</div>
+    </section>
+
+    <footer>
+        <p>© 2026 LevelPM. Built by Reeve. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple waitlist — stores in localStorage for now, will connect to backend later
+        function handleSubmit(e, form) {
+            e.preventDefault();
+            const email = form.querySelector('input[name="email"]').value;
+            
+            // Store locally
+            const waitlist = JSON.parse(localStorage.getItem('levelpm_waitlist') || '[]');
+            if (!waitlist.includes(email)) {
+                waitlist.push(email);
+                localStorage.setItem('levelpm_waitlist', JSON.stringify(waitlist));
+            }
+            
+            // Show success
+            form.style.display = 'none';
+            const successId = form.id === 'waitlist-top' ? 'success-top' : 'success-bottom';
+            document.getElementById(successId).style.display = 'block';
+            
+            // Update counter
+            const counter = document.querySelector('.social-proof');
+            if (counter) {
+                counter.textContent = `Join ${waitlist.length} property manager${waitlist.length !== 1 ? 's' : ''} waiting for launch`;
+            }
+
+            // Send to our API endpoint
+            fetch('/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'landing-page' })
+            }).then(() => updateCount()).catch(() => {});
+        }
+        // Fetch real waitlist count
+        function updateCount() {
+            fetch('/api/waitlist-count')
+                .then(r => r.json())
+                .then(d => {
+                    const counter = document.querySelector('.social-proof');
+                    if (counter && d.count > 0) {
+                        counter.textContent = `Join ${d.count} property manager${d.count !== 1 ? 's' : ''} waiting for launch`;
+                    }
+                })
+                .catch(() => {});
+        }
+        updateCount();
+    </script>
+</body>
+</html>

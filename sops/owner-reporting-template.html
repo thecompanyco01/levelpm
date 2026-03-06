@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Owner Report Template — LevelPM</title>
+    <style>
+        @media print { .no-print { display: none; } body { font-size: 10pt; } }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 2rem; }
+        .header { border-bottom: 3px solid #302b63; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .header h1 { font-size: 1.6rem; color: #302b63; }
+        .header .subtitle { color: #666; font-size: 0.9rem; margin-top: 0.25rem; }
+        .brand { float: right; font-size: 0.8rem; color: #999; }
+        .brand a { color: #302b63; text-decoration: none; }
+        h2 { font-size: 1.2rem; color: #302b63; margin: 2rem 0 0.75rem; border-left: 4px solid #f7971e; padding-left: 0.75rem; }
+        h3 { font-size: 1rem; margin: 1rem 0 0.5rem; color: #302b63; }
+        p, li { font-size: 0.9rem; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .info-field { border: 1px solid #ddd; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.85rem; }
+        .info-field label { font-weight: 600; color: #302b63; display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1.5rem; font-size: 0.85rem; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem 0.7rem; text-align: left; }
+        th { background: #302b63; color: white; font-weight: 600; font-size: 0.8rem; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .total-row { font-weight: 700; background: #e8e6f0 !important; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+        .kpi-card { text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #eee; }
+        .kpi-card .number { font-size: 1.8rem; font-weight: 800; color: #302b63; }
+        .kpi-card .label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
+        .positive { color: #059669; }
+        .negative { color: #dc2626; }
+        .tip { background: #f0f4ff; border-left: 4px solid #302b63; padding: 0.75rem; margin: 1rem 0; border-radius: 0 4px 4px 0; font-size: 0.85rem; }
+        .tip strong { color: #302b63; }
+        .notes-box { border: 1px solid #ddd; min-height: 80px; padding: 0.75rem; border-radius: 4px; margin-bottom: 1rem; }
+        .section-explanation { color: #666; font-size: 0.85rem; font-style: italic; margin-bottom: 0.75rem; }
+        .cta { background: linear-gradient(135deg, #302b63, #24243e); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 2rem 0; }
+        .cta h3 { color: white; margin-bottom: 0.5rem; }
+        .cta a { color: #ffd200; font-weight: 700; }
+        .footer { margin-top: 2rem; padding-top: 1rem; border-top: 2px solid #eee; font-size: 0.8rem; color: #999; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="brand">Free Template from <a href="https://levelpm.vercel.app">LevelPM</a></span>
+        <h1>📊 Monthly Owner Report Template</h1>
+        <p class="subtitle">Professional owner reporting that proves your value and reduces churn</p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-field"><label>Property Address</label> _________________________</div>
+        <div class="info-field"><label>Owner Name</label> _________________________</div>
+        <div class="info-field"><label>Report Period</label> __________ to __________</div>
+    </div>
+
+    <h2>Portfolio Snapshot</h2>
+    <p class="section-explanation">Owners want to see the big picture at a glance. Lead with the metrics that matter.</p>
+    
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="number">$____</div>
+            <div class="label">Net Income<br>This Month</div>
+        </div>
+        <div class="kpi-card">
+            <div class="number">____%</div>
+            <div class="label">Occupancy<br>Rate</div>
+        </div>
+        <div class="kpi-card">
+            <div class="number">$____</div>
+            <div class="label">Maintenance<br>Spend</div>
+        </div>
+        <div class="kpi-card">
+            <div class="number">____</div>
+            <div class="label">Days<br>On Market</div>
+        </div>
+    </div>
+
+    <h2>Income Statement</h2>
+    <h3>Revenue</h3>
+    <table>
+        <tr><th>Item</th><th>Amount</th><th>Notes</th></tr>
+        <tr><td>Rent collected</td><td>$</td><td></td></tr>
+        <tr><td>Late fees</td><td>$</td><td></td></tr>
+        <tr><td>Pet rent</td><td>$</td><td></td></tr>
+        <tr><td>Application fees</td><td>$</td><td></td></tr>
+        <tr><td>Utility reimbursements</td><td>$</td><td></td></tr>
+        <tr><td>Other income</td><td>$</td><td></td></tr>
+        <tr class="total-row"><td>Total Revenue</td><td>$</td><td></td></tr>
+    </table>
+
+    <h3>Expenses</h3>
+    <table>
+        <tr><th>Item</th><th>Amount</th><th>Notes</th></tr>
+        <tr><td>Management fee</td><td>$</td><td></td></tr>
+        <tr><td>Maintenance & repairs</td><td>$</td><td>See maintenance detail below</td></tr>
+        <tr><td>Landscaping</td><td>$</td><td></td></tr>
+        <tr><td>Utilities (owner-paid)</td><td>$</td><td></td></tr>
+        <tr><td>Insurance</td><td>$</td><td></td></tr>
+        <tr><td>Property tax (if escrowed)</td><td>$</td><td></td></tr>
+        <tr><td>HOA fees</td><td>$</td><td></td></tr>
+        <tr><td>Advertising / vacancy costs</td><td>$</td><td></td></tr>
+        <tr><td>Other expenses</td><td>$</td><td></td></tr>
+        <tr class="total-row"><td>Total Expenses</td><td>$</td><td></td></tr>
+    </table>
+
+    <table>
+        <tr class="total-row"><td style="width:60%">NET INCOME (Revenue - Expenses)</td><td>$</td><td></td></tr>
+        <tr class="total-row"><td>Owner Distribution</td><td>$</td><td></td></tr>
+        <tr><td>Reserve balance</td><td>$</td><td>Recommended: $____ per unit</td></tr>
+    </table>
+
+    <h2>Maintenance Detail</h2>
+    <p class="section-explanation">Every dollar of maintenance spend, itemized. Transparency builds trust.</p>
+    <table>
+        <tr><th>Date</th><th>Description</th><th>Vendor</th><th>Amount</th><th>Status</th></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td></tr>
+        <tr class="total-row"><td colspan="3">Total Maintenance</td><td>$</td><td></td></tr>
+    </table>
+
+    <h2>Tenant Status</h2>
+    <table>
+        <tr><th>Unit</th><th>Tenant</th><th>Lease End</th><th>Rent</th><th>Status</th><th>Notes</th></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td>$</td><td></td><td></td></tr>
+    </table>
+
+    <div class="tip">
+        <strong>💡 Status codes:</strong> ✅ Current &nbsp;|&nbsp; ⚠️ Late (1-30 days) &nbsp;|&nbsp; 🔴 Delinquent (30+) &nbsp;|&nbsp; 📋 Notice given &nbsp;|&nbsp; 🔄 Renewing &nbsp;|&nbsp; 🚪 Vacating &nbsp;|&nbsp; ⬜ Vacant
+    </div>
+
+    <h2>Rent Collection Summary</h2>
+    <table>
+        <tr><th>Metric</th><th>This Month</th><th>Last Month</th><th>YTD Average</th></tr>
+        <tr><td>Collection rate</td><td>%</td><td>%</td><td>%</td></tr>
+        <tr><td>Days to collect (avg)</td><td></td><td></td><td></td></tr>
+        <tr><td>Late payments</td><td></td><td></td><td></td></tr>
+        <tr><td>Outstanding balance</td><td>$</td><td>$</td><td>$</td></tr>
+    </table>
+
+    <h2>Market Comparison</h2>
+    <p class="section-explanation">Show owners how their property compares to the local market. This justifies rent increases and proves value.</p>
+    <table>
+        <tr><th>Metric</th><th>Your Property</th><th>Market Average</th><th>Difference</th></tr>
+        <tr><td>Avg rent per unit</td><td>$</td><td>$</td><td></td></tr>
+        <tr><td>Occupancy rate</td><td>%</td><td>%</td><td></td></tr>
+        <tr><td>Avg days on market</td><td></td><td></td><td></td></tr>
+        <tr><td>Maintenance cost per unit</td><td>$</td><td>$</td><td></td></tr>
+    </table>
+
+    <h2>Upcoming Items</h2>
+    <p class="section-explanation">Be proactive. Owners hate surprises. Tell them what's coming before it arrives.</p>
+    <table>
+        <tr><th>Item</th><th>Timeline</th><th>Est. Cost</th><th>Priority</th></tr>
+        <tr><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td>$</td><td></td></tr>
+        <tr><td></td><td></td><td>$</td><td></td></tr>
+    </table>
+
+    <h2>Recommendations</h2>
+    <p class="section-explanation">This is where you add real value. Don't just report — advise.</p>
+    <div class="notes-box">&nbsp;</div>
+
+    <h2>Manager's Notes</h2>
+    <div class="notes-box">&nbsp;</div>
+
+    <div class="tip">
+        <strong>💡 Why This Report Reduces Churn:</strong><br>
+        • Owners leave when they feel uninformed. This report eliminates "what am I paying you for?"<br>
+        • The market comparison section justifies your management fee every month.<br>
+        • Proactive recommendations position you as an advisor, not just a rent collector.<br>
+        • Consistent monthly reports build a paper trail that protects you in disputes.<br>
+        • Include this report with every owner distribution — never send money without context.
+    </div>
+
+    <div class="cta no-print">
+        <h3>Want the full PM Scaling Kit?</h3>
+        <p>This is 1 of 15+ templates in the complete LevelPM system. SOPs, checklists, financial frameworks, and video training to scale from 50 to 500+ doors.</p>
+        <p><a href="https://levelpm.vercel.app">Join the waitlist →</a></p>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 LevelPM. Free to use and customize for your PM company. Share with attribution.</p>
+    </div>
+</body>
+</html>
