@@ -2,6 +2,7 @@
     "version": 2,
     "builds": [
         { "src": "index.html", "use": "@vercel/static" },
+        { "src": "scaling-kit.html", "use": "@vercel/static" },
         { "src": "sops/**/*.html", "use": "@vercel/static" },
         { "src": "blog/**/*.html", "use": "@vercel/static" },
         { "src": "sitemap.xml", "use": "@vercel/static" },
@@ -12,6 +13,7 @@
         { "src": "/api/(.*)", "dest": "/api/$1.js" },
         { "src": "/sitemap\\.xml$", "dest": "/sitemap.xml" },
         { "src": "/robots\\.txt$", "dest": "/robots.txt" },
+        { "src": "/scaling-kit$", "dest": "/scaling-kit.html" },
         { "src": "/blog/([^/]+)$", "dest": "/blog/$1.html" },
         { "src": "/blog/?$", "dest": "/blog/index.html" },
         { "src": "/sops/([^/]+)\\.html$", "dest": "/sops/$1.html" },

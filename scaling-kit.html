@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The PM Scaling Kit — SOPs, Templates & Playbook for Property Managers | LevelPM</title>
+    <meta name="description" content="15 SOPs, templates, and checklists + implementation guide for property management companies. Scale from 50 to 500+ doors with proven systems.">
+    <link rel="canonical" href="https://levelpm.vercel.app/scaling-kit">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.6;background:#fff}
+        .nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .nav a{color:#f0c040;text-decoration:none;font-weight:700;font-size:1.2rem}
+        .nav .nav-links a{color:#ccc;font-weight:400;font-size:.95rem;margin-left:1.5rem}
+        .hero{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#fff;padding:5rem 2rem;text-align:center}
+        .hero h1{font-size:2.8rem;max-width:800px;margin:0 auto 1.5rem;line-height:1.15;font-weight:800}
+        .hero h1 span{background:linear-gradient(90deg,#f7971e,#ffd200);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero .subtitle{color:#ccc;font-size:1.2rem;max-width:600px;margin:0 auto 2rem}
+        .hero .price{font-size:3rem;font-weight:800;color:#f0c040;margin-bottom:.5rem}
+        .hero .price-note{color:#999;font-size:1rem;margin-bottom:2rem}
+        .hero .btn{display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 3rem;border-radius:8px;font-weight:800;font-size:1.2rem;text-decoration:none;transition:transform .2s}
+        .hero .btn:hover{transform:scale(1.05)}
+        .hero .btn.disabled{background:#666;color:#999;cursor:not-allowed}
+        .section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+        .section h2{font-size:2rem;text-align:center;margin-bottom:2rem;color:#1a1a2e}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+        .grid-item{background:#f8f8f8;border:1px solid #e0e0e0;border-radius:12px;padding:1.5rem}
+        .grid-item h3{font-size:1.1rem;margin-bottom:.5rem;color:#1a1a2e}
+        .grid-item p{font-size:.95rem;color:#555}
+        .grid-item .tag{display:inline-block;font-size:.75rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;margin-bottom:.5rem}
+        .tag.sop{background:#e3f2fd;color:#1565c0}
+        .tag.template{background:#e8f5e9;color:#2e7d32}
+        .tag.guide{background:#fff3e0;color:#e65100}
+        .benefits{list-style:none;padding:0;max-width:700px;margin:0 auto}
+        .benefits li{font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid #eee;padding-left:2rem;position:relative}
+        .benefits li::before{content:"✅";position:absolute;left:0}
+        .testimonial{background:#f8f8f8;border-radius:12px;padding:2rem;text-align:center;margin:2rem 0;font-style:italic;font-size:1.1rem;color:#555}
+        .testimonial .author{font-style:normal;font-weight:700;color:#1a1a2e;margin-top:1rem}
+        .faq{max-width:700px;margin:0 auto}
+        .faq-item{border-bottom:1px solid #eee;padding:1.25rem 0}
+        .faq-item h3{font-size:1.1rem;margin-bottom:.5rem;color:#1a1a2e;cursor:pointer}
+        .faq-item p{color:#555;font-size:1rem}
+        .cta-section{background:linear-gradient(135deg,#0f0c29,#302b63);color:#fff;padding:4rem 2rem;text-align:center;margin-top:3rem}
+        .cta-section h2{font-size:2rem;margin-bottom:1rem}
+        .cta-section .price{font-size:3rem;font-weight:800;color:#f0c040;margin-bottom:1rem}
+        .cta-section .btn{display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 3rem;border-radius:8px;font-weight:800;font-size:1.2rem;text-decoration:none}
+        .guarantee{text-align:center;padding:2rem;max-width:600px;margin:0 auto}
+        .guarantee h3{margin-bottom:.5rem}
+        .footer{background:#1a1a2e;color:#999;padding:2rem;text-align:center;font-size:.9rem}
+        .footer a{color:#f0c040;text-decoration:none}
+        @media(max-width:600px){.hero h1{font-size:1.8rem}.grid{grid-template-columns:1fr}.hero .price{font-size:2.2rem}}
+    </style>
+</head>
+<body>
+    <nav class="nav"><a href="/">LevelPM</a><div class="nav-links"><a href="/blog">Blog</a><a href="/sops/">Free SOPs</a></div></nav>
+
+    <div class="hero">
+        <p style="color:#f0c040;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;">For Property Management Company Owners</p>
+        <h1>The PM Scaling Kit: <span>Systems That Grow Your Business</span></h1>
+        <p class="subtitle">15 professional SOPs, templates, and checklists + a step-by-step implementation guide. Stop reinventing the wheel. Start scaling.</p>
+        <div class="price">$147</div>
+        <p class="price-note">One-time purchase. Lifetime access. 30-day money-back guarantee.</p>
+        <a href="#buy" class="btn" id="buy-btn">🔒 Launching Soon — Join Waitlist</a>
+    </div>
+
+    <div class="section">
+        <h2>What's Inside</h2>
+        <div class="grid">
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>Maintenance Triage System</h3><p>4-tier priority system with decision tree, vendor dispatch, and owner notification thresholds.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Move-In/Move-Out Inspection</h3><p>80+ line items. Every room, every system. Photo documentation protocol included.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Monthly Owner Report</h3><p>KPI dashboard, income statement, maintenance detail, market comparison, and recommendations.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>Tenant Screening Criteria</h3><p>Standardized, Fair Housing-compliant screening with criteria document and adverse action templates.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Owner Onboarding (30 steps)</h3><p>From signed agreement to fully operational in 14 days. Welcome packet template included.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Tenant Onboarding (20 steps)</h3><p>Application to move-in day. Welcome packet, portal setup, inspection, and 7-day follow-up.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>Leasing Process Workflow</h3><p>Vacancy to occupancy in 21 days. Pricing, marketing, showings, screening, and lease signing.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Unit Turnover Checklist</h3><p>7-day turnover system. Inspection, vendor scheduling, make-ready, quality check, marketing.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Vendor Management Tracker</h3><p>Vendor scorecard, insurance tracking, rate comparison, and performance review system.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Financial Review Checklist</h3><p>Monthly trust account reconciliation, disbursement verification, and budget variance analysis.</p></div>
+            <div class="grid-item"><span class="tag guide">GUIDE</span><h3>Owner Acquisition Marketing Plan</h3><p>12-month marketing calendar with agent referral program, Google optimization, and outreach scripts.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>KPI Dashboard</h3><p>Track the 12 metrics that matter. Pre-built formulas, benchmarks, and weekly review framework.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>Emergency Response Protocol</h3><p>After-hours decision tree, emergency vendor contacts, authorization levels, and documentation.</p></div>
+            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Hire Onboarding</h3><p>30-60-90 day plan, training checklist, software access, shadowing schedule, and performance metrics.</p></div>
+            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Annual Property Inspection</h3><p>Comprehensive inspection covering structure, systems, safety, and capital expenditure recommendations.</p></div>
+        </div>
+
+        <div style="text-align:center;margin-top:2rem">
+            <p style="font-size:1.1rem;color:#555"><strong>Plus:</strong> Implementation guide with video walkthroughs showing exactly how to deploy each SOP in your operation.</p>
+        </div>
+    </div>
+
+    <div class="section" style="background:#f8f8f8">
+        <h2>Who This Is For</h2>
+        <ul class="benefits">
+            <li>PM company owners managing 20-200+ doors who want to scale without the chaos</li>
+            <li>Property managers tired of "winging it" and ready for professional systems</li>
+            <li>New PM companies who want to start with the right foundation</li>
+            <li>Teams that need documented processes so anyone can handle any task</li>
+            <li>Owners preparing to hire their first employee and need training materials</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Why SOPs Change Everything</h2>
+        <ul class="benefits">
+            <li>Stop making the same decisions over and over — document once, execute forever</li>
+            <li>New hires become productive in days, not months</li>
+            <li>Consistent service quality across every property, every tenant, every owner</li>
+            <li>Reduce owner complaints by 40%+ with proactive reporting and communication</li>
+            <li>Scale from 50 to 200 doors without your quality of life decreasing</li>
+            <li>Your business works without you — because the systems are documented, not in your head</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h3>What format are the templates in?</h3>
+                <p>All SOPs and checklists come as editable Google Docs and downloadable PDFs. The KPI dashboard is a Google Sheets template with pre-built formulas. Customize everything for your company.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will these work with my PM software?</h3>
+                <p>Yes. The SOPs are software-agnostic — they define your processes, not your tools. They work with AppFolio, Buildium, RentManager, Propertyware, or any other PM software.</p>
+            </div>
+            <div class="faq-item">
+                <h3>I only manage 15 properties. Is this too advanced?</h3>
+                <p>No — this is the perfect time to implement SOPs. Starting with systems at 15 doors means you'll scale to 50, then 100 without breaking. Most PM companies that fail at 50+ doors didn't build systems when they were small.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from NARPM or IREM courses?</h3>
+                <p>NARPM/IREM teach theory and award certifications. We give you the actual documents, templates, and checklists you need to run your business. Think of it as the implementation toolkit that certification courses never include.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the refund policy?</h3>
+                <p>30-day money-back guarantee. If the PM Scaling Kit doesn't help you run a more organized operation, email us and we'll refund you. No questions asked.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section" id="buy">
+        <h2>Ready to Scale Your PM Business?</h2>
+        <div class="price">$147</div>
+        <p style="color:#ccc;margin-bottom:2rem;">One-time purchase. Lifetime access. 30-day guarantee.</p>
+        <!-- Stripe button will go here once keys are provisioned -->
+        <div style="margin-bottom:2rem">
+            <input type="email" id="kit-email" placeholder="you@company.com" style="padding:.75rem 1rem;border:none;border-radius:6px;width:280px;font-size:1rem;margin-right:.5rem;">
+            <button onclick="kitSignup()" style="background:#f0c040;color:#1a1a2e;border:none;padding:.75rem 1.5rem;border-radius:6px;font-weight:700;font-size:1rem;cursor:pointer;">Join Waitlist — Get Launch Discount →</button>
+        </div>
+        <p style="color:#888;font-size:.85rem;">Be the first to know when we launch. Waitlist members get 30% off.</p>
+    </div>
+
+    <div class="guarantee">
+        <h3>🛡️ 30-Day Money-Back Guarantee</h3>
+        <p>Try the PM Scaling Kit risk-free. If it doesn't help you run a more organized operation, we'll refund every penny. No questions, no hassle.</p>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 LevelPM. Training & SOPs for property managers who want to grow.</p>
+        <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/sops/">Free SOPs</a></p>
+    </footer>
+
+    <script>
+    async function kitSignup() {
+        const email = document.getElementById('kit-email').value;
+        if (!email || !email.includes('@')) { alert('Please enter a valid email'); return; }
+        try {
+            await fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'scaling-kit-page' }) });
+            document.getElementById('kit-email').value = '';
+            alert("You're on the waitlist! You'll get 30% off at launch.");
+        } catch(e) { alert('Something went wrong.'); }
+    }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
