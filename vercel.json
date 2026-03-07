@@ -3,6 +3,7 @@
     "builds": [
         { "src": "index.html", "use": "@vercel/static" },
         { "src": "scaling-kit.html", "use": "@vercel/static" },
+        { "src": "thank-you.html", "use": "@vercel/static" },
         { "src": "sops/**/*.html", "use": "@vercel/static" },
         { "src": "blog/**/*.html", "use": "@vercel/static" },
         { "src": "sitemap.xml", "use": "@vercel/static" },
@@ -10,9 +11,10 @@
         { "src": "api/**/*.js", "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "/api/$1.js" },
+        { "src": "/api/(.*)", "dest": "/api/$1.js", "methods": ["GET", "POST", "OPTIONS"] },
         { "src": "/sitemap\\.xml$", "dest": "/sitemap.xml" },
         { "src": "/robots\\.txt$", "dest": "/robots.txt" },
+        { "src": "/thank-you$", "dest": "/thank-you.html" },
         { "src": "/scaling-kit$", "dest": "/scaling-kit.html" },
         { "src": "/blog/states/([^/]+)$", "dest": "/blog/states/$1.html" },
         { "src": "/blog/states/?$", "dest": "/blog/states/index.html" },
