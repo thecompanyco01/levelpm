@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Growth Financial Model — ScaleDoors PM Scaling Kit</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; color: #1e293b; line-height: 1.7; background: #fff; }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+  .kit-badge { display: inline-block; background: #0f172a; color: #f59e0b; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 3px; margin-bottom: 24px; }
+  h1 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 38px; color: #0f172a; margin-bottom: 8px; line-height: 1.2; }
+  .subtitle { font-size: 18px; color: #64748b; margin-bottom: 40px; font-style: italic; }
+  h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 24px; color: #0f172a; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #f59e0b; }
+  h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; color: #0f172a; margin-top: 32px; margin-bottom: 12px; }
+  h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; color: #334155; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin-bottom: 14px; font-size: 15px; }
+  ul, ol { margin: 12px 0 16px 24px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  .callout { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .callout-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #92400e; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  th { background: #0f172a; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .interactive-section { background: #f1f5f9; border: 2px solid #0f172a; border-radius: 8px; padding: 28px; margin: 28px 0; }
+  .interactive-section h3 { margin-top: 0; }
+  .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .input-group label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px; }
+  .input-group input, .input-group select { width: 100%; padding: 10px 12px; border: 2px solid #cbd5e1; border-radius: 6px; font-size: 15px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .input-group input:focus, .input-group select:focus { outline: none; border-color: #f59e0b; }
+  .calc-btn { background: #0f172a; color: #f59e0b; border: none; padding: 14px 32px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 700; border-radius: 6px; cursor: pointer; margin-top: 16px; letter-spacing: 0.5px; }
+  .calc-btn:hover { background: #1e293b; }
+  .result-box { background: #fff; border: 2px solid #f59e0b; border-radius: 8px; padding: 20px; margin: 20px 0; display: none; }
+  .result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; }
+  .result-row .label { color: #64748b; }
+  .result-row .value { font-weight: 700; color: #0f172a; }
+  .result-row.highlight { background: #fffbeb; margin: 0 -20px; padding: 12px 20px; border-bottom: none; }
+  .result-row.highlight .value { color: #f59e0b; font-size: 18px; }
+  .bar-chart { margin: 20px 0; }
+  .bar-row { display: flex; align-items: center; margin: 8px 0; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; }
+  .bar-label { min-width: 120px; color: #334155; font-weight: 600; }
+  .bar-track { flex: 1; height: 28px; background: #e2e8f0; border-radius: 4px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: #fff; font-weight: 700; font-size: 12px; transition: width 0.5s ease; }
+  .bar-fill.navy { background: #0f172a; }
+  .bar-fill.gold { background: #f59e0b; }
+  .bar-fill.green { background: #22c55e; }
+  .page-break { page-break-before: always; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .metric-card { display: inline-block; width: 30%; margin: 1%; padding: 16px; border: 2px solid #e2e8f0; border-radius: 8px; text-align: center; vertical-align: top; }
+  .metric-card .number { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 28px; font-weight: 700; color: #0f172a; }
+  .metric-card .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+  @media print {
+    body { font-size: 11px; }
+    .container { padding: 16px; max-width: 100%; }
+    .interactive-section { break-inside: avoid; }
+    table { break-inside: avoid; font-size: 11px; }
+    h2 { break-after: avoid; }
+    .calc-btn { display: none; }
+    input, select { border: 1px solid #000 !important; }
+  }
+  @media (max-width: 768px) {
+    .input-group { grid-template-columns: 1fr; }
+    .metric-card { width: 98%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="kit-badge">ScaleDoors PM Scaling Kit</div>
+<h1>Growth Financial Model</h1>
+<p class="subtitle">Interactive revenue projections, staffing ratios, break-even analysis, and scenario modeling — from 50 doors to 500+.</p>
+
+<div class="callout">
+<div class="callout-title">How to Use This Model</div>
+This document has two parts: (1) industry benchmarks and reference data you can study, and (2) interactive calculators where you input YOUR numbers and get personalized projections. Scroll to the calculator sections, enter your data, and use the results to plan your growth.
+</div>
+
+<h2>1. Revenue Model by Portfolio Size</h2>
+
+<p>These projections assume a blended average management fee of 8.5% of collected rent, with additional revenue from leasing fees, maintenance markups, and ancillary services.</p>
+
+<table>
+  <tr><th>Metric</th><th>50 Doors</th><th>100 Doors</th><th>200 Doors</th><th>300 Doors</th><th>500 Doors</th></tr>
+  <tr><td>Avg. Monthly Rent</td><td>$1,400</td><td>$1,400</td><td>$1,400</td><td>$1,400</td><td>$1,400</td></tr>
+  <tr><td>Total Rent Under Mgmt (monthly)</td><td>$70,000</td><td>$140,000</td><td>$280,000</td><td>$420,000</td><td>$700,000</td></tr>
+  <tr><td>Management Fee Revenue (8.5%)</td><td>$5,950</td><td>$11,900</td><td>$23,800</td><td>$35,700</td><td>$59,500</td></tr>
+  <tr><td>Leasing Fee Revenue*</td><td>$2,333</td><td>$4,667</td><td>$9,333</td><td>$14,000</td><td>$23,333</td></tr>
+  <tr><td>Maintenance Markup (10%)**</td><td>$1,750</td><td>$3,500</td><td>$7,000</td><td>$10,500</td><td>$17,500</td></tr>
+  <tr><td>Late Fee Income</td><td>$250</td><td>$500</td><td>$1,000</td><td>$1,500</td><td>$2,500</td></tr>
+  <tr><td><strong>Total Monthly Revenue</strong></td><td><strong>$10,283</strong></td><td><strong>$20,567</strong></td><td><strong>$41,133</strong></td><td><strong>$61,700</strong></td><td><strong>$102,833</strong></td></tr>
+  <tr><td><strong>Total Annual Revenue</strong></td><td><strong>$123,400</strong></td><td><strong>$246,800</strong></td><td><strong>$493,600</strong></td><td><strong>$740,400</strong></td><td><strong>$1,234,000</strong></td></tr>
+  <tr><td>Revenue Per Door (monthly)</td><td>$206</td><td>$206</td><td>$206</td><td>$206</td><td>$206</td></tr>
+</table>
+<p style="font-size:12px; color:#64748b;">*Leasing fees assume 40% annual turnover, one month's rent per placement, averaged monthly. **Maintenance markup assumes $35/door/month avg. maintenance spend with 10% markup.</p>
+
+<div class="bar-chart">
+  <h4>Annual Revenue by Portfolio Size</h4>
+  <div class="bar-row">
+    <span class="bar-label">50 Doors</span>
+    <div class="bar-track"><div class="bar-fill navy" style="width: 10%;">$123K</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">100 Doors</span>
+    <div class="bar-track"><div class="bar-fill navy" style="width: 20%;">$247K</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">200 Doors</span>
+    <div class="bar-track"><div class="bar-fill navy" style="width: 40%;">$494K</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">300 Doors</span>
+    <div class="bar-track"><div class="bar-fill gold" style="width: 60%;">$740K</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">500 Doors</span>
+    <div class="bar-track"><div class="bar-fill green" style="width: 100%;">$1.23M</div></div>
+  </div>
+</div>
+
+<h2>2. Staffing Ratios by Portfolio Size</h2>
+
+<p>Staffing is the #1 expense and the #1 reason PMs either stall or fail as they grow. Hire too early and you burn cash. Hire too late and you burn out — and your service quality drops, triggering owner churn.</p>
+
+<table>
+  <tr><th>Role</th><th>50 Doors</th><th>100 Doors</th><th>200 Doors</th><th>300 Doors</th><th>500 Doors</th></tr>
+  <tr><td>Owner/PM (you)</td><td>1 (does everything)</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+  <tr><td>Property Manager</td><td>—</td><td>1</td><td>2</td><td>3</td><td>4–5</td></tr>
+  <tr><td>Leasing Agent</td><td>—</td><td>PT or outsource</td><td>1</td><td>1–2</td><td>2</td></tr>
+  <tr><td>Maintenance Coordinator</td><td>—</td><td>—</td><td>1</td><td>1</td><td>2</td></tr>
+  <tr><td>In-House Maintenance Tech</td><td>—</td><td>—</td><td>1 (optional)</td><td>1–2</td><td>2–3</td></tr>
+  <tr><td>Bookkeeper / Accountant</td><td>Outsource</td><td>PT</td><td>1</td><td>1</td><td>1–2</td></tr>
+  <tr><td>Admin / Receptionist</td><td>—</td><td>—</td><td>1</td><td>1</td><td>1–2</td></tr>
+  <tr><td>Inspector</td><td>—</td><td>—</td><td>—</td><td>PT</td><td>1</td></tr>
+  <tr><td>Business Development</td><td>—</td><td>—</td><td>—</td><td>—</td><td>1</td></tr>
+  <tr><td><strong>Total Headcount</strong></td><td><strong>1</strong></td><td><strong>2–3</strong></td><td><strong>6–8</strong></td><td><strong>9–12</strong></td><td><strong>14–19</strong></td></tr>
+  <tr><td><strong>Doors per Employee</strong></td><td><strong>50</strong></td><td><strong>33–50</strong></td><td><strong>25–33</strong></td><td><strong>25–33</strong></td><td><strong>26–36</strong></td></tr>
+</table>
+
+<h3>When to Hire: Decision Triggers</h3>
+<table>
+  <tr><th>Trigger</th><th>What to Hire</th><th>Expected Salary Range</th></tr>
+  <tr><td>60+ doors and you're working 60+ hour weeks</td><td>First Property Manager</td><td>$40,000–$55,000 + bonuses</td></tr>
+  <tr><td>80+ doors and 3+ vacancies at any time</td><td>Leasing Agent (PT)</td><td>$15–$20/hr + leasing commissions</td></tr>
+  <tr><td>120+ doors and maintenance is >20% of your time</td><td>Maintenance Coordinator</td><td>$38,000–$48,000</td></tr>
+  <tr><td>150+ doors and outsourcing most maintenance</td><td>In-House Maintenance Tech</td><td>$42,000–$58,000 + vehicle</td></tr>
+  <tr><td>150+ doors and bookkeeping takes 10+ hrs/week</td><td>Full-Time Bookkeeper</td><td>$38,000–$50,000</td></tr>
+  <tr><td>200+ doors and phones ring all day</td><td>Admin/Receptionist</td><td>$32,000–$40,000</td></tr>
+  <tr><td>350+ doors and you want to grow</td><td>Business Development Manager</td><td>$50,000–$70,000 + commission</td></tr>
+</table>
+
+<h2>3. Overhead Scaling Analysis</h2>
+
+<table>
+  <tr><th>Expense Category</th><th>50 Doors</th><th>100 Doors</th><th>200 Doors</th><th>300 Doors</th><th>500 Doors</th></tr>
+  <tr><td>Payroll (incl. taxes/benefits)</td><td>$0*</td><td>$5,800</td><td>$28,000</td><td>$48,000</td><td>$85,000</td></tr>
+  <tr><td>Office Space</td><td>$0 (home)</td><td>$800</td><td>$1,500</td><td>$2,500</td><td>$4,000</td></tr>
+  <tr><td>PM Software</td><td>$100</td><td>$250</td><td>$500</td><td>$800</td><td>$1,500</td></tr>
+  <tr><td>Insurance (E&O, GL, WC)</td><td>$300</td><td>$500</td><td>$900</td><td>$1,400</td><td>$2,200</td></tr>
+  <tr><td>Vehicle / Mileage</td><td>$400</td><td>$600</td><td>$1,200</td><td>$1,800</td><td>$2,500</td></tr>
+  <tr><td>Phone / Internet / IT</td><td>$200</td><td>$350</td><td>$600</td><td>$900</td><td>$1,500</td></tr>
+  <tr><td>Marketing / Advertising</td><td>$300</td><td>$500</td><td>$1,000</td><td>$1,500</td><td>$3,000</td></tr>
+  <tr><td>Legal / Accounting</td><td>$200</td><td>$400</td><td>$800</td><td>$1,200</td><td>$2,000</td></tr>
+  <tr><td>Office Supplies / Misc</td><td>$100</td><td>$200</td><td>$400</td><td>$600</td><td>$1,000</td></tr>
+  <tr><td><strong>Total Monthly Overhead</strong></td><td><strong>$1,600</strong></td><td><strong>$9,400</strong></td><td><strong>$34,900</strong></td><td><strong>$58,700</strong></td><td><strong>$102,700</strong></td></tr>
+  <tr><td><strong>Overhead Per Door</strong></td><td><strong>$32</strong></td><td><strong>$94</strong></td><td><strong>$175</strong></td><td><strong>$196</strong></td><td><strong>$205</strong></td></tr>
+  <tr><td><strong>Net Profit (monthly)</strong></td><td><strong>$8,683</strong></td><td><strong>$11,167</strong></td><td><strong>$6,233</strong></td><td><strong>$3,000</strong></td><td><strong>$133</strong></td></tr>
+  <tr><td><strong>Net Margin</strong></td><td><strong>84%</strong></td><td><strong>54%</strong></td><td><strong>15%</strong></td><td><strong>5%</strong></td><td><strong>0.1%</strong></td></tr>
+</table>
+<p style="font-size:12px; color:#64748b;">*At 50 doors, assumes owner/operator with no payroll. Net profit = owner's compensation.</p>
+
+<div class="callout">
+<div class="callout-title">The Profitability Valley</div>
+Notice the "valley" between 150–350 doors? This is real. You're hiring ahead of revenue. Margins compress dramatically as you build the team needed for scale. The goal is to push through to 400+ doors where economies of scale kick in and margins recover to 20–25%. Many PMs stall in the valley because they don't plan for the cash flow squeeze. Plan for it.
+</div>
+
+<div class="bar-chart">
+  <h4>Net Margin by Portfolio Size</h4>
+  <div class="bar-row">
+    <span class="bar-label">50 Doors</span>
+    <div class="bar-track"><div class="bar-fill green" style="width: 84%;">84%</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">100 Doors</span>
+    <div class="bar-track"><div class="bar-fill green" style="width: 54%;">54%</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">200 Doors</span>
+    <div class="bar-track"><div class="bar-fill gold" style="width: 15%;">15%</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">300 Doors</span>
+    <div class="bar-track"><div class="bar-fill gold" style="width: 5%;">5%</div></div>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">500 Doors</span>
+    <div class="bar-track"><div class="bar-fill navy" style="width: 2%;">&lt;1%</div></div>
+  </div>
+</div>
+
+<h2 class="page-break">4. Interactive Break-Even Calculator</h2>
+
+<div class="interactive-section">
+  <h3>📊 Break-Even Analysis — Enter Your Numbers</h3>
+  <p>Input your actual costs and revenue per door to find your break-even point.</p>
+
+  <div class="input-group">
+    <div>
+      <label for="be-avgRent">Average Monthly Rent ($)</label>
+      <input type="number" id="be-avgRent" value="1400" min="0">
+    </div>
+    <div>
+      <label for="be-mgmtFee">Management Fee (%)</label>
+      <input type="number" id="be-mgmtFee" value="8.5" min="0" max="15" step="0.5">
+    </div>
+    <div>
+      <label for="be-leaseRevPerDoor">Leasing Revenue Per Door / Month ($)</label>
+      <input type="number" id="be-leaseRevPerDoor" value="47" min="0">
+    </div>
+    <div>
+      <label for="be-otherRevPerDoor">Other Revenue Per Door / Month ($)</label>
+      <input type="number" id="be-otherRevPerDoor" value="40" min="0">
+    </div>
+    <div>
+      <label for="be-fixedCosts">Total Fixed Monthly Costs ($)</label>
+      <input type="number" id="be-fixedCosts" value="3500" min="0">
+    </div>
+    <div>
+      <label for="be-varCostPerDoor">Variable Cost Per Door / Month ($)</label>
+      <input type="number" id="be-varCostPerDoor" value="45" min="0">
+    </div>
+  </div>
+
+  <button class="calc-btn" onclick="calcBreakEven()">Calculate Break-Even</button>
+
+  <div class="result-box" id="be-results">
+    <div class="result-row"><span class="label">Revenue Per Door (monthly)</span><span class="value" id="be-revPerDoor">—</span></div>
+    <div class="result-row"><span class="label">Contribution Per Door (after variable costs)</span><span class="value" id="be-contribution">—</span></div>
+    <div class="result-row highlight"><span class="label">Break-Even Point</span><span class="value" id="be-point">—</span></div>
+    <div class="result-row"><span class="label">At 50 doors — Monthly Profit/Loss</span><span class="value" id="be-at50">—</span></div>
+    <div class="result-row"><span class="label">At 100 doors — Monthly Profit/Loss</span><span class="value" id="be-at100">—</span></div>
+    <div class="result-row"><span class="label">At 200 doors — Monthly Profit/Loss</span><span class="value" id="be-at200">—</span></div>
+  </div>
+</div>
+
+<h2>5. Interactive Growth Projection Calculator</h2>
+
+<div class="interactive-section">
+  <h3>📈 Revenue & Profit Projections — Your Scenario</h3>
+  <p>Model conservative, moderate, and aggressive growth scenarios based on your numbers.</p>
+
+  <div class="input-group">
+    <div>
+      <label for="gp-currentDoors">Current Door Count</label>
+      <input type="number" id="gp-currentDoors" value="75" min="0">
+    </div>
+    <div>
+      <label for="gp-avgRent">Average Monthly Rent ($)</label>
+      <input type="number" id="gp-avgRent" value="1400" min="0">
+    </div>
+    <div>
+      <label for="gp-mgmtFee">Management Fee (%)</label>
+      <input type="number" id="gp-mgmtFee" value="8.5" min="0" max="15" step="0.5">
+    </div>
+    <div>
+      <label for="gp-revenuePerDoor">Total Revenue Per Door / Month ($)</label>
+      <input type="number" id="gp-revenuePerDoor" value="206" min="0">
+    </div>
+    <div>
+      <label for="gp-monthlyOverhead">Current Monthly Overhead ($)</label>
+      <input type="number" id="gp-monthlyOverhead" value="8000" min="0">
+    </div>
+    <div>
+      <label for="gp-costPerNewDoor">Cost to Add Each New Door ($) — one-time acquisition cost</label>
+      <input type="number" id="gp-costPerNewDoor" value="150" min="0">
+    </div>
+  </div>
+
+  <h4>Growth Rates (new doors added per month)</h4>
+  <div class="input-group">
+    <div>
+      <label for="gp-conservative">Conservative (doors/month)</label>
+      <input type="number" id="gp-conservative" value="3" min="0">
+    </div>
+    <div>
+      <label for="gp-moderate">Moderate (doors/month)</label>
+      <input type="number" id="gp-moderate" value="6" min="0">
+    </div>
+    <div>
+      <label for="gp-aggressive">Aggressive (doors/month)</label>
+      <input type="number" id="gp-aggressive" value="12" min="0">
+    </div>
+    <div>
+      <label for="gp-churn">Monthly Churn Rate (%)</label>
+      <input type="number" id="gp-churn" value="1.5" min="0" max="20" step="0.1">
+    </div>
+  </div>
+
+  <button class="calc-btn" onclick="calcGrowth()">Calculate Projections</button>
+
+  <div class="result-box" id="gp-results">
+    <h4 style="margin-bottom:12px;">12-Month Projections</h4>
+    <table id="gp-table">
+      <tr><th>Scenario</th><th>Doors at 12 mo.</th><th>Monthly Revenue</th><th>Annual Revenue</th><th>Est. Monthly Overhead</th><th>Monthly Profit</th></tr>
+    </table>
+    <div id="gp-chart" class="bar-chart" style="margin-top:20px;"></div>
+  </div>
+</div>
+
+<h2>6. Key Financial Ratios & Benchmarks</h2>
+
+<table>
+  <tr><th>Ratio / KPI</th><th>Healthy Range</th><th>Warning Zone</th><th>How to Calculate</th></tr>
+  <tr><td>Revenue Per Door (monthly)</td><td>$180–$250</td><td>&lt; $150</td><td>Total monthly revenue ÷ total doors</td></tr>
+  <tr><td>Cost Per Door (monthly)</td><td>$120–$180</td><td>&gt; $200</td><td>Total monthly expenses ÷ total doors</td></tr>
+  <tr><td>Net Profit Margin</td><td>20–35%</td><td>&lt; 10%</td><td>Net profit ÷ total revenue × 100</td></tr>
+  <tr><td>Payroll as % of Revenue</td><td>40–55%</td><td>&gt; 65%</td><td>Total payroll ÷ total revenue × 100</td></tr>
+  <tr><td>Owner Churn Rate (annual)</td><td>&lt; 15%</td><td>&gt; 25%</td><td>Owners lost in 12 months ÷ total owners × 100</td></tr>
+  <tr><td>Tenant Turnover Rate</td><td>&lt; 40%</td><td>&gt; 55%</td><td>Units turned in 12 months ÷ total units × 100</td></tr>
+  <tr><td>Days to Lease</td><td>14–21 days</td><td>&gt; 35 days</td><td>Avg. days from vacancy to signed lease</td></tr>
+  <tr><td>Rent Collection Rate</td><td>≥ 97%</td><td>&lt; 93%</td><td>Rent collected ÷ rent due × 100</td></tr>
+  <tr><td>Maintenance Cost Per Door (annual)</td><td>$400–$800</td><td>&gt; $1,200</td><td>Total maintenance spend ÷ total doors</td></tr>
+  <tr><td>Customer Acquisition Cost</td><td>$100–$300</td><td>&gt; $500</td><td>Total marketing + sales ÷ new doors signed</td></tr>
+  <tr><td>Lifetime Value Per Door</td><td>$6,000–$15,000</td><td>&lt; $3,000</td><td>Revenue per door × avg. retention months</td></tr>
+  <tr><td>LTV:CAC Ratio</td><td>≥ 10:1</td><td>&lt; 5:1</td><td>Lifetime value ÷ acquisition cost</td></tr>
+</table>
+
+<h2>7. Capital Requirements for Growth</h2>
+
+<table>
+  <tr><th>Growth Phase</th><th>Capital Needed</th><th>Purpose</th></tr>
+  <tr><td>0 → 50 doors</td><td>$5,000–$15,000</td><td>Licensing, E&O insurance, software, initial marketing, home office setup</td></tr>
+  <tr><td>50 → 100 doors</td><td>$15,000–$40,000</td><td>First hire salary bridge (3-month runway), office lease deposit, vehicle, expanded software</td></tr>
+  <tr><td>100 → 200 doors</td><td>$50,000–$100,000</td><td>Team expansion (3+ hires), office buildout, marketing ramp, working capital for growth</td></tr>
+  <tr><td>200 → 500 doors</td><td>$100,000–$300,000</td><td>Full team buildout, technology investment, potential acquisition of smaller PM companies</td></tr>
+</table>
+
+<div class="callout">
+<div class="callout-title">Funding Your Growth</div>
+Most PM companies self-fund through cash flow. Avoid debt unless you're acquiring another company's management contracts. The best capital source is retained earnings from your existing portfolio. Set aside 10–15% of net profit every month into a growth fund. At 100 doors with $11K/mo net profit, that's $1,100–$1,650/month — enough to fund your next hire within 3–6 months.
+</div>
+
+<h2 class="page-break">8. Monthly Cash Flow Worksheet</h2>
+
+<div class="interactive-section">
+  <h3>💰 Monthly Cash Flow Calculator</h3>
+  <p>Enter your actual monthly numbers to see your true cash position.</p>
+
+  <h4>Revenue</h4>
+  <div class="input-group">
+    <div>
+      <label for="cf-mgmtFees">Management Fees Collected ($)</label>
+      <input type="number" id="cf-mgmtFees" value="11900">
+    </div>
+    <div>
+      <label for="cf-leasingFees">Leasing Fees ($)</label>
+      <input type="number" id="cf-leasingFees" value="4200">
+    </div>
+    <div>
+      <label for="cf-maintMarkup">Maintenance Markup ($)</label>
+      <input type="number" id="cf-maintMarkup" value="3500">
+    </div>
+    <div>
+      <label for="cf-lateFees">Late Fee Income ($)</label>
+      <input type="number" id="cf-lateFees" value="500">
+    </div>
+    <div>
+      <label for="cf-otherRev">Other Revenue ($)</label>
+      <input type="number" id="cf-otherRev" value="0">
+    </div>
+  </div>
+
+  <h4>Expenses</h4>
+  <div class="input-group">
+    <div>
+      <label for="cf-payroll">Payroll (incl. taxes/benefits) ($)</label>
+      <input type="number" id="cf-payroll" value="5800">
+    </div>
+    <div>
+      <label for="cf-office">Office / Rent ($)</label>
+      <input type="number" id="cf-office" value="800">
+    </div>
+    <div>
+      <label for="cf-software">Software & Technology ($)</label>
+      <input type="number" id="cf-software" value="250">
+    </div>
+    <div>
+      <label for="cf-insurance">Insurance ($)</label>
+      <input type="number" id="cf-insurance" value="500">
+    </div>
+    <div>
+      <label for="cf-vehicle">Vehicle / Mileage ($)</label>
+      <input type="number" id="cf-vehicle" value="600">
+    </div>
+    <div>
+      <label for="cf-marketing">Marketing ($)</label>
+      <input type="number" id="cf-marketing" value="500">
+    </div>
+    <div>
+      <label for="cf-legal">Legal / Accounting ($)</label>
+      <input type="number" id="cf-legal" value="400">
+    </div>
+    <div>
+      <label for="cf-misc">Phone / IT / Misc ($)</label>
+      <input type="number" id="cf-misc" value="550">
+    </div>
+  </div>
+
+  <button class="calc-btn" onclick="calcCashFlow()">Calculate Cash Flow</button>
+
+  <div class="result-box" id="cf-results">
+    <div class="result-row"><span class="label">Total Monthly Revenue</span><span class="value" id="cf-totalRev">—</span></div>
+    <div class="result-row"><span class="label">Total Monthly Expenses</span><span class="value" id="cf-totalExp">—</span></div>
+    <div class="result-row highlight"><span class="label">Net Monthly Cash Flow</span><span class="value" id="cf-net">—</span></div>
+    <div class="result-row"><span class="label">Annualized Net Income</span><span class="value" id="cf-annual">—</span></div>
+    <div class="result-row"><span class="label">Expense Ratio (expenses/revenue)</span><span class="value" id="cf-ratio">—</span></div>
+    <div class="result-row"><span class="label">Payroll as % of Revenue</span><span class="value" id="cf-payrollPct">—</span></div>
+  </div>
+</div>
+
+<h2>9. Scenario Modeling Reference</h2>
+
+<h3>Conservative Growth Scenario</h3>
+<p><em>Assumptions: 2–3 new doors/month, 1.5% monthly churn, no major capital investment, organic growth only.</em></p>
+<table>
+  <tr><th>Month</th><th>Doors</th><th>Revenue</th><th>Overhead</th><th>Net Profit</th></tr>
+  <tr><td>Start</td><td>75</td><td>$15,450</td><td>$8,000</td><td>$7,450</td></tr>
+  <tr><td>Month 3</td><td>82</td><td>$16,892</td><td>$8,200</td><td>$8,692</td></tr>
+  <tr><td>Month 6</td><td>89</td><td>$18,334</td><td>$8,500</td><td>$9,834</td></tr>
+  <tr><td>Month 9</td><td>96</td><td>$19,776</td><td>$9,000</td><td>$10,776</td></tr>
+  <tr><td>Month 12</td><td>103</td><td>$21,218</td><td>$9,400</td><td>$11,818</td></tr>
+</table>
+
+<h3>Moderate Growth Scenario</h3>
+<p><em>Assumptions: 5–6 new doors/month, 1.5% churn, one new hire at Month 4, dedicated marketing budget.</em></p>
+<table>
+  <tr><th>Month</th><th>Doors</th><th>Revenue</th><th>Overhead</th><th>Net Profit</th></tr>
+  <tr><td>Start</td><td>75</td><td>$15,450</td><td>$8,000</td><td>$7,450</td></tr>
+  <tr><td>Month 3</td><td>90</td><td>$18,540</td><td>$8,800</td><td>$9,740</td></tr>
+  <tr><td>Month 6</td><td>106</td><td>$21,836</td><td>$13,000</td><td>$8,836</td></tr>
+  <tr><td>Month 9</td><td>122</td><td>$25,132</td><td>$14,500</td><td>$10,632</td></tr>
+  <tr><td>Month 12</td><td>138</td><td>$28,428</td><td>$16,000</td><td>$12,428</td></tr>
+</table>
+
+<h3>Aggressive Growth Scenario</h3>
+<p><em>Assumptions: 10–12 new doors/month, 2% churn (higher due to rapid onboarding), two hires by Month 3, significant marketing spend, possibly acquiring a small portfolio.</em></p>
+<table>
+  <tr><th>Month</th><th>Doors</th><th>Revenue</th><th>Overhead</th><th>Net Profit</th></tr>
+  <tr><td>Start</td><td>75</td><td>$15,450</td><td>$8,000</td><td>$7,450</td></tr>
+  <tr><td>Month 3</td><td>107</td><td>$22,042</td><td>$14,000</td><td>$8,042</td></tr>
+  <tr><td>Month 6</td><td>140</td><td>$28,840</td><td>$22,000</td><td>$6,840</td></tr>
+  <tr><td>Month 9</td><td>175</td><td>$36,050</td><td>$28,000</td><td>$8,050</td></tr>
+  <tr><td>Month 12</td><td>210</td><td>$43,260</td><td>$34,900</td><td>$8,360</td></tr>
+</table>
+
+<div class="callout">
+<div class="callout-title">Key Insight</div>
+Notice that aggressive growth produces MORE total revenue but LESS profit in the short term. The payoff comes in Year 2 and beyond when those 210 doors generate $500K+ annually and your team costs are amortized across more units. Growth is an investment. Make sure your cash reserves can fund the journey.
+</div>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — Growth Financial Model</p>
+  <p>© 2026 LevelPM. All rights reserved. For licensed use only.</p>
+</div>
+
+</div>
+
+<script>
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function calcBreakEven() {
+  var avgRent = parseFloat(document.getElementById('be-avgRent').value) || 0;
+  var mgmtPct = parseFloat(document.getElementById('be-mgmtFee').value) || 0;
+  var leaseRev = parseFloat(document.getElementById('be-leaseRevPerDoor').value) || 0;
+  var otherRev = parseFloat(document.getElementById('be-otherRevPerDoor').value) || 0;
+  var fixedCosts = parseFloat(document.getElementById('be-fixedCosts').value) || 0;
+  var varCost = parseFloat(document.getElementById('be-varCostPerDoor').value) || 0;
+
+  var revPerDoor = (avgRent * mgmtPct / 100) + leaseRev + otherRev;
+  var contribution = revPerDoor - varCost;
+  var breakEven = contribution > 0 ? Math.ceil(fixedCosts / contribution) : 'N/A';
+
+  document.getElementById('be-revPerDoor').textContent = fmt(revPerDoor) + '/door';
+  document.getElementById('be-contribution').textContent = fmt(contribution) + '/door';
+  document.getElementById('be-point').textContent = breakEven === 'N/A' ? 'N/A' : breakEven + ' doors';
+
+  [50, 100, 200].forEach(function(d) {
+    var profit = (revPerDoor * d) - fixedCosts - (varCost * d);
+    document.getElementById('be-at' + d).textContent = fmt(profit) + '/mo';
+    document.getElementById('be-at' + d).style.color = profit >= 0 ? '#22c55e' : '#ef4444';
+  });
+
+  document.getElementById('be-results').style.display = 'block';
+}
+
+function calcGrowth() {
+  var current = parseFloat(document.getElementById('gp-currentDoors').value) || 0;
+  var revPD = parseFloat(document.getElementById('gp-revenuePerDoor').value) || 0;
+  var overhead = parseFloat(document.getElementById('gp-monthlyOverhead').value) || 0;
+  var cons = parseFloat(document.getElementById('gp-conservative').value) || 0;
+  var mod = parseFloat(document.getElementById('gp-moderate').value) || 0;
+  var agg = parseFloat(document.getElementById('gp-aggressive').value) || 0;
+  var churn = parseFloat(document.getElementById('gp-churn').value) / 100 || 0;
+
+  var scenarios = [
+    { name: 'Conservative', rate: cons, color: 'navy' },
+    { name: 'Moderate', rate: mod, color: 'gold' },
+    { name: 'Aggressive', rate: agg, color: 'green' }
+  ];
+
+  var tableHTML = '<tr><th>Scenario</th><th>Doors at 12 mo.</th><th>Monthly Revenue</th><th>Annual Revenue</th><th>Est. Monthly Overhead</th><th>Monthly Profit</th></tr>';
+  var maxRev = 0;
+  var chartData = [];
+
+  scenarios.forEach(function(s) {
+    var doors = current;
+    for (var m = 0; m < 12; m++) {
+      doors = doors * (1 - churn) + s.rate;
+    }
+    doors = Math.round(doors);
+    var monthlyRev = doors * revPD;
+    var annualRev = monthlyRev * 12;
+    // Overhead scales: base + $50/door for each door above current (rough staffing cost model)
+    var estOverhead = overhead + Math.max(0, doors - current) * 50;
+    var profit = monthlyRev - estOverhead;
+    if (annualRev > maxRev) maxRev = annualRev;
+    chartData.push({ name: s.name, rev: annualRev, color: s.color });
+
+    tableHTML += '<tr><td><strong>' + s.name + '</strong></td><td>' + doors + '</td><td>' + fmt(monthlyRev) + '</td><td>' + fmt(annualRev) + '</td><td>' + fmt(estOverhead) + '</td><td style="color:' + (profit >= 0 ? '#22c55e' : '#ef4444') + '">' + fmt(profit) + '</td></tr>';
+  });
+
+  document.getElementById('gp-table').innerHTML = tableHTML;
+
+  var chartHTML = '<h4>Projected Annual Revenue (12-Month)</h4>';
+  chartData.forEach(function(d) {
+    var pct = maxRev > 0 ? (d.rev / maxRev * 100) : 0;
+    chartHTML += '<div class="bar-row"><span class="bar-label">' + d.name + '</span><div class="bar-track"><div class="bar-fill ' + d.color + '" style="width:' + pct + '%">' + fmt(d.rev) + '</div></div></div>';
+  });
+  document.getElementById('gp-chart').innerHTML = chartHTML;
+  document.getElementById('gp-results').style.display = 'block';
+}
+
+function calcCashFlow() {
+  var revFields = ['cf-mgmtFees', 'cf-leasingFees', 'cf-maintMarkup', 'cf-lateFees', 'cf-otherRev'];
+  var expFields = ['cf-payroll', 'cf-office', 'cf-software', 'cf-insurance', 'cf-vehicle', 'cf-marketing', 'cf-legal', 'cf-misc'];
+
+  var totalRev = 0, totalExp = 0;
+  revFields.forEach(function(id) { totalRev += parseFloat(document.getElementById(id).value) || 0; });
+  expFields.forEach(function(id) { totalExp += parseFloat(document.getElementById(id).value) || 0; });
+
+  var net = totalRev - totalExp;
+  var payroll = parseFloat(document.getElementById('cf-payroll').value) || 0;
+
+  document.getElementById('cf-totalRev').textContent = fmt(totalRev);
+  document.getElementById('cf-totalExp').textContent = fmt(totalExp);
+  document.getElementById('cf-net').textContent = fmt(net);
+  document.getElementById('cf-net').style.color = net >= 0 ? '#22c55e' : '#ef4444';
+  document.getElementById('cf-annual').textContent = fmt(net * 12);
+  document.getElementById('cf-ratio').textContent = totalRev > 0 ? (totalExp / totalRev * 100).toFixed(1) + '%' : 'N/A';
+  document.getElementById('cf-payrollPct').textContent = totalRev > 0 ? (payroll / totalRev * 100).toFixed(1) + '%' : 'N/A';
+
+  document.getElementById('cf-results').style.display = 'block';
+}
+</script>
+</body>
+</html>

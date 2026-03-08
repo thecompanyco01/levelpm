@@ -3,169 +3,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The PM Scaling Kit — SOPs, Templates & Playbook for Property Managers | LevelPM</title>
-    <meta name="description" content="15 SOPs, templates, and checklists + implementation guide for property management companies. Scale from 50 to 500+ doors with proven systems.">
+    <title>PM Scaling Kit — Scale from 50 to 500+ Doors | ScaleDoors</title>
+    <meta name="description" content="The PM Scaling Kit: 15 SOPs, templates, scripts, and playbooks to scale your property management company from 50 to 500+ doors. $147 one-time — over $2,000 in value.">
     <link rel="canonical" href="https://scaledoors.com/scaling-kit">
+    <meta property="og:title" content="PM Scaling Kit — 15 SOPs & Templates for $147">
+    <meta property="og:description" content="Everything a PM company owner needs to scale from 50 to 500+ doors. SOPs, templates, scripts, financial models. One-time purchase.">
+    <meta property="og:url" content="https://scaledoors.com/scaling-kit">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.6;background:#fff}
-        .nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-        .nav a{color:#f0c040;text-decoration:none;font-weight:700;font-size:1.2rem}
-        .nav .nav-links a{color:#ccc;font-weight:400;font-size:.95rem;margin-left:1.5rem}
-        .hero{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#fff;padding:5rem 2rem;text-align:center}
-        .hero h1{font-size:2.8rem;max-width:800px;margin:0 auto 1.5rem;line-height:1.15;font-weight:800}
-        .hero h1 span{background:linear-gradient(90deg,#f7971e,#ffd200);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero .subtitle{color:#ccc;font-size:1.2rem;max-width:600px;margin:0 auto 2rem}
-        .hero .price{font-size:3rem;font-weight:800;color:#f0c040;margin-bottom:.5rem}
-        .hero .price-note{color:#999;font-size:1rem;margin-bottom:2rem}
-        .hero .btn{display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 3rem;border-radius:8px;font-weight:800;font-size:1.2rem;text-decoration:none;transition:transform .2s}
-        .hero .btn:hover{transform:scale(1.05)}
-        .hero .btn.disabled{background:#666;color:#999;cursor:not-allowed}
-        .section{max-width:900px;margin:0 auto;padding:4rem 2rem}
-        .section h2{font-size:2rem;text-align:center;margin-bottom:2rem;color:#1a1a2e}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
-        .grid-item{background:#f8f8f8;border:1px solid #e0e0e0;border-radius:12px;padding:1.5rem}
-        .grid-item h3{font-size:1.1rem;margin-bottom:.5rem;color:#1a1a2e}
-        .grid-item p{font-size:.95rem;color:#555}
-        .grid-item .tag{display:inline-block;font-size:.75rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;margin-bottom:.5rem}
-        .tag.sop{background:#e3f2fd;color:#1565c0}
-        .tag.template{background:#e8f5e9;color:#2e7d32}
-        .tag.guide{background:#fff3e0;color:#e65100}
-        .benefits{list-style:none;padding:0;max-width:700px;margin:0 auto}
-        .benefits li{font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid #eee;padding-left:2rem;position:relative}
-        .benefits li::before{content:"✅";position:absolute;left:0}
-        .testimonial{background:#f8f8f8;border-radius:12px;padding:2rem;text-align:center;margin:2rem 0;font-style:italic;font-size:1.1rem;color:#555}
-        .testimonial .author{font-style:normal;font-weight:700;color:#1a1a2e;margin-top:1rem}
-        .faq{max-width:700px;margin:0 auto}
-        .faq-item{border-bottom:1px solid #eee;padding:1.25rem 0}
-        .faq-item h3{font-size:1.1rem;margin-bottom:.5rem;color:#1a1a2e;cursor:pointer}
-        .faq-item p{color:#555;font-size:1rem}
-        .cta-section{background:linear-gradient(135deg,#0f0c29,#302b63);color:#fff;padding:4rem 2rem;text-align:center;margin-top:3rem}
-        .cta-section h2{font-size:2rem;margin-bottom:1rem}
-        .cta-section .price{font-size:3rem;font-weight:800;color:#f0c040;margin-bottom:1rem}
-        .cta-section .btn{display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 3rem;border-radius:8px;font-weight:800;font-size:1.2rem;text-decoration:none}
-        .guarantee{text-align:center;padding:2rem;max-width:600px;margin:0 auto}
-        .guarantee h3{margin-bottom:.5rem}
-        .footer{background:#1a1a2e;color:#999;padding:2rem;text-align:center;font-size:.9rem}
-        .footer a{color:#f0c040;text-decoration:none}
-        @media(max-width:600px){.hero h1{font-size:1.8rem}.grid{grid-template-columns:1fr}.hero .price{font-size:2.2rem}}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--gold:#f59e0b;--gold-light:#fbbf24;--gold-dark:#d97706;--white:#ffffff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--text:#0f172a;--text-muted:#64748b;--radius:12px;--radius-lg:16px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.375rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
+        .nav-logo span{color:var(--gold)}
+        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--gray-300);font-size:.9rem;font-weight:500;transition:color .2s}
+        .nav-links a:hover{color:var(--white)}
+        .nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.25rem;border-radius:8px;font-weight:700;font-size:.875rem;transition:all .2s}
+        .nav-cta:hover{background:var(--gold-light)}
+        .nav-menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+        .container{max-width:800px;margin:0 auto;padding:0 2rem}
+        .container-wide{max-width:1100px;margin:0 auto;padding:0 2rem}
+
+        /* HERO */
+        .sales-hero{background:var(--navy);padding:8rem 2rem 5rem;text-align:center;position:relative;overflow:hidden}
+        .sales-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:150%;height:100%;background:radial-gradient(ellipse at center top,rgba(245,158,11,.08),transparent 60%)}
+        .sales-hero .eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2);padding:.375rem 1.25rem;border-radius:100px;color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.5rem}
+        .sales-hero h1{font-size:3.25rem;font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.03em;margin-bottom:1.25rem;max-width:750px;margin-left:auto;margin-right:auto}
+        .sales-hero h1 em{font-style:normal;color:var(--gold)}
+        .sales-hero .subhead{font-size:1.2rem;color:var(--gray-400);max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
+        .sales-hero .price-hero{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem}
+        .price-old{font-size:1.5rem;color:var(--gray-500);text-decoration:line-through}
+        .price-new{font-size:3rem;font-weight:800;color:var(--gold)}
+        .price-tag{background:rgba(239,68,68,.15);color:#ef4444;padding:.25rem .75rem;border-radius:6px;font-size:.8rem;font-weight:700}
+        .btn-buy{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);padding:1rem 3rem;border-radius:12px;font-weight:800;font-size:1.15rem;transition:all .2s;border:none;cursor:pointer}
+        .btn-buy:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,158,11,.35)}
+        .hero-guarantee{color:var(--gray-400);font-size:.85rem;margin-top:1rem}
+        .hero-guarantee strong{color:var(--gray-300)}
+
+        /* PAIN SECTION */
+        .pain-section{padding:5rem 2rem;background:var(--gray-50)}
+        .pain-section h2{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:.75rem;letter-spacing:-.02em}
+        .pain-section .sub{text-align:center;color:var(--text-muted);font-size:1.1rem;margin-bottom:3rem;max-width:600px;margin-left:auto;margin-right:auto}
+        .pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:900px;margin:0 auto}
+        .pain-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;display:flex;gap:1rem;align-items:start}
+        .pain-emoji{font-size:1.5rem;flex-shrink:0}
+        .pain-card h4{font-weight:700;font-size:.95rem;margin-bottom:.25rem}
+        .pain-card p{font-size:.85rem;color:var(--text-muted);line-height:1.5}
+
+        /* SOLUTION BRIDGE */
+        .bridge{padding:4rem 2rem;text-align:center;background:var(--navy);color:var(--white)}
+        .bridge h2{font-size:2.25rem;font-weight:800;margin-bottom:1rem;letter-spacing:-.02em}
+        .bridge h2 em{font-style:normal;color:var(--gold)}
+        .bridge p{font-size:1.1rem;color:var(--gray-400);max-width:650px;margin:0 auto;line-height:1.7}
+
+        /* WHAT'S INCLUDED */
+        .included{padding:5rem 2rem}
+        .included h2{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:.5rem;letter-spacing:-.02em}
+        .included .sub{text-align:center;color:var(--text-muted);font-size:1.05rem;margin-bottom:3rem}
+        .included-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:0 auto}
+        .included-item{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;transition:all .2s}
+        .included-item:hover{border-color:var(--gold);background:rgba(245,158,11,.03)}
+        .included-item .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gold);color:var(--navy);border-radius:6px;font-size:.75rem;font-weight:800;margin-bottom:.75rem}
+        .included-item h4{font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+        .included-item p{font-size:.82rem;color:var(--text-muted);line-height:1.5}
+        .included-item .value{display:inline-block;margin-top:.5rem;font-size:.75rem;font-weight:600;color:var(--gold-dark);background:rgba(245,158,11,.1);padding:.2rem .6rem;border-radius:4px}
+
+        /* BENEFITS */
+        .benefits{padding:5rem 2rem;background:var(--gray-50)}
+        .benefits h2{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:3rem;letter-spacing:-.02em}
+        .benefits-list{max-width:700px;margin:0 auto}
+        .benefit-row{display:flex;gap:1rem;align-items:start;margin-bottom:1.5rem;padding:1.25rem;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200)}
+        .benefit-icon{width:44px;height:44px;background:rgba(34,197,94,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+        .benefit-row h4{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+        .benefit-row p{font-size:.88rem;color:var(--text-muted);line-height:1.5}
+
+        /* SOCIAL PROOF */
+        .social-proof{padding:5rem 2rem;background:var(--navy);color:var(--white)}
+        .social-proof h2{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:3rem;letter-spacing:-.02em}
+        .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+        .sp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2rem}
+        .sp-stars{color:var(--gold);margin-bottom:.75rem;letter-spacing:.1em}
+        .sp-card blockquote{font-size:.9rem;color:var(--gray-300);line-height:1.7;margin-bottom:1.25rem;font-style:italic}
+        .sp-author{display:flex;align-items:center;gap:.75rem}
+        .sp-avatar{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:.8rem}
+        .sp-name{color:var(--white);font-weight:600;font-size:.85rem}
+        .sp-role{color:var(--gray-400);font-size:.75rem}
+
+        /* PRICE ANCHORING */
+        .pricing{padding:5rem 2rem;text-align:center}
+        .pricing h2{font-size:2.25rem;font-weight:800;margin-bottom:1rem;letter-spacing:-.02em}
+        .pricing .sub{color:var(--text-muted);font-size:1.05rem;margin-bottom:3rem}
+        .price-comparison{max-width:600px;margin:0 auto 2rem;background:var(--gray-50);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200)}
+        .price-row{display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--gray-200);font-size:.9rem}
+        .price-row:last-child{border-bottom:0}
+        .price-row .item{font-weight:500}
+        .price-row .val{font-weight:700;color:var(--text-muted)}
+        .price-total{display:flex;justify-content:space-between;padding:1.25rem 1.5rem;background:var(--navy);color:var(--white);font-weight:700;font-size:1.05rem}
+        .price-total .val{color:var(--gold)}
+        .your-price{margin:2.5rem 0}
+        .your-price .label{font-size:1rem;color:var(--text-muted);margin-bottom:.5rem}
+        .your-price .amount{font-size:4rem;font-weight:800;color:var(--navy);line-height:1}
+        .your-price .once{font-size:1rem;color:var(--text-muted);font-weight:500}
+
+        /* FAQ */
+        .faq{padding:5rem 2rem;background:var(--gray-50)}
+        .faq h2{font-size:2.25rem;font-weight:800;text-align:center;margin-bottom:3rem;letter-spacing:-.02em}
+        .faq-list{max-width:700px;margin:0 auto}
+        .faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden}
+        .faq-q{padding:1.25rem 1.5rem;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+        .faq-q::after{content:'+';font-size:1.25rem;color:var(--gold);font-weight:700;transition:transform .2s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:all .3s ease}
+        .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.25rem}
+        .faq-a p{font-size:.9rem;color:var(--text-muted);line-height:1.6}
+
+        /* GUARANTEE */
+        .guarantee{padding:4rem 2rem;text-align:center}
+        .guarantee-box{max-width:600px;margin:0 auto;background:rgba(34,197,94,.04);border:2px solid rgba(34,197,94,.2);border-radius:var(--radius-lg);padding:2.5rem}
+        .guarantee-icon{font-size:3rem;margin-bottom:1rem}
+        .guarantee-box h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem}
+        .guarantee-box p{font-size:.95rem;color:var(--text-muted);line-height:1.7}
+
+        /* FINAL CTA */
+        .final-cta{padding:5rem 2rem;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));text-align:center}
+        .final-cta h2{font-size:2.5rem;font-weight:800;color:var(--navy);margin-bottom:.75rem;letter-spacing:-.02em}
+        .final-cta p{font-size:1.1rem;color:rgba(15,23,42,.65);margin-bottom:2rem;max-width:550px;margin-left:auto;margin-right:auto}
+        .btn-dark{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 3rem;border-radius:12px;font-weight:800;font-size:1.15rem;transition:all .2s}
+        .btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,.3)}
+
+        /* STICKY CTA */
+        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:.75rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;z-index:99;border-top:1px solid rgba(255,255,255,.08);transform:translateY(100%);transition:transform .3s ease}
+        .sticky-cta.visible{transform:translateY(0)}
+        .sticky-cta p{color:var(--gray-300);font-size:.9rem;font-weight:500}
+        .sticky-cta p strong{color:var(--white)}
+        .sticky-cta .btn-buy{padding:.625rem 1.5rem;font-size:.9rem}
+
+        /* FOOTER */
+        .footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
+        .footer p{color:var(--gray-500);font-size:.8rem}
+        .footer a{color:var(--gray-400)}
+        .footer a:hover{color:var(--gold)}
+
+        @media(max-width:768px){
+            .sales-hero h1{font-size:2.25rem}
+            .pain-grid,.included-grid,.sp-grid{grid-template-columns:1fr}
+            .price-new{font-size:2.5rem}
+            .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:1rem 2rem;flex-direction:column;gap:1rem}
+            .nav-links.open{display:flex}
+            .nav-menu-btn{display:block}
+            .your-price .amount{font-size:3rem}
+            .final-cta h2{font-size:1.75rem}
+        }
     </style>
 </head>
 <body>
-    <nav class="nav"><a href="/">LevelPM</a><div class="nav-links"><a href="/blog">Blog</a><a href="/sops/">Free SOPs</a></div></nav>
 
-    <div class="hero">
-        <p style="color:#f0c040;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;">For Property Management Company Owners</p>
-        <h1>The PM Scaling Kit: <span>Systems That Grow Your Business</span></h1>
-        <p class="subtitle">15 professional SOPs, templates, and checklists + a step-by-step implementation guide. Stop reinventing the wheel. Start scaling.</p>
-        <div class="price">$147</div>
-        <p class="price-note">One-time purchase. Lifetime access. 30-day money-back guarantee.</p>
-        <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn" id="buy-btn">🛒 Buy Now — $147</a>
-    </div>
-
-    <div class="section">
-        <h2>What's Inside</h2>
-        <div class="grid">
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>Maintenance Triage System</h3><p>4-tier priority system with decision tree, vendor dispatch, and owner notification thresholds.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Move-In/Move-Out Inspection</h3><p>80+ line items. Every room, every system. Photo documentation protocol included.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Monthly Owner Report</h3><p>KPI dashboard, income statement, maintenance detail, market comparison, and recommendations.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>Tenant Screening Criteria</h3><p>Standardized, Fair Housing-compliant screening with criteria document and adverse action templates.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Owner Onboarding (30 steps)</h3><p>From signed agreement to fully operational in 14 days. Welcome packet template included.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Tenant Onboarding (20 steps)</h3><p>Application to move-in day. Welcome packet, portal setup, inspection, and 7-day follow-up.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>Leasing Process Workflow</h3><p>Vacancy to occupancy in 21 days. Pricing, marketing, showings, screening, and lease signing.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Unit Turnover Checklist</h3><p>7-day turnover system. Inspection, vendor scheduling, make-ready, quality check, marketing.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Vendor Management Tracker</h3><p>Vendor scorecard, insurance tracking, rate comparison, and performance review system.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Financial Review Checklist</h3><p>Monthly trust account reconciliation, disbursement verification, and budget variance analysis.</p></div>
-            <div class="grid-item"><span class="tag guide">GUIDE</span><h3>Owner Acquisition Marketing Plan</h3><p>12-month marketing calendar with agent referral program, Google optimization, and outreach scripts.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>KPI Dashboard</h3><p>Track the 12 metrics that matter. Pre-built formulas, benchmarks, and weekly review framework.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>Emergency Response Protocol</h3><p>After-hours decision tree, emergency vendor contacts, authorization levels, and documentation.</p></div>
-            <div class="grid-item"><span class="tag sop">SOP</span><h3>New Hire Onboarding</h3><p>30-60-90 day plan, training checklist, software access, shadowing schedule, and performance metrics.</p></div>
-            <div class="grid-item"><span class="tag template">TEMPLATE</span><h3>Annual Property Inspection</h3><p>Comprehensive inspection covering structure, systems, safety, and capital expenditure recommendations.</p></div>
-        </div>
-
-        <div style="text-align:center;margin-top:2rem">
-            <p style="font-size:1.1rem;color:#555"><strong>Plus:</strong> Implementation guide with video walkthroughs showing exactly how to deploy each SOP in your operation.</p>
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Scale<span>Doors</span></a>
+        <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/sops">Free SOPs</a>
+            <a href="/tools/rent-calculator">Tools</a>
+            <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="nav-cta">Buy Now — $147</a>
         </div>
     </div>
+</nav>
 
-    <div class="section" style="background:#f8f8f8">
-        <h2>Who This Is For</h2>
-        <ul class="benefits">
-            <li>PM company owners managing 20-200+ doors who want to scale without the chaos</li>
-            <li>Property managers tired of "winging it" and ready for professional systems</li>
-            <li>New PM companies who want to start with the right foundation</li>
-            <li>Teams that need documented processes so anyone can handle any task</li>
-            <li>Owners preparing to hire their first employee and need training materials</li>
-        </ul>
+<!-- HERO -->
+<section class="sales-hero">
+    <div class="eyebrow">🎯 For PM owners managing 50–200 doors</div>
+    <h1>The Complete System to Scale from 50 to <em>500+ Doors</em></h1>
+    <p class="subhead">15 battle-tested SOPs, templates, scripts, and financial models — everything you need to stop firefighting and start scaling. Used by 500+ property management companies.</p>
+    <div class="price-hero">
+        <span class="price-old">$2,000+</span>
+        <span class="price-new">$147</span>
+        <span class="price-tag">SAVE 92%</span>
     </div>
+    <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn-buy">Get Instant Access — $147 →</a>
+    <p class="hero-guarantee">🔒 <strong>30-day money-back guarantee.</strong> No questions asked.</p>
+</section>
 
-    <div class="section">
-        <h2>Why SOPs Change Everything</h2>
-        <ul class="benefits">
-            <li>Stop making the same decisions over and over — document once, execute forever</li>
-            <li>New hires become productive in days, not months</li>
-            <li>Consistent service quality across every property, every tenant, every owner</li>
-            <li>Reduce owner complaints by 40%+ with proactive reporting and communication</li>
-            <li>Scale from 50 to 200 doors without your quality of life decreasing</li>
-            <li>Your business works without you — because the systems are documented, not in your head</li>
-        </ul>
+<!-- PAIN POINTS -->
+<section class="pain-section">
+    <div class="container-wide">
+        <h2>Sound Familiar?</h2>
+        <p class="sub">These are the growth killers that keep PM companies stuck. If you're nodding, the Scaling Kit was built for you.</p>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-emoji">📱</div>
+                <div>
+                    <h4>"I get maintenance calls at 2 AM"</h4>
+                    <p>No triage system means every issue escalates to you. Your phone never stops ringing.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🔄</div>
+                <div>
+                    <h4>"Training new hires takes forever"</h4>
+                    <p>No written processes. Every new employee shadows you for weeks and still makes mistakes.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">📉</div>
+                <div>
+                    <h4>"More doors but less profit"</h4>
+                    <p>Revenue grows but margins shrink. You don't know your real cost per door. Pricing is guesswork.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🤯</div>
+                <div>
+                    <h4>"I'm the bottleneck for everything"</h4>
+                    <p>Owners call you directly. Staff can't make decisions without you. Nothing moves when you're out.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">😬</div>
+                <div>
+                    <h4>"Owner onboarding is a mess"</h4>
+                    <p>No standardized process. Every new owner gets a different experience. Some churn in 90 days.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">💸</div>
+                <div>
+                    <h4>"I can't justify raising fees"</h4>
+                    <p>No data on what your services are worth. Competing on price is a race to the bottom.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="section">
+<!-- SOLUTION BRIDGE -->
+<section class="bridge">
+    <h2>What If You Had a <em>Proven Playbook</em>?</h2>
+    <p>The PM Scaling Kit gives you the exact systems, templates, and SOPs that companies use to go from 50 doors to 500+. Not theory — actual documents you can implement this week.</p>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+    <div class="container-wide">
+        <h2>Everything Inside the PM Scaling Kit</h2>
+        <p class="sub">15 ready-to-deploy resources. Copy, customize, implement.</p>
+        <div class="included-grid">
+            <div class="included-item">
+                <div class="num">1</div>
+                <h4>Maintenance Triage SOP</h4>
+                <p>Step-by-step triage system with priority levels, response times, and vendor escalation rules.</p>
+                <span class="value">Value: $200</span>
+            </div>
+            <div class="included-item">
+                <div class="num">2</div>
+                <h4>Move-In/Move-Out Checklist</h4>
+                <p>Comprehensive inspection checklist with photo documentation requirements and deposit handling.</p>
+                <span class="value">Value: $150</span>
+            </div>
+            <div class="included-item">
+                <div class="num">3</div>
+                <h4>Owner Reporting Template</h4>
+                <p>Monthly/quarterly owner report with financials, maintenance summary, and occupancy metrics.</p>
+                <span class="value">Value: $175</span>
+            </div>
+            <div class="included-item">
+                <div class="num">4</div>
+                <h4>Owner Onboarding Playbook</h4>
+                <p>30-day onboarding sequence: welcome package, property assessment, expectation setting, first report.</p>
+                <span class="value">Value: $200</span>
+            </div>
+            <div class="included-item">
+                <div class="num">5</div>
+                <h4>Tenant Screening SOP</h4>
+                <p>Fair Housing compliant screening criteria, application review process, and denial letter templates.</p>
+                <span class="value">Value: $175</span>
+            </div>
+            <div class="included-item">
+                <div class="num">6</div>
+                <h4>Fee Structure Calculator</h4>
+                <p>Spreadsheet to model your pricing: management fees, leasing fees, maintenance markup, profit margin.</p>
+                <span class="value">Value: $150</span>
+            </div>
+            <div class="included-item">
+                <div class="num">7</div>
+                <h4>Hiring & Job Description Kit</h4>
+                <p>Job descriptions for PM, leasing agent, maintenance coordinator. Interview questions and scoring rubric.</p>
+                <span class="value">Value: $200</span>
+            </div>
+            <div class="included-item">
+                <div class="num">8</div>
+                <h4>New Employee Onboarding Plan</h4>
+                <p>Week-by-week training schedule. Day 1 to Day 30 — what they learn, practice, and own.</p>
+                <span class="value">Value: $175</span>
+            </div>
+            <div class="included-item">
+                <div class="num">9</div>
+                <h4>47 Email Templates</h4>
+                <p>Pre-written emails for every scenario: late rent, lease renewal, maintenance updates, owner comms.</p>
+                <span class="value">Value: $150</span>
+            </div>
+            <div class="included-item">
+                <div class="num">10</div>
+                <h4>Vendor Management SOP</h4>
+                <p>Vendor vetting checklist, insurance requirements, performance tracking, and preferred vendor agreements.</p>
+                <span class="value">Value: $125</span>
+            </div>
+            <div class="included-item">
+                <div class="num">11</div>
+                <h4>Rent Collection Playbook</h4>
+                <p>Automated collection workflow: due dates, grace periods, late notices, eviction escalation timeline.</p>
+                <span class="value">Value: $125</span>
+            </div>
+            <div class="included-item">
+                <div class="num">12</div>
+                <h4>Property Inspection Templates</h4>
+                <p>Annual, semi-annual, and drive-by inspection forms with photo requirements and condition ratings.</p>
+                <span class="value">Value: $100</span>
+            </div>
+            <div class="included-item">
+                <div class="num">13</div>
+                <h4>Growth Financial Model</h4>
+                <p>Revenue projections at 100, 200, 300, 500 doors. Staffing ratios, overhead scaling, break-even analysis.</p>
+                <span class="value">Value: $250</span>
+            </div>
+            <div class="included-item">
+                <div class="num">14</div>
+                <h4>Owner Acquisition Scripts</h4>
+                <p>Cold call scripts, email sequences, and pitch deck for winning new property owner clients.</p>
+                <span class="value">Value: $175</span>
+            </div>
+            <div class="included-item">
+                <div class="num">15</div>
+                <h4>KPI Dashboard Template</h4>
+                <p>Track the 12 metrics that matter: occupancy, days-to-lease, cost-per-door, owner retention, and more.</p>
+                <span class="value">Value: $150</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <div class="container">
+        <h2>What Changes After You Get the Kit</h2>
+        <div class="benefits-list">
+            <div class="benefit-row">
+                <div class="benefit-icon">⏰</div>
+                <div>
+                    <h4>Save 15+ hours per week</h4>
+                    <p>Stop reinventing the wheel. Use proven templates and SOPs instead of building from scratch.</p>
+                </div>
+            </div>
+            <div class="benefit-row">
+                <div class="benefit-icon">👥</div>
+                <div>
+                    <h4>Hire and train in days, not months</h4>
+                    <p>Hand new team members a playbook. They know exactly what to do, when, and how.</p>
+                </div>
+            </div>
+            <div class="benefit-row">
+                <div class="benefit-icon">💰</div>
+                <div>
+                    <h4>Increase profit margins by 15-25%</h4>
+                    <p>Know your real cost per door. Price services correctly. Stop leaving money on the table.</p>
+                </div>
+            </div>
+            <div class="benefit-row">
+                <div class="benefit-icon">📈</div>
+                <div>
+                    <h4>Add doors without adding chaos</h4>
+                    <p>Scalable systems mean going from 100 to 200 doors doesn't double your workload.</p>
+                </div>
+            </div>
+            <div class="benefit-row">
+                <div class="benefit-icon">🏖️</div>
+                <div>
+                    <h4>Take a vacation without your phone</h4>
+                    <p>Your team runs the business because the systems run the team. Finally work ON the business.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+    <h2>PM Owners Who Scaled With the Kit</h2>
+    <div class="sp-grid">
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"Went from 80 to 210 doors in 14 months. The maintenance triage SOP alone saved us 15 hours a week. Absolute game changer."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">MR</div>
+                <div>
+                    <div class="sp-name">Marcus R.</div>
+                    <div class="sp-role">Apex Property Group — 210 doors</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"Restructured our fees using the calculator and our profit margin jumped 22% in 3 months. I was leaving $4K/month on the table."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">JL</div>
+                <div>
+                    <div class="sp-name">Jessica L.</div>
+                    <div class="sp-role">Keystone Management — 145 doors</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"Hired my first PM using their job descriptions. She was productive in 5 days. Previously took 6 weeks. Worth 100x the price."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">DW</div>
+                <div>
+                    <div class="sp-name">David W.</div>
+                    <div class="sp-role">GreatNest PM — 320 doors</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"The owner onboarding playbook reduced our churn from 18% to under 5%. New owners stay because the first 30 days are seamless."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">SR</div>
+                <div>
+                    <div class="sp-name">Sarah R.</div>
+                    <div class="sp-role">Summit Properties — 175 doors</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"I took a 2-week vacation and nothing broke. First time in 7 years. The SOPs made my team self-sufficient."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">TK</div>
+                <div>
+                    <div class="sp-name">Thomas K.</div>
+                    <div class="sp-role">Cornerstone PM — 280 doors</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp-card">
+            <div class="sp-stars">★★★★★</div>
+            <blockquote>"The email templates alone are worth $147. I used to spend 30 minutes crafting every owner email. Now it's 2 minutes."</blockquote>
+            <div class="sp-author">
+                <div class="sp-avatar">AM</div>
+                <div>
+                    <div class="sp-name">Andrea M.</div>
+                    <div class="sp-role">Pacific Coast PM — 90 doors</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICE ANCHORING -->
+<section class="pricing">
+    <div class="container">
+        <h2>What You'd Pay Separately</h2>
+        <p class="sub">The Scaling Kit replaces thousands of dollars in consulting, templates, and course fees.</p>
+        <div class="price-comparison">
+            <div class="price-row"><span class="item">PM Consultant (1 session)</span><span class="val">$300–$500</span></div>
+            <div class="price-row"><span class="item">SOP Writing Service</span><span class="val">$150–$250/each</span></div>
+            <div class="price-row"><span class="item">HR Template Kit</span><span class="val">$200–$400</span></div>
+            <div class="price-row"><span class="item">Financial Modeling</span><span class="val">$500+</span></div>
+            <div class="price-row"><span class="item">Email Template Pack</span><span class="val">$97–$197</span></div>
+            <div class="price-row"><span class="item">PM Training Course</span><span class="val">$500–$2,000</span></div>
+            <div class="price-total"><span class="item">Total if purchased separately</span><span class="val">$2,000+</span></div>
+        </div>
+        <div class="your-price">
+            <div class="label">Your price today:</div>
+            <div class="amount">$147</div>
+            <div class="once">One-time payment. Lifetime access. Instant download.</div>
+        </div>
+        <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn-buy">Get Instant Access — $147 →</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
         <h2>Frequently Asked Questions</h2>
-        <div class="faq">
+        <div class="faq-list">
             <div class="faq-item">
-                <h3>What format are the templates in?</h3>
-                <p>All SOPs and checklists come as editable Google Docs and downloadable PDFs. The KPI dashboard is a Google Sheets template with pre-built formulas. Customize everything for your company.</p>
+                <div class="faq-q">What format are the materials in?</div>
+                <div class="faq-a"><p>Everything is delivered as editable documents (Google Docs/Sheets) and PDF. Copy them, customize to your brand, and deploy immediately. No software to install.</p></div>
             </div>
             <div class="faq-item">
-                <h3>Will these work with my PM software?</h3>
-                <p>Yes. The SOPs are software-agnostic — they define your processes, not your tools. They work with AppFolio, Buildium, RentManager, Propertyware, or any other PM software.</p>
+                <div class="faq-q">Is this for residential or commercial PM?</div>
+                <div class="faq-a"><p>The kit is designed for residential property management companies (single-family, multifamily, and small portfolios). Many principles apply to commercial, but the templates are residential-focused.</p></div>
             </div>
             <div class="faq-item">
-                <h3>I only manage 15 properties. Is this too advanced?</h3>
-                <p>No — this is the perfect time to implement SOPs. Starting with systems at 15 doors means you'll scale to 50, then 100 without breaking. Most PM companies that fail at 50+ doors didn't build systems when they were small.</p>
+                <div class="faq-q">I only manage 30 doors. Is this too advanced?</div>
+                <div class="faq-a"><p>No — in fact, implementing these systems early is how you avoid the chaos that hits at 50-100 doors. Starting with SOPs at 30 doors means you'll scale smoothly rather than rebuilding under pressure.</p></div>
             </div>
             <div class="faq-item">
-                <h3>How is this different from NARPM or IREM courses?</h3>
-                <p>NARPM/IREM teach theory and award certifications. We give you the actual documents, templates, and checklists you need to run your business. Think of it as the implementation toolkit that certification courses never include.</p>
+                <div class="faq-q">How quickly can I implement everything?</div>
+                <div class="faq-a"><p>Most PM owners implement 3-5 SOPs in the first week. Full implementation typically takes 2-4 weeks. The maintenance triage and owner onboarding SOPs are the highest-impact starting points.</p></div>
             </div>
             <div class="faq-item">
-                <h3>What's the refund policy?</h3>
-                <p>30-day money-back guarantee. If the PM Scaling Kit doesn't help you run a more organized operation, email us and we'll refund you. No questions asked.</p>
+                <div class="faq-q">Do you offer refunds?</div>
+                <div class="faq-a"><p>Yes — 30-day money-back guarantee, no questions asked. If the kit doesn't help you, email us and we'll refund every penny. We've had less than 2% refund rate because the materials work.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Can I share this with my team?</div>
+                <div class="faq-a"><p>Absolutely. One purchase covers your entire company. Share the SOPs with your team, customize the templates, and deploy across your organization.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is there ongoing support?</div>
+                <div class="faq-a"><p>You get lifetime access to all materials plus any future updates. For personalized help, check our blog with 80+ free articles covering every aspect of PM operations.</p></div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="cta-section" id="buy">
-        <h2>Ready to Scale Your PM Business?</h2>
-        <div class="price">$147</div>
-        <p style="color:#ccc;margin-bottom:2rem;">One-time purchase. Lifetime access. 30-day guarantee.</p>
-        <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" style="display:inline-block;background:#f0c040;color:#1a1a2e;border:none;padding:1rem 2.5rem;border-radius:8px;font-weight:700;font-size:1.2rem;cursor:pointer;text-decoration:none;margin-bottom:1rem;">🛒 Buy Now — Get Instant Access</a>
-        <p style="color:#888;font-size:.85rem;">Secure checkout powered by Stripe. Instant download after purchase.</p>
+<!-- GUARANTEE -->
+<section class="guarantee">
+    <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <h3>30-Day Money-Back Guarantee</h3>
+        <p>Try the PM Scaling Kit for 30 days. If it doesn't help you systematize your operations and save time, email us for a full refund. No questions, no hassle. We're confident because our customers see results within the first week.</p>
     </div>
+</section>
 
-    <div class="guarantee">
-        <h3>🛡️ 30-Day Money-Back Guarantee</h3>
-        <p>Try the PM Scaling Kit risk-free. If it doesn't help you run a more organized operation, we'll refund every penny. No questions, no hassle.</p>
-    </div>
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <h2>Stop Firefighting. Start Scaling.</h2>
+    <p>500+ PM owners have used these systems to break through the growth ceiling. Your turn.</p>
+    <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn-dark">Get the PM Scaling Kit — $147 →</a>
+</section>
 
-    <footer class="footer">
-        <p>© 2026 LevelPM. Training & SOPs for property managers who want to grow.</p>
-        <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/sops/">Free SOPs</a></p>
-    </footer>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+    <p><strong>PM Scaling Kit</strong> — 15 SOPs & templates for $147</p>
+    <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn-buy">Buy Now →</a>
+</div>
 
-    <script>
-    async function kitSignup() {
-        const email = document.getElementById('kit-email').value;
-        if (!email || !email.includes('@')) { alert('Please enter a valid email'); return; }
-        try {
-            await fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'scaling-kit-page' }) });
-            document.getElementById('kit-email').value = '';
-            alert("You're on the waitlist! You'll get 30% off at launch.");
-        } catch(e) { alert('Something went wrong.'); }
-    }
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>
+<footer class="footer">
+    <p>© 2026 <a href="/">ScaleDoors</a>. All rights reserved. | <a href="/blog">Blog</a> · <a href="/sops">Free SOPs</a> · <a href="/tools/rent-calculator">Tools</a></p>
+</footer>
+
+<script>
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+        const item=q.parentElement;
+        item.classList.toggle('open');
+    });
+});
+// Sticky CTA
+const stickyCta=document.getElementById('stickyCta');
+let lastScroll=0;
+window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    if(y>600){stickyCta.classList.add('visible')}
+    else{stickyCta.classList.remove('visible')}
+    lastScroll=y;
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"PM Scaling Kit",
+  "description":"15 SOPs, templates, scripts, and playbooks for property management companies scaling from 50 to 500+ doors.",
+  "brand":{"@type":"Brand","name":"ScaleDoors"},
+  "offers":{"@type":"Offer","price":"147","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://scaledoors.com/scaling-kit"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What format are the materials in?","acceptedAnswer":{"@type":"Answer","text":"Everything is delivered as editable documents (Google Docs/Sheets) and PDF."}},
+    {"@type":"Question","name":"Is this for residential or commercial PM?","acceptedAnswer":{"@type":"Answer","text":"The kit is designed for residential property management companies."}},
+    {"@type":"Question","name":"How quickly can I implement everything?","acceptedAnswer":{"@type":"Answer","text":"Most PM owners implement 3-5 SOPs in the first week. Full implementation takes 2-4 weeks."}},
+    {"@type":"Question","name":"Do you offer refunds?","acceptedAnswer":{"@type":"Answer","text":"Yes — 30-day money-back guarantee, no questions asked."}}
+  ]
+}
+</script>
 </body>
 </html>

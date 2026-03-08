@@ -3,428 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Management Blog — Guides, SOPs & Growth Strategies | LevelPM</title>
-    <meta name="description" content="Practical guides for property managers: certifications, SOPs, checklists, KPIs, accounting, marketing, screening, and scaling strategies. Free resources.">
+    <title>Property Management Blog — Expert Guides for PM Owners | ScaleDoors</title>
+    <meta name="description" content="80+ expert articles on property management: scaling, hiring, SOPs, compliance, technology, and operations. Written for PM company owners, not landlords.">
     <link rel="canonical" href="https://scaledoors.com/blog">
+    <meta property="og:title" content="Property Management Blog | ScaleDoors">
+    <meta property="og:url" content="https://scaledoors.com/blog">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.7;background:#fafafa}.nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.nav a{color:#f0c040;text-decoration:none;font-weight:700;font-size:1.2rem}.nav .nav-links a{color:#ccc;font-weight:400;font-size:.95rem;margin-left:1.5rem}.nav .nav-links a:hover{color:#f0c040}.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#fff;padding:3rem 2rem;text-align:center}.hero h1{font-size:2.2rem;margin-bottom:.5rem}.hero p{color:#aaa;font-size:1.1rem}.posts{max-width:800px;margin:2rem auto;padding:0 2rem}.post-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:2rem;margin-bottom:1.5rem;transition:box-shadow .2s}.post-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}.post-card h2{font-size:1.3rem;margin-bottom:.5rem}.post-card h2 a{color:#1a1a2e;text-decoration:none}.post-card h2 a:hover{color:#2563eb}.post-card p{color:#555;font-size:.95rem;margin-bottom:.5rem}.post-card .meta{color:#999;font-size:.85rem}.post-card .tag{display:inline-block;background:#f0f0f0;color:#555;padding:.15rem .5rem;border-radius:4px;font-size:.8rem;margin-right:.3rem}.cta-box{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:2.5rem;border-radius:12px;text-align:center;margin:2rem auto;max-width:800px}.cta-box h3{color:#f0c040;font-size:1.3rem;margin-bottom:.75rem}.cta-box p{color:#ccc;margin-bottom:1rem}.cta-box input{padding:.75rem 1rem;border:none;border-radius:6px;width:260px;font-size:1rem;margin-right:.5rem}.cta-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.75rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer}.footer{background:#1a1a2e;color:#999;padding:2rem;text-align:center;font-size:.9rem;margin-top:3rem}.footer a{color:#f0c040;text-decoration:none}@media(max-width:600px){.cta-box input{width:100%;margin-bottom:.5rem}}
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--gold:#f59e0b;--gold-light:#fbbf24;--gold-dark:#d97706;--white:#fff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--text:#0f172a;--text-muted:#64748b;--radius:12px;--radius-lg:16px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--gray-50);line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.375rem;font-weight:800;color:var(--white)}
+        .nav-logo span{color:var(--gold)}
+        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--gray-300);font-size:.9rem;font-weight:500;transition:color .2s}
+        .nav-links a:hover{color:var(--white)}
+        .nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.25rem;border-radius:8px;font-weight:700;font-size:.875rem}
+        .nav-menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+        .hero{background:var(--navy);padding:7rem 2rem 3rem;text-align:center}
+        .hero h1{font-size:2.75rem;font-weight:800;color:var(--white);letter-spacing:-.02em;margin-bottom:.75rem}
+        .hero p{font-size:1.1rem;color:var(--gray-400);max-width:600px;margin:0 auto}
+
+        .controls{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;position:sticky;top:56px;z-index:90;background:var(--gray-50);border-bottom:1px solid var(--gray-200)}
+        .search-box{flex:1;min-width:250px;position:relative}
+        .search-box input{width:100%;padding:.75rem 1rem .75rem 2.5rem;border:1px solid var(--gray-200);border-radius:8px;font-size:.9rem;background:var(--white);outline:none;transition:border-color .2s}
+        .search-box input:focus{border-color:var(--gold)}
+        .search-box::before{content:'🔍';position:absolute;left:.75rem;top:50%;transform:translateY(-50%);font-size:.85rem}
+        .filter-btn{padding:.5rem 1rem;border:1px solid var(--gray-200);background:var(--white);border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text-muted)}
+        .filter-btn:hover,.filter-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+        .count{color:var(--text-muted);font-size:.85rem;font-weight:500}
+
+        .grid{max-width:1200px;margin:0 auto;padding:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+        .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.08)}
+        .card-img{height:140px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:2rem;position:relative}
+        .card-cat{position:absolute;top:.75rem;left:.75rem;background:rgba(245,158,11,.9);color:var(--navy);padding:.2rem .6rem;border-radius:4px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+        .card-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+        .card-body h3{font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:.5rem;flex:1}
+        .card-body p{font-size:.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:.75rem}
+        .card-link{color:var(--gold-dark);font-weight:600;font-size:.82rem;display:inline-flex;align-items:center;gap:.25rem}
+
+        .no-results{text-align:center;padding:4rem 2rem;color:var(--text-muted);font-size:1.1rem;display:none}
+        .cta-bar{max-width:1200px;margin:2rem auto;padding:2rem;background:var(--navy);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+        .cta-bar h3{color:var(--white);font-size:1.15rem;font-weight:700}
+        .cta-bar p{color:var(--gray-400);font-size:.9rem}
+        .cta-bar a{background:var(--gold);color:var(--navy);padding:.75rem 1.5rem;border-radius:8px;font-weight:700;font-size:.9rem;flex-shrink:0;transition:all .2s}
+        .cta-bar a:hover{background:var(--gold-light)}
+        .footer{text-align:center;padding:2rem;color:var(--gray-500);font-size:.8rem;background:var(--navy);margin-top:2rem}
+        .footer a{color:var(--gray-400)}.footer a:hover{color:var(--gold)}
+
+        @media(max-width:968px){.grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:640px){
+            .grid{grid-template-columns:1fr}
+            .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:1rem 2rem;flex-direction:column;gap:1rem}
+            .nav-links.open{display:flex}
+            .nav-menu-btn{display:block}
+            .hero h1{font-size:1.75rem}
+            .controls{flex-direction:column;top:56px}
+            .cta-bar{flex-direction:column;text-align:center}
+        }
     </style>
 </head>
 <body>
-    <nav class="nav"><a href="/">LevelPM</a><div class="nav-links"><a href="/blog">Blog</a><a href="/sops/">Free SOPs</a><a href="/#waitlist">Join Waitlist</a></div></nav>
 
-    <div class="hero">
-        <h1>LevelPM Blog</h1>
-        <p>Practical guides for property managers who want to grow. No fluff. 90 in-depth articles and counting.</p>
-    </div>
-
-    <div class="posts">
-        <div class="post-card">
-            <h2><a href="/blog/property-management-systems">Property Management Systems: The Complete Guide for 2026</a></h2>
-            <p>10+ PM platforms compared side-by-side. Find the right system for your portfolio size, property types, and growth plan — from free tools to enterprise solutions.</p>
-            <div class="meta"><span class="tag">Software</span><span class="tag">Systems</span> · 18 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-tools">Best Property Management Tools in 2026: Complete Guide</a></h2>
-            <p>30+ tools compared across every category: software, inspections, accounting, maintenance, communication, AI. Recommended stacks by portfolio size.</p>
-            <div class="meta"><span class="tag">Tools</span><span class="tag">Technology</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/ai-tools-property-management">AI Tools for Property Management: What Actually Works in 2026</a></h2>
-            <p>Separating AI hype from reality. Which tools deliver ROI for property managers — leasing assistants, maintenance triage, document processing, and more.</p>
-            <div class="meta"><span class="tag">AI</span><span class="tag">Technology</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-side-hustle">Property Management as a Side Hustle: How to Start in 2026</a></h2>
-            <p>How to build a $3K-10K/month PM business part-time. Step-by-step: licensing, finding clients, pricing, tools, and scaling from 0 to 50 doors.</p>
-            <div class="meta"><span class="tag">Getting Started</span><span class="tag">Side Hustle</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-income">Property Management Income: How Much Can You Really Make?</a></h2>
-            <p>Real PM income data: owner earnings by portfolio size, salary ranges, 7 revenue streams, market comparisons, and how to maximize take-home pay.</p>
-            <div class="meta"><span class="tag">Income</span><span class="tag">Business</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-hiring">Property Management Hiring: How to Recruit, Interview, and Retain Top PMs</a></h2>
-            <p>Complete hiring guide for PM companies: where to find candidates, job description templates, salary benchmarks, interview scorecards, and retention strategies that beat the 35% industry turnover rate.</p>
-            <div class="meta"><span class="tag">Hiring</span><span class="tag">Team</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-training">Property Management Training: The Complete Guide to Building PM Skills</a></h2>
-            <p>Everything you need to train property managers: the 5 core skill areas, week-by-week onboarding plans, SOP training, and measuring training ROI.</p>
-            <div class="meta"><span class="tag">Training</span><span class="tag">Operations</span> · 18 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-course-online">Best Property Management Courses Online in 2026: From Free to Certified</a></h2>
-            <p>Compare every major PM course online: IREM CPM, NARPM designations, Udemy, Coursera, and free alternatives. Find the right learning path for your career stage.</p>
-            <div class="meta"><span class="tag">Education</span><span class="tag">Courses</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-consulting">Property Management Consulting: When You Need It and When You Don't</a></h2>
-            <p>Property management consulting costs $150-500/hr. Here's when it's worth it, when to DIY with proven playbooks, and how to get 80% of the value at 1% of the cost.</p>
-            <div class="meta"><span class="tag">Strategy</span><span class="tag">Growth</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-training-program">How to Build a Property Management Training Program That Actually Works</a></h2>
-            <p>Step-by-step guide to building a PM training program that reduces turnover by 40% and cuts onboarding time in half. Includes the 4-phase training framework.</p>
-            <div class="meta"><span class="tag">Training</span><span class="tag">SOPs</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/remote-property-management">Remote Property Management: How to Manage Rentals From Anywhere (2026)</a></h2>
-            <p>Complete guide to managing rental properties remotely. Tech stack, boots-on-the-ground team structure, systems, financial controls, and expanding into new markets without an office.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Remote</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/best-property-management-companies">Best Property Management Companies 2026: Top 15 Ranked & Compared</a></h2>
-            <p>The 15 largest and most respected PM companies in the U.S. ranked by doors, technology, transparency, and satisfaction. What makes them great — and how small PMs can compete.</p>
-            <div class="meta"><span class="tag">Industry</span><span class="tag">Research</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-lease-agreement">Property Management Lease Agreement: Complete Guide + Template</a></h2>
-            <p>Essential lease clauses every PM company needs, state-specific pitfalls, digital signing best practices, and common mistakes that create liability.</p>
-            <div class="meta"><span class="tag">Legal</span><span class="tag">Templates</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-best-practices">Property Management Best Practices: 20 Rules Top PMs Follow</a></h2>
-            <p>The 20 habits that separate top-performing PM companies from average ones. Proven strategies for operations, tenant relations, financial management, and growth.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Best Practices</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/how-to-fire-a-property-manager">How to Fire a Property Manager: Step-by-Step Guide</a></h2>
-            <p>When to fire your PM, how to do it legally, what to demand during the transition, and how to choose a better replacement. Includes termination checklist.</p>
-            <div class="meta"><span class="tag">Owner Guide</span><span class="tag">Legal</span> · 10 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/rental-property-depreciation">Rental Property Depreciation Guide 2026: Calculate & Maximize Tax Savings</a></h2>
-            <p>Complete guide to rental property depreciation: how to calculate it, cost segregation strategies, depreciation recapture, and how PMs can use this knowledge as a competitive advantage with owners.</p>
-            <div class="meta"><span class="tag">Tax</span><span class="tag">Finance</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-accounting-software">Best Property Management Accounting Software 2026: Top 10 Compared</a></h2>
-            <p>AppFolio vs Buildium vs Rent Manager vs Yardi — detailed comparison of PM accounting software by portfolio size. Trust accounting, owner reporting, pricing breakdown, and our recommendations.</p>
-            <div class="meta"><span class="tag">Software</span><span class="tag">Accounting</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/multifamily-property-management">Multifamily Property Management Guide 2026: Operations, Staffing & Scaling</a></h2>
-            <p>How to run efficient apartment operations: staffing ratios, maintenance systems, leasing funnels, financial metrics, and scaling from 100 to 1,000+ units.</p>
-            <div class="meta"><span class="tag">Multifamily</span><span class="tag">Operations</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-rent-collection">Property Management Rent Collection Guide 2026: Systems & Automation</a></h2>
-            <p>Build a rent collection system that hits 98%+ collection rates on autopilot. Online payments, late fee policies, delinquency procedures, and automation workflows.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Finance</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-portfolio">How to Build a Property Management Portfolio: Growth Strategy Guide</a></h2>
-            <p>Systematic approach to growing from 50 to 500+ managed doors. Client acquisition strategies ranked by ROI, portfolio diversification, revenue stacking, and when to say no.</p>
-            <div class="meta"><span class="tag">Growth</span><span class="tag">Strategy</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/commercial-property-management">Commercial Property Management: The Complete 2026 Guide</a></h2>
-            <p>Everything about commercial PM: office, retail, industrial, mixed-use. Lease types (NNN, gross, modified gross), CAM reconciliation, tenant improvements, and the transition from residential to commercial.</p>
-            <div class="meta"><span class="tag">Commercial</span><span class="tag">Operations</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-insurance">Property Management Insurance Guide 2026: Every Coverage You Need</a></h2>
-            <p>GL, E&O, workers comp, cyber liability, EPLI — complete breakdown of every insurance policy a PM company needs, real cost numbers, and the 5 mistakes that leave you exposed.</p>
-            <div class="meta"><span class="tag">Insurance</span><span class="tag">Risk</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-vendor-management">Property Management Vendor Management: Build a Reliable Vendor Network</a></h2>
-            <p>How to find, vet, negotiate with, and manage maintenance vendors. Vendor scorecards, rate negotiation tactics, and scaling your network from 50 to 500 doors.</p>
-            <div class="meta"><span class="tag">Vendors</span><span class="tag">Operations</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-reporting">Property Management Reporting: Owner Reports, KPIs & Templates</a></h2>
-            <p>The 5 reports every PM must send, KPI dashboards, reporting automation at scale, and how great reporting becomes your #1 retention strategy.</p>
-            <div class="meta"><span class="tag">Reporting</span><span class="tag">KPIs</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/how-to-hire-property-manager">How to Hire a Property Manager: The Complete 2026 Guide</a></h2>
-            <p>Step-by-step guide for property owners: 10 questions to ask, fee structures explained, red flags to watch for, and how to hold your PM accountable after hiring.</p>
-            <div class="meta"><span class="tag">Hiring</span><span class="tag">Owners</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/hoa-property-management">HOA Property Management: The Complete Guide for 2026</a></h2>
-            <p>Everything about managing homeowners associations: board relations, common area maintenance, fee structures, winning contracts, and adding HOA management to your PM company.</p>
-            <div class="meta"><span class="tag">HOA</span><span class="tag">Operations</span> · 18 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/section-8-property-management">Section 8 Property Management: Complete Guide for PMs</a></h2>
-            <p>How to build a profitable Section 8 portfolio: HUD requirements, HQS inspections, rent calculations, pros and cons, and operational SOPs for HCV management.</p>
-            <div class="meta"><span class="tag">Section 8</span><span class="tag">Operations</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/rental-property-cash-flow">Rental Property Cash Flow: How to Calculate, Track & Maximize It</a></h2>
-            <p>Complete cash flow analysis guide: NOI, cap rate, cash-on-cash return, DSCR, expense ratios, and proven strategies to improve cash flow for your PM clients.</p>
-            <div class="meta"><span class="tag">Finance</span><span class="tag">Analysis</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-spreadsheet">Property Management Spreadsheet Templates: Free Downloads</a></h2>
-            <p>Essential spreadsheet templates: rent roll, maintenance log, tenant database, expense tracker, owner statements, lease expiration tracker, and vacancy tracker.</p>
-            <div class="meta"><span class="tag">Templates</span><span class="tag">Operations</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-cover-letter">Property Management Cover Letter: Templates & Examples</a></h2>
-            <p>Cover letter templates for every PM career level: entry-level, experienced PMs, regional managers, and career changers. Plus power phrases and common mistakes.</p>
-            <div class="meta"><span class="tag">Career</span><span class="tag">Templates</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/how-much-do-property-managers-charge">How Much Do Property Managers Charge? Complete 2026 Fee Guide</a></h2>
-            <p>Average PM fees are 8-12% of monthly rent, plus leasing fees, maintenance markups, and more. Complete breakdown of every fee type with state-by-state data.</p>
-            <div class="meta"><span class="tag">Fees</span><span class="tag">Pricing</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-company-for-sale">Property Management Company for Sale: How to Buy or Sell a PM Business [2026]</a></h2>
-            <p>Complete guide to PM M&A: valuation methods (1-2.5x revenue, $200-500/door), deal structures, due diligence checklists, and where to find PM companies for sale.</p>
-            <div class="meta"><span class="tag">Business</span><span class="tag">M&A</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-tips">25 Property Management Tips That Actually Work in 2026</a></h2>
-            <p>No fluff. Battle-tested tips from PMs running 200-2,000+ doors: tenant management, owner relations, operations, financials, and growth.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Tips</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-skills">15 Essential Property Management Skills Every PM Needs in 2026</a></h2>
-            <p>Hard and soft skills that separate great PMs from the rest: financial management, legal knowledge, communication, technology, and leadership.</p>
-            <div class="meta"><span class="tag">Skills</span><span class="tag">Career</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-technology">The Complete Property Management Technology Stack for 2026</a></h2>
-            <p>Every tool you need: PM software comparison, inspection apps, AI automation, communication platforms, and tech stack by portfolio size.</p>
-            <div class="meta"><span class="tag">Technology</span><span class="tag">Software</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-courses-free">Free Property Management Courses & Training Resources [2026]</a></h2>
-            <p>Every free PM course, YouTube channel, podcast, and template worth your time — curated and ranked. Plus a 6-week free PM education curriculum.</p>
-            <div class="meta"><span class="tag">Education</span><span class="tag">Free</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-responsibilities">Property Management Responsibilities: The Complete 2026 Guide</a></h2>
-            <p>Every responsibility a property manager handles — tenant relations, financial management, maintenance, legal compliance, and more. Use as your delegation checklist.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Management</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-laws-by-state">Property Management Laws by State: 2026 Compliance Guide</a></h2>
-            <p>State-by-state guide to PM laws: licensing, security deposits, eviction timelines, rent control, and fair housing. Stay compliant as you scale.</p>
-            <div class="meta"><span class="tag">Legal</span><span class="tag">Compliance</span> · 18 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-bookkeeping">Property Management Bookkeeping: Complete Guide for PM Companies</a></h2>
-            <p>Chart of accounts, trust account reconciliation, monthly workflow, and year-end tax prep. Everything you need to keep clean books as you scale.</p>
-            <div class="meta"><span class="tag">Accounting</span><span class="tag">Finance</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/landlord-vs-property-manager">Landlord vs Property Manager: When to DIY and When to Hire</a></h2>
-            <p>The honest cost comparison between self-managing and hiring a PM. Including the hidden costs most landlords ignore and the breakpoint where hiring makes sense.</p>
-            <div class="meta"><span class="tag">Comparison</span><span class="tag">Fees</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-contract-template">Property Management Contract Template [Free 2026]</a></h2>
-            <p>Free PM contract template with all 15 essential clauses — fees, termination, maintenance authority, insurance, and more. Avoid the 5 mistakes that cost PMs thousands.</p>
-            <div class="meta"><span class="tag">Legal</span><span class="tag">Templates</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-duties">Property Management Duties: The Complete List [2026]</a></h2>
-            <p>Every duty a property manager handles — tenant relations, maintenance, financials, legal compliance, and more. Organized by category with scaling guidance.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Management</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-franchise">Property Management Franchise: Top Options, Costs & ROI [2026]</a></h2>
-            <p>Compare the top PM franchises — Real Property Management, PMI, All County, and more. Franchise vs. independent: the real math.</p>
-            <div class="meta"><span class="tag">Business</span><span class="tag">Franchise</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-profit-margin">Property Management Profit Margins: Real Numbers & Benchmarks [2026]</a></h2>
-            <p>What are realistic profit margins for PM companies? Revenue breakdown per door, expense analysis, and 9 strategies to increase profitability.</p>
-            <div class="meta"><span class="tag">Finance</span><span class="tag">Profitability</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-inspection-checklist">Property Management Inspection Checklist: Free Templates [2026]</a></h2>
-            <p>100+ line item inspection checklists for move-in, move-out, annual, and drive-by inspections. Photo documentation standards included.</p>
-            <div class="meta"><span class="tag">Templates</span><span class="tag">Inspections</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-salary-guide">Property Management Salary Guide 2026: What PMs Really Earn</a></h2>
-            <p>Complete salary breakdown by role, state, and experience. Average PM salary is $56,340 — here's how to earn more (including ownership math).</p>
-            <div class="meta"><span class="tag">Career</span><span class="tag">Salary</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/how-to-grow-property-management-company">How to Grow a Property Management Company: The Complete Scaling Playbook</a></h2>
-            <p>Break through the 50-100 door plateau. Systems, hiring sequences, owner acquisition, and revenue benchmarks from 50 to 1,000+ doors.</p>
-            <div class="meta"><span class="tag">Growth</span><span class="tag">Scaling</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-interview-questions">30 Property Management Interview Questions (With Expert Answers)</a></h2>
-            <p>Prepare for your PM interview with real questions and answers covering operations, maintenance, fair housing, and owner relations.</p>
-            <div class="meta"><span class="tag">Career</span><span class="tag">Interview</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-lease-renewal">Property Management Lease Renewal Process: The Complete Guide</a></h2>
-            <p>Master lease renewals with the right timeline, rent increase math, tenant retention tactics, and renewal letter templates.</p>
-            <div class="meta"><span class="tag">Operations</span><span class="tag">Leasing</span> · 11 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-workflow-automation">Property Management Workflow Automation: 12 Processes to Automate Today</a></h2>
-            <p>Save 20+ hours/week by automating rent collection, maintenance intake, lease renewals, and 9 more workflows. Implementation roadmap included.</p>
-            <div class="meta"><span class="tag">Automation</span><span class="tag">Operations</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-owner-acquisition">Property Management Owner Acquisition: 15 Proven Ways to Get More Owners</a></h2>
-            <p>From referral programs to direct mail to agent partnerships — 15 strategies ranked by ROI to add 10+ owner clients per month.</p>
-            <div class="meta"><span class="tag">Growth</span><span class="tag">Sales</span> · 16 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-trust-accounting">Property Management Trust Accounting: The Complete Compliance Guide</a></h2>
-            <p>Master trust accounting setup, three-way reconciliation, and avoid the violations that sink PM companies. State-by-state compliance included.</p>
-            <div class="meta"><span class="tag">Accounting</span><span class="tag">Compliance</span> · 18 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-employee-training">Property Management Employee Training: Build a Team That Scales</a></h2>
-            <p>The 90-day training framework for PMs, leasing agents, and maintenance coordinators. Stop gambling on hires and start building systems.</p>
-            <div class="meta"><span class="tag">Training</span><span class="tag">Scaling</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-pricing-guide">How to Price Property Management Services: Complete Fee Guide 2026</a></h2>
-            <p>Data-backed pricing strategies, fee models, revenue-per-door benchmarks, and when to raise prices. Stop undercharging.</p>
-            <div class="meta"><span class="tag">Pricing</span><span class="tag">Revenue</span> · 17 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-resume-tips">Property Management Resume: Examples, Skills & Tips for 2026</a></h2>
-            <p>Write a PM resume that gets interviews. Includes examples, key skills to highlight, and format tips for every experience level.</p>
-            <div class="meta"><span class="tag">Career</span><span class="tag">Resume</span> · 10 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-certification-guide">Property Management Certification: The Complete 2026 Guide</a></h2>
-            <p>CPM vs. CAM vs. NARPM vs. ARM — which certification is actually worth your time and money? Honest comparison with ROI analysis.</p>
-            <div class="meta"><span class="tag">Certification</span><span class="tag">Career</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/how-to-start-property-management-company">How to Start a Property Management Company in 2026</a></h2>
-            <p>From zero to 100 doors. Licensing, startup costs, first 10 clients, software, SOPs — the complete step-by-step playbook.</p>
-            <div class="meta"><span class="tag">Startup</span><span class="tag">Business Plan</span> · 15 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-accounting-guide">Property Management Accounting: The Complete Guide</a></h2>
-            <p>Trust accounts, owner disbursements, financial reporting, tax obligations, and the two-account system every PM company needs.</p>
-            <div class="meta"><span class="tag">Accounting</span><span class="tag">Finance</span> · 14 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/best-property-management-courses-online">Best Property Management Courses Online in 2026 (Ranked)</a></h2>
-            <p>15+ courses compared: IREM, NARPM, Udemy, Coursera, and modern alternatives. What's worth your money?</p>
-            <div class="meta"><span class="tag">Courses</span><span class="tag">Training</span> · 13 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-marketing-strategies">Property Management Marketing: 7 Strategies That Get Owner Clients</a></h2>
-            <p>Stop waiting for referrals. 7 systematic owner acquisition strategies ranked by ROI — from agent programs to SEO to direct outreach.</p>
-            <div class="meta"><span class="tag">Marketing</span><span class="tag">Growth</span> · 12 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-business-plan-template">Property Management Business Plan Template [Free]</a></h2>
-            <p>A practical one-page business plan with financial projections, revenue model, expense budget, and marketing plan. Fill-in-the-blank framework.</p>
-            <div class="meta"><span class="tag">Business Plan</span><span class="tag">Finance</span> · 11 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-fee-structure-guide">Property Management Fee Structure: Complete Pricing Guide</a></h2>
-            <p>Every fee a PM company can charge. Management fees, leasing fees, maintenance markups — with pricing strategies and revenue per door math.</p>
-            <div class="meta"><span class="tag">Pricing</span><span class="tag">Revenue</span> · 11 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-checklist-templates">15 Property Management Checklists & Templates (Free Downloads)</a></h2>
-            <p>Maintenance triage, move-in/out inspection, owner reporting, tenant screening, and 11 more essential checklists. 3 free downloads.</p>
-            <div class="meta"><span class="tag">Templates</span><span class="tag">SOPs</span> · 10 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/property-management-kpis-metrics">Property Management KPIs: 12 Metrics That Drive Growth</a></h2>
-            <p>The only 12 numbers you need to track — with industry benchmarks and improvement strategies. From occupancy to revenue per door.</p>
-            <div class="meta"><span class="tag">KPIs</span><span class="tag">Operations</span> · 11 min read</div>
-        </div>
-
-        <div class="post-card">
-            <h2><a href="/blog/tenant-screening-process-guide">Tenant Screening Process: Step-by-Step Guide</a></h2>
-            <p>Credit checks, income verification, rental history, criminal background — the complete screening process with Fair Housing compliance.</p>
-            <div class="meta"><span class="tag">Screening</span><span class="tag">Legal</span> · 13 min read</div>
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Scale<span>Doors</span></a>
+        <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="/blog" style="color:var(--gold)">Blog</a>
+            <a href="/sops">Free SOPs</a>
+            <a href="/tools/rent-calculator">Tools</a>
+            <a href="/scaling-kit" class="nav-cta">Get Scaling Kit →</a>
         </div>
     </div>
+</nav>
 
-    <div class="cta-box" style="margin-left:2rem;margin-right:2rem;">
-        <h3>Get the PM Scaling Kit</h3>
-        <p>SOPs, templates, checklists, and a growth playbook. Join the waitlist.</p>
-        <div>
-            <input type="email" id="blog-email" placeholder="you@company.com">
-            <button onclick="blogSignup()">Join Waitlist →</button>
-        </div>
+<section class="hero">
+    <h1>Property Management Blog</h1>
+    <p>80+ expert guides written for PM company owners who are serious about scaling. Not fluff — actionable playbooks.</p>
+</section>
+
+<div class="controls">
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search articles..." autocomplete="off">
     </div>
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="growth">Growth</button>
+    <button class="filter-btn" data-cat="operations">Operations</button>
+    <button class="filter-btn" data-cat="hiring">Hiring</button>
+    <button class="filter-btn" data-cat="finance">Finance</button>
+    <button class="filter-btn" data-cat="legal">Legal</button>
+    <button class="filter-btn" data-cat="technology">Technology</button>
+    <button class="filter-btn" data-cat="marketing">Marketing</button>
+    <span class="count" id="count">88 articles</span>
+</div>
 
-    <footer class="footer">
-        <p>© 2026 LevelPM. Training & SOPs for property managers who want to grow.</p>
-        <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/sops/">Free SOPs</a></p>
-    </footer>
+<div class="grid" id="grid"></div>
+<div class="no-results" id="noResults">No articles match your search. Try different keywords.</div>
 
-    <script>async function blogSignup(){const e=document.getElementById('blog-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email');return}try{await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,source:'blog-index'})});document.getElementById('blog-email').value='';alert("You're in!")}catch(x){alert('Something went wrong.')}}</script>
-    <script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>
+<div class="cta-bar" style="margin:2rem auto 0;max-width:1160px;padding:2rem">
+    <div>
+        <h3>Ready to systematize your PM company?</h3>
+        <p>Get 15 SOPs, templates, and playbooks in one kit.</p>
+    </div>
+    <a href="/scaling-kit">Get the PM Scaling Kit — $147 →</a>
+</div>
+
+<footer class="footer">
+    <p>© 2026 <a href="/">ScaleDoors</a>. <a href="/blog">Blog</a> · <a href="/sops">SOPs</a> · <a href="/tools/rent-calculator">Tools</a> · <a href="/scaling-kit">Scaling Kit</a></p>
+</footer>
+
+<script>
+const articles=[
+{s:"how-to-grow-property-management-company",t:"How to Grow a Property Management Company: The Complete Scaling Playbook",d:"Proven strategies to grow from 50 to 500+ doors.",c:"growth",e:"🚀"},
+{s:"how-to-start-property-management-company",t:"How to Start a Property Management Company (Step-by-Step)",d:"Complete guide: licensing, startup costs, getting first 10 clients.",c:"growth",e:"🏗️"},
+{s:"how-to-get-property-management-clients",t:"How to Get PM Clients: Owner Acquisition Playbook",d:"Agent referrals, Google, outreach scripts, investor events.",c:"marketing",e:"🎯"},
+{s:"property-management-owner-acquisition",t:"15 Ways to Get More Property Owners in 2026",d:"Referral programs, digital marketing, and more.",c:"marketing",e:"📣"},
+{s:"property-management-marketing-strategies",t:"7 PM Marketing Strategies That Get Owner Clients",d:"Real tactics that work for property management companies.",c:"marketing",e:"📢"},
+{s:"property-management-best-practices",t:"20 Property Management Best Practices Top PMs Follow",d:"The habits that separate top PM companies from average.",c:"operations",e:"⭐"},
+{s:"property-management-hiring",t:"PM Hiring: Recruit, Interview & Retain Top Talent",d:"Job descriptions, interview questions, compensation benchmarks.",c:"hiring",e:"👥"},
+{s:"property-management-employee-training",t:"PM Employee Training: Build a Team That Scales",d:"Onboarding programs, skill frameworks, training plans.",c:"hiring",e:"🎓"},
+{s:"property-management-training-program",t:"How to Build a PM Training Program That Works",d:"Reduce turnover 40%, cut onboarding time in half.",c:"hiring",e:"📝"},
+{s:"property-management-training",t:"Property Management Training: Complete Skills Guide",d:"Skills, certifications, and hands-on training programs.",c:"hiring",e:"📖"},
+{s:"property-management-job-description",t:"PM Job Description Templates for Every Role",d:"Templates for PM, leasing agent, maintenance, and more.",c:"hiring",e:"📋"},
+{s:"property-management-interview-questions",t:"30 PM Interview Questions (With Answers)",d:"Common questions and expert answers for PM interviews.",c:"hiring",e:"💬"},
+{s:"property-management-resume-tips",t:"Property Management Resume: Examples & Tips",d:"Resume examples, key skills, and templates.",c:"hiring",e:"📄"},
+{s:"property-management-cover-letter",t:"PM Cover Letter: Templates & Examples",d:"Cover letter templates for PM roles.",c:"hiring",e:"✉️"},
+{s:"property-management-salary-guide",t:"PM Salary Guide 2026: What PMs Really Earn",d:"Salary breakdown by role, state, and experience.",c:"hiring",e:"💰"},
+{s:"property-management-income",t:"Property Management Income: How Much Can You Make?",d:"Real data on owner earnings by portfolio size.",c:"finance",e:"📊"},
+{s:"property-management-fee-structure-guide",t:"PM Fee Structure: Complete Pricing Guide",d:"Management fees, leasing fees, maintenance markups.",c:"finance",e:"💲"},
+{s:"property-management-pricing-guide",t:"How to Price PM Services: Fee Guide 2026",d:"Data-backed pricing strategies and profit margins.",c:"finance",e:"🏷️"},
+{s:"how-much-do-property-managers-charge",t:"How Much Do Property Managers Charge? 2026",d:"Average fees 8-12% of monthly rent. Full breakdown.",c:"finance",e:"💵"},
+{s:"property-management-profit-margin",t:"PM Profit Margins: Real Numbers & How to Improve",d:"Real data on profitability, expense breakdown.",c:"finance",e:"📈"},
+{s:"property-management-accounting-guide",t:"PM Accounting: Complete Guide for Companies",d:"Trust accounts, disbursements, financial reporting.",c:"finance",e:"🧾"},
+{s:"property-management-accounting-software",t:"Best PM Accounting Software 2026",d:"AppFolio, Buildium, Rent Manager compared.",c:"technology",e:"💻"},
+{s:"property-management-bookkeeping",t:"PM Bookkeeping: Complete Guide",d:"Trust accounts, chart of accounts, reconciliation.",c:"finance",e:"📒"},
+{s:"property-management-trust-accounting",t:"PM Trust Accounting: Compliance Guide",d:"Setup, compliance rules by state, common violations.",c:"finance",e:"🏦"},
+{s:"rental-property-cash-flow",t:"Rental Property Cash Flow: Calculate & Maximize",d:"NOI, cap rate, cash-on-cash return formulas.",c:"finance",e:"💸"},
+{s:"rental-property-depreciation",t:"Rental Property Depreciation Guide 2026",d:"Calculate depreciation, cost segregation strategies.",c:"finance",e:"🏠"},
+{s:"rental-property-roi-calculator",t:"Rental Property ROI Calculator + Formula Guide",d:"Cash-on-cash return, cap rate, total ROI.",c:"finance",e:"🧮"},
+{s:"property-management-maintenance-guide",t:"PM Maintenance: Complete Operations Guide",d:"Preventive maintenance, vendor management, emergencies.",c:"operations",e:"🔧"},
+{s:"property-management-onboarding-checklist",t:"PM Onboarding Checklist: Owner & Tenant",d:"30+ steps from signed agreement to operational.",c:"operations",e:"✅"},
+{s:"property-management-checklist-templates",t:"15 PM Checklists & Templates (Free Downloads)",d:"Maintenance, move-in/out, reporting, screening.",c:"operations",e:"📝"},
+{s:"property-management-email-templates",t:"47 PM Email Templates That Save Hours",d:"Tenant, owner, lease, maintenance email templates.",c:"operations",e:"📧"},
+{s:"property-management-rent-collection",t:"PM Rent Collection Guide 2026",d:"Online payment, late fees, delinquency procedures.",c:"operations",e:"🏧"},
+{s:"property-management-lease-renewal",t:"PM Lease Renewal Process: Complete Guide",d:"Timeline, rent increases, tenant retention.",c:"operations",e:"🔄"},
+{s:"property-management-lease-agreement",t:"PM Lease Agreement: Guide + Template",d:"Essential clauses, state requirements, templates.",c:"legal",e:"📃"},
+{s:"property-management-vendor-management",t:"PM Vendor Management: Build a Vendor Network",d:"Find, vet, manage maintenance vendors.",c:"operations",e:"🤝"},
+{s:"property-management-workflow-automation",t:"PM Workflow Automation: 12 Processes to Automate",d:"Save 20+ hours/week automating PM workflows.",c:"technology",e:"⚡"},
+{s:"property-management-reporting",t:"PM Reporting: Owner Reports, KPIs & Templates",d:"Financial statements, KPI dashboards, templates.",c:"operations",e:"📊"},
+{s:"property-management-kpis-metrics",t:"PM KPIs: 12 Metrics That Drive Growth",d:"Occupancy, days-to-lease, maintenance response time.",c:"operations",e:"📉"},
+{s:"tenant-screening-process-guide",t:"Tenant Screening: Step-by-Step Guide for PMs",d:"Credit checks, background checks, income verification.",c:"operations",e:"🔍"},
+{s:"property-management-inspection-checklist",t:"PM Inspection Checklist: Free Templates",d:"Move-in, move-out, annual, drive-by inspections.",c:"operations",e:"🔎"},
+{s:"rental-property-inspection-guide",t:"Rental Property Inspection: Guide + Checklists",d:"Complete inspection guide with free checklists.",c:"operations",e:"🏘️"},
+{s:"property-management-customer-service",t:"PM Customer Service: Delight Tenants & Retain Owners",d:"Communication frameworks, response standards.",c:"operations",e:"🌟"},
+{s:"property-management-systems",t:"PM Systems: Complete Guide for 2026",d:"Compare 10+ platforms, features at each stage.",c:"technology",e:"🖥️"},
+{s:"property-management-software-comparison",t:"PM Software 2026: AppFolio vs Buildium vs Rent Manager",d:"Detailed comparison of top PM software.",c:"technology",e:"📱"},
+{s:"property-management-technology",t:"PM Technology Stack: Best Tech for 2026",d:"Software, inspections, accounting integrations.",c:"technology",e:"🔌"},
+{s:"property-management-tools",t:"Best PM Tools in 2026: Complete Guide",d:"30+ tools across categories compared.",c:"technology",e:"🛠️"},
+{s:"property-management-crm",t:"Best PM CRM Software 2026: Comparison",d:"Features, pricing, pros/cons of top CRM tools.",c:"technology",e:"📇"},
+{s:"ai-tools-property-management",t:"AI Tools for Property Management in 2026",d:"What's real, what's hype, and what's worth it.",c:"technology",e:"🤖"},
+{s:"property-management-virtual-assistant",t:"PM Virtual Assistant: Complete Guide",d:"Tasks, where to hire, costs, SOPs.",c:"technology",e:"🧑‍💻"},
+{s:"property-management-spreadsheet",t:"PM Spreadsheet Templates: Free Downloads",d:"Rent tracking, maintenance, expenses, tenants.",c:"technology",e:"📊"},
+{s:"property-management-compliance",t:"PM Compliance: Laws, Fair Housing & Risk",d:"Fair housing, security deposits, eviction laws.",c:"legal",e:"⚖️"},
+{s:"property-management-laws-by-state",t:"PM Laws by State: 2026 Compliance Guide",d:"State-by-state licensing, deposits, eviction timelines.",c:"legal",e:"🗺️"},
+{s:"property-management-insurance",t:"PM Insurance Guide 2026: Coverage & Costs",d:"General liability, E&O, workers comp, cyber.",c:"legal",e:"🛡️"},
+{s:"property-management-license-california",t:"PM License California: DRE Requirements",d:"License requirements, costs, exam prep.",c:"legal",e:"🌴"},
+{s:"property-management-license-florida",t:"PM License Florida: Requirements & How to Get",d:"Real estate license, FREC courses, exam prep.",c:"legal",e:"🌊"},
+{s:"property-management-license-texas",t:"PM License Texas: TREC Requirements",d:"Texas license requirements, costs, exam prep.",c:"legal",e:"⛽"},
+{s:"property-management-agreement-guide",t:"PM Agreement: Complete Guide + Template",d:"Key clauses, fee structures, red flags.",c:"legal",e:"📜"},
+{s:"property-management-agreement-template",t:"PM Agreement Template: Free Download",d:"Clause-by-clause breakdown with template.",c:"legal",e:"📎"},
+{s:"property-management-agreement",t:"PM Agreement: Guide + Free Template",d:"Everything about PM agreements.",c:"legal",e:"📋"},
+{s:"property-management-contract-template",t:"PM Contract Template [Free 2026]",d:"Fee structures, termination clauses, authority.",c:"legal",e:"🗂️"},
+{s:"property-management-duties",t:"PM Duties: Complete List of Responsibilities",d:"Tenant relations, maintenance, financials, legal.",c:"operations",e:"📌"},
+{s:"property-management-responsibilities",t:"PM Responsibilities: The Complete Guide",d:"Every responsibility a PM handles.",c:"operations",e:"📑"},
+{s:"property-management-skills",t:"15 Essential PM Skills for 2026",d:"Communication, financial management, technology.",c:"hiring",e:"🎯"},
+{s:"property-management-tips",t:"25 PM Tips That Actually Work in 2026",d:"Actionable tips for PM professionals.",c:"operations",e:"💡"},
+{s:"property-management-consulting",t:"PM Consulting: When, Cost & How to Choose",d:"When to hire, costs ($150-500/hr), alternatives.",c:"growth",e:"🗣️"},
+{s:"property-management-outsourcing",t:"PM Outsourcing: What to Delegate & When",d:"Maintenance, accounting, leasing outsourcing.",c:"operations",e:"🔀"},
+{s:"property-management-portfolio",t:"Building a PM Portfolio: Growth Strategy",d:"Client acquisition, diversification strategies.",c:"growth",e:"📂"},
+{s:"property-management-proposal-template",t:"PM Proposal Template: Win More Owners",d:"Structure proposals that convert owners.",c:"marketing",e:"💼"},
+{s:"property-management-business-plan-template",t:"PM Business Plan Template [Free Guide]",d:"Financial projections, market analysis, operations.",c:"growth",e:"📐"},
+{s:"property-management-certification-guide",t:"PM Certification: Complete 2026 Guide",d:"CPM, CAM, NARPM, ARM compared.",c:"hiring",e:"🏅"},
+{s:"property-management-courses-free",t:"Free PM Courses & Training Resources",d:"Best free courses, YouTube channels, books.",c:"hiring",e:"🆓"},
+{s:"property-management-course-online",t:"Best PM Courses Online 2026: Free to Certified",d:"Compare online PM course options.",c:"hiring",e:"🎓"},
+{s:"best-property-management-courses-online",t:"Best PM Courses Online 2026 (Ranked)",d:"IREM, NARPM, Udemy, Coursera compared.",c:"hiring",e:"🏆"},
+{s:"property-management-company-for-sale",t:"PM Company for Sale: Buy or Sell Guide",d:"Valuation methods, deal structures, due diligence.",c:"growth",e:"🏢"},
+{s:"property-management-company-names",t:"150+ PM Company Names: Ideas & Branding",d:"Naming ideas, tips, domain availability.",c:"growth",e:"🔤"},
+{s:"property-management-franchise",t:"PM Franchise: Top Options, Costs & ROI",d:"Compare PM franchises, startup costs, fees.",c:"growth",e:"🏪"},
+{s:"property-management-side-hustle",t:"PM as a Side Hustle: How to Start in 2026",d:"Step-by-step with no experience.",c:"growth",e:"🌙"},
+{s:"landlord-vs-property-manager",t:"Landlord vs Property Manager: DIY or Hire?",d:"Costs, time, returns compared.",c:"operations",e:"🤔"},
+{s:"how-to-hire-property-manager",t:"How to Hire a Property Manager: 2026 Guide",d:"What to look for, questions, red flags.",c:"operations",e:"🤝"},
+{s:"how-to-fire-a-property-manager",t:"How to Fire a Property Manager: Step-by-Step",d:"When, how, and how to transition.",c:"operations",e:"🚪"},
+{s:"how-to-manage-rental-properties",t:"How to Manage Rental Properties: Guide",d:"Screening, rent collection, maintenance, financials.",c:"operations",e:"🏡"},
+{s:"best-property-management-companies",t:"Best PM Companies 2026: Top 15 Ranked",d:"Compare fees, door counts, services.",c:"operations",e:"🏆"},
+{s:"multifamily-property-management",t:"Multifamily PM Guide 2026",d:"Staffing ratios, maintenance, tenant retention.",c:"operations",e:"🏢"},
+{s:"commercial-property-management",t:"Commercial PM Guide 2026",d:"Office, retail, industrial, mixed-use.",c:"operations",e:"🏗️"},
+{s:"hoa-property-management",t:"HOA Property Management: Complete Guide",d:"Responsibilities, fees, contracts, maintenance.",c:"operations",e:"🏘️"},
+{s:"airbnb-property-management",t:"Airbnb PM: Start & Scale Short-Term Rentals",d:"Pricing, guest SOPs, cleaning operations.",c:"growth",e:"🏖️"},
+{s:"section-8-property-management",t:"Section 8 PM: Complete HCV Guide",d:"Inspections, HAP contracts, rent calculations.",c:"operations",e:"🏠"},
+{s:"remote-property-management",t:"Remote PM: Manage Rentals From Anywhere",d:"Systems, tools, team structure for remote.",c:"technology",e:"🌐"},
+{s:"how-to-value-property-management-company",t:"How to Value a PM Company (2026 Guide)",d:"Revenue multiples, per-door valuation, EBITDA methods.",c:"growth",e:"💰"},
+{s:"sell-property-management-company",t:"How to Sell a PM Company: Step-by-Step",d:"Valuation, finding buyers, deal structure, earn-outs.",c:"growth",e:"🤝"},
+{s:"property-management-lead-generation",t:"PM Lead Generation: 15 Proven Strategies",d:"From SEO to referrals, ranked by ROI.",c:"marketing",e:"🧲"}
+];
+
+const grid=document.getElementById('grid');
+const search=document.getElementById('search');
+const countEl=document.getElementById('count');
+const noResults=document.getElementById('noResults');
+let activeCat='all';
+
+function render(){
+    const q=search.value.toLowerCase().trim();
+    const filtered=articles.filter(a=>{
+        const matchCat=activeCat==='all'||a.c===activeCat;
+        const matchSearch=!q||a.t.toLowerCase().includes(q)||a.d.toLowerCase().includes(q)||a.s.includes(q);
+        return matchCat&&matchSearch;
+    });
+    countEl.textContent=filtered.length+' article'+(filtered.length!==1?'s':'');
+    if(filtered.length===0){grid.innerHTML='';noResults.style.display='block';return;}
+    noResults.style.display='none';
+    grid.innerHTML=filtered.map(a=>`<a href="/blog/${a.s}" class="card"><div class="card-img">${a.e}<span class="card-cat">${a.c}</span></div><div class="card-body"><h3>${a.t}</h3><p>${a.d}</p><span class="card-link">Read Article →</span></div></a>`).join('');
+}
+
+search.addEventListener('input',render);
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat=btn.dataset.cat;
+        render();
+    });
+});
+render();
+</script>
 </body>
 </html>

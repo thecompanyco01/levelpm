@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Maintenance Triage SOP — ScaleDoors PM Scaling Kit</title>
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-light: #2d4a7a;
+    --accent: #e8a838;
+    --bg: #ffffff;
+    --text: #2c3e50;
+    --light-gray: #f4f6f8;
+    --border: #d1d9e6;
+    --green: #27ae60;
+    --red: #c0392b;
+    --orange: #e67e22;
+    --yellow: #f39c12;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 14px;
+    background: var(--bg);
+  }
+  .watermark-bar {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .cover h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .cover .subtitle {
+    font-size: 18px;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 30px;
+  }
+  h2 {
+    color: var(--navy);
+    font-size: 22px;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+  }
+  h3 {
+    color: var(--navy-light);
+    font-size: 17px;
+    margin: 28px 0 12px;
+  }
+  h4 {
+    color: var(--navy);
+    font-size: 15px;
+    margin: 20px 0 8px;
+  }
+  p { margin-bottom: 12px; }
+  .tier-card {
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+  .tier-card .tier-header {
+    padding: 12px 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tier-header.emergency { background: var(--red); }
+  .tier-header.urgent { background: var(--orange); }
+  .tier-header.routine { background: var(--navy-light); }
+  .tier-header.scheduled { background: var(--green); }
+  .tier-card .tier-body {
+    padding: 16px 20px;
+  }
+  .tier-card .tier-body ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .tier-card .tier-body li {
+    margin-bottom: 4px;
+  }
+  .response-badge {
+    background: rgba(255,255,255,0.25);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  table tr:nth-child(even) { background: var(--light-gray); }
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    font-size: 16px;
+    color: var(--navy);
+  }
+  .flowchart {
+    background: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .flow-step {
+    background: #fff;
+    border: 2px solid var(--navy-light);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    position: relative;
+  }
+  .flow-step.decision {
+    border-color: var(--accent);
+    background: #fffdf5;
+  }
+  .flow-arrow {
+    text-align: center;
+    font-size: 20px;
+    color: var(--navy-light);
+    margin: 4px 0;
+  }
+  .callout {
+    background: #fef9e7;
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout-red {
+    background: #fdf2f2;
+    border-left: 4px solid var(--red);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .form-box {
+    border: 2px solid var(--navy);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .form-field {
+    flex: 1;
+    border-bottom: 1px solid var(--border);
+    padding: 6px 0;
+    font-size: 13px;
+  }
+  .form-field label {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--navy-light);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .section-number {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .toc {
+    background: var(--light-gray);
+    padding: 24px 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  .toc ol {
+    margin-left: 20px;
+  }
+  .toc li {
+    margin-bottom: 6px;
+  }
+  .toc a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  @media print {
+    .watermark-bar { position: running(header); }
+    body { font-size: 12px; }
+    .cover { padding: 40px 30px; }
+    .cover h1 { font-size: 28px; }
+    h2 { page-break-after: avoid; }
+    .tier-card, .flowchart, .form-box, table { page-break-inside: avoid; }
+    .container { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="watermark-bar">ScaleDoors PM Scaling Kit — Maintenance Triage SOP</div>
+
+<div class="cover">
+  <h1>Maintenance Triage SOP</h1>
+  <p class="subtitle">A complete maintenance request handling system — from intake to resolution. Standardize your team's response, protect your owners, and deliver 5-star tenant service.</p>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <h3 style="margin-top:0;">Table of Contents</h3>
+  <ol>
+    <li>Purpose &amp; Scope</li>
+    <li>4-Tier Priority Classification</li>
+    <li>Decision Tree: Triaging a Request</li>
+    <li>Response Time Targets</li>
+    <li>Vendor Dispatch Protocol</li>
+    <li>Owner Notification &amp; Approval Thresholds</li>
+    <li>After-Hours Emergency Procedures</li>
+    <li>Documentation Requirements</li>
+    <li>Quality Control Checklist</li>
+    <li>Sample Maintenance Request Form</li>
+    <li>Escalation Matrix</li>
+  </ol>
+</div>
+
+<h2><span class="section-number">1</span> Purpose &amp; Scope</h2>
+
+<p>This Standard Operating Procedure establishes a consistent, repeatable process for receiving, classifying, dispatching, and resolving every maintenance request across your portfolio. It applies to all maintenance requests — whether submitted by tenants, identified during inspections, or flagged by vendors.</p>
+
+<p><strong>Why this matters:</strong> Maintenance is the #1 driver of tenant satisfaction and retention. Companies that respond to emergency requests within 1 hour and routine requests within 48 hours see 23% higher renewal rates (National Apartment Association, 2023). This SOP ensures you hit those benchmarks every time.</p>
+
+<div class="callout">
+  <strong>Before you begin:</strong> Customize the dollar thresholds, vendor lists, and response targets to match your management agreements. The defaults in this document reflect industry best practices for portfolios of 100–500 doors.
+</div>
+
+<h2><span class="section-number">2</span> 4-Tier Priority Classification</h2>
+
+<p>Every maintenance request must be assigned one of four priority tiers within 15 minutes of receipt during business hours. This classification determines response time, dispatch protocol, and owner notification requirements.</p>
+
+<div class="tier-card">
+  <div class="tier-header emergency">
+    🔴 TIER 1 — EMERGENCY <span class="response-badge">Response: Immediate (≤1 hour)</span>
+  </div>
+  <div class="tier-body">
+    <p><strong>Definition:</strong> Situations that pose an immediate threat to life, health, safety, or property — or that will cause rapidly escalating damage if not addressed immediately.</p>
+    <h4>Examples:</h4>
+    <ul>
+      <li>Fire, smoke, or carbon monoxide detection (call 911 first, then dispatch)</li>
+      <li>Gas leak or gas odor (evacuate, call gas company, then dispatch)</li>
+      <li>Major water leak — flooding from burst pipe, water heater failure, or sewer backup</li>
+      <li>No heat when outdoor temperature is below 40°F (habitability issue)</li>
+      <li>No air conditioning when outdoor temperature exceeds 95°F (habitability in many states)</li>
+      <li>Total electrical failure (entire unit — not a single outlet or breaker)</li>
+      <li>Broken exterior door lock or window that cannot secure the unit</li>
+      <li>Sewage backup into living areas</li>
+      <li>Structural damage creating immediate safety hazard (tree on roof, ceiling collapse)</li>
+      <li>Active break-in damage or vandalism making unit unsecure</li>
+    </ul>
+    <p><strong>Action:</strong> Dispatch immediately. Do not wait for owner approval regardless of cost. Notify owner within 2 hours of dispatch. Document with photos before and after.</p>
+  </div>
+</div>
+
+<div class="tier-card">
+  <div class="tier-header urgent">
+    🟠 TIER 2 — URGENT <span class="response-badge">Response: Same day (≤8 hours)</span>
+  </div>
+  <div class="tier-body">
+    <p><strong>Definition:</strong> Issues that significantly impact habitability or tenant quality of life but do not pose an immediate safety threat. Damage will worsen if not addressed within 24 hours.</p>
+    <h4>Examples:</h4>
+    <ul>
+      <li>A/C failure (below 95°F threshold but still impactful)</li>
+      <li>Refrigerator not cooling (food spoilage risk)</li>
+      <li>Toilet not flushing (if only bathroom in unit — emergency; if second bathroom available — urgent)</li>
+      <li>Hot water heater failure (no hot water)</li>
+      <li>Slow/active leak that is contained but risks water damage</li>
+      <li>Oven/stove not working (if only cooking appliance)</li>
+      <li>Garage door malfunction preventing vehicle access</li>
+      <li>Washer/dryer leak (in-unit only — not owner's responsibility for hookup-only)</li>
+      <li>Pest infestation affecting habitability (roaches, bed bugs, rodents)</li>
+      <li>Exterior drainage issue during active rain causing water intrusion risk</li>
+    </ul>
+    <p><strong>Action:</strong> Schedule vendor within 4 hours. Vendor on-site within 8 business hours. Owner notification required before dispatch if estimated cost exceeds $500.</p>
+  </div>
+</div>
+
+<div class="tier-card">
+  <div class="tier-header routine">
+    🔵 TIER 3 — ROUTINE <span class="response-badge">Response: 2–5 business days</span>
+  </div>
+  <div class="tier-body">
+    <p><strong>Definition:</strong> Non-urgent repairs and maintenance items that affect comfort or convenience but do not impact habitability or safety.</p>
+    <h4>Examples:</h4>
+    <ul>
+      <li>Dripping faucet (not flooding — just dripping)</li>
+      <li>Running toilet (functional but wasting water)</li>
+      <li>Dishwasher not cleaning properly</li>
+      <li>Garbage disposal jammed or not working</li>
+      <li>Ceiling fan wobble or light fixture issues</li>
+      <li>Cabinet door off hinge</li>
+      <li>Weather stripping replacement</li>
+      <li>Caulking needed around tub/shower</li>
+      <li>Screen door or window screen repair</li>
+      <li>Minor drywall damage (nail holes, small cracks)</li>
+      <li>Slow drain (functional but slow)</li>
+      <li>Landscape/irrigation issues (non-emergency)</li>
+      <li>Doorbell not working</li>
+    </ul>
+    <p><strong>Action:</strong> Acknowledge within 24 hours. Schedule vendor within 48 hours. Complete within 5 business days. Owner approval required for any single item exceeding $300.</p>
+  </div>
+</div>
+
+<div class="tier-card">
+  <div class="tier-header scheduled">
+    🟢 TIER 4 — SCHEDULED / PREVENTIVE <span class="response-badge">Response: Scheduled (7–30 days)</span>
+  </div>
+  <div class="tier-body">
+    <p><strong>Definition:</strong> Planned maintenance, cosmetic improvements, and preventive items that can be batched with other work or scheduled during a convenient window.</p>
+    <h4>Examples:</h4>
+    <ul>
+      <li>Interior/exterior painting (cosmetic, not damage-related)</li>
+      <li>HVAC filter changes (quarterly schedule)</li>
+      <li>Gutter cleaning (seasonal)</li>
+      <li>Dryer vent cleaning (annual)</li>
+      <li>Water heater flush (annual)</li>
+      <li>Smoke detector battery replacement (semi-annual)</li>
+      <li>Appliance upgrades approved by owner</li>
+      <li>Landscaping improvements</li>
+      <li>Window cleaning</li>
+      <li>Re-keying between tenants (non-emergency scheduling)</li>
+    </ul>
+    <p><strong>Action:</strong> Add to scheduled maintenance calendar. Batch with other scheduled items at same property when possible to reduce trip charges. Owner approval required for any items not in the approved annual maintenance budget.</p>
+  </div>
+</div>
+
+<h2><span class="section-number">3</span> Decision Tree: Triaging a Request</h2>
+
+<p>Use this decision tree for every incoming maintenance request. It ensures consistent classification regardless of which team member handles intake.</p>
+
+<div class="flowchart">
+  <div class="flow-step"><strong>STEP 1:</strong> Request received (tenant portal, phone, email, text, or inspection report)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step decision"><strong>DECISION:</strong> Is there an immediate threat to life, health, or safety?<br>
+    <em>Fire, gas, flood, no heat in freezing temps, no A/C in extreme heat, unsecured entry point</em></div>
+  <div class="flow-arrow">↓ YES → 🔴 <strong>TIER 1 EMERGENCY</strong> — Dispatch immediately, no owner approval needed</div>
+  <div class="flow-arrow">↓ NO</div>
+  <div class="flow-step decision"><strong>DECISION:</strong> Will the issue cause property damage or significant habitability impact within 24 hours if not addressed?<br>
+    <em>Active leak (contained), no hot water, no refrigeration, pest infestation</em></div>
+  <div class="flow-arrow">↓ YES → 🟠 <strong>TIER 2 URGENT</strong> — Schedule same-day, owner approval if &gt;$500</div>
+  <div class="flow-arrow">↓ NO</div>
+  <div class="flow-step decision"><strong>DECISION:</strong> Does the issue affect daily living comfort or convenience?<br>
+    <em>Dripping faucet, slow drain, broken screen, jammed disposal</em></div>
+  <div class="flow-arrow">↓ YES → 🔵 <strong>TIER 3 ROUTINE</strong> — Schedule within 2–5 business days, owner approval if &gt;$300</div>
+  <div class="flow-arrow">↓ NO</div>
+  <div class="flow-step">🟢 <strong>TIER 4 SCHEDULED</strong> — Add to maintenance calendar, batch when possible</div>
+</div>
+
+<div class="callout">
+  <strong>When in doubt, classify UP.</strong> It's always better to over-respond than under-respond. A Tier 3 classified as Tier 2 costs you a faster dispatch. A Tier 2 misclassified as Tier 3 costs you a tenant, a lawsuit, or a habitability complaint.
+</div>
+
+<h2><span class="section-number">4</span> Response Time Targets</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>🔴 Emergency</th>
+      <th>🟠 Urgent</th>
+      <th>🔵 Routine</th>
+      <th>🟢 Scheduled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Acknowledgment to tenant</strong></td>
+      <td>Immediate (≤15 min)</td>
+      <td>Within 1 hour</td>
+      <td>Within 24 hours</td>
+      <td>Within 48 hours</td>
+    </tr>
+    <tr>
+      <td><strong>Vendor dispatched</strong></td>
+      <td>Immediate</td>
+      <td>Within 4 hours</td>
+      <td>Within 48 hours</td>
+      <td>Within 7 days</td>
+    </tr>
+    <tr>
+      <td><strong>Vendor on-site</strong></td>
+      <td>Within 1 hour</td>
+      <td>Within 8 hours</td>
+      <td>Within 5 business days</td>
+      <td>Scheduled window</td>
+    </tr>
+    <tr>
+      <td><strong>Issue resolved</strong></td>
+      <td>Within 24 hours</td>
+      <td>Within 48 hours</td>
+      <td>Within 7 business days</td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td><strong>Tenant follow-up</strong></td>
+      <td>Same day</td>
+      <td>Next business day</td>
+      <td>Within 2 days of completion</td>
+      <td>Upon completion</td>
+    </tr>
+    <tr>
+      <td><strong>Owner notification</strong></td>
+      <td>Within 2 hours</td>
+      <td>Same day (if &gt;$500)</td>
+      <td>In monthly report</td>
+      <td>In monthly report</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><span class="section-number">5</span> Vendor Dispatch Protocol</h2>
+
+<h3>5.1 Vendor Selection Hierarchy</h3>
+<p>For each trade, maintain a ranked preferred vendor list of at least 3 vendors:</p>
+
+<table>
+  <thead>
+    <tr><th>Priority</th><th>Criteria</th><th>When to Use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Primary Vendor</strong></td><td>Best price/quality balance, strong response times, insured, licensed</td><td>Default for all Tier 2–4 requests</td></tr>
+    <tr><td><strong>Secondary Vendor</strong></td><td>Reliable backup, may be slightly higher cost</td><td>Primary unavailable within SLA window</td></tr>
+    <tr><td><strong>Emergency Vendor</strong></td><td>24/7 availability, may charge premium rates</td><td>Tier 1 emergencies when primary/secondary unavailable</td></tr>
+  </tbody>
+</table>
+
+<h3>5.2 Vendor Dispatch Steps</h3>
+<ol>
+  <li><strong>Create work order</strong> in property management software with: property address, unit number, tenant contact info, issue description, tier classification, access instructions, photos if available</li>
+  <li><strong>Contact primary vendor</strong> via phone (Tier 1–2) or email/portal (Tier 3–4). For phone dispatch, follow up with a written work order within 1 hour.</li>
+  <li><strong>Confirm ETA</strong> — vendor must provide estimated arrival time. If ETA exceeds SLA, escalate to secondary vendor.</li>
+  <li><strong>Notify tenant</strong> of vendor name, scheduled date/time, and what to expect. Include vendor's phone number.</li>
+  <li><strong>Verify completion</strong> — follow up with vendor for completion confirmation, final cost, and before/after photos.</li>
+  <li><strong>Close work order</strong> — update software with completion date, actual cost, vendor notes, and tenant satisfaction confirmation.</li>
+</ol>
+
+<h3>5.3 Required Vendor Documentation</h3>
+<ul class="checklist">
+  <li>Current Certificate of Insurance (COI) — General Liability minimum $1M, updated annually</li>
+  <li>W-9 on file for any vendor paid &gt;$600/year</li>
+  <li>Valid state/local license for licensed trades (plumbing, electrical, HVAC, roofing)</li>
+  <li>Signed vendor agreement with rate schedule</li>
+  <li>Not-to-exceed (NTE) authorization limits documented</li>
+</ul>
+
+<h2><span class="section-number">6</span> Owner Notification &amp; Approval Thresholds</h2>
+
+<p>Owner communication during maintenance events depends on cost, severity, and your management agreement. Use these defaults and adjust per owner preference:</p>
+
+<table>
+  <thead>
+    <tr><th>Scenario</th><th>Threshold</th><th>Action Required</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tier 1 Emergency — any cost</td><td>No limit</td><td>Dispatch immediately. Notify owner within 2 hours with description, vendor, and estimated cost.</td></tr>
+    <tr><td>Tier 2 Urgent repair</td><td>≤ $500</td><td>Dispatch without approval. Include in next owner communication.</td></tr>
+    <tr><td>Tier 2 Urgent repair</td><td>$501 – $1,500</td><td>Notify owner before dispatch. If no response within 2 hours, dispatch and document attempts to reach owner.</td></tr>
+    <tr><td>Tier 2 Urgent repair</td><td>&gt; $1,500</td><td>Owner approval required. Provide two vendor estimates. If truly urgent and owner unreachable after 4 hours, dispatch lowest estimate.</td></tr>
+    <tr><td>Tier 3 Routine repair</td><td>≤ $300</td><td>Dispatch without approval. Include in monthly report.</td></tr>
+    <tr><td>Tier 3 Routine repair</td><td>$301 – $1,000</td><td>Owner approval required before dispatch. Provide estimate and recommended vendor.</td></tr>
+    <tr><td>Tier 3 Routine repair</td><td>&gt; $1,000</td><td>Owner approval required. Provide minimum two competitive estimates.</td></tr>
+    <tr><td>Tier 4 Scheduled/preventive</td><td>Any amount</td><td>Include in annual maintenance budget for pre-approval, or get individual approval if unbudgeted.</td></tr>
+    <tr><td>Capital expenditure</td><td>&gt; $2,500</td><td>Requires three estimates, written owner approval, and documentation of necessity (photos, vendor assessment).</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Pro tip:</strong> During onboarding, get each owner's preferred NTE (not-to-exceed) amount in writing. Some owners set this at $250, others at $1,000. Document it in their owner profile and reference it here instead of the defaults above.
+</div>
+
+<h2><span class="section-number">7</span> After-Hours Emergency Procedures</h2>
+
+<h3>7.1 Defining "After Hours"</h3>
+<p>After-hours = weekdays after 5:00 PM through 8:00 AM, all day Saturday and Sunday, and all federal holidays. Your lease and management agreement should define these hours explicitly.</p>
+
+<h3>7.2 After-Hours Call Handling Process</h3>
+<ol>
+  <li><strong>Answering service or on-call manager</strong> receives the call. All after-hours calls should be answered by a live person or returned within 15 minutes.</li>
+  <li><strong>Determine if it's a true Tier 1 emergency</strong> using the emergency screening questions:
+    <ul>
+      <li>"Is anyone in immediate danger?" → 911 first, then us</li>
+      <li>"Is there active flooding or water pouring?" → Instruct tenant to shut off water at the valve, dispatch plumber</li>
+      <li>"Do you smell gas?" → Evacuate, call gas company, do not use light switches</li>
+      <li>"Is your home unsecured (broken door/window)?" → Dispatch locksmith/board-up</li>
+      <li>"Do you have no heat and it's below 40°F outside?" → Dispatch HVAC</li>
+    </ul>
+  </li>
+  <li><strong>If TRUE emergency:</strong> Dispatch emergency vendor immediately. Follow Tier 1 protocol. Log all actions with timestamps. Notify owner by 9:00 AM next business day at latest.</li>
+  <li><strong>If NOT a true emergency:</strong> Reassure tenant, log the request, and schedule for next business day. Provide the tenant with a case number and expected follow-up time. Example script: <em>"I understand this is frustrating. I've logged your request as [case #] and our maintenance team will contact you by [time] tomorrow to schedule a repair. If the situation changes or worsens, please call us back immediately."</em></li>
+</ol>
+
+<h3>7.3 After-Hours Vendor Rate Policy</h3>
+<p>After-hours and weekend rates are typically 1.5x–2x normal rates. This premium is acceptable for Tier 1 emergencies only. For Tier 2 items that can safely wait until morning, schedule for first thing next business day to avoid premium charges. Document the business rationale for any after-hours dispatch to justify the cost to the owner.</p>
+
+<h2><span class="section-number">8</span> Documentation Requirements</h2>
+
+<p>Every maintenance event must be documented completely. Incomplete records create liability, make security deposit disputes harder to win, and prevent data-driven budgeting.</p>
+
+<h3>8.1 Required for Every Work Order</h3>
+<ul class="checklist">
+  <li>Date and time request received</li>
+  <li>How request was submitted (portal, phone, email, inspection)</li>
+  <li>Tenant name and unit number</li>
+  <li>Verbatim description of the issue (tenant's words)</li>
+  <li>Priority tier assigned and who assigned it</li>
+  <li>Photos/video from tenant (if provided)</li>
+  <li>Vendor assigned, date/time dispatched</li>
+  <li>Vendor ETA communicated to tenant</li>
+  <li>Owner notification (if required) — date, method, response</li>
+  <li>Vendor arrival date/time</li>
+  <li>Work performed (vendor's description)</li>
+  <li>Parts/materials used</li>
+  <li>Before and after photos from vendor</li>
+  <li>Final cost (parts + labor)</li>
+  <li>Tenant satisfaction confirmation</li>
+  <li>Work order close date</li>
+</ul>
+
+<h3>8.2 Retention Policy</h3>
+<p>Maintain all maintenance records for the duration of ownership plus 3 years. For security deposit-related items, retain for 5 years minimum. Digital records are preferred — scan any paper documents and attach to the property file in your management software.</p>
+
+<h2><span class="section-number">9</span> Quality Control Checklist</h2>
+
+<p>Run this checklist weekly (every Monday) to ensure your maintenance operation is meeting standards:</p>
+
+<ul class="checklist">
+  <li><strong>Open work orders review:</strong> Are any work orders past their SLA? If yes, escalate immediately.</li>
+  <li><strong>Response time audit:</strong> Pull last week's requests. Calculate average acknowledgment time, dispatch time, and resolution time per tier. Are you meeting targets?</li>
+  <li><strong>Tenant satisfaction:</strong> Review any tenant complaints related to maintenance. Identify patterns.</li>
+  <li><strong>Vendor performance:</strong> Did any vendor miss their ETA or deliver substandard work? Document and discuss.</li>
+  <li><strong>Cost review:</strong> Flag any invoices that seem inflated. Compare against historical costs for similar work.</li>
+  <li><strong>Documentation completeness:</strong> Randomly audit 3 closed work orders. Are all required fields filled? Are photos attached?</li>
+  <li><strong>Owner communication:</strong> Were all required owner notifications sent on time?</li>
+  <li><strong>Emergency protocol:</strong> Were after-hours calls handled correctly? Any non-emergencies dispatched at premium rates?</li>
+  <li><strong>Preventive maintenance:</strong> Are scheduled items on track? Any past due?</li>
+  <li><strong>Vendor compliance:</strong> Any vendor COIs expiring this month? Follow up proactively.</li>
+</ul>
+
+<h2><span class="section-number">10</span> Sample Maintenance Request Form</h2>
+
+<div class="form-box">
+  <h3 style="text-align:center; margin-bottom: 20px;">MAINTENANCE REQUEST FORM</h3>
+  <div class="form-row">
+    <div class="form-field"><label>Date Submitted</label> _______________</div>
+    <div class="form-field"><label>Request #</label> MR-___________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Tenant Name</label> _______________</div>
+    <div class="form-field"><label>Phone</label> _______________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Property Address</label> _______________</div>
+    <div class="form-field"><label>Unit #</label> ______</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Submitted Via</label> ☐ Portal &nbsp; ☐ Phone &nbsp; ☐ Email &nbsp; ☐ Text &nbsp; ☐ In-Person</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Issue Description (tenant's words)</label><br><br><br></div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Location in Unit</label> ☐ Kitchen &nbsp; ☐ Bathroom &nbsp; ☐ Bedroom &nbsp; ☐ Living Area &nbsp; ☐ Exterior &nbsp; ☐ Garage &nbsp; ☐ Other: ______</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Priority Tier</label> ☐ 🔴 Emergency &nbsp; ☐ 🟠 Urgent &nbsp; ☐ 🔵 Routine &nbsp; ☐ 🟢 Scheduled</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Classified By</label> _______________</div>
+    <div class="form-field"><label>Date/Time Classified</label> _______________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Permission to Enter?</label> ☐ Yes &nbsp; ☐ No — coordinate with tenant</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Pet on Premises?</label> ☐ Yes (type: _______) &nbsp; ☐ No</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Vendor Assigned</label> _______________</div>
+    <div class="form-field"><label>Dispatch Date/Time</label> _______________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Estimated Cost</label> $___________</div>
+    <div class="form-field"><label>Owner Approval</label> ☐ Not Required &nbsp; ☐ Approved &nbsp; ☐ Pending</div>
+  </div>
+  <hr style="margin: 16px 0;">
+  <h4>COMPLETION</h4>
+  <div class="form-row">
+    <div class="form-field"><label>Work Completed Date</label> _______________</div>
+    <div class="form-field"><label>Final Cost</label> $___________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Work Performed</label><br><br></div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Tenant Notified of Completion?</label> ☐ Yes &nbsp; ☐ No</div>
+    <div class="form-field"><label>Tenant Satisfied?</label> ☐ Yes &nbsp; ☐ No &nbsp; ☐ Follow-up needed</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Before Photos Attached?</label> ☐ Yes</div>
+    <div class="form-field"><label>After Photos Attached?</label> ☐ Yes</div>
+  </div>
+</div>
+
+<h2><span class="section-number">11</span> Escalation Matrix</h2>
+
+<p>When normal processes aren't resolving an issue, use this escalation path:</p>
+
+<table>
+  <thead>
+    <tr><th>Trigger</th><th>Escalate To</th><th>Timeframe</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vendor no-show or missed ETA</td>
+      <td>Maintenance Coordinator</td>
+      <td>Immediately</td>
+      <td>Contact vendor for revised ETA. If &gt;2 hours past due, dispatch secondary vendor. Document for vendor scorecard.</td>
+    </tr>
+    <tr>
+      <td>SLA at risk (50%+ of response window elapsed)</td>
+      <td>Maintenance Coordinator</td>
+      <td>At 50% of SLA window</td>
+      <td>Proactive outreach to vendor. Begin contacting backup. Update tenant with status.</td>
+    </tr>
+    <tr>
+      <td>SLA breached</td>
+      <td>Property Manager</td>
+      <td>Immediately upon breach</td>
+      <td>Personal call to tenant. Emergency dispatch if needed. Root cause analysis within 24 hours.</td>
+    </tr>
+    <tr>
+      <td>Owner unreachable for required approval</td>
+      <td>Property Manager</td>
+      <td>After 2 failed contact attempts (4 hours for Urgent)</td>
+      <td>PM makes dispatch decision based on management agreement authority. Document all contact attempts.</td>
+    </tr>
+    <tr>
+      <td>Tenant threatens legal action or files habitability complaint</td>
+      <td>Operations Manager / Principal Broker</td>
+      <td>Immediately</td>
+      <td>Stop all verbal communication. Document everything. Forward to legal counsel if complaint is filed.</td>
+    </tr>
+    <tr>
+      <td>Repair exceeds $5,000</td>
+      <td>Property Manager + Owner</td>
+      <td>Before work begins</td>
+      <td>Three competitive bids required. Written owner authorization. Consider insurance claim if applicable.</td>
+    </tr>
+    <tr>
+      <td>Recurring issue (3+ work orders for same problem in 12 months)</td>
+      <td>Property Manager</td>
+      <td>Upon 3rd occurrence</td>
+      <td>Root cause investigation. May require capital improvement recommendation to owner rather than continued repairs.</td>
+    </tr>
+    <tr>
+      <td>Suspected tenant-caused damage</td>
+      <td>Property Manager</td>
+      <td>Before repair</td>
+      <td>Document with photos. Repair for habitability. Bill tenant per lease terms. Consult legal if tenant disputes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout-red">
+  <strong>Legal Note:</strong> In most jurisdictions, landlords have a legal obligation to maintain habitable conditions regardless of fault. Even if damage was tenant-caused, make the repair first, then pursue cost recovery. Withholding repairs as leverage is a habitability violation in most states.
+</div>
+
+<h3>Key Performance Indicators (KPIs)</h3>
+<p>Track these monthly and include in your operations dashboard:</p>
+<table>
+  <thead>
+    <tr><th>KPI</th><th>Target</th><th>How to Calculate</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Emergency response time</td><td>≤ 1 hour</td><td>Avg time from request to vendor on-site for Tier 1</td></tr>
+    <tr><td>Overall SLA compliance</td><td>≥ 95%</td><td>% of work orders resolved within tier SLA</td></tr>
+    <tr><td>Average days to close</td><td>≤ 3 days</td><td>Mean time from request to work order closed (all tiers)</td></tr>
+    <tr><td>First-call fix rate</td><td>≥ 70%</td><td>% of issues resolved on first vendor visit</td></tr>
+    <tr><td>Tenant satisfaction</td><td>≥ 4.5/5</td><td>Post-completion survey average</td></tr>
+    <tr><td>Maintenance cost per unit/month</td><td>≤ $50</td><td>Total maintenance spend ÷ total units ÷ months</td></tr>
+    <tr><td>Emergency call rate</td><td>≤ 5% of requests</td><td>Tier 1 requests ÷ total requests</td></tr>
+    <tr><td>Work order documentation score</td><td>≥ 90%</td><td>Random audit: % of required fields completed</td></tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — Maintenance Triage SOP</p>
+  <p>© 2026 LevelPM. All rights reserved. This document is licensed for use by the purchaser only. Do not distribute.</p>
+</div>
+
+</div>
+</body>
+</html>

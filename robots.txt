@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /products/
 
 Sitemap: https://scaledoors.com/sitemap.xml

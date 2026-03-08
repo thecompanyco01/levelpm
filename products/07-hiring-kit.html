@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hiring & Job Description Kit — ScaleDoors PM Scaling Kit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  
+  :root {
+    --navy: #0f172a;
+    --navy-light: #1e293b;
+    --gold: #f59e0b;
+    --gold-light: #fbbf24;
+    --gold-bg: #fffbeb;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-500: #64748b;
+    --gray-700: #334155;
+    --gray-900: #0f172a;
+    --green: #059669;
+    --green-bg: #ecfdf5;
+    --red: #dc2626;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--gray-900);
+    line-height: 1.7;
+    background: var(--gray-50);
+  }
+
+  .watermark-bar {
+    background: var(--navy);
+    color: var(--gold);
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: white;
+    padding: 60px 50px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero .badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.2);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 48px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 32px 0 12px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-light);
+    margin: 20px 0 8px;
+  }
+
+  p { margin-bottom: 14px; color: var(--gray-700); }
+
+  .jd-card {
+    background: white;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 24px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .jd-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 4px 12px rgba(245,158,11,0.12);
+  }
+
+  .jd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gray-100);
+  }
+
+  .jd-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0;
+  }
+
+  .jd-type {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .jd-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--gray-50);
+    border-radius: 8px;
+  }
+
+  .jd-meta-item {
+    font-size: 13px;
+  }
+
+  .jd-meta-item .label {
+    color: var(--gray-500);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+
+  .jd-meta-item .value {
+    color: var(--navy);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 8px;
+  }
+
+  ul, ol {
+    margin: 8px 0 16px 24px;
+    color: var(--gray-700);
+  }
+
+  li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+  }
+
+  tr:nth-child(even) { background: var(--gray-50); }
+
+  .tip-box {
+    background: var(--gold-bg);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+
+  .tip-box strong { color: var(--navy); }
+
+  .interview-q {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 12px 0;
+  }
+
+  .interview-q .question {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .interview-q .listen-for {
+    font-size: 13px;
+    color: var(--gray-500);
+    background: var(--gray-50);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
+
+  .interview-q .listen-for strong {
+    color: var(--green);
+  }
+
+  .rubric-table td:nth-child(n+2) {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .template-box {
+    background: var(--blue-bg);
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .template-box h4 {
+    color: var(--blue);
+    margin-top: 0;
+  }
+
+  .checklist {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .checklist li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 4px;
+    font-size: 16px;
+  }
+
+  .salary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .salary-card {
+    background: white;
+    border: 2px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .salary-card .role {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .salary-card .range {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 8px 0 4px;
+  }
+
+  .salary-card .note {
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: var(--gray-500);
+    font-size: 13px;
+    border-top: 2px solid var(--gray-200);
+    margin-top: 60px;
+  }
+
+  @media print {
+    .watermark-bar { position: static; }
+    .container { padding: 0; }
+    .hero { break-after: avoid; }
+    .jd-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    body { background: white; }
+    h2 { break-after: avoid; }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 50px 20px 40px; }
+    .hero { padding: 40px 24px; }
+    .hero h1 { font-size: 28px; }
+    .jd-meta { grid-template-columns: 1fr; }
+    .salary-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="watermark-bar">ScaleDoors PM Scaling Kit</div>
+
+<div class="container">
+
+<div class="hero">
+  <div class="badge">Complete Hiring System</div>
+  <h1>Hiring &amp; Job Description Kit</h1>
+  <p>Ready-to-post job descriptions, a structured interview process, scoring rubrics, and compensation benchmarks — everything you need to build a high-performing PM team.</p>
+</div>
+
+<!-- ==================== JOB DESCRIPTION 1: Property Manager ==================== -->
+<h2>1. Job Descriptions</h2>
+
+<div class="jd-card featured">
+  <div class="jd-header">
+    <h3 class="jd-title">Property Manager</h3>
+    <span class="jd-type">Full-Time</span>
+  </div>
+  <div class="jd-meta">
+    <div class="jd-meta-item"><div class="label">Reports To</div><div class="value">Owner / Director of Operations</div></div>
+    <div class="jd-meta-item"><div class="label">Salary Range</div><div class="value">$45,000–$65,000 + bonuses</div></div>
+    <div class="jd-meta-item"><div class="label">Portfolio</div><div class="value">75–150 doors</div></div>
+  </div>
+
+  <div class="section-label">Position Summary</div>
+  <p>The Property Manager is responsible for the day-to-day management of a portfolio of residential rental properties. This role serves as the primary point of contact for property owners and tenants, overseeing leasing, maintenance coordination, rent collection, financial reporting, and lease compliance. The ideal candidate is highly organized, communicates proactively, and thrives in a fast-paced environment where no two days are the same.</p>
+
+  <div class="section-label">Essential Responsibilities</div>
+  <ul>
+    <li><strong>Owner Relations:</strong> Serve as the primary contact for property owners. Provide monthly financial reports, occupancy updates, and maintenance summaries. Respond to owner inquiries within 4 business hours.</li>
+    <li><strong>Tenant Management:</strong> Handle tenant inquiries, complaints, and requests. Enforce lease terms consistently and fairly. Manage move-in and move-out processes including inspections and security deposit dispositions.</li>
+    <li><strong>Leasing & Marketing:</strong> Prepare properties for market, create listings with professional photos, coordinate showings, screen applicants (credit, criminal, income, rental history), and execute lease agreements.</li>
+    <li><strong>Rent Collection:</strong> Monitor rent payments, issue late notices per company timeline, initiate collections and eviction proceedings when necessary, and maintain accurate financial records in property management software.</li>
+    <li><strong>Maintenance Coordination:</strong> Receive and triage maintenance requests, dispatch vendors or in-house technicians, obtain owner approval for repairs exceeding the spending threshold, and follow up to ensure completion and tenant satisfaction.</li>
+    <li><strong>Property Inspections:</strong> Conduct move-in, move-out, and periodic inspections. Document condition with photos and written reports. Identify deferred maintenance and recommend capital improvements.</li>
+    <li><strong>Financial Management:</strong> Process owner distributions, manage security deposits per state law, review monthly income/expense statements for accuracy, and ensure timely payment of property-related invoices.</li>
+    <li><strong>Compliance:</strong> Ensure all activities comply with Fair Housing laws, local landlord-tenant statutes, and company policies. Stay current on regulatory changes affecting property management.</li>
+    <li><strong>Vendor Management:</strong> Maintain a network of reliable, licensed, and insured vendors. Negotiate pricing, monitor performance, and ensure quality work.</li>
+  </ul>
+
+  <div class="section-label">Required Qualifications</div>
+  <ul>
+    <li>2+ years of residential property management experience (SFR and/or multi-family)</li>
+    <li>Working knowledge of landlord-tenant law in [state]</li>
+    <li>Experience with property management software (AppFolio, Buildium, Rent Manager, or similar)</li>
+    <li>Valid driver's license and reliable transportation</li>
+    <li>Strong written and verbal communication skills</li>
+    <li>Proficiency in Microsoft Office / Google Workspace</li>
+    <li>Real estate license (required in [state]) or ability to obtain within 90 days</li>
+  </ul>
+
+  <div class="section-label">Preferred Qualifications</div>
+  <ul>
+    <li>NARPM® designation (RMP®, MPM®, or CRMC®)</li>
+    <li>Experience managing 100+ doors</li>
+    <li>Bilingual (English/Spanish) preferred in applicable markets</li>
+    <li>Experience with maintenance triage and basic property systems (HVAC, plumbing, electrical)</li>
+    <li>Proven track record of maintaining 95%+ occupancy rates</li>
+  </ul>
+
+  <div class="section-label">Compensation & Benefits</div>
+  <ul>
+    <li>Base salary: $45,000–$65,000 depending on experience and market</li>
+    <li>Performance bonuses: Leasing bonuses ($100–$250 per lease), occupancy bonuses, and owner retention bonuses</li>
+    <li>Mileage reimbursement at IRS standard rate</li>
+    <li>Cell phone stipend: $50–$75/month</li>
+    <li>PTO: 10–15 days per year plus company holidays</li>
+    <li>Health insurance (if offered): medical, dental, vision</li>
+    <li>Professional development: NARPM membership and designation support</li>
+  </ul>
+</div>
+
+<!-- ==================== JOB DESCRIPTION 2: Leasing Agent ==================== -->
+<div class="jd-card">
+  <div class="jd-header">
+    <h3 class="jd-title">Leasing Agent</h3>
+    <span class="jd-type">Full-Time or Part-Time</span>
+  </div>
+  <div class="jd-meta">
+    <div class="jd-meta-item"><div class="label">Reports To</div><div class="value">Property Manager / Operations Director</div></div>
+    <div class="jd-meta-item"><div class="label">Salary Range</div><div class="value">$32,000–$45,000 + commissions</div></div>
+    <div class="jd-meta-item"><div class="label">Focus</div><div class="value">Vacancy reduction & tenant placement</div></div>
+  </div>
+
+  <div class="section-label">Position Summary</div>
+  <p>The Leasing Agent is responsible for filling vacancies quickly with qualified tenants. This role focuses on property marketing, conducting showings, processing applications, and executing lease agreements. The ideal candidate is outgoing, detail-oriented, and motivated by a commission structure tied to successful placements.</p>
+
+  <div class="section-label">Essential Responsibilities</div>
+  <ul>
+    <li>Market vacant properties on MLS, Zillow, Apartments.com, Facebook Marketplace, and other syndication platforms within 48 hours of vacancy notification</li>
+    <li>Take professional-quality listing photos and write compelling property descriptions</li>
+    <li>Respond to all leasing inquiries within 1 hour during business hours</li>
+    <li>Schedule and conduct property showings (including evenings and weekends as needed)</li>
+    <li>Pre-screen prospective tenants using company qualification criteria before formal application</li>
+    <li>Process rental applications: verify income (3x rent minimum), check credit (minimum score per policy), criminal background, rental history, and employment</li>
+    <li>Present qualified applicants to property owners with a recommendation</li>
+    <li>Prepare lease agreements and ensure all documents are properly executed</li>
+    <li>Coordinate move-in: collect first month's rent, security deposit, and all move-in funds; schedule move-in inspection; provide keys and welcome packet</li>
+    <li>Maintain accurate records of all leasing activity in property management software</li>
+    <li>Track and report on key metrics: days on market, showing-to-application ratio, application-to-lease ratio</li>
+  </ul>
+
+  <div class="section-label">Required Qualifications</div>
+  <ul>
+    <li>1+ year of leasing, real estate, or sales experience</li>
+    <li>Real estate license (if required by state) or willingness to obtain within 60 days</li>
+    <li>Excellent interpersonal and communication skills</li>
+    <li>Valid driver's license and reliable transportation</li>
+    <li>Availability for evening and weekend showings</li>
+    <li>Comfort with technology: property management software, listing platforms, smartphone photography</li>
+    <li>Knowledge of Fair Housing laws and ethical screening practices</li>
+  </ul>
+
+  <div class="section-label">Compensation</div>
+  <ul>
+    <li>Base salary: $32,000–$45,000 (or $15–$20/hour for part-time)</li>
+    <li>Leasing commission: $150–$350 per executed lease (in addition to base)</li>
+    <li>Renewal commission: $75–$100 per renewal processed</li>
+    <li>Mileage and cell phone reimbursement</li>
+  </ul>
+</div>
+
+<!-- ==================== JOB DESCRIPTION 3: Maintenance Coordinator ==================== -->
+<div class="jd-card">
+  <div class="jd-header">
+    <h3 class="jd-title">Maintenance Coordinator</h3>
+    <span class="jd-type">Full-Time</span>
+  </div>
+  <div class="jd-meta">
+    <div class="jd-meta-item"><div class="label">Reports To</div><div class="value">Property Manager / Operations Director</div></div>
+    <div class="jd-meta-item"><div class="label">Salary Range</div><div class="value">$35,000–$50,000</div></div>
+    <div class="jd-meta-item"><div class="label">Focus</div><div class="value">Work order management & vendor coordination</div></div>
+  </div>
+
+  <div class="section-label">Position Summary</div>
+  <p>The Maintenance Coordinator manages all maintenance requests from receipt to completion. This role serves as the central hub between tenants, vendors, and property owners — ensuring repairs are completed quickly, cost-effectively, and to quality standards. The ideal candidate is organized, calm under pressure, and has a working understanding of residential property systems.</p>
+
+  <div class="section-label">Essential Responsibilities</div>
+  <ul>
+    <li>Receive and triage all maintenance requests within 2 hours of submission</li>
+    <li>Classify requests by priority: Emergency (immediate), Urgent (24 hours), Routine (3–5 business days)</li>
+    <li>Dispatch appropriate vendors or in-house technicians based on trade, availability, and property location</li>
+    <li>Obtain owner approval for repairs exceeding the pre-authorized spending limit ($300–$500 typical)</li>
+    <li>Schedule access with tenants and coordinate vendor arrival times</li>
+    <li>Follow up on all open work orders every 48 hours until closed</li>
+    <li>Review vendor invoices for accuracy and reasonableness before processing payment</li>
+    <li>Maintain the preferred vendor list with current insurance, licensing, and pricing</li>
+    <li>Coordinate unit turnovers: create make-ready punch lists, schedule vendors, and track completion</li>
+    <li>Manage seasonal maintenance programs (HVAC filter changes, gutter cleaning, winterization)</li>
+    <li>Track maintenance metrics: average completion time, cost per work order, vendor performance scores</li>
+    <li>Handle after-hours emergency calls on rotation (if applicable)</li>
+  </ul>
+
+  <div class="section-label">Required Qualifications</div>
+  <ul>
+    <li>2+ years in maintenance coordination, facilities management, or similar role</li>
+    <li>Basic knowledge of residential systems: HVAC, plumbing, electrical, appliances, roofing</li>
+    <li>Experience with work order management systems</li>
+    <li>Strong organizational and multitasking abilities</li>
+    <li>Excellent phone communication and de-escalation skills</li>
+    <li>Ability to evaluate vendor quotes and negotiate pricing</li>
+    <li>Proficiency with property management software</li>
+  </ul>
+
+  <div class="section-label">Compensation</div>
+  <ul>
+    <li>Base salary: $35,000–$50,000</li>
+    <li>After-hours on-call stipend: $150–$250/week when on rotation</li>
+    <li>Cell phone and mileage reimbursement</li>
+  </ul>
+</div>
+
+<!-- ==================== JOB DESCRIPTION 4: Administrative Assistant ==================== -->
+<div class="jd-card">
+  <div class="jd-header">
+    <h3 class="jd-title">Administrative Assistant / Operations Support</h3>
+    <span class="jd-type">Full-Time or Part-Time</span>
+  </div>
+  <div class="jd-meta">
+    <div class="jd-meta-item"><div class="label">Reports To</div><div class="value">Office Manager / Operations Director</div></div>
+    <div class="jd-meta-item"><div class="label">Salary Range</div><div class="value">$30,000–$42,000</div></div>
+    <div class="jd-meta-item"><div class="label">Focus</div><div class="value">Administrative support & data accuracy</div></div>
+  </div>
+
+  <div class="section-label">Position Summary</div>
+  <p>The Administrative Assistant provides critical operational support to the property management team. This role handles data entry, document preparation, phone reception, owner/tenant correspondence, and financial processing. The ideal candidate is meticulous, reliable, and comfortable managing high volumes of information across multiple systems.</p>
+
+  <div class="section-label">Essential Responsibilities</div>
+  <ul>
+    <li>Answer incoming calls and emails; route to appropriate team members; take messages accurately</li>
+    <li>Process new owner onboarding: set up accounts in PM software, input property data, upload documents (PMA, insurance, deed), and create owner profiles</li>
+    <li>Prepare and send monthly owner statements and distribution packets</li>
+    <li>Process accounts payable: enter vendor invoices, match to work orders, submit for approval</li>
+    <li>Manage security deposit accounting: track deposits, process dispositions per state timelines, send itemized statements</li>
+    <li>Maintain accurate records in property management software (lease dates, rent amounts, tenant contacts, owner info)</li>
+    <li>Prepare lease agreements, renewals, and addenda from templates</li>
+    <li>File and organize digital and physical documents per company filing system</li>
+    <li>Assist with compliance tracking: insurance certificate expiration, lease expiration reports, inspection schedules</li>
+    <li>Order office supplies, coordinate equipment maintenance, and support general office operations</li>
+  </ul>
+
+  <div class="section-label">Required Qualifications</div>
+  <ul>
+    <li>1+ year of administrative or office support experience</li>
+    <li>Proficiency in Microsoft Office / Google Workspace (especially Excel/Sheets)</li>
+    <li>Data entry accuracy and attention to detail</li>
+    <li>Professional phone manner and written communication skills</li>
+    <li>Ability to handle sensitive financial and personal information with confidentiality</li>
+    <li>Self-motivated with ability to prioritize and manage multiple tasks</li>
+  </ul>
+
+  <div class="section-label">Compensation</div>
+  <ul>
+    <li>Base salary: $30,000–$42,000 (or $15–$20/hour for part-time)</li>
+    <li>Standard benefits package if full-time</li>
+  </ul>
+</div>
+
+<!-- ==================== INTERVIEW QUESTIONS ==================== -->
+<h2>2. Interview Question Bank</h2>
+<p>Use these questions across all PM roles. Each question includes guidance on what strong and weak answers look like.</p>
+
+<h3>Property Management Knowledge (6 Questions)</h3>
+
+<div class="interview-q">
+  <div class="question">1. Walk me through how you would handle a tenant who is 10 days late on rent and not responding to your calls or emails.</div>
+  <div class="listen-for"><strong>Listen for:</strong> Knowledge of escalation steps (late notice → certified mail → three-day notice → attorney referral). Empathy balanced with firmness. Understanding of state-specific timelines. Mention of documentation at every step. Red flag: "I'd just start eviction" (too aggressive) or "I'd keep calling and hope they pay" (too passive).</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">2. A property owner wants to reject an applicant because "they just don't seem like a good fit." How do you respond?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Immediate recognition of Fair Housing risk. Ability to redirect the owner to objective, documented criteria (income, credit score, rental history). Willingness to push back professionally. Mention of consistent screening standards applied equally to all applicants. Red flag: Agreement with the owner or failure to mention Fair Housing.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">3. How do you determine pricing for a vacant rental property?</div>
+  <div class="listen-for"><strong>Listen for:</strong> CMA process — comparable analysis using similar size, location, condition, and amenities. Use of tools like Rentometer, Zillow Rent Zestimate, or MLS data. Consideration of seasonal demand. Discussion of pricing strategy (price to lease quickly vs. maximize rent). Understanding that overpricing costs more in vacancy loss than a slightly lower rent.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">4. A tenant calls at 10 PM on a Saturday reporting water gushing from under the kitchen sink. What do you do?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Immediate instruction to tenant (turn off water at the shut-off valve under the sink or at the main). Dispatch of emergency plumber from vendor list. Notification to owner if over spending limit. Follow-up within 24 hours. Documentation of everything. Red flag: "Tell them to call back Monday" or not knowing about shut-off valves.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">5. How do you handle a security deposit dispute where the tenant disagrees with your deductions?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Reference to state-specific security deposit law (return timeline, itemization requirements). Use of move-in and move-out inspection reports with date-stamped photos. Distinction between normal wear and tear vs. tenant damage. Professional, documented response. Willingness to negotiate reasonable disputes to avoid small claims court.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">6. What property management software have you used, and what did you like or dislike about it?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Specific software names (AppFolio, Buildium, Rent Manager, Propertyware). Ability to articulate features they used regularly (work orders, owner portals, accounting, leasing). Adaptability to learn new systems. Red flag: "I mostly used spreadsheets" at 100+ doors, or inability to name any PM software.</div>
+</div>
+
+<h3>Behavioral & Situational Questions (8 Questions)</h3>
+
+<div class="interview-q">
+  <div class="question">7. Tell me about a time you had to deliver bad news to a property owner. How did you handle it?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Proactive communication (didn't wait to be asked). Presented the problem AND a recommended solution. Remained calm and professional. Took ownership rather than blaming others. Specific example with a concrete outcome.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">8. Describe a situation where you had to juggle multiple urgent requests at the same time. How did you prioritize?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Clear prioritization framework (safety first, then legal deadlines, then urgency, then routine). Ability to delegate or ask for help when needed. Use of systems (task lists, PM software) rather than trying to keep everything in their head. Specific example demonstrating composure under pressure.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">9. Tell me about a time you made a mistake at work. What happened and what did you learn?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Honesty and self-awareness. Took responsibility (didn't blame others). Described what they learned and how they changed their process to prevent it from happening again. Red flag: "I can't think of one" (lack of self-awareness) or blaming external factors entirely.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">10. An owner is calling you every day asking why their property hasn't rented yet. It's been 3 weeks on the market. How do you handle this?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Empathy for the owner's frustration (vacancy costs money). Data-driven response (showing numbers, portal views, showing count). Willingness to re-evaluate pricing or marketing strategy. Proactive communication plan (weekly updates). Setting realistic expectations based on market conditions.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">11. How would you handle a situation where a vendor you dispatched did poor-quality work and the tenant is upset?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Taking ownership with the tenant (even though the vendor did the work). Having the vendor return to fix it at no additional cost. Documenting the quality issue in vendor scorecard. Considering removing the vendor from the preferred list if it's a pattern. Following up with the tenant to ensure satisfaction.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">12. What would you do if you discovered a tenant was running an unauthorized business from the rental property?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Review of lease terms regarding commercial use. Checking local zoning laws. Notification to tenant of the violation with documentation. Giving tenant opportunity to cure. Consideration of the type of business (quiet home office vs. customer-facing). Involvement of owner in decision. Escalation path if tenant doesn't comply.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">13. You arrive for a routine inspection and notice signs of unauthorized occupants. What do you do?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Document observations (extra vehicles, additional belongings, extra beds). Compare occupancy against lease terms. Send formal notice to tenant referencing the lease clause on unauthorized occupants. Offer the tenant the option to add the occupant to the lease (with screening) or have them vacate. Understanding of the difference between guests and occupants.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">14. Where do you see yourself in 2–3 years in property management?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Ambition within the industry (portfolio growth, designation goals, leadership). Alignment with your company's growth trajectory. Desire to grow skills and take on more responsibility. Red flag: "I want to start my own PM company" (they may take your clients) or complete lack of career vision.</div>
+</div>
+
+<h3>Culture & Values Questions (6 Questions)</h3>
+
+<div class="interview-q">
+  <div class="question">15. What does great customer service look like in property management?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Recognition that PM has TWO customers: owners and tenants. Specific examples like proactive communication, fast response times, following through on promises. Understanding that service quality directly impacts retention (both owner and tenant). Not just "being nice" — structured, consistent service delivery.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">16. How do you stay organized when managing 100+ doors with different owners, tenants, and vendors?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Specific systems and tools (PM software, calendars, task lists, CRM). Daily routines and rituals. Checklists for recurring tasks. Proactive calendar management (lease expirations, inspection schedules). Red flag: "I just try to remember everything" or "I manage by email."</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">17. Tell me about a time you went above and beyond for a client or tenant.</div>
+  <div class="listen-for"><strong>Listen for:</strong> Genuine care and initiative, not just doing what was required. An example that shows judgment — knowing when extra effort creates value. Impact on the relationship or outcome. Balanced approach (didn't sacrifice other responsibilities to overserve one person).</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">18. How do you handle a situation where you disagree with your manager's decision?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Professional communication of their perspective with supporting rationale. Willingness to voice concerns respectfully. Ultimate respect for the decision once made. Ability to execute even when they disagree. Red flag: "I just do what I'm told" (no initiative) or "I'd go over their head" (undermining).</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">19. What's the most challenging aspect of property management for you, and how do you manage it?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Self-awareness about genuine challenges (difficult conversations, work-life balance, emotional tenants). Specific coping strategies and skills they've developed. Growth mindset — they see challenges as opportunities to improve, not just complaints. Red flag: "I don't really find anything challenging" (unrealistic).</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">20. Why did you leave (or why are you looking to leave) your current/last position?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Professional, non-disparaging response about their previous employer. Growth-oriented reasons (seeking more responsibility, larger portfolio, better systems). Alignment with what your company offers. Red flags: badmouthing previous employer, vague reasons, or frequent job changes with no good explanation.</div>
+</div>
+
+<h3>Bonus Questions (4 Additional)</h3>
+
+<div class="interview-q">
+  <div class="question">21. What's your approach to tenant retention? How do you keep good tenants from leaving?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Proactive renewal outreach (60–90 days before expiration). Competitive market rent analysis. Responsiveness to maintenance as a retention tool. Relationship building. Understanding that turnover cost ($2,000–$5,000+) far exceeds the cost of keeping a good tenant with modest concessions.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">22. How would you handle an owner who wants to set rent significantly above market rate?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Data-driven approach — presenting comps and market analysis. Calculating the vacancy cost of overpricing. Offering to try the higher price for a defined period (2–3 weeks) before reducing. Respecting the owner's right to make the final decision while giving professional advice.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">23. Describe your experience with lease enforcement. Give me a specific example.</div>
+  <div class="listen-for"><strong>Listen for:</strong> Consistent, documented enforcement. Knowledge of proper notice procedures. Balance of firmness and fairness. Understanding that selective enforcement creates liability. Specific example with timeline and outcome.</div>
+</div>
+
+<div class="interview-q">
+  <div class="question">24. If I called your last three property owners, what would they say about you?</div>
+  <div class="listen-for"><strong>Listen for:</strong> Confidence in their reputation. Specific qualities they'd be known for (responsiveness, thoroughness, communication). Realistic — mention of areas for growth alongside strengths. Consistency with the rest of their interview answers.</div>
+</div>
+
+<!-- ==================== SCORING RUBRIC ==================== -->
+<h2>3. Interview Scoring Rubric</h2>
+<p>Use this rubric to objectively evaluate every candidate. Score each competency 1–5 during or immediately after the interview. A score below 3 in any critical competency is a disqualifier.</p>
+
+<table class="rubric-table">
+  <tr>
+    <th>Competency</th>
+    <th>1 — Poor</th>
+    <th>2 — Below Avg</th>
+    <th>3 — Meets</th>
+    <th>4 — Exceeds</th>
+    <th>5 — Exceptional</th>
+  </tr>
+  <tr>
+    <td><strong>PM Knowledge ★</strong></td>
+    <td>No relevant experience</td>
+    <td>Basic awareness only</td>
+    <td>Solid working knowledge</td>
+    <td>Deep expertise, cites specifics</td>
+    <td>Expert-level, trains others</td>
+  </tr>
+  <tr>
+    <td><strong>Communication ★</strong></td>
+    <td>Unclear, disorganized</td>
+    <td>Adequate but vague</td>
+    <td>Clear and professional</td>
+    <td>Articulate, persuasive</td>
+    <td>Exceptional communicator</td>
+  </tr>
+  <tr>
+    <td><strong>Problem Solving ★</strong></td>
+    <td>No framework</td>
+    <td>Reactive only</td>
+    <td>Logical approach</td>
+    <td>Creative, considers options</td>
+    <td>Strategic, anticipates issues</td>
+  </tr>
+  <tr>
+    <td><strong>Organization</strong></td>
+    <td>No systems mentioned</td>
+    <td>Relies on memory</td>
+    <td>Uses basic tools</td>
+    <td>Systematic approach</td>
+    <td>Highly structured, proactive</td>
+  </tr>
+  <tr>
+    <td><strong>Customer Service</strong></td>
+    <td>Dismissive attitude</td>
+    <td>Minimal effort</td>
+    <td>Responsive, helpful</td>
+    <td>Proactive, empathetic</td>
+    <td>Creates raving fans</td>
+  </tr>
+  <tr>
+    <td><strong>Fair Housing ★</strong></td>
+    <td>Unaware</td>
+    <td>Vague awareness</td>
+    <td>Understands basics</td>
+    <td>Applies consistently</td>
+    <td>Could train others</td>
+  </tr>
+  <tr>
+    <td><strong>Tech Proficiency</strong></td>
+    <td>Paper-based only</td>
+    <td>Basic computer skills</td>
+    <td>PM software experience</td>
+    <td>Multiple systems mastered</td>
+    <td>Tech-forward, learns quickly</td>
+  </tr>
+  <tr>
+    <td><strong>Cultural Fit</strong></td>
+    <td>Misaligned values</td>
+    <td>Uncertain fit</td>
+    <td>Adequate alignment</td>
+    <td>Strong alignment</td>
+    <td>Perfect cultural match</td>
+  </tr>
+  <tr>
+    <td><strong>Growth Potential</strong></td>
+    <td>No ambition</td>
+    <td>Content in place</td>
+    <td>Willing to learn</td>
+    <td>Actively growing</td>
+    <td>Future leader</td>
+  </tr>
+</table>
+<p style="font-size:13px;color:var(--gray-500);">★ = Critical competency — score of 2 or below is a disqualifier regardless of other scores.</p>
+
+<div class="tip-box">
+  <strong>💡 Scoring Guide:</strong> Total possible: 45 points. <strong>Hire:</strong> 36+ (80%+). <strong>Consider:</strong> 30–35 (with no critical competency below 3). <strong>Pass:</strong> Below 30 or any critical competency below 3.
+</div>
+
+<!-- ==================== COMPENSATION BENCHMARKING ==================== -->
+<h2>4. Compensation Benchmarking Guide</h2>
+<p>Salary ranges vary significantly by market size. Use these benchmarks as starting points and adjust based on your local cost of living, competition, and company budget.</p>
+
+<table>
+  <tr>
+    <th>Role</th>
+    <th>Small Market<br>(<250K pop)</th>
+    <th>Mid Market<br>(250K–1M pop)</th>
+    <th>Large Market<br>(1M+ pop)</th>
+  </tr>
+  <tr>
+    <td><strong>Property Manager</strong></td>
+    <td>$38,000–$50,000</td>
+    <td>$45,000–$62,000</td>
+    <td>$55,000–$80,000</td>
+  </tr>
+  <tr>
+    <td><strong>Leasing Agent (FT)</strong></td>
+    <td>$28,000–$36,000</td>
+    <td>$32,000–$45,000</td>
+    <td>$38,000–$55,000</td>
+  </tr>
+  <tr>
+    <td><strong>Maintenance Coordinator</strong></td>
+    <td>$30,000–$40,000</td>
+    <td>$35,000–$48,000</td>
+    <td>$42,000–$58,000</td>
+  </tr>
+  <tr>
+    <td><strong>Administrative Assistant</strong></td>
+    <td>$26,000–$34,000</td>
+    <td>$30,000–$42,000</td>
+    <td>$36,000–$50,000</td>
+  </tr>
+  <tr>
+    <td><strong>Maintenance Technician</strong></td>
+    <td>$32,000–$42,000</td>
+    <td>$38,000–$52,000</td>
+    <td>$45,000–$62,000</td>
+  </tr>
+  <tr>
+    <td><strong>Operations Director</strong></td>
+    <td>$50,000–$65,000</td>
+    <td>$60,000–$85,000</td>
+    <td>$75,000–$110,000</td>
+  </tr>
+</table>
+
+<div class="tip-box">
+  <strong>💡 Compensation Strategy:</strong> Pay at the 60th–75th percentile of your market to attract strong candidates. The cost of a bad hire ($15,000–$30,000 in turnover costs, lost clients, and training time) far exceeds the $3,000–$5,000/year premium for a top performer. Include performance bonuses to align incentives: leasing bonuses, occupancy bonuses, owner retention bonuses, and annual profit-sharing.
+</div>
+
+<!-- ==================== REFERENCE CHECK ==================== -->
+<h2>5. Reference Check Script</h2>
+
+<div class="template-box">
+  <h4>📞 Reference Call Script</h4>
+  <p style="color:var(--gray-700);font-style:normal;font-size:14px;margin-bottom:16px;">Call at least 2 professional references and 1 previous direct supervisor. Budget 10–15 minutes per call.</p>
+  
+  <p style="color:var(--gray-700);font-style:italic;">"Hi [Reference Name], this is [Your Name] with [Company]. [Candidate] has applied for a [Role] position with us and listed you as a reference. Do you have about 10 minutes?"</p>
+
+  <ol style="color:var(--gray-700);font-size:14px;">
+    <li><strong>What was your working relationship with [Candidate], and how long did you work together?</strong></li>
+    <li><strong>What were their primary responsibilities?</strong> (Verify matches their resume)</li>
+    <li><strong>How would you rate their overall performance on a scale of 1–10?</strong> (Anything below 7 is a concern)</li>
+    <li><strong>How did they handle stressful situations or upset clients?</strong></li>
+    <li><strong>What are their greatest strengths?</strong></li>
+    <li><strong>What areas could they improve in?</strong> (Everyone has weaknesses — vague answers suggest the reference is being evasive)</li>
+    <li><strong>How was their attendance and reliability?</strong></li>
+    <li><strong>Were they ever involved in any Fair Housing complaints, lawsuits, or disciplinary actions?</strong></li>
+    <li><strong>Would you rehire them?</strong> (This is the most important question — hesitation here is a red flag)</li>
+    <li><strong>Is there anything else I should know before making a hiring decision?</strong></li>
+  </ol>
+</div>
+
+<!-- ==================== OFFER LETTER ==================== -->
+<h2>6. Offer Letter Template</h2>
+
+<div class="template-box">
+  <h4>📄 Employment Offer Letter</h4>
+  <div style="color:var(--gray-700);font-size:14px;line-height:1.8;">
+    <p>[Date]</p>
+    <p>[Candidate Full Name]<br>[Address]<br>[City, State ZIP]</p>
+    <p>Dear [Candidate First Name],</p>
+    <p>We are pleased to offer you the position of <strong>[Job Title]</strong> at <strong>[Company Name]</strong>. We believe your experience and skills will be a valuable addition to our team.</p>
+    <p><strong>Position Details:</strong></p>
+    <ul>
+      <li><strong>Title:</strong> [Job Title]</li>
+      <li><strong>Start Date:</strong> [Date]</li>
+      <li><strong>Employment Type:</strong> [Full-Time / Part-Time], [Exempt / Non-Exempt]</li>
+      <li><strong>Reports To:</strong> [Manager Name, Title]</li>
+      <li><strong>Work Location:</strong> [Office Address] with field work as required</li>
+      <li><strong>Work Schedule:</strong> [Monday–Friday, 8:30 AM–5:00 PM, with occasional evenings/weekends for showings or emergencies]</li>
+    </ul>
+    <p><strong>Compensation:</strong></p>
+    <ul>
+      <li><strong>Base Salary:</strong> $[Amount] per year, paid [bi-weekly / semi-monthly]</li>
+      <li><strong>Performance Bonuses:</strong> [Describe bonus structure — leasing bonuses, occupancy incentives, etc.]</li>
+      <li><strong>Mileage Reimbursement:</strong> IRS standard rate for business-related travel</li>
+      <li><strong>Cell Phone Stipend:</strong> $[Amount]/month</li>
+    </ul>
+    <p><strong>Benefits:</strong> [Health insurance, PTO policy, holidays, 401(k) if applicable, professional development support]</p>
+    <p><strong>Contingencies:</strong> This offer is contingent upon:</p>
+    <ul>
+      <li>Satisfactory completion of a background check (criminal, credit, driving record)</li>
+      <li>Verification of employment eligibility (I-9)</li>
+      <li>Obtaining a real estate license within [90 days] of start date (if not already licensed)</li>
+      <li>[Drug screening if applicable]</li>
+    </ul>
+    <p><strong>At-Will Employment:</strong> Employment with [Company Name] is at-will, meaning either party may terminate the employment relationship at any time, with or without cause or notice.</p>
+    <p>Please sign and return this letter by <strong>[Deadline Date]</strong> to confirm your acceptance.</p>
+    <p>We are excited to welcome you to the team!</p>
+    <p>Sincerely,<br><br>[Your Name]<br>[Title]<br>[Company Name]</p>
+    <p style="margin-top:30px;border-top:2px solid var(--gray-200);padding-top:20px;"><strong>Acceptance:</strong></p>
+    <p>I accept the offer of employment as described above.</p>
+    <p>Signature: _________________________________ &nbsp;&nbsp; Date: _______________</p>
+    <p>Printed Name: _________________________________</p>
+  </div>
+</div>
+
+<!-- ==================== BACKGROUND CHECK ==================== -->
+<h2>7. Background Check Requirements</h2>
+<p>Every hire in property management handles keys, financial information, and access to occupied homes. Thorough background checks are non-negotiable.</p>
+
+<table>
+  <tr>
+    <th>Check Type</th>
+    <th>Required For</th>
+    <th>What You're Looking For</th>
+    <th>Typical Cost</th>
+  </tr>
+  <tr>
+    <td><strong>Criminal Background (county + national)</strong></td>
+    <td>All positions</td>
+    <td>Felonies, theft, fraud, violence. Use EEOC guidance — consider nature, severity, and recency of offense.</td>
+    <td>$25–$50</td>
+  </tr>
+  <tr>
+    <td><strong>Credit Check</strong></td>
+    <td>PM, Admin, any role handling money</td>
+    <td>Excessive debt, bankruptcies, collections. Indicators of financial stress that could create risk.</td>
+    <td>$10–$20</td>
+  </tr>
+  <tr>
+    <td><strong>Driving Record (MVR)</strong></td>
+    <td>Any role requiring driving</td>
+    <td>Valid license, DUI/DWI history, excessive violations. Your insurance requires this.</td>
+    <td>$5–$15</td>
+  </tr>
+  <tr>
+    <td><strong>Employment Verification</strong></td>
+    <td>All positions</td>
+    <td>Confirm dates of employment, title, and responsibilities for last 3 positions.</td>
+    <td>$10–$25 per employer</td>
+  </tr>
+  <tr>
+    <td><strong>Education Verification</strong></td>
+    <td>If degree is a requirement</td>
+    <td>Confirm degree, institution, and graduation date.</td>
+    <td>$10–$20</td>
+  </tr>
+  <tr>
+    <td><strong>Real Estate License Verification</strong></td>
+    <td>PM, Leasing Agent</td>
+    <td>Active license status, any disciplinary actions. Check directly with state licensing board.</td>
+    <td>Free (state website)</td>
+  </tr>
+  <tr>
+    <td><strong>Drug Screening</strong></td>
+    <td>Optional — company policy</td>
+    <td>5-panel or 10-panel urine test. More common for maintenance roles.</td>
+    <td>$30–$60</td>
+  </tr>
+</table>
+
+<div class="tip-box">
+  <strong>💡 Legal Requirements:</strong> Always obtain written consent (signed authorization form) before running any background check. Follow FCRA (Fair Credit Reporting Act) guidelines including pre-adverse and adverse action notice procedures. Some states and cities have "ban the box" laws — check your local regulations. Never make hiring decisions based on protected classes. Use a reputable background check provider (Checkr, GoodHire, Sterling, or TransUnion SmartMove).
+</div>
+
+<div class="footer">
+  <p><strong>ScaleDoors PM Scaling Kit</strong> — Hiring & Job Description Kit</p>
+  <p>© 2026 LevelPM. For licensed purchaser use only. Do not distribute.</p>
+</div>
+
+</div>
+</body>
+</html>

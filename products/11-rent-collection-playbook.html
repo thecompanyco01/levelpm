@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Rent Collection Playbook — ScaleDoors PM Scaling Kit</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; color: #1e293b; line-height: 1.7; background: #fff; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+  .kit-badge { display: inline-block; background: #0f172a; color: #f59e0b; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 3px; margin-bottom: 24px; }
+  h1 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 38px; color: #0f172a; margin-bottom: 8px; line-height: 1.2; }
+  .subtitle { font-size: 18px; color: #64748b; margin-bottom: 40px; font-style: italic; }
+  h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 24px; color: #0f172a; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #f59e0b; }
+  h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; color: #0f172a; margin-top: 32px; margin-bottom: 12px; }
+  h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; color: #334155; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin-bottom: 14px; font-size: 15px; }
+  ul, ol { margin: 12px 0 16px 24px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  .callout { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .callout-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #92400e; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .warning { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .warning-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #dc2626; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  th { background: #0f172a; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; }
+  td { padding: 10px 16px; border-bottom: 1px solid #e2e8f0; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .template-box { border: 2px solid #0f172a; border-radius: 8px; padding: 24px; margin: 24px 0; background: #f8fafc; }
+  .template-box h3 { margin-top: 0; color: #0f172a; border-bottom: 2px dashed #cbd5e1; padding-bottom: 8px; }
+  .checklist { list-style: none; margin-left: 0; }
+  .checklist li { padding: 6px 0 6px 32px; position: relative; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 18px; color: #f59e0b; }
+  .decision-tree { background: #f1f5f9; padding: 24px; border-radius: 8px; margin: 20px 0; }
+  .decision-tree .node { padding: 10px 16px; background: #fff; border: 2px solid #0f172a; border-radius: 6px; margin: 8px 0 8px 20px; font-size: 14px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .decision-tree .arrow { color: #f59e0b; font-weight: 700; font-size: 16px; margin-left: 28px; }
+  .script-box { background: #0f172a; color: #e2e8f0; padding: 20px 24px; border-radius: 8px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8; }
+  .script-box em { color: #f59e0b; font-style: italic; }
+  .timeline { position: relative; margin: 24px 0; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 3px; background: #f59e0b; }
+  .timeline-item { position: relative; margin-bottom: 20px; }
+  .timeline-item::before { content: ''; position: absolute; left: -33px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: #f59e0b; border: 3px solid #fff; box-shadow: 0 0 0 2px #f59e0b; }
+  .timeline-item .day { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #0f172a; font-size: 15px; }
+  .timeline-item .action { font-size: 14px; color: #475569; margin-top: 4px; }
+  .page-break { page-break-before: always; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  @media print {
+    body { font-size: 12px; }
+    .container { padding: 20px; max-width: 100%; }
+    .callout, .warning { break-inside: avoid; }
+    table { break-inside: avoid; }
+    h2 { break-after: avoid; }
+    .template-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="kit-badge">ScaleDoors PM Scaling Kit</div>
+<h1>Rent Collection Playbook</h1>
+<p class="subtitle">The complete automated workflow for collecting rent on time, every time — from payment setup through eviction escalation.</p>
+
+<div class="callout">
+<div class="callout-title">Why This Matters</div>
+At 100 doors with average rent of $1,400/month, every 1% improvement in on-time collection equals $16,800 per year in avoided delinquency. Property managers who follow a structured collection process achieve 97%+ on-time rates vs. the industry average of 91%.
+</div>
+
+<h2>1. Payment Method Setup Guide</h2>
+
+<p>Your payment infrastructure determines your collection rate. The goal: make it as easy as possible for tenants to pay on time, and as automated as possible for your team to track.</p>
+
+<h3>ACH / Direct Bank Transfer (Target: 70%+ of Tenants)</h3>
+<p>ACH is your best friend. It's the cheapest processing method and enables auto-pay. Push every tenant toward ACH enrollment at lease signing.</p>
+<ul>
+  <li><strong>Processing cost:</strong> $0.25–$1.50 per transaction (vs. 2.9% for credit cards)</li>
+  <li><strong>Settlement time:</strong> 3–5 business days</li>
+  <li><strong>NSF risk:</strong> Have a clear NSF fee policy ($25–$50) and require two consecutive successful payments before allowing auto-pay</li>
+  <li><strong>Setup process:</strong> Collect routing number, account number, and signed ACH authorization form at lease signing</li>
+</ul>
+
+<div class="callout">
+<div class="callout-title">Pro Tip</div>
+Offer a $25 discount on the first month's rent for tenants who enroll in ACH auto-pay. The lifetime value of automated payments far exceeds the one-time discount.
+</div>
+
+<h3>Credit/Debit Card Payments</h3>
+<ul>
+  <li><strong>Processing cost:</strong> 2.5%–3.5% per transaction — pass this to the tenant as a "convenience fee"</li>
+  <li><strong>Settlement time:</strong> 1–2 business days</li>
+  <li><strong>Policy:</strong> Accept credit cards but require tenant to pay the convenience fee. Put this in the lease addendum.</li>
+  <li><strong>Chargebacks:</strong> Rare for rent but document everything. Keep signed lease and payment authorization on file.</li>
+</ul>
+
+<h3>Check / Money Order Policy</h3>
+<ul>
+  <li><strong>Strongly discourage</strong> — checks slow down your process and increase manual work</li>
+  <li><strong>If accepted:</strong> Only cashier's checks or money orders after any bounced check. No personal checks after NSF.</li>
+  <li><strong>Drop-off location:</strong> If you allow physical payments, provide a secure drop box and process daily by 2 PM</li>
+  <li><strong>Mail policy:</strong> Payments mailed must be postmarked by the 1st. Late postmarks = late payment.</li>
+</ul>
+
+<h3>Recommended Software Stack</h3>
+<table>
+  <tr><th>Portfolio Size</th><th>Recommended Platform</th><th>Cost (approx.)</th></tr>
+  <tr><td>1–50 doors</td><td>Buildium, RentRedi, or TenantCloud</td><td>$50–$175/mo</td></tr>
+  <tr><td>50–200 doors</td><td>AppFolio or Buildium Plus</td><td>$250–$600/mo</td></tr>
+  <tr><td>200–500 doors</td><td>AppFolio, Yardi Breeze, or Rent Manager</td><td>$500–$1,500/mo</td></tr>
+  <tr><td>500+ doors</td><td>Yardi Voyager or RealPage</td><td>$1,500+/mo</td></tr>
+</table>
+
+<h2>2. Due Date & Grace Period Policies</h2>
+
+<h3>Standard Policy (Recommended)</h3>
+<table>
+  <tr><th>Element</th><th>Policy</th><th>Rationale</th></tr>
+  <tr><td>Due Date</td><td>1st of every month</td><td>Industry standard; aligns with most payroll cycles</td></tr>
+  <tr><td>Grace Period</td><td>Through the 5th (payment received by 11:59 PM on the 5th)</td><td>Required by many state laws; provides reasonable buffer</td></tr>
+  <tr><td>Late Fee Trigger</td><td>6th of the month</td><td>Automatic assessment — no exceptions, no negotiations</td></tr>
+  <tr><td>Late Fee Amount</td><td>5% of monthly rent or $50, whichever is greater</td><td>Must comply with state maximums — check your state</td></tr>
+  <tr><td>Daily Late Fee</td><td>$10/day after 10th (optional, where legal)</td><td>Creates urgency; cap at state maximum</td></tr>
+</table>
+
+<div class="warning">
+<div class="warning-title">Legal Warning</div>
+Late fee maximums vary dramatically by state. California caps at 6% of monthly rent. New York has no statutory cap but courts have voided "unconscionable" fees above 5%. Texas allows up to 10% for single-family. <strong>Always verify your state and local regulations.</strong>
+</div>
+
+<h3>State Grace Period Requirements (Common States)</h3>
+<table>
+  <tr><th>State</th><th>Required Grace Period</th><th>Max Late Fee</th></tr>
+  <tr><td>California</td><td>None required (but standard is 3–5 days)</td><td>~6% of monthly rent</td></tr>
+  <tr><td>Texas</td><td>2 days (by statute)</td><td>10% for single-family; 12% for multi-family</td></tr>
+  <tr><td>Florida</td><td>None required</td><td>No statutory cap (reasonable standard)</td></tr>
+  <tr><td>New York</td><td>5 days (by statute)</td><td>$50 or 5% (whichever is less)</td></tr>
+  <tr><td>Oregon</td><td>4 days (by statute)</td><td>Must not exceed 6% of monthly rent</td></tr>
+  <tr><td>North Carolina</td><td>5 days (by statute)</td><td>$15 or 5% (whichever is greater)</td></tr>
+  <tr><td>Georgia</td><td>None required</td><td>No statutory cap</td></tr>
+  <tr><td>Pennsylvania</td><td>None required</td><td>No statutory cap</td></tr>
+</table>
+
+<h2>3. Day-by-Day Late Rent Collection Timeline</h2>
+
+<p>This is the core of your collection process. Follow it exactly — consistency is what makes it work. Every tenant gets the same treatment, every time.</p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="day">Day 1 (1st of Month) — Rent Due</div>
+    <div class="action">
+      <strong>Automated actions:</strong> PM software sends payment reminder (if not on auto-pay). Portal shows "Rent Due" status. No manual action needed.
+      <br><strong>Team action:</strong> None. Let the system work.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 3 — Friendly Reminder</div>
+    <div class="action">
+      <strong>Automated:</strong> Send automated text/email reminder: "Hi [Name], just a friendly reminder that your rent of $[amount] is due. Pay online at [link]. Grace period ends on the 5th."
+      <br><strong>Team action:</strong> None — fully automated.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 5 — Grace Period Ends</div>
+    <div class="action">
+      <strong>Automated:</strong> Final grace period warning: "Your grace period ends tonight at 11:59 PM. After today, a late fee of $[amount] will be automatically assessed."
+      <br><strong>Team action:</strong> Pull non-payment report. Flag units for Day 6 action.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 6 — Late Fee Assessed</div>
+    <div class="action">
+      <strong>Automated:</strong> Late fee posted to tenant account. Notification sent: "A late fee of $[amount] has been applied to your account. Your total balance due is $[total]. Pay now at [link]."
+      <br><strong>Team action:</strong> Property manager reviews delinquency list. No personal calls yet — let the system create urgency.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 8 — Personal Contact Attempt</div>
+    <div class="action">
+      <strong>Manual:</strong> Call the tenant directly. Use this script:
+      <br>"Hi [Name], this is [PM Name] from [Company]. I'm calling about your rent for [month] — I see it hasn't come through yet and there's a late fee on your account. Is everything okay? I want to help you get this resolved. Can you make the payment today?"
+      <br><strong>Document:</strong> Log the call in your PM software — date, time, who you spoke with, what was said.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 10 — Written Notice (Pre-Legal)</div>
+    <div class="action">
+      <strong>Manual:</strong> Send a formal late rent notice via email AND certified mail or posted on door. This is NOT the legal notice — it's a firm reminder.
+      <br>"This letter serves as formal notice that your rent of $[amount] plus late fees of $[fees] totaling $[total] is past due. Please remit payment immediately to avoid further action including legal proceedings."
+      <br><strong>Team action:</strong> Notify owner: "[Property address] — tenant is 10 days delinquent. We are following our standard collection process. Legal notice will be issued on Day 14 if unresolved."
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 14 — Pay-or-Quit Notice Served</div>
+    <div class="action">
+      <strong>CRITICAL LEGAL STEP:</strong> Serve the formal Pay-or-Quit notice (also called "Notice to Pay Rent or Vacate"). This must comply with your state's requirements for:
+      <ul>
+        <li>Notice period (3 days in CA/TX, 5 days in FL, 14 days in NY/OR)</li>
+        <li>Delivery method (personal service, posting + mailing, etc.)</li>
+        <li>Content requirements (exact amount owed, where to pay, deadline)</li>
+      </ul>
+      <strong>Owner notification:</strong> "Pay-or-quit notice served. Tenant has [X] days to pay or we proceed with eviction filing."
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 17–21 — Pay-or-Quit Expires (varies by state)</div>
+    <div class="action">
+      <strong>Decision point:</strong> Did the tenant pay in full?
+      <br><strong>YES →</strong> Accept payment including all late fees. Document everything. Reset.
+      <br><strong>NO →</strong> Proceed to eviction filing. Contact your eviction attorney. Do NOT accept partial payment at this stage (see Partial Payment Policy below).
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 21–25 — Eviction Filing</div>
+    <div class="action">
+      <strong>Attorney files eviction complaint</strong> (unlawful detainer / forcible entry & detainer / summary process — terminology varies by state).
+      <br><strong>Costs:</strong> $300–$1,200 depending on state and attorney.
+      <br><strong>Owner decision:</strong> Confirm owner authorizes eviction and understands costs. Get written approval.
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="day">Day 30+ — Court Process</div>
+    <div class="action">
+      Court hearing scheduled (typically 2–6 weeks after filing). Continue documenting all communication attempts. Do NOT accept partial payments without attorney guidance — it may reset the eviction clock.
+    </div>
+  </div>
+</div>
+
+<h2>4. Late Fee Calculation & Assessment</h2>
+
+<h3>Standard Late Fee Schedule</h3>
+<table>
+  <tr><th>Monthly Rent</th><th>Late Fee (5%)</th><th>Daily Fee ($10/day)</th><th>Max Total (capped at 10%)</th></tr>
+  <tr><td>$800</td><td>$50 (minimum)</td><td>$10/day after Day 10</td><td>$80</td></tr>
+  <tr><td>$1,200</td><td>$60</td><td>$10/day after Day 10</td><td>$120</td></tr>
+  <tr><td>$1,500</td><td>$75</td><td>$10/day after Day 10</td><td>$150</td></tr>
+  <tr><td>$2,000</td><td>$100</td><td>$10/day after Day 10</td><td>$200</td></tr>
+  <tr><td>$2,500</td><td>$125</td><td>$10/day after Day 10</td><td>$250</td></tr>
+</table>
+
+<h3>Assessment Rules</h3>
+<ol>
+  <li><strong>Automatic, no exceptions.</strong> The system assesses late fees. Your team does not waive them. Period.</li>
+  <li><strong>One waiver per lease term.</strong> If a tenant with a perfect payment history has a genuine emergency, you may waive ONE late fee per lease term. Document it. Require a written request.</li>
+  <li><strong>NSF/bounced payment fee:</strong> $25–$50 in addition to late fees. The bounced payment does NOT count as a payment — the rent is still outstanding.</li>
+  <li><strong>Payment application order:</strong> All payments apply to oldest balance first → late fees → current rent. This is critical. Put it in the lease.</li>
+</ol>
+
+<h2>5. Pay-or-Quit Notice Procedures</h2>
+
+<h3>By State Notice Type</h3>
+<table>
+  <tr><th>Notice Period</th><th>States</th><th>Key Requirements</th></tr>
+  <tr><td>3-Day Notice</td><td>CA, TX, NV, AZ, CO, FL</td><td>Must state exact amount owed; weekends may not count in some states; service method matters</td></tr>
+  <tr><td>5-Day Notice</td><td>IL, IN, MO, MT, WI</td><td>Must include right to cure; some require specific language</td></tr>
+  <tr><td>7-Day Notice</td><td>GA, UT, VA, AL</td><td>Personal delivery or posting + mailing typically required</td></tr>
+  <tr><td>10-Day Notice</td><td>KS, NC, PA, WA</td><td>Certified mail or personal service; some states allow electronic service</td></tr>
+  <tr><td>14-Day Notice</td><td>NY, OR, VT, MA, CT</td><td>Tenant-friendly states; strict form requirements; may require mediation opportunities</td></tr>
+</table>
+
+<div class="warning">
+<div class="warning-title">Critical</div>
+A defective pay-or-quit notice will get your eviction case dismissed. Common errors: wrong amount listed, wrong notice period, improper service method, missing required language. <strong>Use attorney-reviewed templates specific to your state.</strong> This is not the place to save money.
+</div>
+
+<h3>Notice Content Requirements (Universal)</h3>
+<ul class="checklist">
+  <li>Full legal name(s) of all tenants on the lease</li>
+  <li>Property address (full, including unit number)</li>
+  <li>Exact amount of rent owed (do NOT include late fees in some states)</li>
+  <li>Period for which rent is owed (e.g., "March 2026")</li>
+  <li>Number of days to pay or vacate</li>
+  <li>Where and how to make payment (address, online portal, etc.)</li>
+  <li>Date of notice</li>
+  <li>Signature of property manager or authorized agent</li>
+  <li>Proof of service (signed affidavit of service)</li>
+</ul>
+
+<h2>6. Partial Payment Acceptance Policy</h2>
+
+<div class="warning">
+<div class="warning-title">This Section Can Make or Break Your Eviction</div>
+Accepting partial payment after serving a pay-or-quit notice can reset the eviction clock in many states. This is the #1 mistake that costs PMs thousands of dollars and months of delay.
+</div>
+
+<h3>Policy Rules</h3>
+<table>
+  <tr><th>Stage</th><th>Accept Partial?</th><th>Conditions</th></tr>
+  <tr><td>Day 1–13 (before notice)</td><td>YES — with signed agreement</td><td>Must sign a Payment Plan Agreement (see template below). Balance due by specific date. Late fees still apply.</td></tr>
+  <tr><td>Day 14+ (after notice served)</td><td>NO — unless attorney approves</td><td>Accepting ANY payment may waive your notice and restart the eviction timeline. Consult your attorney.</td></tr>
+  <tr><td>During eviction proceedings</td><td>NEVER without court/attorney guidance</td><td>Any acceptance is typically deemed waiver of the eviction action.</td></tr>
+</table>
+
+<h3>If You Must Accept Partial Payment After Notice</h3>
+<ol>
+  <li>Consult your eviction attorney FIRST — confirm it won't waive your notice in your state</li>
+  <li>Use a "Nonwaiver of Rights" agreement signed by the tenant acknowledging the partial payment does not waive your eviction right</li>
+  <li>Document everything — amount accepted, date, signed agreement</li>
+  <li>Some states (CA, for example) do NOT allow you to accept partial payment and continue eviction. Period.</li>
+</ol>
+
+<h2 class="page-break">7. Payment Plan Agreement Template</h2>
+
+<div class="template-box">
+<h3>PAYMENT PLAN AGREEMENT</h3>
+<p><strong>Date:</strong> ___________________</p>
+<p><strong>Tenant Name(s):</strong> ___________________</p>
+<p><strong>Property Address:</strong> ___________________</p>
+<p><strong>Total Amount Owed:</strong> $__________ (including rent of $__________ and late fees of $__________)</p>
+
+<p>This Payment Plan Agreement ("Agreement") is entered into between __________________ ("Landlord/Agent") and __________________ ("Tenant") regarding the above-referenced property.</p>
+
+<h4>Payment Schedule</h4>
+<table>
+  <tr><th>Payment #</th><th>Due Date</th><th>Amount</th><th>Paid (✓)</th></tr>
+  <tr><td>1</td><td>___________</td><td>$__________</td><td>☐</td></tr>
+  <tr><td>2</td><td>___________</td><td>$__________</td><td>☐</td></tr>
+  <tr><td>3</td><td>___________</td><td>$__________</td><td>☐</td></tr>
+  <tr><td>4</td><td>___________</td><td>$__________</td><td>☐</td></tr>
+</table>
+
+<h4>Terms and Conditions</h4>
+<ol>
+  <li>These payments are IN ADDITION TO regular monthly rent, which remains due on the 1st of each month.</li>
+  <li>If Tenant misses any payment under this Agreement by more than 2 days, the ENTIRE remaining balance becomes immediately due.</li>
+  <li>Landlord/Agent reserves the right to pursue eviction proceedings if any payment is missed.</li>
+  <li>This Agreement does NOT waive any previous notices served, except as required by applicable law.</li>
+  <li>All late fees previously assessed remain valid and are included in the total amount owed.</li>
+  <li>No additional late fees will be assessed on amounts covered by this Agreement, provided payments are made on time.</li>
+  <li>This Agreement supersedes any prior oral arrangements regarding the delinquent balance.</li>
+</ol>
+
+<p><strong>Tenant Signature:</strong> ___________________________ Date: ___________</p>
+<p><strong>Tenant Signature:</strong> ___________________________ Date: ___________</p>
+<p><strong>Manager Signature:</strong> ___________________________ Date: ___________</p>
+</div>
+
+<h2>8. Eviction Escalation Decision Tree</h2>
+
+<div class="decision-tree">
+<p><strong>Start: Rent is 14+ days late. Pay-or-quit notice period has expired.</strong></p>
+
+<div class="node">Has the tenant communicated at all?</div>
+<div class="arrow">↓ YES</div>
+<div class="node">Is the tenant offering a reasonable payment plan (full balance within 30 days)?</div>
+<div class="arrow">↓ YES → Accept with signed Payment Plan Agreement. Monitor weekly.</div>
+<div class="arrow">↓ NO (unreasonable plan or excuses only)</div>
+<div class="node">Is the tenant requesting more than 30 days to pay in full?</div>
+<div class="arrow">↓ YES → Decline. Proceed to eviction filing. A 60-day payment plan on a single month's rent signals inability to pay going forward.</div>
+
+<p style="margin-top: 20px;"><strong>Has the tenant communicated at all?</strong></p>
+<div class="arrow">↓ NO (ghosting)</div>
+<div class="node">File eviction immediately. Zero-communication delinquency almost never resolves itself. File on Day 15–17 (immediately after notice expires).</div>
+
+<p style="margin-top: 20px;"><strong>Special circumstances to consider before filing:</strong></p>
+<div class="node">
+  <ul>
+    <li><strong>Military service:</strong> SCRA (Servicemembers Civil Relief Act) protections apply. Consult attorney.</li>
+    <li><strong>Active COVID/disaster moratorium:</strong> Check current local ordinances. Some municipalities still have protections.</li>
+    <li><strong>Section 8/voucher tenant:</strong> Housing authority portion should be coming — confirm with HA before filing. Only file on tenant portion if HA is current.</li>
+    <li><strong>Owner instructions:</strong> Some owners prefer Cash for Keys over eviction. Discuss with owner before filing.</li>
+  </ul>
+</div>
+</div>
+
+<h3>Cash for Keys: When to Offer</h3>
+<p>Sometimes it's cheaper to pay a tenant to leave than to evict them. Consider Cash for Keys when:</p>
+<ul>
+  <li>Eviction will take 60+ days in your jurisdiction</li>
+  <li>Total eviction cost (attorney + court + lost rent + turnover) exceeds $3,000</li>
+  <li>Tenant is cooperative but genuinely cannot pay</li>
+  <li>Property will re-rent quickly at equal or higher rate</li>
+</ul>
+<p><strong>Standard offer:</strong> Waive outstanding balance + $500–$1,500 cash for keys returned, property broom-clean, within 7–14 days. Get it in writing with a specific move-out date and inspection requirements.</p>
+
+<h2>9. Owner Communication During Delinquency</h2>
+
+<h3>Communication Schedule</h3>
+<table>
+  <tr><th>Day</th><th>Communication</th><th>Method</th></tr>
+  <tr><td>Day 10</td><td>"Tenant at [address] is delinquent. Following standard collection process. Will update at Day 14."</td><td>Email / Owner Portal</td></tr>
+  <tr><td>Day 14</td><td>"Pay-or-quit notice served today. Tenant has [X] days to pay or we proceed to eviction. Estimated eviction cost: $[X]. Do you want to proceed or explore alternatives?"</td><td>Phone call + email follow-up</td></tr>
+  <tr><td>Day 21+</td><td>"Notice period expired. Tenant has not paid. Recommending eviction filing. Need your written authorization. Estimated timeline: [X] weeks. Cost: $[X]."</td><td>Phone call + written authorization request</td></tr>
+  <tr><td>Weekly during eviction</td><td>Status update: where in the court process, next hearing date, any settlement offers from tenant</td><td>Email</td></tr>
+</table>
+
+<div class="callout">
+<div class="callout-title">Owner Communication Script — Day 14 Call</div>
+"Hi [Owner], it's [Your Name] from [Company]. I'm calling about [Property Address]. Unfortunately, the tenant is now 14 days past due and we served the formal pay-or-quit notice today. They have [X] days to pay the full balance of $[amount] or we'll need to move forward with eviction. Based on our experience, the eviction process in [State] typically takes [X] weeks and costs approximately $[X] in legal fees. I want to discuss your options — would you like to proceed with eviction if the tenant doesn't pay, or would you prefer we explore a Cash for Keys arrangement? I'd recommend [your recommendation] because [reason]."
+</div>
+
+<h2>10. Month-End Reconciliation Procedures</h2>
+
+<h3>Last Business Day of Month Checklist</h3>
+<ul class="checklist">
+  <li>Pull delinquency report from PM software — list all units with outstanding balances</li>
+  <li>Verify all payments received match bank deposits (3-way reconciliation: software ↔ bank ↔ trust ledger)</li>
+  <li>Confirm all late fees assessed correctly — no missed assessments, no double-charges</li>
+  <li>Review payment plan compliance — are tenants on plans making their scheduled payments?</li>
+  <li>Update owner statements with delinquency notes for any unit with outstanding balance</li>
+  <li>Calculate and record: Total rent collected / Total rent due = Collection Rate %</li>
+  <li>Reconcile trust account — every dollar must be accounted for by property and tenant</li>
+  <li>Generate and distribute owner disbursements (rent collected minus management fee minus expenses)</li>
+  <li>File completed pay-or-quit notices and any legal correspondence in tenant files</li>
+  <li>Review upcoming lease expirations — do NOT renew tenants with chronic late payment history without owner discussion</li>
+</ul>
+
+<h3>Monthly Collection KPIs to Track</h3>
+<table>
+  <tr><th>Metric</th><th>Target</th><th>Red Flag</th></tr>
+  <tr><td>On-time collection rate (by Day 5)</td><td>≥ 95%</td><td>&lt; 90%</td></tr>
+  <tr><td>Full collection rate (by Day 30)</td><td>≥ 98%</td><td>&lt; 95%</td></tr>
+  <tr><td>Average days delinquent</td><td>&lt; 3 days</td><td>&gt; 7 days</td></tr>
+  <tr><td>Late fee collection rate</td><td>≥ 90%</td><td>&lt; 75%</td></tr>
+  <tr><td>Active eviction filings</td><td>&lt; 2% of portfolio</td><td>&gt; 5%</td></tr>
+  <tr><td>Payment plan compliance rate</td><td>≥ 80%</td><td>&lt; 60%</td></tr>
+</table>
+
+<h2>11. Delinquency Tracking Spreadsheet Format</h2>
+
+<p>Whether you use PM software reporting or supplement with a spreadsheet, track these fields for every delinquent account:</p>
+
+<table>
+  <tr><th>Field</th><th>Purpose</th></tr>
+  <tr><td>Property Address / Unit</td><td>Identification</td></tr>
+  <tr><td>Tenant Name</td><td>Primary contact</td></tr>
+  <tr><td>Monthly Rent</td><td>Base amount owed</td></tr>
+  <tr><td>Balance Owed (total)</td><td>Rent + late fees + NSF fees</td></tr>
+  <tr><td>Days Delinquent</td><td>Days since rent due date</td></tr>
+  <tr><td>Last Payment Date</td><td>Most recent payment received</td></tr>
+  <tr><td>Last Contact Date</td><td>When you last reached the tenant</td></tr>
+  <tr><td>Contact Method</td><td>Phone / Email / In-person / Letter</td></tr>
+  <tr><td>Notice Served?</td><td>Y/N — type of notice and date served</td></tr>
+  <tr><td>Notice Expiration Date</td><td>When the pay-or-quit period expires</td></tr>
+  <tr><td>Payment Plan?</td><td>Y/N — terms and next payment date</td></tr>
+  <tr><td>Eviction Filed?</td><td>Y/N — filing date and case number</td></tr>
+  <tr><td>Attorney Assigned</td><td>Name and contact for eviction attorney</td></tr>
+  <tr><td>Owner Notified?</td><td>Y/N — dates of owner communications</td></tr>
+  <tr><td>Next Action</td><td>What's the next step and when</td></tr>
+  <tr><td>Notes</td><td>Running log of all interactions</td></tr>
+</table>
+
+<div class="callout">
+<div class="callout-title">Automation Tip</div>
+Set up your PM software to auto-generate this delinquency report every Monday morning. Review it in your weekly team meeting. The Monday review is non-negotiable — it takes 15 minutes and prevents accounts from slipping through the cracks.
+</div>
+
+<h2>12. Collection Agency Referral Criteria</h2>
+
+<p>After a tenant has moved out (voluntarily or via eviction) with an outstanding balance, you have two options: write it off or send to collections. Here's when to refer:</p>
+
+<h3>Refer to Collections When:</h3>
+<ul>
+  <li>Balance owed exceeds $500 (anything less costs more to collect than you'll recover)</li>
+  <li>Tenant has moved out and has no active lease with you</li>
+  <li>You have documented proof of the debt (signed lease, ledger, correspondence)</li>
+  <li>30 days have passed since move-out with no payment arrangement</li>
+  <li>Tenant is not active military (SCRA protections)</li>
+</ul>
+
+<h3>Do NOT Refer When:</h3>
+<ul>
+  <li>Balance is under $500 — not worth the collection fee (typically 25–50% of amount collected)</li>
+  <li>You don't have complete documentation (lease, ledger, move-out inspection, notices served)</li>
+  <li>Tenant is disputing the amount and you haven't resolved the dispute</li>
+  <li>Security deposit disposition letter hasn't been sent within the state-required timeframe</li>
+</ul>
+
+<h3>Recommended Collection Agency Selection Criteria</h3>
+<ul>
+  <li>Specializes in residential tenant debt (not medical or credit card debt)</li>
+  <li>Contingency-based fee structure (they only get paid if they collect — typically 25–40%)</li>
+  <li>Licensed in the state where the tenant now resides</li>
+  <li>Reports to all three credit bureaus</li>
+  <li>Complies with FDCPA (Fair Debt Collection Practices Act)</li>
+  <li>Provides monthly reporting on collection status</li>
+</ul>
+
+<h3>Information to Provide to the Collection Agency</h3>
+<ul class="checklist">
+  <li>Tenant full legal name and any known aliases</li>
+  <li>Last known address (current, not the rental property)</li>
+  <li>Social Security Number (from the rental application)</li>
+  <li>Date of birth</li>
+  <li>Phone numbers and email addresses</li>
+  <li>Employer information (if known)</li>
+  <li>Copy of signed lease agreement</li>
+  <li>Complete ledger showing all charges and payments</li>
+  <li>Copies of all notices served</li>
+  <li>Move-out inspection report and photos</li>
+  <li>Security deposit disposition letter</li>
+  <li>Total amount owed (itemized: unpaid rent, late fees, damages beyond deposit, lease break fees)</li>
+</ul>
+
+<div class="callout">
+<div class="callout-title">Final Thought</div>
+The best rent collection system is one you never have to think about. Set up the automation, train your team on the timeline, and follow it without exception. Consistency is the #1 predictor of high collection rates. When every tenant knows that Day 6 means a late fee and Day 14 means a legal notice — no exceptions, no excuses — they prioritize your rent over other bills. That's the goal.
+</div>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — Rent Collection Playbook</p>
+  <p>© 2026 LevelPM. All rights reserved. For licensed use only.</p>
+</div>
+
+</div>
+</body>
+</html>

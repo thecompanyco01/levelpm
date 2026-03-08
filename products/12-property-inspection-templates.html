@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Property Inspection Templates — ScaleDoors PM Scaling Kit</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; color: #1e293b; line-height: 1.7; background: #fff; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+  .kit-badge { display: inline-block; background: #0f172a; color: #f59e0b; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 3px; margin-bottom: 24px; }
+  h1 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 38px; color: #0f172a; margin-bottom: 8px; line-height: 1.2; }
+  .subtitle { font-size: 18px; color: #64748b; margin-bottom: 40px; font-style: italic; }
+  h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 24px; color: #0f172a; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #f59e0b; }
+  h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 18px; color: #0f172a; margin-top: 32px; margin-bottom: 12px; }
+  h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; color: #334155; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin-bottom: 14px; font-size: 15px; }
+  ul, ol { margin: 12px 0 16px 24px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  .callout { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .callout-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #92400e; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .warning { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .warning-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #dc2626; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  th { background: #0f172a; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; }
+  td { padding: 10px 16px; border-bottom: 1px solid #e2e8f0; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .template-box { border: 2px solid #0f172a; border-radius: 8px; padding: 24px; margin: 24px 0; background: #f8fafc; }
+  .template-box h3 { margin-top: 0; color: #0f172a; border-bottom: 2px dashed #cbd5e1; padding-bottom: 8px; }
+  .checklist { list-style: none; margin-left: 0; }
+  .checklist li { padding: 6px 0 6px 32px; position: relative; font-size: 14px; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 18px; color: #f59e0b; }
+  .inspection-section { background: #f1f5f9; border-radius: 8px; padding: 20px 24px; margin: 16px 0; }
+  .inspection-section h4 { color: #0f172a; margin-top: 0; font-size: 14px; }
+  .rating-scale { display: flex; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+  .rating-item { flex: 1; min-width: 140px; padding: 12px; border-radius: 6px; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; }
+  .rating-1 { background: #22c55e; color: #fff; }
+  .rating-2 { background: #84cc16; color: #fff; }
+  .rating-3 { background: #f59e0b; color: #fff; }
+  .rating-4 { background: #f97316; color: #fff; }
+  .rating-5 { background: #ef4444; color: #fff; }
+  .page-break { page-break-before: always; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .form-header { background: #0f172a; color: #fff; padding: 16px 20px; border-radius: 8px 8px 0 0; margin-bottom: 0; }
+  .form-header h3 { color: #fff; margin: 0; font-size: 16px; }
+  .form-header p { color: #94a3b8; margin: 4px 0 0 0; font-size: 13px; }
+  .form-body { border: 2px solid #0f172a; border-top: none; border-radius: 0 0 8px 8px; padding: 20px; margin-top: 0; margin-bottom: 24px; }
+  .form-field { display: flex; border-bottom: 1px dotted #cbd5e1; padding: 6px 0; font-size: 14px; }
+  .form-label { font-weight: 700; min-width: 200px; color: #334155; }
+  .form-value { flex: 1; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .two-col .checklist li { font-size: 13px; padding: 4px 0 4px 28px; }
+  @media print {
+    body { font-size: 11px; }
+    .container { padding: 16px; max-width: 100%; }
+    .callout, .warning { break-inside: avoid; }
+    table { break-inside: avoid; font-size: 11px; }
+    h2 { break-after: avoid; }
+    .template-box, .form-body { break-inside: avoid; }
+    .inspection-section { break-inside: avoid; }
+    .rating-scale { flex-wrap: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="kit-badge">ScaleDoors PM Scaling Kit</div>
+<h1>Property Inspection Templates</h1>
+<p class="subtitle">A complete inspection system — from annual interiors to seasonal drive-bys — with 100+ checkpoint items, condition rating scales, and owner-ready reporting templates.</p>
+
+<div class="callout">
+<div class="callout-title">Why Inspections Matter at Scale</div>
+At 100+ doors, you can't rely on memory or informal walkthroughs. A missed water leak costs $3,000–$15,000 in remediation. A missed code violation costs $500–$5,000 in fines. Systematic inspections catch $50 problems before they become $5,000 emergencies. This system pays for itself on the first catch.
+</div>
+
+<h2>1. Condition Rating Scale</h2>
+
+<p>Use this standardized 5-point scale for every inspection item across all forms. Consistency is essential — train every inspector to use the same definitions.</p>
+
+<div class="rating-scale">
+  <div class="rating-item rating-1"><strong>1 — Excellent</strong><br>Like new. No wear. No action needed.</div>
+  <div class="rating-item rating-2"><strong>2 — Good</strong><br>Minor wear consistent with age. No action needed.</div>
+  <div class="rating-item rating-3"><strong>3 — Fair</strong><br>Moderate wear. Monitor. Schedule maintenance within 6 months.</div>
+  <div class="rating-item rating-4"><strong>4 — Poor</strong><br>Significant wear/damage. Needs repair within 30 days.</div>
+  <div class="rating-item rating-5"><strong>5 — Failed/Urgent</strong><br>Safety hazard or non-functional. Immediate repair required.</div>
+</div>
+
+<h3>Rating Descriptions by Common Item</h3>
+<table>
+  <tr><th>Item</th><th>1 — Excellent</th><th>3 — Fair</th><th>5 — Failed</th></tr>
+  <tr><td>Interior Paint</td><td>Fresh, no marks, uniform color</td><td>Scuffs, minor nail holes, slight fading</td><td>Peeling, large holes, water stains, mold</td></tr>
+  <tr><td>Carpet/Flooring</td><td>No stains, no wear patterns</td><td>Light traffic wear, small stains, minor scratches</td><td>Large stains, rips/tears, buckling, odor</td></tr>
+  <tr><td>HVAC System</td><td>Runs efficiently, clean filter, no noise</td><td>Runs but noisy, dirty filter, slight temp variance</td><td>Not heating/cooling, strange smells, won't start</td></tr>
+  <tr><td>Plumbing</td><td>No leaks, good pressure, drains clear</td><td>Slow drain, minor drip, slightly low pressure</td><td>Active leak, no hot water, backed up drain</td></tr>
+  <tr><td>Roof (exterior)</td><td>No missing shingles, no leaks, gutters clean</td><td>1-2 missing shingles, minor gutter debris</td><td>Multiple leaks, sagging, significant damage</td></tr>
+  <tr><td>Appliances</td><td>All working, clean, no rust/damage</td><td>Working but worn, minor cosmetic issues</td><td>Not working, safety hazard, needs replacement</td></tr>
+</table>
+
+<h2>2. Inspection Scheduling & Tenant Notice</h2>
+
+<h3>Legal Notice Requirements</h3>
+<table>
+  <tr><th>State Category</th><th>Required Notice</th><th>Example States</th></tr>
+  <tr><td>24-hour notice</td><td>Written notice 24 hours before entry</td><td>CA, AZ, NV, OR, WA, KS, KY</td></tr>
+  <tr><td>48-hour notice</td><td>Written notice 48 hours before entry</td><td>HI, RI, ME</td></tr>
+  <tr><td>Reasonable notice</td><td>"Reasonable" advance notice (courts interpret as 24-48 hours)</td><td>TX, FL, GA, NC, NY, PA, IL</td></tr>
+  <tr><td>No statute</td><td>No specific statute — still provide 24+ hours as best practice</td><td>AL, CO, MS</td></tr>
+</table>
+
+<h3>Inspection Scheduling Procedure</h3>
+<ol>
+  <li><strong>60 days before:</strong> Add inspection to calendar. Assign inspector from team.</li>
+  <li><strong>14 days before:</strong> Send initial notification to tenant (email + portal): "Your annual property inspection is scheduled for the week of [date]. We'll confirm the exact date and time shortly."</li>
+  <li><strong>7 days before:</strong> Send confirmed date/time and statutory notice: "Your inspection is scheduled for [date] at [time]. Per [State] law, this serves as your [24/48]-hour advance notice. An inspector will need access to all rooms. Estimated duration: 30-45 minutes. You are welcome to be present but it is not required."</li>
+  <li><strong>Day before:</strong> Confirmation reminder via text: "Reminder: Property inspection tomorrow at [time]. Please ensure access to all areas. Questions? Call [number]."</li>
+  <li><strong>Day of:</strong> Inspector arrives on time. Knocks and announces. If no answer and proper notice was given, enter with management key per lease terms.</li>
+</ol>
+
+<h2 class="page-break">3. Annual Interior Inspection Form</h2>
+
+<div class="form-header">
+  <h3>ANNUAL INTERIOR PROPERTY INSPECTION</h3>
+  <p>Complete for every unit annually. Rate each item 1-5 per the Condition Rating Scale.</p>
+</div>
+<div class="form-body">
+  <div class="form-field"><span class="form-label">Property Address:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Unit #:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Tenant Name(s):</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Inspection Date:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Inspector Name:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Tenant Present:</span><span class="form-value">☐ Yes  ☐ No</span></div>
+  <div class="form-field"><span class="form-label">Pets Observed:</span><span class="form-value">☐ None  ☐ Yes: ________________ (authorized? ☐ Y ☐ N)</span></div>
+  <div class="form-field"><span class="form-label">Smoke Detectors Tested:</span><span class="form-value">☐ All functional  ☐ Needs battery  ☐ Missing/Non-functional</span></div>
+  <div class="form-field"><span class="form-label">CO Detectors Tested:</span><span class="form-value">☐ All functional  ☐ Needs battery  ☐ Missing/Non-functional</span></div>
+
+  <h4>KITCHEN</h4>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Countertops — condition, chips, stains</td><td></td><td></td></tr>
+    <tr><td>Cabinets — doors, hinges, drawers, finish</td><td></td><td></td></tr>
+    <tr><td>Sink — faucet, drain, disposal, leaks</td><td></td><td></td></tr>
+    <tr><td>Refrigerator — operation, seals, cleanliness</td><td></td><td></td></tr>
+    <tr><td>Stove/Oven — burners, oven function, knobs, cleanliness</td><td></td><td></td></tr>
+    <tr><td>Dishwasher — operation, leaks, door seal</td><td></td><td></td></tr>
+    <tr><td>Microwave (if provided) — operation, door, turntable</td><td></td><td></td></tr>
+    <tr><td>Flooring — condition, damage, cleanliness</td><td></td><td></td></tr>
+    <tr><td>Walls/Paint — marks, holes, water damage</td><td></td><td></td></tr>
+    <tr><td>Ceiling — stains, cracks, water damage</td><td></td><td></td></tr>
+    <tr><td>Lighting — all fixtures working, bulbs</td><td></td><td></td></tr>
+    <tr><td>Outlets/Switches — functional, cover plates, GFCI test</td><td></td><td></td></tr>
+    <tr><td>Windows — operation, locks, seals, screens</td><td></td><td></td></tr>
+    <tr><td>Under-sink plumbing — leaks, water damage, mold</td><td></td><td></td></tr>
+    <tr><td>Exhaust fan/ventilation — operation, grease buildup</td><td></td><td></td></tr>
+  </table>
+
+  <h4>LIVING ROOM / DINING ROOM</h4>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Flooring/Carpet — wear, stains, damage</td><td></td><td></td></tr>
+    <tr><td>Walls/Paint — marks, holes, damage</td><td></td><td></td></tr>
+    <tr><td>Ceiling — stains, cracks, water damage</td><td></td><td></td></tr>
+    <tr><td>Windows — operation, locks, seals, screens</td><td></td><td></td></tr>
+    <tr><td>Window coverings — blinds, curtains (if provided)</td><td></td><td></td></tr>
+    <tr><td>Lighting/Ceiling fan — operation, balance</td><td></td><td></td></tr>
+    <tr><td>Outlets/Switches — functional, cover plates</td><td></td><td></td></tr>
+    <tr><td>Doors — interior doors, hinges, hardware</td><td></td><td></td></tr>
+    <tr><td>Baseboards/Trim — condition, gaps, damage</td><td></td><td></td></tr>
+    <tr><td>Fireplace (if applicable) — damper, hearth, surround</td><td></td><td></td></tr>
+    <tr><td>Thermostat — operation, programming</td><td></td><td></td></tr>
+  </table>
+
+  <h4>BEDROOMS (repeat for each bedroom)</h4>
+  <p><em>Bedroom #: ___</em></p>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Flooring/Carpet — wear, stains, damage</td><td></td><td></td></tr>
+    <tr><td>Walls/Paint — marks, holes, damage</td><td></td><td></td></tr>
+    <tr><td>Ceiling — stains, cracks</td><td></td><td></td></tr>
+    <tr><td>Windows — operation, locks, seals, screens</td><td></td><td></td></tr>
+    <tr><td>Window coverings</td><td></td><td></td></tr>
+    <tr><td>Closet — doors, rod, shelving, condition</td><td></td><td></td></tr>
+    <tr><td>Lighting/Ceiling fan</td><td></td><td></td></tr>
+    <tr><td>Outlets/Switches</td><td></td><td></td></tr>
+    <tr><td>Door — operation, lock, hardware</td><td></td><td></td></tr>
+    <tr><td>Smoke detector in room</td><td></td><td></td></tr>
+  </table>
+
+  <h4>BATHROOM(S) (repeat for each bathroom)</h4>
+  <p><em>Bathroom #: ___</em></p>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Toilet — operation, leaks, seal, stability</td><td></td><td></td></tr>
+    <tr><td>Sink — faucet, drain, leaks, condition</td><td></td><td></td></tr>
+    <tr><td>Tub/Shower — faucet, drain, caulk, tile, diverter</td><td></td><td></td></tr>
+    <tr><td>Vanity/Countertop — condition, damage</td><td></td><td></td></tr>
+    <tr><td>Mirror/Medicine cabinet</td><td></td><td></td></tr>
+    <tr><td>Exhaust fan — operation, vent clear</td><td></td><td></td></tr>
+    <tr><td>Flooring — condition, water damage, grout</td><td></td><td></td></tr>
+    <tr><td>Walls/Paint — moisture, peeling, mold</td><td></td><td></td></tr>
+    <tr><td>Ceiling — moisture, mold, paint condition</td><td></td><td></td></tr>
+    <tr><td>Caulking — tub/shower, sink, toilet base</td><td></td><td></td></tr>
+    <tr><td>GFCI outlet — test and reset</td><td></td><td></td></tr>
+    <tr><td>Towel bars/TP holder — secure, condition</td><td></td><td></td></tr>
+    <tr><td>Under-sink plumbing — leaks, water damage</td><td></td><td></td></tr>
+    <tr><td>Door — operation, lock, hardware</td><td></td><td></td></tr>
+  </table>
+
+  <h4>LAUNDRY AREA</h4>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Washer connections — hoses, valves, leaks</td><td></td><td></td></tr>
+    <tr><td>Dryer vent — clear, properly connected, lint buildup</td><td></td><td></td></tr>
+    <tr><td>Flooring — water damage, condition</td><td></td><td></td></tr>
+    <tr><td>Utility sink (if present) — operation, leaks</td><td></td><td></td></tr>
+    <tr><td>Washer/Dryer (if provided) — operation, condition</td><td></td><td></td></tr>
+  </table>
+
+  <h4>MECHANICAL / SYSTEMS</h4>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>HVAC — operation, filter condition, unusual noise</td><td></td><td></td></tr>
+    <tr><td>Water heater — age, leaks, temp setting, corrosion</td><td></td><td></td></tr>
+    <tr><td>Electrical panel — accessible, labeled, no hazards</td><td></td><td></td></tr>
+    <tr><td>Plumbing main — shutoff accessible, no visible leaks</td><td></td><td></td></tr>
+    <tr><td>Smoke detectors — all locations, tested, working</td><td></td><td></td></tr>
+    <tr><td>CO detectors — all locations, tested, working</td><td></td><td></td></tr>
+    <tr><td>Fire extinguisher (if required/provided)</td><td></td><td></td></tr>
+    <tr><td>Attic access (visual only) — insulation, leaks, pests</td><td></td><td></td></tr>
+    <tr><td>Crawl space (if accessible) — moisture, pests, plumbing</td><td></td><td></td></tr>
+  </table>
+
+  <h4>GENERAL OBSERVATIONS</h4>
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Overall cleanliness / housekeeping</td><td></td><td></td></tr>
+    <tr><td>Signs of unauthorized occupants</td><td></td><td></td></tr>
+    <tr><td>Signs of unauthorized pets</td><td></td><td></td></tr>
+    <tr><td>Lease violations observed</td><td></td><td></td></tr>
+    <tr><td>Odors (smoke, pets, mold, cooking)</td><td></td><td></td></tr>
+    <tr><td>Evidence of smoking indoors</td><td></td><td></td></tr>
+    <tr><td>Hoarding or safety concerns</td><td></td><td></td></tr>
+    <tr><td>Tenant-reported maintenance issues</td><td></td><td></td></tr>
+  </table>
+
+  <h4>INSPECTOR SUMMARY</h4>
+  <p><strong>Items rated 4 or 5 (requiring action):</strong></p>
+  <p style="border-bottom: 1px dotted #cbd5e1; min-height: 60px;"></p>
+  <p><strong>Maintenance work orders to generate:</strong></p>
+  <p style="border-bottom: 1px dotted #cbd5e1; min-height: 60px;"></p>
+  <p><strong>Lease violations to address:</strong></p>
+  <p style="border-bottom: 1px dotted #cbd5e1; min-height: 60px;"></p>
+  <p><strong>Inspector Signature:</strong> ___________________________ <strong>Date:</strong> ___________</p>
+</div>
+
+<h2 class="page-break">4. Semi-Annual Drive-By Exterior Inspection</h2>
+
+<div class="form-header">
+  <h3>EXTERIOR DRIVE-BY INSPECTION</h3>
+  <p>Complete every 6 months. No tenant notice required — exterior only, from public areas.</p>
+</div>
+<div class="form-body">
+  <div class="form-field"><span class="form-label">Property Address:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Inspection Date:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Inspector:</span><span class="form-value">___________________________________</span></div>
+
+  <table>
+    <tr><th style="width:45%">Item</th><th style="width:15%">Rating (1-5)</th><th style="width:40%">Notes / Photo #</th></tr>
+    <tr><td>Roof — visible damage, missing shingles, sagging</td><td></td><td></td></tr>
+    <tr><td>Gutters/Downspouts — attached, clear, draining properly</td><td></td><td></td></tr>
+    <tr><td>Siding/Exterior walls — damage, paint peeling, rot</td><td></td><td></td></tr>
+    <tr><td>Foundation — visible cracks, settling, water pooling</td><td></td><td></td></tr>
+    <tr><td>Windows — broken panes, missing screens, open/damaged</td><td></td><td></td></tr>
+    <tr><td>Doors — front door condition, screen door, weather stripping</td><td></td><td></td></tr>
+    <tr><td>Driveway/Walkways — cracks, heaving, trip hazards</td><td></td><td></td></tr>
+    <tr><td>Lawn/Landscaping — mowing, weeds, dead plants, overgrowth</td><td></td><td></td></tr>
+    <tr><td>Trees/Shrubs — overhanging branches, dead trees, proximity to structure</td><td></td><td></td></tr>
+    <tr><td>Fence — condition, leaning, missing sections, gate operation</td><td></td><td></td></tr>
+    <tr><td>Porch/Deck/Patio — condition, railing secure, rot, tripping hazards</td><td></td><td></td></tr>
+    <tr><td>Exterior lighting — working, fixtures intact</td><td></td><td></td></tr>
+    <tr><td>Address numbers — visible from street</td><td></td><td></td></tr>
+    <tr><td>A/C unit (exterior) — condition, clearance, rust, noise</td><td></td><td></td></tr>
+    <tr><td>Vehicles — unauthorized, inoperable, or excessive vehicles</td><td></td><td></td></tr>
+    <tr><td>Trash/Debris — exterior cleanliness, trash cans stored properly</td><td></td><td></td></tr>
+    <tr><td>Mailbox — condition, secure</td><td></td><td></td></tr>
+    <tr><td>HOA violations visible — parking, trash cans, decorations</td><td></td><td></td></tr>
+    <tr><td>Overall curb appeal</td><td></td><td></td></tr>
+  </table>
+
+  <p><strong>Issues requiring immediate action:</strong></p>
+  <p style="border-bottom: 1px dotted #cbd5e1; min-height: 40px;"></p>
+  <p><strong>Tenant violation notices to send:</strong></p>
+  <p style="border-bottom: 1px dotted #cbd5e1; min-height: 40px;"></p>
+</div>
+
+<h2>5. Pre-Lease (Move-In) Inspection Checklist</h2>
+
+<div class="callout">
+<div class="callout-title">Critical: Complete BEFORE Keys Are Handed Over</div>
+This inspection is your baseline. Without it, you cannot prove pre-existing conditions at move-out. Complete it with the tenant present, get their signature, and keep copies in the tenant file and property file. Take 50+ photos minimum.
+</div>
+
+<div class="form-header">
+  <h3>PRE-LEASE / MOVE-IN CONDITION REPORT</h3>
+  <p>Walk through with tenant. Both parties sign. Tenant gets a copy within 3 days.</p>
+</div>
+<div class="form-body">
+  <div class="form-field"><span class="form-label">Property Address/Unit:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Tenant Name(s):</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Move-In Date:</span><span class="form-value">___________________________________</span></div>
+  <div class="form-field"><span class="form-label">Inspector:</span><span class="form-value">___________________________________</span></div>
+
+  <p style="margin-top: 16px;"><em>For each area, note the condition and any pre-existing damage. Be specific: "2-inch scratch on hardwood near bedroom door" not "minor floor damage."</em></p>
+
+  <table>
+    <tr><th>Area</th><th>Condition at Move-In</th><th>Tenant Notes/Disagreements</th></tr>
+    <tr><td>Front Door & Entry</td><td style="min-width:200px;"></td><td></td></tr>
+    <tr><td>Living Room — Walls</td><td></td><td></td></tr>
+    <tr><td>Living Room — Floor</td><td></td><td></td></tr>
+    <tr><td>Living Room — Windows</td><td></td><td></td></tr>
+    <tr><td>Living Room — Lights/Ceiling</td><td></td><td></td></tr>
+    <tr><td>Kitchen — Counters/Cabinets</td><td></td><td></td></tr>
+    <tr><td>Kitchen — Appliances</td><td></td><td></td></tr>
+    <tr><td>Kitchen — Sink/Plumbing</td><td></td><td></td></tr>
+    <tr><td>Kitchen — Floor</td><td></td><td></td></tr>
+    <tr><td>Bedroom 1 — Walls/Floor/Closet</td><td></td><td></td></tr>
+    <tr><td>Bedroom 2 — Walls/Floor/Closet</td><td></td><td></td></tr>
+    <tr><td>Bedroom 3 — Walls/Floor/Closet</td><td></td><td></td></tr>
+    <tr><td>Bathroom 1 — Toilet/Tub/Sink</td><td></td><td></td></tr>
+    <tr><td>Bathroom 1 — Floor/Walls/Caulk</td><td></td><td></td></tr>
+    <tr><td>Bathroom 2 — All Items</td><td></td><td></td></tr>
+    <tr><td>Laundry Area</td><td></td><td></td></tr>
+    <tr><td>Garage/Storage</td><td></td><td></td></tr>
+    <tr><td>Patio/Balcony/Yard</td><td></td><td></td></tr>
+    <tr><td>HVAC — Filter Changed?</td><td></td><td></td></tr>
+    <tr><td>Water Heater — Temp/Age</td><td></td><td></td></tr>
+    <tr><td>Smoke/CO Detectors — Tested</td><td></td><td></td></tr>
+    <tr><td>Keys Provided</td><td></td><td></td></tr>
+    <tr><td>Garage Remotes</td><td></td><td></td></tr>
+    <tr><td>Mailbox Key</td><td></td><td></td></tr>
+  </table>
+
+  <p><strong>Total Photos Taken:</strong> ________</p>
+  <p><strong>Tenant acknowledges receiving copy of this report:</strong> ☐ Yes</p>
+  <p><strong>Tenant Signature:</strong> ___________________________ <strong>Date:</strong> ___________</p>
+  <p><strong>Inspector Signature:</strong> ___________________________ <strong>Date:</strong> ___________</p>
+</div>
+
+<h2 class="page-break">6. Seasonal Inspection Reminders</h2>
+
+<h3>Spring (March–May)</h3>
+<ul class="checklist">
+  <li>Inspect roof for winter damage — missing shingles, ice dam effects</li>
+  <li>Clean gutters and downspouts — remove winter debris</li>
+  <li>Test A/C systems — schedule HVAC tune-up before summer</li>
+  <li>Check exterior paint and caulking — schedule touch-ups</li>
+  <li>Inspect sprinkler systems — repair heads, adjust timers</li>
+  <li>Trim trees/shrubs away from structures (6-foot clearance)</li>
+  <li>Check window and door seals — reseal as needed</li>
+  <li>Inspect crawl spaces for moisture after spring rains</li>
+  <li>Test all smoke detectors and CO detectors (replace batteries)</li>
+  <li>Schedule annual interior inspections for May–June</li>
+</ul>
+
+<h3>Summer (June–August)</h3>
+<ul class="checklist">
+  <li>Monitor A/C performance — respond quickly to cooling complaints</li>
+  <li>Check for pest activity — ants, wasps, mosquitoes, termites</li>
+  <li>Inspect pool/spa equipment and fencing (if applicable)</li>
+  <li>Water landscape plants during drought conditions</li>
+  <li>Check exterior for peeling paint in sun-exposed areas</li>
+  <li>Ensure dryer vents are clear — fire prevention</li>
+  <li>Inspect exterior drainage — are downspouts directing water away?</li>
+</ul>
+
+<h3>Fall (September–November)</h3>
+<ul class="checklist">
+  <li>Schedule furnace tune-up and inspection before heating season</li>
+  <li>Replace HVAC filters</li>
+  <li>Clean gutters — remove leaves before winter</li>
+  <li>Inspect and service fireplaces/chimneys</li>
+  <li>Check weatherstripping on doors and windows</li>
+  <li>Insulate exposed pipes for freeze prevention</li>
+  <li>Test smoke and CO detectors (Daylight Saving Time reminder)</li>
+  <li>Inspect attic insulation</li>
+  <li>Schedule semi-annual drive-by exterior inspections</li>
+  <li>Aerate and overseed lawns (if owner-maintained)</li>
+</ul>
+
+<h3>Winter (December–February)</h3>
+<ul class="checklist">
+  <li>Monitor for frozen pipes — send tenant prevention reminders</li>
+  <li>Check furnace operation weekly during cold snaps</li>
+  <li>Inspect for ice dams and icicle buildup</li>
+  <li>Ensure walkways are clear of ice — liability prevention</li>
+  <li>Check for roof leaks after storms</li>
+  <li>Monitor vacant units — keep heat at 55°F minimum to prevent pipe freeze</li>
+  <li>Check emergency supplies (sand/salt at multi-family properties)</li>
+</ul>
+
+<h2>7. Report Writing Guidelines</h2>
+
+<h3>What to Document</h3>
+<ul>
+  <li><strong>Be specific:</strong> "3-inch water stain on ceiling in SE corner of bedroom 2" — not "ceiling stain"</li>
+  <li><strong>Quantify damage:</strong> Include dimensions, count, and severity</li>
+  <li><strong>Note location:</strong> Use compass directions, wall positions (N/S/E/W), proximity to fixtures</li>
+  <li><strong>Describe cause if apparent:</strong> "Water stain likely from bathroom above" or "damage consistent with pet scratching"</li>
+  <li><strong>Document lease violations clearly:</strong> "Unauthorized pet observed (medium-sized dog) — no pet addendum on file"</li>
+</ul>
+
+<h3>Photography Standards</h3>
+<ol>
+  <li><strong>Minimum 50 photos per unit</strong> for annual inspection (100+ for move-in/move-out)</li>
+  <li><strong>Wide-angle shot of each room</strong> — shows overall condition from doorway</li>
+  <li><strong>Close-up of every deficiency</strong> — with something for scale (ruler, coin, hand)</li>
+  <li><strong>Timestamp enabled</strong> on camera/phone — critical for legal purposes</li>
+  <li><strong>Photo naming convention:</strong> [Address]_[Room]_[Item]_[Date].jpg (e.g., 123Main_Kitchen_Sink_20260315.jpg)</li>
+  <li><strong>Photo log:</strong> Every photo numbered and referenced in the inspection form ("See Photo #23")</li>
+  <li><strong>Serial numbers:</strong> Photograph appliance model/serial numbers and water heater labels</li>
+</ol>
+
+<h2>8. Maintenance Recommendations from Inspections</h2>
+
+<h3>Priority Action Matrix</h3>
+<table>
+  <tr><th>Rating</th><th>Priority</th><th>Timeline</th><th>Action</th></tr>
+  <tr><td>5 — Failed</td><td>EMERGENCY</td><td>Same day / 24 hours</td><td>Dispatch maintenance immediately. Notify owner. Create work order before leaving the property.</td></tr>
+  <tr><td>4 — Poor</td><td>URGENT</td><td>Within 7 days</td><td>Create work order. Schedule vendor/maintenance within the week. Notify owner in inspection report.</td></tr>
+  <tr><td>3 — Fair</td><td>ROUTINE</td><td>Within 30–90 days</td><td>Add to maintenance schedule. Can be batched with other work at same property or nearby properties.</td></tr>
+  <tr><td>2 — Good</td><td>MONITOR</td><td>Next inspection</td><td>Note in file. Re-evaluate at next inspection. No work order needed now.</td></tr>
+  <tr><td>1 — Excellent</td><td>NONE</td><td>N/A</td><td>No action. Document as baseline.</td></tr>
+</table>
+
+<h3>Common Inspection Findings → Standard Recommendations</h3>
+<table>
+  <tr><th>Finding</th><th>Recommendation</th><th>Est. Cost</th></tr>
+  <tr><td>HVAC filter dirty</td><td>Replace filter immediately. Remind tenant of filter change responsibility per lease.</td><td>$15–$30</td></tr>
+  <tr><td>Caulk deteriorating around tub</td><td>Recaulk within 30 days. Prevents water damage behind walls.</td><td>$75–$150</td></tr>
+  <tr><td>Running toilet</td><td>Replace flapper valve. If persistent, replace fill valve assembly.</td><td>$10–$75</td></tr>
+  <tr><td>Smoke detector beeping/dead</td><td>Replace battery immediately. Replace unit if >10 years old.</td><td>$5–$35</td></tr>
+  <tr><td>Gutters overflowing</td><td>Clean gutters. Check for proper downspout extension (6+ feet from foundation).</td><td>$100–$250</td></tr>
+  <tr><td>Water stain on ceiling</td><td>Investigate source (roof, plumbing, condensation). Fix source before repainting.</td><td>$200–$2,000+</td></tr>
+  <tr><td>Dryer vent lint buildup</td><td>Professional dryer vent cleaning. Fire hazard — schedule within 7 days.</td><td>$100–$175</td></tr>
+  <tr><td>Exterior paint peeling</td><td>Scrape, prime, repaint affected area. Check for moisture source behind paint.</td><td>$300–$2,000</td></tr>
+</table>
+
+<h2 class="page-break">9. Owner Inspection Report Template</h2>
+
+<div class="template-box">
+<h3>PROPERTY INSPECTION REPORT — OWNER SUMMARY</h3>
+<p><strong>Property:</strong> ___________________________________</p>
+<p><strong>Inspection Date:</strong> _______________ <strong>Type:</strong> ☐ Annual  ☐ Semi-Annual  ☐ Drive-By  ☐ Move-In  ☐ Move-Out</p>
+<p><strong>Inspector:</strong> ___________________________________</p>
+
+<h4>Overall Property Condition</h4>
+<p>☐ Excellent — No issues identified<br>
+☐ Good — Minor maintenance items only<br>
+☐ Fair — Several items needing attention<br>
+☐ Poor — Significant maintenance/repair needed<br>
+☐ Critical — Immediate action required</p>
+
+<h4>Executive Summary</h4>
+<p style="border-bottom: 1px dotted #cbd5e1; min-height: 80px;"><em>[2-3 sentence overview of property condition, tenant compliance, and key findings]</em></p>
+
+<h4>Action Items Requiring Owner Approval</h4>
+<table>
+  <tr><th>#</th><th>Item</th><th>Priority</th><th>Est. Cost</th><th>Approved?</th></tr>
+  <tr><td>1</td><td></td><td></td><td>$</td><td>☐</td></tr>
+  <tr><td>2</td><td></td><td></td><td>$</td><td>☐</td></tr>
+  <tr><td>3</td><td></td><td></td><td>$</td><td>☐</td></tr>
+  <tr><td>4</td><td></td><td></td><td>$</td><td>☐</td></tr>
+  <tr><td>5</td><td></td><td></td><td>$</td><td>☐</td></tr>
+</table>
+<p><strong>Total Estimated Maintenance Cost:</strong> $__________</p>
+
+<h4>Tenant Compliance</h4>
+<p>☐ Fully compliant — No violations<br>
+☐ Minor violations — Notice sent (details: _______________________)<br>
+☐ Significant violations — Cure notice required (details: _______________________)</p>
+
+<h4>Recommended Capital Improvements (next 12 months)</h4>
+<p style="border-bottom: 1px dotted #cbd5e1; min-height: 60px;"></p>
+
+<h4>Photos Attached:</h4>
+<p>☐ Yes — _______ photos attached to this report</p>
+
+<p><strong>Owner Signature (approving work):</strong> ___________________________ <strong>Date:</strong> ___________</p>
+</div>
+
+<h2>10. Inspection Frequency Matrix</h2>
+
+<table>
+  <tr><th>Property Type</th><th>Interior</th><th>Exterior Drive-By</th><th>HVAC Filter</th><th>Seasonal</th><th>Move-In/Out</th></tr>
+  <tr><td>Single-Family Home</td><td>Annually</td><td>Every 6 months</td><td>Quarterly</td><td>Quarterly</td><td>Every turnover</td></tr>
+  <tr><td>Duplex / Triplex</td><td>Annually</td><td>Every 6 months</td><td>Quarterly</td><td>Quarterly</td><td>Every turnover</td></tr>
+  <tr><td>Multi-Family (4-20 units)</td><td>Annually</td><td>Monthly</td><td>Quarterly</td><td>Quarterly</td><td>Every turnover</td></tr>
+  <tr><td>Multi-Family (20+ units)</td><td>Annually per unit; common areas monthly</td><td>Weekly</td><td>Quarterly</td><td>Monthly</td><td>Every turnover</td></tr>
+  <tr><td>Condo/HOA Managed</td><td>Annually (interior only)</td><td>Per HOA schedule</td><td>Quarterly</td><td>Per HOA</td><td>Every turnover</td></tr>
+  <tr><td>Vacation / Short-Term Rental</td><td>Between every guest</td><td>Monthly</td><td>Monthly</td><td>Quarterly</td><td>Every guest turn</td></tr>
+  <tr><td>Section 8 / Voucher</td><td>Annually + HQS inspection</td><td>Every 6 months</td><td>Quarterly</td><td>Quarterly</td><td>Every turnover + HA inspection</td></tr>
+  <tr><td>New Construction (&lt;5 years)</td><td>Annually</td><td>Every 6 months</td><td>Quarterly</td><td>Semi-annually</td><td>Every turnover</td></tr>
+  <tr><td>Older Property (30+ years)</td><td>Every 6 months</td><td>Quarterly</td><td>Quarterly</td><td>Quarterly</td><td>Every turnover</td></tr>
+</table>
+
+<div class="callout">
+<div class="callout-title">Staffing for Inspections at Scale</div>
+<strong>1–75 doors:</strong> PM or assistant handles all inspections (budget 45 min/unit for interior, 10 min for drive-by).<br>
+<strong>75–200 doors:</strong> Dedicate one team member to inspections 2-3 days/week. Can complete 6-8 interior inspections per day.<br>
+<strong>200+ doors:</strong> Full-time inspector role. One inspector can handle ~400 annual inspections plus seasonal drive-bys. Consider inspection software (HappyCo, zInspector, Inspectify) for mobile forms and photo management.
+</div>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — Property Inspection Templates</p>
+  <p>© 2026 LevelPM. All rights reserved. For licensed use only.</p>
+</div>
+
+</div>
+</body>
+</html>

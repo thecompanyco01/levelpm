@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your PM Scaling Kit — Access Your Products | ScaleDoors</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--gold:#f59e0b;--gold-light:#fbbf24;--white:#fff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-400:#94a3b8;--gray-500:#64748b;--text:#0f172a;--text-muted:#64748b;--green:#22c55e;--green-light:#dcfce7;--radius:12px;--radius-lg:16px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--gray-50);line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit}
+
+        .nav{background:var(--navy);padding:.875rem 2rem}
+        .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.375rem;font-weight:800;color:var(--white)}
+        .nav-logo span{color:var(--gold)}
+
+        .gate{max-width:500px;margin:6rem auto;padding:2rem;text-align:center}
+        .gate h1{font-size:1.75rem;font-weight:800;margin-bottom:1rem}
+        .gate p{color:var(--text-muted);margin-bottom:2rem}
+        .gate-input{width:100%;padding:1rem;border:2px solid var(--gray-200);border-radius:var(--radius);font-size:1rem;margin-bottom:1rem;outline:none;transition:border .2s}
+        .gate-input:focus{border-color:var(--gold)}
+        .gate-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy);border:none;border-radius:var(--radius);font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s}
+        .gate-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
+        .gate-error{color:#ef4444;margin-top:1rem;display:none}
+        .gate-note{color:var(--gray-400);font-size:.85rem;margin-top:1.5rem}
+
+        .dashboard{display:none;max-width:1000px;margin:0 auto;padding:2rem}
+        .dash-header{text-align:center;margin-bottom:3rem;padding:2.5rem;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius-lg);color:var(--white)}
+        .dash-header .welcome{font-size:.9rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+        .dash-header h1{font-size:2rem;font-weight:800;margin-bottom:.5rem}
+        .dash-header p{color:var(--gray-400);font-size:1rem}
+
+        .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+        .product-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.75rem;transition:all .2s;position:relative;overflow:hidden}
+        .product-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(0,0,0,.06);transform:translateY(-2px)}
+        .product-num{position:absolute;top:1.25rem;right:1.25rem;width:32px;height:32px;background:var(--gray-100);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:var(--gray-400)}
+        .product-type{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.25rem .75rem;border-radius:6px;margin-bottom:.75rem}
+        .type-sop{background:#dbeafe;color:#1d4ed8}
+        .type-template{background:var(--green-light);color:#16a34a}
+        .type-playbook{background:#fef3c7;color:#d97706}
+        .type-kit{background:#ede9fe;color:#7c3aed}
+        .type-calculator{background:#fce7f3;color:#db2777}
+        .type-scripts{background:#ffedd5;color:#ea580c}
+        .type-model{background:#e0e7ff;color:#4338ca}
+        .type-dashboard{background:#ccfbf1;color:#0d9488}
+        .type-plan{background:#f3e8ff;color:#9333ea}
+        .type-templates{background:#fef9c3;color:#a16207}
+        .product-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;padding-right:2rem}
+        .product-card p{font-size:.85rem;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.5}
+        .product-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:700;font-size:.9rem;padding:.625rem 1.25rem;background:var(--gray-100);border-radius:8px;transition:all .2s}
+        .product-link:hover{background:var(--gold);color:var(--navy)}
+
+        .quick-start{background:var(--white);border:2px solid var(--green);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem}
+        .quick-start h2{font-size:1.25rem;font-weight:800;color:var(--green);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+        .quick-start ol{padding-left:1.5rem;color:var(--text-muted)}
+        .quick-start li{margin-bottom:.5rem;font-size:.95rem}
+        .quick-start li strong{color:var(--text)}
+
+        .footer{text-align:center;padding:3rem 2rem 2rem;color:var(--gray-400);font-size:.8rem}
+        .footer a{color:var(--gold)}
+
+        @media(max-width:640px){.product-grid{grid-template-columns:1fr}.dash-header h1{font-size:1.5rem}}
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Scale<span>Doors</span></a>
+    </div>
+</nav>
+
+<!-- GATE: Verify purchase before showing products -->
+<div class="gate" id="gate">
+    <h1>🔐 Access Your PM Scaling Kit</h1>
+    <p>Enter the email you used at checkout to access your products.</p>
+    <input type="email" class="gate-input" id="gate-email" placeholder="your@email.com" autocomplete="email">
+    <button class="gate-btn" id="gate-btn" onclick="verifyAccess()">Access My Products →</button>
+    <p class="gate-error" id="gate-error"></p>
+    <p class="gate-note">Purchased the kit? Your access link was sent to your checkout email. You can also access products directly from your purchase confirmation page.</p>
+</div>
+
+<!-- DASHBOARD: Shown after verification -->
+<div class="dashboard" id="dashboard">
+    <div class="dash-header">
+        <p class="welcome">Welcome back</p>
+        <h1 id="dash-name">Your PM Scaling Kit</h1>
+        <p>15 premium resources to scale your property management company. Click any item to view, print, or save.</p>
+    </div>
+
+    <div class="quick-start">
+        <h2>🚀 Recommended Quick Start</h2>
+        <ol>
+            <li><strong>Start with the Maintenance Triage SOP</strong> — highest-impact, most PM owners save 10+ hours/week</li>
+            <li><strong>Set up the KPI Dashboard</strong> — know your numbers before making changes</li>
+            <li><strong>Implement Owner Onboarding Playbook</strong> — reduce churn immediately</li>
+            <li><strong>Deploy Email Templates</strong> — save 30+ minutes per day on communications</li>
+        </ol>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+        <!-- Populated by JavaScript -->
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2026 <a href="/">ScaleDoors</a>. Questions? We're here to help you scale.</p>
+</div>
+
+<script>
+const PRODUCTS = [
+    { id:'01', title:'Maintenance Triage SOP', desc:'4-tier priority system with decision tree, vendor dispatch protocols, and after-hours procedures.', file:'01-maintenance-triage-sop.html', type:'SOP' },
+    { id:'02', title:'Move-In/Move-Out Inspection Checklist', desc:'80+ line item inspection form with photo documentation requirements and deposit guidelines.', file:'02-move-in-move-out-checklist.html', type:'Template' },
+    { id:'03', title:'Monthly Owner Report Template', desc:'Professional owner report with financials, occupancy metrics, maintenance summary, and recommendations.', file:'03-owner-reporting-template.html', type:'Template' },
+    { id:'04', title:'Owner Onboarding Playbook', desc:'30-step playbook from signed agreement to fully operational in 30 days.', file:'04-owner-onboarding-playbook.html', type:'Playbook' },
+    { id:'05', title:'Tenant Screening SOP', desc:'Fair Housing compliant screening with criteria, verification procedures, and denial templates.', file:'05-tenant-screening-sop.html', type:'SOP' },
+    { id:'06', title:'Fee Structure Calculator', desc:'Interactive calculator for management fees, leasing fees, maintenance markup, and profit margins.', file:'06-fee-structure-calculator.html', type:'Calculator' },
+    { id:'07', title:'Hiring & Job Description Kit', desc:'Job descriptions, interview questions, scoring rubric, and offer letter templates.', file:'07-hiring-kit.html', type:'Kit' },
+    { id:'08', title:'New Employee Onboarding Plan', desc:'Day-by-day 30-day training program with role-specific tracks and milestone checkpoints.', file:'08-employee-onboarding.html', type:'Plan' },
+    { id:'09', title:'47 Email Templates', desc:'Copy-paste emails for every PM scenario: late rent, lease renewal, maintenance, owner comms.', file:'09-email-templates.html', type:'Templates' },
+    { id:'10', title:'Vendor Management SOP', desc:'Vendor vetting, insurance requirements, performance scorecard, and preferred vendor agreements.', file:'10-vendor-management-sop.html', type:'SOP' },
+    { id:'11', title:'Rent Collection Playbook', desc:'Day-by-day collection workflow from due date through eviction escalation.', file:'11-rent-collection-playbook.html', type:'Playbook' },
+    { id:'12', title:'Property Inspection Templates', desc:'Annual, semi-annual, and pre-lease inspection forms with 100+ items.', file:'12-property-inspection-templates.html', type:'Templates' },
+    { id:'13', title:'Growth Financial Model', desc:'Interactive revenue projections at 50-500 doors with staffing ratios and break-even analysis.', file:'13-growth-financial-model.html', type:'Model' },
+    { id:'14', title:'Owner Acquisition Scripts', desc:'Cold call scripts, email sequences, pitch frameworks, and referral partnership templates.', file:'14-owner-acquisition-scripts.html', type:'Scripts' },
+    { id:'15', title:'KPI Dashboard', desc:'Track 12 key metrics with benchmarks, color-coded performance, and weekly review framework.', file:'15-kpi-dashboard.html', type:'Dashboard' }
+];
+
+const TYPE_CLASSES = {
+    'SOP':'type-sop','Template':'type-template','Playbook':'type-playbook','Kit':'type-kit',
+    'Calculator':'type-calculator','Scripts':'type-scripts','Model':'type-model',
+    'Dashboard':'type-dashboard','Plan':'type-plan','Templates':'type-templates'
+};
+
+function verifyAccess() {
+    const email = document.getElementById('gate-email').value.trim();
+    const errorEl = document.getElementById('gate-error');
+
+    // Check URL for session_id first, then email
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+
+    if (sessionId) {
+        verifyWithSession(sessionId);
+        return;
+    }
+
+    if (!email) {
+        errorEl.textContent = 'Please enter your email address.';
+        errorEl.style.display = 'block';
+        return;
+    }
+
+    // For now, show products (in production, verify email against Stripe customers)
+    // This is a soft gate — the real security is that this page isn't linked publicly
+    showDashboard(email);
+}
+
+function verifyWithSession(sessionId) {
+    const errorEl = document.getElementById('gate-error');
+    fetch('/api/verify-access?session_id=' + encodeURIComponent(sessionId))
+        .then(r => r.json())
+        .then(data => {
+            if (data.verified) {
+                showDashboard(data.customer_email, data.customer_name);
+            } else {
+                errorEl.textContent = 'Could not verify your purchase. Please enter your checkout email.';
+                errorEl.style.display = 'block';
+            }
+        })
+        .catch(() => {
+            errorEl.textContent = 'Verification error. Please try entering your email.';
+            errorEl.style.display = 'block';
+        });
+}
+
+function showDashboard(email, name) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+
+    if (name) {
+        document.getElementById('dash-name').textContent = name + "'s PM Scaling Kit";
+    }
+
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = PRODUCTS.map(p => `
+        <div class="product-card">
+            <div class="product-num">${p.id}</div>
+            <span class="product-type ${TYPE_CLASSES[p.type] || 'type-sop'}">${p.type}</span>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <a href="/products/${p.file}?access=verified" class="product-link" target="_blank">Open Document →</a>
+        </div>
+    `).join('');
+}
+
+// Auto-verify if session_id in URL
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    if (sessionId) {
+        document.getElementById('gate').innerHTML = '<h1>🔐 Verifying your purchase...</h1><p>Please wait...</p>';
+        verifyWithSession(sessionId);
+    }
+})();
+</script>
+</body>
+</html>

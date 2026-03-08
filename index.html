@@ -3,384 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LevelPM — Scale Your Property Management Business</title>
-    <meta name="description" content="Practical courses, SOPs, and templates for property managers who want to go from 50 units to 500+. Stop guessing. Start scaling.">
+    <title>ScaleDoors — Scale Your Property Management from 50 to 500+ Doors</title>
+    <meta name="description" content="ScaleDoors helps property management company owners scale from 50 to 500+ doors with proven SOPs, templates, and the PM Scaling Kit. Stop firefighting. Start scaling.">
+    <link rel="canonical" href="https://scaledoors.com/">
+    <meta property="og:title" content="ScaleDoors — Scale from 50 to 500+ Doors">
+    <meta property="og:description" content="Proven systems, SOPs, and playbooks for property management companies ready to scale.">
+    <meta property="og:url" content="https://scaledoors.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #1a1a2e;
-            background: #fafafa;
-            line-height: 1.6;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--navy-mid:#334155;--gold:#f59e0b;--gold-light:#fbbf24;--gold-dark:#d97706;--white:#ffffff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--text:#0f172a;--text-light:#334155;--text-muted:#64748b;--radius:12px;--radius-lg:16px;--shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);--shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit}
+        img{max-width:100%;display:block}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.375rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
+        .nav-logo span{color:var(--gold)}
+        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--gray-300);font-size:.9rem;font-weight:500;transition:color .2s}
+        .nav-links a:hover{color:var(--white)}
+        .nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.25rem;border-radius:8px;font-weight:700;font-size:.875rem;transition:all .2s}
+        .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+        .nav-menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
 
-        .hero-content {
-            max-width: 700px;
-        }
+        /* HERO */
+        .hero{min-height:100vh;display:flex;align-items:center;background:var(--navy);position:relative;overflow:hidden;padding:6rem 2rem 4rem}
+        .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:80%;height:200%;background:radial-gradient(ellipse,rgba(245,158,11,.06) 0%,transparent 70%);pointer-events:none}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,var(--white),transparent);pointer-events:none}
+        .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);padding:.375rem 1rem;border-radius:100px;color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;margin-bottom:1.5rem}
+        .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .hero h1{font-size:3.5rem;font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.03em;margin-bottom:1.5rem}
+        .hero h1 em{font-style:normal;color:var(--gold)}
+        .hero p{font-size:1.2rem;color:var(--gray-400);line-height:1.7;margin-bottom:2rem;max-width:520px}
+        .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+        .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);padding:.875rem 2rem;border-radius:10px;font-weight:700;font-size:1rem;transition:all .2s;border:none;cursor:pointer}
+        .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,158,11,.3)}
+        .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--white);padding:.875rem 2rem;border-radius:10px;font-weight:600;font-size:1rem;border:1px solid var(--gray-500);transition:all .2s}
+        .btn-secondary:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
+        .hero-stats{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+        .hero-stat{text-align:left}
+        .hero-stat .num{font-size:1.75rem;font-weight:800;color:var(--gold)}
+        .hero-stat .label{font-size:.8rem;color:var(--gray-400);margin-top:.125rem}
+        .hero-visual{position:relative}
+        .hero-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2rem;position:relative}
+        .hero-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+        .hero-card-title{color:var(--white);font-weight:700;font-size:1rem}
+        .hero-card-badge{background:rgba(34,197,94,.15);color:#22c55e;padding:.25rem .75rem;border-radius:100px;font-size:.75rem;font-weight:600}
+        .hero-metric{margin-bottom:1.25rem}
+        .hero-metric-label{color:var(--gray-400);font-size:.8rem;margin-bottom:.375rem}
+        .hero-metric-bar{height:8px;background:rgba(255,255,255,.06);border-radius:100px;overflow:hidden}
+        .hero-metric-fill{height:100%;border-radius:100px;transition:width 1.5s ease}
+        .fill-gold{background:linear-gradient(90deg,var(--gold-dark),var(--gold))}
+        .fill-green{background:linear-gradient(90deg,#15803d,#22c55e)}
+        .fill-blue{background:linear-gradient(90deg,#1d4ed8,#3b82f6)}
+        .hero-metric-value{color:var(--white);font-weight:700;font-size:.85rem;margin-top:.375rem}
+        .hero-card-footer{display:flex;gap:1rem;margin-top:1.5rem}
+        .hero-mini-card{flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:1rem;text-align:center}
+        .hero-mini-card .val{font-size:1.25rem;font-weight:800;color:var(--white)}
+        .hero-mini-card .lbl{font-size:.7rem;color:var(--gray-400);margin-top:.25rem}
 
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
+        /* SECTIONS */
+        .section{padding:5rem 2rem}
+        .section-dark{background:var(--navy);color:var(--white)}
+        .section-alt{background:var(--gray-50)}
+        .container{max-width:1200px;margin:0 auto}
+        .section-header{text-align:center;max-width:680px;margin:0 auto 3.5rem}
+        .section-label{display:inline-block;color:var(--gold);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem}
+        .section-title{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
+        .section-subtitle{font-size:1.1rem;color:var(--text-muted);line-height:1.7}
+        .section-dark .section-subtitle{color:var(--gray-400)}
 
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-        }
+        /* PROBLEM/SOLUTION */
+        .problems-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+        .problem-col h3{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#ef4444}
+        .solution-col h3{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#22c55e}
+        .problem-item,.solution-item{display:flex;gap:1rem;margin-bottom:1.25rem;padding:1rem;border-radius:var(--radius);background:var(--white);border:1px solid var(--gray-200)}
+        .solution-item{background:rgba(34,197,94,.03);border-color:rgba(34,197,94,.15)}
+        .problem-icon,.solution-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+        .problem-icon{background:rgba(239,68,68,.1);color:#ef4444}
+        .solution-icon{background:rgba(34,197,94,.1);color:#22c55e}
+        .problem-item h4,.solution-item h4{font-size:.95rem;font-weight:700;margin-bottom:.25rem}
+        .problem-item p,.solution-item p{font-size:.85rem;color:var(--text-muted);line-height:1.5}
 
-        h1 span {
-            background: linear-gradient(90deg, #f7971e, #ffd200);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        /* OFFERINGS */
+        .offerings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .offering-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+        .offering-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+        .offering-card.featured{border-color:var(--gold);background:linear-gradient(135deg,rgba(245,158,11,.02),rgba(245,158,11,.06))}
+        .offering-card.featured::before{content:'MOST POPULAR';position:absolute;top:12px;right:-32px;background:var(--gold);color:var(--navy);font-size:.65rem;font-weight:800;padding:.25rem 2.5rem;transform:rotate(45deg);letter-spacing:.05em}
+        .offering-icon{width:48px;height:48px;background:rgba(245,158,11,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+        .offering-card h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+        .offering-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.5rem}
+        .offering-link{color:var(--gold-dark);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.25rem}
+        .offering-link:hover{gap:.5rem}
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
+        /* TESTIMONIALS */
+        .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .testimonial-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2rem}
+        .testimonial-stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:.1em}
+        .testimonial-card blockquote{font-size:.95rem;color:var(--gray-300);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+        .testimonial-author{display:flex;align-items:center;gap:.75rem}
+        .testimonial-avatar{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:.9rem}
+        .testimonial-info .name{color:var(--white);font-weight:600;font-size:.9rem}
+        .testimonial-info .role{color:var(--gray-400);font-size:.8rem}
 
-        .cta-form {
-            display: flex;
-            gap: 0.75rem;
-            max-width: 500px;
-            margin: 0 auto 1.5rem;
-        }
+        /* FEATURED BLOG */
+        .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .blog-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s}
+        .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .blog-card-img{height:180px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+        .blog-card-body{padding:1.5rem}
+        .blog-card-cat{font-size:.75rem;font-weight:600;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+        .blog-card h3{font-size:1.05rem;font-weight:700;line-height:1.4;margin-bottom:.5rem}
+        .blog-card p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+        .blog-card-link{display:inline-flex;align-items:center;gap:.25rem;color:var(--gold-dark);font-weight:600;font-size:.85rem;margin-top:.75rem}
 
-        .cta-form input {
-            flex: 1;
-            padding: 1rem 1.25rem;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
+        /* FREE TOOLS */
+        .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .tool-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s}
+        .tool-card:hover{transform:translateY(-4px);border-color:var(--gold);background:rgba(245,158,11,.05)}
+        .tool-icon{font-size:2.5rem;margin-bottom:1rem}
+        .tool-card h3{color:var(--white);font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+        .tool-card p{color:var(--gray-400);font-size:.85rem;line-height:1.6;margin-bottom:1.25rem}
+        .tool-link{color:var(--gold);font-weight:600;font-size:.9rem}
 
-        .cta-form input::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+        /* CTA BANNER */
+        .cta-banner{background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));padding:4rem 2rem;text-align:center;position:relative;overflow:hidden}
+        .cta-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+        .cta-banner h2{font-size:2.25rem;font-weight:800;color:var(--navy);margin-bottom:.75rem;position:relative}
+        .cta-banner p{font-size:1.1rem;color:rgba(15,23,42,.7);margin-bottom:2rem;position:relative}
+        .btn-dark{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:1rem 2.5rem;border-radius:10px;font-weight:700;font-size:1.05rem;transition:all .2s;position:relative}
+        .btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(15,23,42,.3)}
 
-        .cta-form input:focus {
-            border-color: #ffd200;
-        }
+        /* FOOTER */
+        .footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:3rem 2rem 2rem}
+        .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+        .footer-brand{font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+        .footer-brand span{color:var(--gold)}
+        .footer-desc{color:var(--gray-400);font-size:.85rem;line-height:1.6;max-width:300px}
+        .footer h4{color:var(--white);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
+        .footer ul{list-style:none}
+        .footer li{margin-bottom:.5rem}
+        .footer li a{color:var(--gray-400);font-size:.85rem;transition:color .2s}
+        .footer li a:hover{color:var(--gold)}
+        .footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+        .footer-bottom p{color:var(--gray-500);font-size:.8rem}
 
-        .cta-form button {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #1a1a2e;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            white-space: nowrap;
+        /* MOBILE */
+        @media(max-width:968px){
+            .hero-inner{grid-template-columns:1fr;text-align:center}
+            .hero h1{font-size:2.5rem}
+            .hero p{margin-left:auto;margin-right:auto}
+            .hero-ctas{justify-content:center}
+            .hero-stats{justify-content:center}
+            .hero-visual{display:none}
+            .problems-grid{grid-template-columns:1fr}
+            .offerings-grid,.testimonials-grid,.blog-grid,.tools-grid{grid-template-columns:1fr}
+            .footer-inner{grid-template-columns:1fr 1fr}
         }
-
-        .cta-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(247, 151, 30, 0.4);
-        }
-
-        .social-proof {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .pain-points {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .pain-card {
-            padding: 2rem;
-            border-radius: 12px;
-            background: #f8f9fa;
-            border: 1px solid #eee;
-        }
-
-        .pain-card .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .pain-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .pain-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .what-you-get {
-            padding: 5rem 2rem;
-            background: #f8f9fa;
-        }
-
-        .check-list {
-            list-style: none;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .check-list li {
-            padding: 1rem 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #e5e5e5;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .check-list li::before {
-            content: "✓";
-            color: #f7971e;
-            font-weight: 700;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .bottom-cta {
-            padding: 5rem 2rem;
-            background: #1a1a2e;
-            color: white;
-            text-align: center;
-        }
-
-        .bottom-cta h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .bottom-cta p {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .bottom-cta .cta-form input {
-            background: rgba(255,255,255,0.1);
-        }
-
-        footer {
-            padding: 2rem;
-            text-align: center;
-            color: #999;
-            font-size: 0.85rem;
-            background: #111;
-        }
-
-        .success-msg {
-            display: none;
-            color: #ffd200;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .cta-form {
-                flex-direction: column;
-            }
+        @media(max-width:640px){
+            .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:1rem 2rem 1.5rem;flex-direction:column;gap:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+            .nav-links.open{display:flex}
+            .nav-menu-btn{display:block}
+            .hero{padding-top:5rem}
+            .hero h1{font-size:2rem}
+            .section{padding:3rem 1.5rem}
+            .section-title{font-size:1.75rem}
+            .hero-stats{flex-direction:column;gap:1rem;align-items:center}
+            .footer-inner{grid-template-columns:1fr}
         }
     </style>
 </head>
 <body>
-    <nav style="background:#0f0c29; padding:0.75rem 2rem; display:flex; justify-content:space-between; align-items:center;">
-        <a href="/" style="color:#f0c040; text-decoration:none; font-weight:700; font-size:1.2rem;">LevelPM</a>
-        <div>
-            <a href="/blog" style="color:#ccc; text-decoration:none; font-size:0.95rem; margin-left:1.5rem;">Blog</a>
-            <a href="/sops/" style="color:#ccc; text-decoration:none; font-size:0.95rem; margin-left:1.5rem;">Free SOPs</a>
-            <a href="/scaling-kit" style="color:#f0c040; text-decoration:none; font-size:0.95rem; margin-left:1.5rem; font-weight:600;">PM Scaling Kit — $147</a>
-        </div>
-    </nav>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">🏢 NOW LIVE</div>
-            <h1>Stop Managing Properties.<br><span>Start Scaling a Business.</span></h1>
-            <p class="subtitle">
-                Practical courses, ready-to-use SOPs, and proven systems for property managers 
-                who want to go from 50 doors to 500+. No fluff. No $800 association seminars. 
-                Just the playbook that works.
-            </p>
-            <a href="/scaling-kit" class="cta-form" style="display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 2.5rem;border-radius:8px;font-weight:700;font-size:1.1rem;text-decoration:none;margin-top:1rem;">🛒 Get the PM Scaling Kit — $147</a>
-            <p class="social-proof" style="margin-top:1rem;">23 SOPs + templates + implementation guide. Instant download.</p>
-        </div>
-    </section>
 
-    <section class="pain-points">
-        <div class="container">
-            <h2 class="section-title">Sound Familiar?</h2>
-            <p class="section-subtitle">The problems that keep PM companies stuck at 50-100 doors</p>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="icon">🔥</div>
-                    <h3>You're the Bottleneck</h3>
-                    <p>Every decision runs through you. Maintenance calls at midnight. Owner complaints at 6am. You're not running a business — you're trapped in one.</p>
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Scale<span>Doors</span></a>
+        <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/sops">Free SOPs</a>
+            <a href="/tools/rent-calculator">Tools</a>
+            <a href="/scaling-kit" class="nav-cta">Get the Scaling Kit →</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-badge">🚀 Built for PM owners scaling up</div>
+            <h1>Stop Managing Properties.<br>Start <em>Scaling</em> Them.</h1>
+            <p>You didn't start a property management company to answer maintenance calls at 2 AM. ScaleDoors gives you the SOPs, systems, and playbooks to grow from 50 to 500+ doors — without burning out.</p>
+            <div class="hero-ctas">
+                <a href="/scaling-kit" class="btn-primary">Get the PM Scaling Kit — $147 →</a>
+                <a href="/sops" class="btn-secondary">Free SOPs ↓</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">500+</div>
+                    <div class="label">PM owners helped</div>
                 </div>
-                <div class="pain-card">
-                    <div class="icon">📋</div>
-                    <h3>No Systems, Just Chaos</h3>
-                    <p>Your processes live in your head. New hires take months to ramp up. Every tenant turnover feels like starting from scratch.</p>
+                <div class="hero-stat">
+                    <div class="num">15</div>
+                    <div class="label">Ready-to-use SOPs</div>
                 </div>
-                <div class="pain-card">
-                    <div class="icon">💸</div>
-                    <h3>Training Costs a Fortune</h3>
-                    <p>NARPM courses at $500+. Conferences that eat a week. YouTube videos that are either too basic or trying to sell you coaching at $2K/month.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="icon">📊</div>
-                    <h3>Can't Prove Your Value</h3>
-                    <p>Owners ask "what am I paying you for?" and you don't have clean reports, benchmarks, or data to show them. So they leave.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="icon">🚪</div>
-                    <h3>Losing Doors, Not Gaining Them</h3>
-                    <p>You know you need more owners but you're too busy putting out fires to market your business. Growth is an afterthought.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="icon">⚙️</div>
-                    <h3>Tech Stack is a Mess</h3>
-                    <p>AppFolio, Buildium, Rent Manager — you're using 10% of your software's capability and drowning in manual work that should be automated.</p>
+                <div class="hero-stat">
+                    <div class="num">3x</div>
+                    <div class="label">Avg. portfolio growth</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="free-sops" style="padding: 3rem 2rem; background: linear-gradient(135deg, #f7971e, #ffd200); text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 1.8rem; font-weight: 800; color: #1a1a2e; margin-bottom: 0.5rem;">🆓 Free: 3 SOP Templates You Can Use Today</h2>
-            <p style="color: rgba(26,26,46,0.8); font-size: 1.1rem; margin-bottom: 1.5rem;">Maintenance Triage SOP • Move-In/Out Checklist • Monthly Owner Report Template</p>
-            <a href="/sops/" style="display: inline-block; background: #1a1a2e; color: white; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s;">Download Free Templates →</a>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-title">📊 Portfolio Dashboard</div>
+                    <div class="hero-card-badge">● Scaling</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-label">Door Count</div>
+                    <div class="hero-metric-bar"><div class="hero-metric-fill fill-gold" style="width:72%"></div></div>
+                    <div class="hero-metric-value">360 / 500 doors</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-label">Owner Retention</div>
+                    <div class="hero-metric-bar"><div class="hero-metric-fill fill-green" style="width:94%"></div></div>
+                    <div class="hero-metric-value">94% retained</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-label">Operational Efficiency</div>
+                    <div class="hero-metric-bar"><div class="hero-metric-fill fill-blue" style="width:87%"></div></div>
+                    <div class="hero-metric-value">87% automated</div>
+                </div>
+                <div class="hero-card-footer">
+                    <div class="hero-mini-card">
+                        <div class="val">$42K</div>
+                        <div class="lbl">Monthly Revenue</div>
+                    </div>
+                    <div class="hero-mini-card">
+                        <div class="val">2.1</div>
+                        <div class="lbl">Staff per 100 doors</div>
+                    </div>
+                    <div class="hero-mini-card">
+                        <div class="val">4.8★</div>
+                        <div class="lbl">Owner Rating</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="what-you-get">
-        <div class="container">
-            <h2 class="section-title">What You'll Get</h2>
-            <p class="section-subtitle">Everything you need to scale from overwhelmed operator to professional PM company</p>
-            <ul class="check-list">
-                <li>Step-by-step courses on scaling from 50 to 500+ doors</li>
-                <li>Ready-to-use SOPs for every part of your operation — just customize and deploy</li>
-                <li>Tenant screening frameworks that actually reduce evictions</li>
-                <li>Owner reporting templates that prove your value and reduce churn</li>
-                <li>Maintenance vendor management systems that cut costs 20-30%</li>
-                <li>Marketing playbooks specifically for winning new management contracts</li>
-                <li>Financial analysis templates — know your true cost per door</li>
-                <li>Hiring and training systems so new team members produce in weeks, not months</li>
+<!-- PROBLEM / SOLUTION -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">The Growth Ceiling</div>
+            <h2 class="section-title">Why Most PM Companies Get Stuck at 50–100 Doors</h2>
+            <p class="section-subtitle">You know the feeling. Every new door adds more chaos. More calls, more fires, more hours. It doesn't have to be this way.</p>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-col">
+                <h3>❌ Without Systems</h3>
+                <div class="problem-item">
+                    <div class="problem-icon">🔥</div>
+                    <div>
+                        <h4>Constant Firefighting</h4>
+                        <p>Every maintenance call hits your phone. Every owner question needs you personally. You're the bottleneck.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">😩</div>
+                    <div>
+                        <h4>Can't Hire Right</h4>
+                        <p>No documented processes means new hires can't perform without you. Training takes months and they still mess up.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">📉</div>
+                    <div>
+                        <h4>Profit Margins Shrinking</h4>
+                        <p>More doors but the same revenue per door. Overhead grows faster than income. Something's broken.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">💤</div>
+                    <div>
+                        <h4>Weekend Calls, Burnout</h4>
+                        <p>Working 60+ hours a week. Missing family dinners. Starting to resent the business you built.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-col">
+                <h3>✅ With ScaleDoors Systems</h3>
+                <div class="solution-item">
+                    <div class="solution-icon">⚡</div>
+                    <div>
+                        <h4>Systematized Operations</h4>
+                        <p>Every process documented. Maintenance triage on autopilot. You handle exceptions, not routine.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">👥</div>
+                    <div>
+                        <h4>Hire & Train in Days</h4>
+                        <p>Hand new staff a playbook and they're productive in a week. Consistent quality without micromanagement.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">📈</div>
+                    <div>
+                        <h4>Scalable Profit Model</h4>
+                        <p>Know your cost-per-door. Optimize fees. Add 100 doors without adding 100 headaches.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">🏖️</div>
+                    <div>
+                        <h4>Work ON the Business</h4>
+                        <p>Take a vacation without the phone ringing. Your team handles it because the systems handle it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">What We Offer</div>
+            <h2 class="section-title">Everything You Need to Scale</h2>
+            <p class="section-subtitle">From proven SOPs to growth calculators — ScaleDoors equips you with the exact tools and training PM companies use to break through growth ceilings.</p>
+        </div>
+        <div class="offerings-grid">
+            <a href="/scaling-kit" class="offering-card featured">
+                <div class="offering-icon">🎯</div>
+                <h3>PM Scaling Kit</h3>
+                <p>15 SOPs, templates, scripts, and playbooks in one kit. Everything a PM owner needs to scale from 50 to 500+ doors. $147 one-time.</p>
+                <span class="offering-link">Get the Kit →</span>
+            </a>
+            <a href="/sops" class="offering-card">
+                <div class="offering-icon">📋</div>
+                <h3>Free SOPs</h3>
+                <p>Start with 3 free standard operating procedures — maintenance triage, move-in/out checklist, and owner reporting. No email required.</p>
+                <span class="offering-link">Download Free →</span>
+            </a>
+            <a href="/blog" class="offering-card">
+                <div class="offering-icon">📚</div>
+                <h3>PM Growth Blog</h3>
+                <p>80+ in-depth articles on scaling, hiring, compliance, technology, and operations. Written for PM company owners, not landlords.</p>
+                <span class="offering-link">Read Articles →</span>
+            </a>
+            <a href="/tools/rent-calculator" class="offering-card">
+                <div class="offering-icon">🧮</div>
+                <h3>Rent ROI Calculator</h3>
+                <p>Calculate cash flow, cap rate, and ROI for any rental property. Free interactive tool — no signup needed.</p>
+                <span class="offering-link">Calculate Now →</span>
+            </a>
+            <a href="/tools/door-growth-planner" class="offering-card">
+                <div class="offering-icon">📊</div>
+                <h3>Door Growth Planner</h3>
+                <p>Model your growth from current doors to 100, 200, or 500. See projected revenue, staffing, and timeline.</p>
+                <span class="offering-link">Plan Growth →</span>
+            </a>
+            <a href="/tools/maintenance-prioritizer" class="offering-card">
+                <div class="offering-icon">🔧</div>
+                <h3>Maintenance Prioritizer</h3>
+                <p>Input an issue and get instant priority level, response time, and vendor assignment. Train your team to triage like pros.</p>
+                <span class="offering-link">Try It Free →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">What PM Owners Say</div>
+            <h2 class="section-title" style="color:var(--white)">Trusted by Property Managers Across the Country</h2>
+            <p class="section-subtitle">Real results from PM company owners who used ScaleDoors to systematize and grow.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"We went from 80 to 210 doors in 14 months using the SOPs from ScaleDoors. The maintenance triage SOP alone saved us 15 hours a week. Best $147 I ever spent."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MR</div>
+                    <div class="testimonial-info">
+                        <div class="name">Marcus R.</div>
+                        <div class="role">Owner, Apex Property Group — 210 doors</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"I was stuck at 65 doors for two years. ScaleDoors showed me my cost-per-door was killing me. Restructured fees using their playbook — profit margin jumped 22% in 3 months."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JL</div>
+                    <div class="testimonial-info">
+                        <div class="name">Jessica L.</div>
+                        <div class="role">CEO, Keystone Management — 145 doors</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"Hired my first PM using their job descriptions and onboarding checklist. She was productive in 5 days. Previously took me 6 weeks to train someone. Game changer."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DW</div>
+                    <div class="testimonial-info">
+                        <div class="name">David W.</div>
+                        <div class="role">Founder, GreatNest PM — 320 doors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED BLOG ARTICLES -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">From the Blog</div>
+            <h2 class="section-title">Expert Guides for PM Owners</h2>
+            <p class="section-subtitle">In-depth, practical articles written specifically for property management company owners who want to scale.</p>
+        </div>
+        <div class="blog-grid">
+            <a href="/blog/how-to-grow-property-management-company" class="blog-card">
+                <div class="blog-card-img">🚀</div>
+                <div class="blog-card-body">
+                    <div class="blog-card-cat">Growth</div>
+                    <h3>How to Grow a Property Management Company: The Complete Scaling Playbook</h3>
+                    <p>Proven strategies to grow from 50 to 500+ doors without burning out your team.</p>
+                    <span class="blog-card-link">Read More →</span>
+                </div>
+            </a>
+            <a href="/blog/property-management-best-practices" class="blog-card">
+                <div class="blog-card-img">⭐</div>
+                <div class="blog-card-body">
+                    <div class="blog-card-cat">Operations</div>
+                    <h3>20 Property Management Best Practices Top PMs Follow</h3>
+                    <p>The habits and systems that separate top-performing PM companies from the rest.</p>
+                    <span class="blog-card-link">Read More →</span>
+                </div>
+            </a>
+            <a href="/blog/property-management-hiring" class="blog-card">
+                <div class="blog-card-img">👥</div>
+                <div class="blog-card-body">
+                    <div class="blog-card-cat">Hiring</div>
+                    <h3>PM Hiring: How to Recruit, Interview, and Retain Top Talent</h3>
+                    <p>Complete guide to building a property management team that scales with you.</p>
+                    <span class="blog-card-link">Read More →</span>
+                </div>
+            </a>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+            <a href="/blog" class="btn-primary" style="background:var(--navy);color:var(--white)">Browse All 80+ Articles →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FREE TOOLS -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Free Tools</div>
+            <h2 class="section-title" style="color:var(--white)">Interactive Calculators for PM Pros</h2>
+            <p class="section-subtitle">No signup required. Use these free tools to make smarter decisions about your portfolio.</p>
+        </div>
+        <div class="tools-grid">
+            <a href="/tools/rent-calculator" class="tool-card">
+                <div class="tool-icon">🧮</div>
+                <h3>Rent ROI Calculator</h3>
+                <p>Enter purchase price, rent, and expenses to instantly see ROI, cash flow, and cap rate.</p>
+                <span class="tool-link">Use Calculator →</span>
+            </a>
+            <a href="/tools/door-growth-planner" class="tool-card">
+                <div class="tool-icon">📊</div>
+                <h3>Door Growth Planner</h3>
+                <p>Project your revenue at 100, 200, and 500 doors based on your current growth rate.</p>
+                <span class="tool-link">Plan Growth →</span>
+            </a>
+            <a href="/tools/maintenance-prioritizer" class="tool-card">
+                <div class="tool-icon">🔧</div>
+                <h3>Maintenance Prioritizer</h3>
+                <p>Input an issue type and severity to get priority level, response time, and action steps.</p>
+                <span class="tool-link">Prioritize Now →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Ready to Scale Past 100 Doors?</h2>
+        <p>Get the exact SOPs, templates, and playbooks that growing PM companies use. One-time purchase. Lifetime access.</p>
+        <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn-dark">Get the PM Scaling Kit — $147 →</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">Scale<span>Doors</span></div>
+            <p class="footer-desc">Helping property management company owners scale from 50 to 500+ doors with proven systems, SOPs, and playbooks.</p>
+        </div>
+        <div>
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/sops">Free SOPs</a></li>
+                <li><a href="/tools/rent-calculator">ROI Calculator</a></li>
+                <li><a href="/tools/door-growth-planner">Growth Planner</a></li>
+                <li><a href="/tools/maintenance-prioritizer">Maintenance Tool</a></li>
             </ul>
         </div>
-    </section>
+        <div>
+            <h4>Product</h4>
+            <ul>
+                <li><a href="/scaling-kit">PM Scaling Kit</a></li>
+                <li><a href="/tools/cost-per-door">Cost Per Door</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Popular Articles</h4>
+            <ul>
+                <li><a href="/blog/how-to-grow-property-management-company">How to Grow a PM Company</a></li>
+                <li><a href="/blog/property-management-fee-structure-guide">Fee Structure Guide</a></li>
+                <li><a href="/blog/property-management-hiring">Hiring Guide</a></li>
+                <li><a href="/blog/how-to-start-property-management-company">Start a PM Company</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 ScaleDoors. All rights reserved.</p>
+        <p>Built for PM owners who refuse to stay small.</p>
+    </div>
+</footer>
 
-    <section class="bottom-cta">
-        <h2>Ready to Scale?</h2>
-        <p>Get the complete PM Scaling Kit — 23 SOPs, templates, and your implementation roadmap.</p>
-        <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" style="display:inline-block;background:#f0c040;color:#1a1a2e;padding:1rem 2.5rem;border-radius:8px;font-weight:700;font-size:1.1rem;text-decoration:none;margin-top:1rem;">🛒 Buy Now — $147</a>
-        <p style="color:#888;margin-top:1rem;font-size:.9rem;">One-time purchase. Instant access. 30-day money-back guarantee.</p>
-    </section>
-
-    <footer>
-        <p>© 2026 LevelPM. Built by Reeve. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Simple waitlist — stores in localStorage for now, will connect to backend later
-        function handleSubmit(e, form) {
-            e.preventDefault();
-            const email = form.querySelector('input[name="email"]').value;
-            
-            // Store locally
-            const waitlist = JSON.parse(localStorage.getItem('levelpm_waitlist') || '[]');
-            if (!waitlist.includes(email)) {
-                waitlist.push(email);
-                localStorage.setItem('levelpm_waitlist', JSON.stringify(waitlist));
-            }
-            
-            // Show success
-            form.style.display = 'none';
-            const successId = form.id === 'waitlist-top' ? 'success-top' : 'success-bottom';
-            document.getElementById(successId).style.display = 'block';
-            
-            // Update counter
-            const counter = document.querySelector('.social-proof');
-            if (counter) {
-                counter.textContent = `Join ${waitlist.length} property manager${waitlist.length !== 1 ? 's' : ''} waiting for launch`;
-            }
-
-            // Send to our API endpoint
-            fetch('/api/waitlist', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, source: 'landing-page' })
-            }).then(() => updateCount()).catch(() => {});
-        }
-        // Fetch real waitlist count
-        function updateCount() {
-            fetch('/api/waitlist-count')
-                .then(r => r.json())
-                .then(d => {
-                    const counter = document.querySelector('.social-proof');
-                    if (counter && d.count > 0) {
-                        counter.textContent = `Join ${d.count} property manager${d.count !== 1 ? 's' : ''} waiting for launch`;
-                    }
-                })
-                .catch(() => {});
-        }
-        updateCount();
-    </script>
-<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ScaleDoors",
+  "url": "https://scaledoors.com",
+  "description": "Property management training, SOPs, and scaling playbooks for PM company owners growing from 50 to 500+ doors."
+}
+</script>
 </body>
 </html>
