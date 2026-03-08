@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://levelpm.vercel.app/sitemap.xml
+Sitemap: https://scaledoors.com/sitemap.xml

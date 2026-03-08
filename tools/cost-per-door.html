@@ -6,7 +6,7 @@
     <title>Free Cost Per Door Calculator — Property Management | LevelPM</title>
     <meta name="description" content="Calculate your true cost per door and compare to industry benchmarks. Free tool for property managers scaling from 50 to 500+ doors.">
     <meta name="keywords" content="cost per door calculator, property management cost per door, PM cost analysis, property management profitability">
-    <link rel="canonical" href="https://levelpm.vercel.app/tools/cost-per-door">
+    <link rel="canonical" href="https://scaledoors.com/tools/cost-per-door">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -16,7 +16,7 @@
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "provider": { "@type": "Organization", "name": "LevelPM", "url": "https://levelpm.vercel.app" }
+        "provider": { "@type": "Organization", "name": "LevelPM", "url": "https://scaledoors.com" }
     }
     </script>
     <style>
@@ -300,14 +300,14 @@
         const ppd = document.getElementById('profitPerDoor').textContent;
         const pm = document.getElementById('profitMargin').textContent;
         const grade = document.getElementById('gradeLetter').textContent;
-        const text = `My PM Cost Per Door Results (via LevelPM):\n• Cost/Door: ${cpd}/mo\n• Revenue/Door: ${rpm}/mo\n• Profit/Door: ${ppd}/mo\n• Margin: ${pm}\n• Grade: ${grade}\n\nCalculate yours free: https://levelpm.vercel.app/tools/cost-per-door`;
+        const text = `My PM Cost Per Door Results (via LevelPM):\n• Cost/Door: ${cpd}/mo\n• Revenue/Door: ${rpm}/mo\n• Profit/Door: ${ppd}/mo\n• Margin: ${pm}\n• Grade: ${grade}\n\nCalculate yours free: https://scaledoors.com/tools/cost-per-door`;
         navigator.clipboard.writeText(text).then(() => alert('Copied! Share it with your PM network.'));
     }
 
     function shareTwitter() {
         const grade = document.getElementById('gradeLetter').textContent;
         const cpd = document.getElementById('costPerDoor').textContent;
-        const text = encodeURIComponent(`Just calculated my property management cost per door: ${cpd}/mo (Grade: ${grade})\n\nFree calculator for PMs → https://levelpm.vercel.app/tools/cost-per-door`);
+        const text = encodeURIComponent(`Just calculated my property management cost per door: ${cpd}/mo (Grade: ${grade})\n\nFree calculator for PMs → https://scaledoors.com/tools/cost-per-door`);
         window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
     }
     </script>
