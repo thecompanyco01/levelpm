@@ -10,12 +10,14 @@
         { "src": "products/**/*.html", "use": "@vercel/static" },
         { "src": "sitemap.xml", "use": "@vercel/static" },
         { "src": "robots.txt", "use": "@vercel/static" },
+        { "src": "scaledoors.txt", "use": "@vercel/static" },
         { "src": "api/**/*.js", "use": "@vercel/node" }
     ],
     "routes": [
         { "src": "/api/(.*)", "dest": "/api/$1.js", "methods": ["GET", "POST", "OPTIONS"] },
         { "src": "/sitemap\\.xml$", "dest": "/sitemap.xml" },
         { "src": "/robots\\.txt$", "dest": "/robots.txt" },
+        { "src": "/scaledoors\\.txt$", "dest": "/scaledoors.txt" },
         { "src": "/thank-you$", "dest": "/thank-you.html" },
         { "src": "/scaling-kit$", "dest": "/scaling-kit.html" },
         { "src": "/blog/states/([^/]+)$", "dest": "/blog/states/$1.html" },
