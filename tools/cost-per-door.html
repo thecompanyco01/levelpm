@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Cost Per Door Calculator — Property Management | LevelPM</title>
+    <meta name="description" content="Calculate your true cost per door and compare to industry benchmarks. Free tool for property managers scaling from 50 to 500+ doors.">
+    <meta name="keywords" content="cost per door calculator, property management cost per door, PM cost analysis, property management profitability">
+    <link rel="canonical" href="https://levelpm.vercel.app/tools/cost-per-door">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cost Per Door Calculator",
+        "description": "Calculate your true cost per door and compare to industry benchmarks",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": { "@type": "Organization", "name": "LevelPM", "url": "https://levelpm.vercel.app" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .nav { background: #1e293b; border-bottom: 1px solid #334155; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav a { color: #60a5fa; text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+        .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .hero { text-align: center; padding: 3rem 1rem 2rem; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .hero h1 span { color: #60a5fa; }
+        .hero p { color: #94a3b8; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; }
+        .card h2 { font-size: 1.1rem; color: #60a5fa; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.3rem; }
+        .form-group input { width: 100%; padding: 0.6rem 0.8rem; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #e2e8f0; font-size: 1rem; }
+        .form-group input:focus { outline: none; border-color: #60a5fa; }
+        .form-group .hint { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; }
+        .btn-calc { width: 100%; padding: 0.8rem; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+        .btn-calc:hover { background: #1d4ed8; }
+        .results { display: none; }
+        .results.show { display: block; }
+        .result-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+        .result-card h2 { font-size: 1.2rem; color: #10b981; margin-bottom: 1rem; }
+        .metric { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #334155; }
+        .metric:last-child { border-bottom: none; }
+        .metric-label { color: #94a3b8; font-size: 0.9rem; }
+        .metric-value { font-size: 1.3rem; font-weight: 700; }
+        .metric-value.good { color: #10b981; }
+        .metric-value.warning { color: #f59e0b; }
+        .metric-value.bad { color: #ef4444; }
+        .benchmark { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+        .benchmark h3 { color: #60a5fa; margin-bottom: 1rem; font-size: 1rem; }
+        .bench-row { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; }
+        .bench-label { color: #94a3b8; }
+        .bench-value { color: #e2e8f0; font-weight: 600; }
+        .grade-box { text-align: center; padding: 1.5rem; margin-top: 1.5rem; border-radius: 12px; }
+        .grade-box.a { background: linear-gradient(135deg, #065f46, #064e3b); border: 1px solid #10b981; }
+        .grade-box.b { background: linear-gradient(135deg, #1e3a5f, #1e293b); border: 1px solid #3b82f6; }
+        .grade-box.c { background: linear-gradient(135deg, #78350f, #451a03); border: 1px solid #f59e0b; }
+        .grade-box.d { background: linear-gradient(135deg, #7f1d1d, #450a0a); border: 1px solid #ef4444; }
+        .grade-letter { font-size: 3rem; font-weight: 800; }
+        .grade-text { font-size: 0.9rem; color: #94a3b8; margin-top: 0.3rem; }
+        .cta-box { background: linear-gradient(135deg, #1e3a5f, #1e293b); border: 1px solid #3b82f6; border-radius: 12px; padding: 2rem; margin-top: 2rem; text-align: center; }
+        .cta-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .cta-box p { color: #94a3b8; margin-bottom: 1rem; }
+        .cta-btn { display: inline-block; padding: 0.8rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .cta-btn:hover { background: #1d4ed8; }
+        .share-row { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+        .share-btn { padding: 0.5rem 1rem; background: #334155; border: none; color: #94a3b8; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
+        .share-btn:hover { background: #475569; color: white; }
+        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.8rem; border-top: 1px solid #1e293b; margin-top: 3rem; }
+        footer a { color: #60a5fa; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">🏢 LevelPM</a>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="/sops/">Free SOPs</a>
+            <a href="/scaling-kit">Scaling Kit</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🧮 <span>Cost Per Door</span> Calculator</h1>
+        <p>Know your true cost per door. Compare to industry benchmarks. Find where you're leaking profit — and fix it.</p>
+    </div>
+
+    <div class="container">
+        <div class="calc-grid">
+            <div class="card">
+                <h2>📊 Revenue</h2>
+                <div class="form-group">
+                    <label>Total Doors Under Management</label>
+                    <input type="number" id="doors" placeholder="e.g., 150" min="1">
+                </div>
+                <div class="form-group">
+                    <label>Average Monthly Rent Per Unit</label>
+                    <input type="number" id="avgRent" placeholder="e.g., 1500" min="0">
+                    <div class="hint">Average across all units</div>
+                </div>
+                <div class="form-group">
+                    <label>Management Fee %</label>
+                    <input type="number" id="feePercent" placeholder="e.g., 8" min="0" max="100" step="0.5">
+                    <div class="hint">Your management fee rate (typically 6-12%)</div>
+                </div>
+                <div class="form-group">
+                    <label>Other Monthly Revenue ($)</label>
+                    <input type="number" id="otherRevenue" placeholder="e.g., 2000" min="0">
+                    <div class="hint">Leasing fees, maintenance markups, etc.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Monthly Expenses</h2>
+                <div class="form-group">
+                    <label>Payroll & Benefits ($)</label>
+                    <input type="number" id="payroll" placeholder="e.g., 12000" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Software & Technology ($)</label>
+                    <input type="number" id="software" placeholder="e.g., 800" min="0">
+                    <div class="hint">AppFolio, Buildium, etc.</div>
+                </div>
+                <div class="form-group">
+                    <label>Office / Overhead ($)</label>
+                    <input type="number" id="overhead" placeholder="e.g., 2500" min="0">
+                    <div class="hint">Rent, insurance, utilities, supplies</div>
+                </div>
+                <div class="form-group">
+                    <label>Marketing ($)</label>
+                    <input type="number" id="marketing" placeholder="e.g., 500" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Other Expenses ($)</label>
+                    <input type="number" id="otherExpense" placeholder="e.g., 1000" min="0">
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">Calculate My Cost Per Door →</button>
+
+        <div class="results" id="results">
+            <div class="result-card">
+                <h2>📈 Your Results</h2>
+                <div class="metric">
+                    <span class="metric-label">Cost Per Door (Monthly)</span>
+                    <span class="metric-value" id="costPerDoor">—</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Revenue Per Door (Monthly)</span>
+                    <span class="metric-value" id="revPerDoor">—</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Profit Per Door (Monthly)</span>
+                    <span class="metric-value" id="profitPerDoor">—</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Profit Margin</span>
+                    <span class="metric-value" id="profitMargin">—</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Annual Profit (Estimated)</span>
+                    <span class="metric-value" id="annualProfit">—</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Break-Even Doors</span>
+                    <span class="metric-value" id="breakEven">—</span>
+                </div>
+            </div>
+
+            <div id="gradeBox" class="grade-box b">
+                <div class="grade-letter" id="gradeLetter">B</div>
+                <div class="grade-text" id="gradeText">Your cost efficiency is solid</div>
+            </div>
+
+            <div class="benchmark">
+                <h3>📊 Industry Benchmarks (2025-2026)</h3>
+                <div class="bench-row"><span class="bench-label">Top Performers (500+ doors)</span><span class="bench-value">$35-55/door/mo</span></div>
+                <div class="bench-row"><span class="bench-label">Efficient Mid-Size (150-500)</span><span class="bench-value">$55-85/door/mo</span></div>
+                <div class="bench-row"><span class="bench-label">Average (50-150 doors)</span><span class="bench-value">$85-120/door/mo</span></div>
+                <div class="bench-row"><span class="bench-label">Struggling / Early Stage</span><span class="bench-value">$120-200+/door/mo</span></div>
+                <div class="bench-row"><span class="bench-label">Target Profit Margin</span><span class="bench-value">25-40%</span></div>
+                <div class="bench-row"><span class="bench-label">Payroll % of Revenue (target)</span><span class="bench-value">40-55%</span></div>
+            </div>
+
+            <div id="tips" class="result-card" style="display:none;">
+                <h2>💡 How to Improve</h2>
+                <div id="tipsList"></div>
+            </div>
+
+            <div class="share-row">
+                <button class="share-btn" onclick="copyResults()">📋 Copy Results</button>
+                <button class="share-btn" onclick="shareTwitter()">𝕏 Share on Twitter</button>
+            </div>
+
+            <div class="cta-box">
+                <h3>Want to cut your cost per door by 20-30%?</h3>
+                <p>The PM Scaling Kit includes SOPs, templates, and systems that top property managers use to scale efficiently from 50 to 500+ doors.</p>
+                <a href="/scaling-kit" class="cta-btn">Get the PM Scaling Kit — $147</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built by <a href="/">LevelPM</a> — Free tools and training for property managers scaling to 500+ doors.</p>
+        <p style="margin-top:0.5rem;"><a href="/blog/">Blog</a> · <a href="/sops/">Free SOPs</a> · <a href="/tools/cost-per-door">Cost Per Door Calculator</a></p>
+    </footer>
+
+    <script>
+    function val(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+    function calculate() {
+        const doors = val('doors');
+        if (doors < 1) { alert('Enter at least 1 door'); return; }
+
+        const avgRent = val('avgRent');
+        const feePercent = val('feePercent');
+        const otherRev = val('otherRevenue');
+        const payroll = val('payroll');
+        const software = val('software');
+        const overhead = val('overhead');
+        const marketing = val('marketing');
+        const otherExp = val('otherExpense');
+
+        const totalRevenue = (doors * avgRent * feePercent / 100) + otherRev;
+        const totalExpenses = payroll + software + overhead + marketing + otherExp;
+        const costPerDoor = totalExpenses / doors;
+        const revPerDoor = totalRevenue / doors;
+        const profitPerDoor = revPerDoor - costPerDoor;
+        const profitMargin = totalRevenue > 0 ? (profitPerDoor / revPerDoor * 100) : 0;
+        const annualProfit = profitPerDoor * doors * 12;
+
+        // Break-even: at what door count does revenue = expenses?
+        const revPerDoorUnit = avgRent * feePercent / 100;
+        const fixedCosts = totalExpenses; // simplified
+        const breakEven = revPerDoorUnit > 0 ? Math.ceil((totalExpenses - otherRev) / revPerDoorUnit) : '∞';
+
+        // Display
+        const cpd = document.getElementById('costPerDoor');
+        cpd.textContent = '$' + costPerDoor.toFixed(0);
+        cpd.className = 'metric-value ' + (costPerDoor <= 55 ? 'good' : costPerDoor <= 85 ? '' : costPerDoor <= 120 ? 'warning' : 'bad');
+
+        document.getElementById('revPerDoor').textContent = '$' + revPerDoor.toFixed(0);
+        
+        const ppd = document.getElementById('profitPerDoor');
+        ppd.textContent = (profitPerDoor >= 0 ? '+' : '') + '$' + profitPerDoor.toFixed(0);
+        ppd.className = 'metric-value ' + (profitPerDoor > 0 ? 'good' : 'bad');
+
+        const pm = document.getElementById('profitMargin');
+        pm.textContent = profitMargin.toFixed(1) + '%';
+        pm.className = 'metric-value ' + (profitMargin >= 30 ? 'good' : profitMargin >= 15 ? 'warning' : 'bad');
+
+        const ap = document.getElementById('annualProfit');
+        ap.textContent = (annualProfit >= 0 ? '+' : '-') + '$' + Math.abs(annualProfit).toLocaleString();
+        ap.className = 'metric-value ' + (annualProfit > 0 ? 'good' : 'bad');
+
+        document.getElementById('breakEven').textContent = breakEven + ' doors';
+
+        // Grade
+        let grade, gradeClass, gradeText;
+        if (costPerDoor <= 55 && profitMargin >= 30) { grade = 'A'; gradeClass = 'a'; gradeText = 'Elite efficiency! You\'re operating at top-performer level.'; }
+        else if (costPerDoor <= 85 && profitMargin >= 20) { grade = 'B'; gradeClass = 'b'; gradeText = 'Solid operations. Some room to optimize.'; }
+        else if (costPerDoor <= 120 && profitMargin >= 10) { grade = 'C'; gradeClass = 'c'; gradeText = 'Average efficiency. Significant room for improvement.'; }
+        else { grade = 'D'; gradeClass = 'd'; gradeText = 'Below benchmarks. Your costs are eating your profits.'; }
+
+        const gb = document.getElementById('gradeBox');
+        gb.className = 'grade-box ' + gradeClass;
+        document.getElementById('gradeLetter').textContent = grade;
+        document.getElementById('gradeText').textContent = gradeText;
+
+        // Tips
+        const tips = [];
+        const payrollPct = totalRevenue > 0 ? (payroll / totalRevenue * 100) : 0;
+        if (payrollPct > 55) tips.push('⚠️ <strong>Payroll is ' + payrollPct.toFixed(0) + '% of revenue</strong> (target: 40-55%). Consider cross-training staff, using virtual assistants for admin tasks, or centralizing operations to reduce headcount per door.');
+        if (costPerDoor > 120) tips.push('🔴 <strong>Your cost per door ($' + costPerDoor.toFixed(0) + ') is above industry average.</strong> Focus on growing doors while keeping fixed costs stable — your cost per door drops dramatically as you add units without adding staff.');
+        if (software / doors > 15) tips.push('💻 <strong>Software costs are high at $' + (software/doors).toFixed(0) + '/door.</strong> Audit your tech stack — are you paying for features you don\'t use? Consolidate tools where possible.');
+        if (profitMargin < 20) tips.push('📉 <strong>Profit margin (' + profitMargin.toFixed(1) + '%) is below healthy range.</strong> Either increase fees, add ancillary revenue (maintenance markups, tenant fees), or reduce expenses.');
+        if (doors < 100) tips.push('📈 <strong>Scale is your biggest lever.</strong> At ' + doors + ' doors, your fixed costs are spread thin. Adding 50 doors with minimal extra staff could nearly double your profit.');
+        if (feePercent < 8) tips.push('💰 <strong>Your fee rate (' + feePercent + '%) is below average.</strong> Consider raising rates to 8-10% — most markets support it. Even a 1% increase across ' + doors + ' units = $' + (doors * avgRent * 0.01).toLocaleString() + '/mo extra revenue.');
+
+        if (tips.length > 0) {
+            document.getElementById('tips').style.display = 'block';
+            document.getElementById('tipsList').innerHTML = tips.map(t => '<p style="margin-bottom:0.8rem;color:#cbd5e1;font-size:0.9rem;">' + t + '</p>').join('');
+        }
+
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyResults() {
+        const cpd = document.getElementById('costPerDoor').textContent;
+        const rpm = document.getElementById('revPerDoor').textContent;
+        const ppd = document.getElementById('profitPerDoor').textContent;
+        const pm = document.getElementById('profitMargin').textContent;
+        const grade = document.getElementById('gradeLetter').textContent;
+        const text = `My PM Cost Per Door Results (via LevelPM):\n• Cost/Door: ${cpd}/mo\n• Revenue/Door: ${rpm}/mo\n• Profit/Door: ${ppd}/mo\n• Margin: ${pm}\n• Grade: ${grade}\n\nCalculate yours free: https://levelpm.vercel.app/tools/cost-per-door`;
+        navigator.clipboard.writeText(text).then(() => alert('Copied! Share it with your PM network.'));
+    }
+
+    function shareTwitter() {
+        const grade = document.getElementById('gradeLetter').textContent;
+        const cpd = document.getElementById('costPerDoor').textContent;
+        const text = encodeURIComponent(`Just calculated my property management cost per door: ${cpd}/mo (Grade: ${grade})\n\nFree calculator for PMs → https://levelpm.vercel.app/tools/cost-per-door`);
+        window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+    }
+    </script>
+</body>
+</html>

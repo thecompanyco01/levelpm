@@ -6,6 +6,7 @@
         { "src": "thank-you.html", "use": "@vercel/static" },
         { "src": "sops/**/*.html", "use": "@vercel/static" },
         { "src": "blog/**/*.html", "use": "@vercel/static" },
+        { "src": "tools/**/*.html", "use": "@vercel/static" },
         { "src": "sitemap.xml", "use": "@vercel/static" },
         { "src": "robots.txt", "use": "@vercel/static" },
         { "src": "api/**/*.js", "use": "@vercel/node" }
@@ -20,6 +21,8 @@
         { "src": "/blog/states/?$", "dest": "/blog/states/index.html" },
         { "src": "/blog/([^/]+)$", "dest": "/blog/$1.html" },
         { "src": "/blog/?$", "dest": "/blog/index.html" },
+        { "src": "/tools/([^/]+)$", "dest": "/tools/$1.html" },
+        { "src": "/tools/?$", "dest": "/tools/cost-per-door.html" },
         { "src": "/sops/([^/]+)\\.html$", "dest": "/sops/$1.html" },
         { "src": "/sops/?$", "dest": "/sops/index.html" },
         { "src": "^/$", "dest": "/index.html" }
