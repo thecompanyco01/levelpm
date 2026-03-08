@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Property Management Fee Calculator — How Much Should You Charge? | ScaleDoors</title>
+    <meta name="description" content="Calculate exactly what to charge for property management. Compare your fees to market rates by city, property type, and service level. Free PM fee calculator.">
+    <meta name="keywords" content="property management fee calculator, how much to charge property management, PM fee structure, property management pricing calculator">
+    <link rel="canonical" href="https://scaledoors.com/tools/fee-calculator">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Property Management Fee Calculator",
+        "description": "Calculate optimal property management fees based on your market, property type, and services",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": { "@type": "Organization", "name": "ScaleDoors", "url": "https://scaledoors.com" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .nav { background: #1e293b; border-bottom: 1px solid #334155; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav a { color: #60a5fa; text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+        .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .hero { text-align: center; padding: 3rem 1rem 2rem; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .hero p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+        .calculator { background: #1e293b; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #cbd5e1; }
+        select, input { width: 100%; padding: 0.75rem 1rem; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #e2e8f0; font-size: 1rem; }
+        select:focus, input:focus { outline: none; border-color: #60a5fa; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+        .btn { background: #2563eb; color: white; border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 700; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 0.5rem; }
+        .btn:hover { background: #1d4ed8; }
+        .results { display: none; background: #1e293b; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; border: 2px solid #2563eb; }
+        .results h2 { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+        .result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        @media (max-width: 600px) { .result-grid { grid-template-columns: 1fr; } }
+        .result-card { background: #0f172a; border-radius: 8px; padding: 1.25rem; text-align: center; }
+        .result-card .label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.25rem; }
+        .result-card .value { font-size: 1.8rem; font-weight: 800; color: #34d399; }
+        .result-card .sub { font-size: 0.8rem; color: #64748b; margin-top: 0.25rem; }
+        .result-card.highlight { border: 2px solid #2563eb; }
+        .result-card.highlight .value { color: #60a5fa; }
+        .breakdown { background: #0f172a; border-radius: 8px; padding: 1.25rem; margin-top: 1rem; }
+        .breakdown h3 { margin-bottom: 0.75rem; font-size: 1rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #1e293b; }
+        .breakdown-row:last-child { border: none; font-weight: 700; color: #34d399; }
+        .market-compare { background: #0f172a; border-radius: 8px; padding: 1.25rem; margin-top: 1rem; }
+        .market-compare h3 { margin-bottom: 0.75rem; font-size: 1rem; }
+        .bar-container { margin-bottom: 0.75rem; }
+        .bar-label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .bar { height: 24px; background: #334155; border-radius: 4px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+        .bar-fill.low { background: #ef4444; }
+        .bar-fill.mid { background: #f59e0b; }
+        .bar-fill.rec { background: #34d399; }
+        .bar-fill.high { background: #60a5fa; }
+        .bar-marker { position: absolute; top: 0; height: 100%; width: 3px; background: white; z-index: 2; }
+        .cta { text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%); border-radius: 12px; }
+        .cta h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .cta p { color: #94a3b8; margin-bottom: 1rem; }
+        .cta .btn { max-width: 350px; margin: 0 auto; display: block; }
+        .content { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .content h2 { font-size: 1.6rem; margin: 2rem 0 1rem; }
+        .content h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; color: #60a5fa; }
+        .content p { color: #94a3b8; margin-bottom: 1rem; }
+        .content ul, .content ol { color: #94a3b8; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .content li { margin-bottom: 0.5rem; }
+        .content table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .content th, .content td { padding: 0.75rem; border: 1px solid #334155; text-align: left; }
+        .content th { background: #1e293b; color: #e2e8f0; }
+        .content td { color: #94a3b8; }
+        .footer { background: #1e293b; padding: 2rem; text-align: center; color: #64748b; font-size: 0.85rem; margin-top: 3rem; }
+        .footer a { color: #60a5fa; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">ScaleDoors</a>
+        <div class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/tools/cost-per-door">Cost/Door Calculator</a>
+            <a href="/tools/rent-calculator">Rent Calculator</a>
+            <a href="/scaling-kit">PM Scaling Kit</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🧮 Property Management Fee Calculator</h1>
+        <p>Find out exactly what to charge for property management based on your market, property type, portfolio size, and services offered.</p>
+    </div>
+
+    <div class="container">
+        <div class="calculator">
+            <div class="row">
+                <div class="form-group">
+                    <label>Market / City</label>
+                    <select id="market">
+                        <option value="high">High-Cost Market (NYC, SF, LA, Boston, Seattle)</option>
+                        <option value="mid" selected>Mid-Cost Market (Denver, Austin, Nashville, Phoenix)</option>
+                        <option value="low">Low-Cost Market (Midwest, Southeast, Rural)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Property Type</label>
+                    <select id="propType">
+                        <option value="sfr" selected>Single-Family Rental (SFR)</option>
+                        <option value="small-multi">Small Multifamily (2-4 units)</option>
+                        <option value="large-multi">Large Multifamily (5-50 units)</option>
+                        <option value="commercial">Commercial / Mixed-Use</option>
+                        <option value="hoa">HOA / Community Association</option>
+                        <option value="vacation">Vacation / Short-Term Rental</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label>Average Monthly Rent per Unit ($)</label>
+                    <input type="number" id="avgRent" value="1500" min="0" step="50">
+                </div>
+                <div class="form-group">
+                    <label>Number of Units Managed</label>
+                    <input type="number" id="units" value="50" min="1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label>Service Level</label>
+                    <select id="serviceLevel">
+                        <option value="basic">Basic (Rent Collection + Maintenance Coordination)</option>
+                        <option value="standard" selected>Standard (Full-Service Leasing + Management)</option>
+                        <option value="premium">Premium (Full-Service + Accounting + Reporting)</option>
+                        <option value="luxury">Luxury / Concierge (White-Glove Service)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Do You Charge a Leasing Fee?</label>
+                    <select id="leasingFee">
+                        <option value="none">No Leasing Fee</option>
+                        <option value="half" selected>50% of First Month's Rent</option>
+                        <option value="full">100% of First Month's Rent</option>
+                        <option value="flat">Flat Fee ($500-$1,000)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" onclick="calculate()">Calculate My Optimal Fees →</button>
+        </div>
+
+        <div class="results" id="results">
+            <h2>📊 Your Recommended Fee Structure</h2>
+            <div class="result-grid">
+                <div class="result-card highlight">
+                    <div class="label">Recommended Monthly Fee</div>
+                    <div class="value" id="recPercent">—</div>
+                    <div class="sub" id="recPerUnit">per unit/month</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Monthly Revenue (Your Portfolio)</div>
+                    <div class="value" id="monthlyRev">—</div>
+                    <div class="sub">based on <span id="unitCount">0</span> units</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Annual Revenue Potential</div>
+                    <div class="value" id="annualRev">—</div>
+                    <div class="sub">management fees only</div>
+                </div>
+            </div>
+
+            <div class="breakdown">
+                <h3>💰 Full Revenue Breakdown (Annual)</h3>
+                <div class="breakdown-row"><span>Management Fees</span><span id="bkMgmt">—</span></div>
+                <div class="breakdown-row"><span>Leasing Fees (est. 40% turnover)</span><span id="bkLease">—</span></div>
+                <div class="breakdown-row"><span>Late Fees (est. 5% of tenants)</span><span id="bkLate">—</span></div>
+                <div class="breakdown-row"><span>Maintenance Markup (est. 10%)</span><span id="bkMaint">—</span></div>
+                <div class="breakdown-row"><span>Total Annual Revenue</span><span id="bkTotal">—</span></div>
+            </div>
+
+            <div class="market-compare">
+                <h3>📈 How You Compare to Market Rates</h3>
+                <div class="bar-container">
+                    <div class="bar-label"><span>Below Market</span><span id="lowRate">—</span></div>
+                    <div class="bar"><div class="bar-fill low" id="barLow"></div></div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label"><span>Market Average</span><span id="avgRate">—</span></div>
+                    <div class="bar"><div class="bar-fill mid" id="barAvg"></div></div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label"><span>✅ Your Recommended Rate</span><span id="recRate">—</span></div>
+                    <div class="bar"><div class="bar-fill rec" id="barRec"></div></div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label"><span>Premium / Top 10%</span><span id="highRate">—</span></div>
+                    <div class="bar"><div class="bar-fill high" id="barHigh"></div></div>
+                </div>
+            </div>
+
+            <div class="cta">
+                <h3>Want the Complete Fee Structure Playbook?</h3>
+                <p>Our PM Scaling Kit includes fee benchmarks for every US market, negotiation scripts, and pricing models that maximize revenue per door.</p>
+                <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01" class="btn">Get the PM Scaling Kit — $147 →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>How to Set Property Management Fees in 2026</h2>
+        <p>Setting the right fees is the difference between a profitable PM company and one that's slowly bleeding money. Charge too little and you can't afford quality staff or systems. Charge too much and owners shop around. This calculator helps you find the sweet spot based on real market data.</p>
+
+        <h3>Typical Property Management Fee Ranges</h3>
+        <table>
+            <tr><th>Property Type</th><th>Typical Management Fee</th><th>Common Leasing Fee</th></tr>
+            <tr><td>Single-Family Rental</td><td>8-12% of monthly rent</td><td>50-100% of first month</td></tr>
+            <tr><td>Small Multifamily (2-4)</td><td>6-10% of monthly rent</td><td>50-75% of first month</td></tr>
+            <tr><td>Large Multifamily (5-50)</td><td>4-8% of monthly rent</td><td>$300-$750 flat</td></tr>
+            <tr><td>Commercial</td><td>4-6% of monthly rent</td><td>3-6% of annual lease value</td></tr>
+            <tr><td>HOA / Community</td><td>$10-$25 per unit/month</td><td>N/A</td></tr>
+            <tr><td>Vacation / STR</td><td>15-30% of rental income</td><td>Included in fee</td></tr>
+        </table>
+
+        <h3>Factors That Justify Higher Fees</h3>
+        <ul>
+            <li><strong>Full-service management</strong> including accounting, reporting, and owner communication</li>
+            <li><strong>In-house maintenance team</strong> with fast response times</li>
+            <li><strong>Technology stack</strong> (online portals, automated inspections, digital payments)</li>
+            <li><strong>Low vacancy rates</strong> — if you can prove you lease faster, charge more</li>
+            <li><strong>High-cost markets</strong> where rents justify premium service</li>
+            <li><strong>Specialty management</strong> (Section 8, student housing, luxury)</li>
+        </ul>
+
+        <h3>Common Pricing Mistakes PMs Make</h3>
+        <ol>
+            <li><strong>Racing to the bottom:</strong> Competing on price attracts the worst clients</li>
+            <li><strong>Not charging for extras:</strong> Lease renewals, inspections, and maintenance coordination have real costs</li>
+            <li><strong>One fee for everything:</strong> Different property types need different fee structures</li>
+            <li><strong>No annual increases:</strong> Your costs rise every year — your fees should too</li>
+            <li><strong>Hiding fees:</strong> Transparent pricing builds trust and reduces churn</li>
+        </ol>
+
+        <h3>How to Raise Your Fees Without Losing Clients</h3>
+        <p>Most PM companies undercharge because they're afraid of losing clients. Here's how to raise fees successfully:</p>
+        <ul>
+            <li>Give 60-90 day notice before any fee increase</li>
+            <li>Tie increases to new services or improvements you've added</li>
+            <li>Start with new clients at higher rates — existing clients at renewal</li>
+            <li>Show ROI: "We reduced your vacancy from 8% to 3%, saving you $X/year"</li>
+            <li>Offer tiered packages so owners can choose their service level</li>
+        </ul>
+
+        <h2>More Free PM Tools</h2>
+        <p>
+            <a href="/tools/cost-per-door">Cost Per Door Calculator</a> — Know your true cost to manage each door<br>
+            <a href="/tools/rent-calculator">Rent Analysis Calculator</a> — Set optimal rent prices for your properties<br>
+            <a href="/blog">PM Scaling Blog</a> — 90+ free articles on growing your PM company
+        </p>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 <a href="/">ScaleDoors</a>. Built for property managers who want to scale.</p>
+        <p style="margin-top:0.5rem">
+            <a href="/blog">Blog</a> · <a href="/scaling-kit">PM Scaling Kit</a> · <a href="/tools/cost-per-door">Cost/Door Calculator</a> · <a href="/tools/rent-calculator">Rent Calculator</a>
+        </p>
+    </footer>
+
+    <script>
+    const marketData = {
+        high: { sfr: [9,11,13], 'small-multi': [7,9,11], 'large-multi': [5,7,9], commercial: [4,5.5,7], hoa: [15,20,25], vacation: [20,25,30] },
+        mid:  { sfr: [8,10,12], 'small-multi': [6,8,10], 'large-multi': [4,6,8], commercial: [4,5,6], hoa: [10,15,20], vacation: [18,22,28] },
+        low:  { sfr: [7,9,10], 'small-multi': [5,7,9], 'large-multi': [3,5,7], commercial: [3,4.5,6], hoa: [8,12,18], vacation: [15,20,25] }
+    };
+    const serviceMod = { basic: -1, standard: 0, premium: 1.5, luxury: 3 };
+
+    function calculate() {
+        const market = document.getElementById('market').value;
+        const propType = document.getElementById('propType').value;
+        const avgRent = parseFloat(document.getElementById('avgRent').value) || 1500;
+        const units = parseInt(document.getElementById('units').value) || 50;
+        const serviceLevel = document.getElementById('serviceLevel').value;
+        const leasingFee = document.getElementById('leasingFee').value;
+
+        const [low, mid, high] = marketData[market][propType];
+        const mod = serviceMod[serviceLevel];
+        const rec = Math.round((mid + mod) * 10) / 10;
+        const recClamped = Math.max(low, Math.min(high + 2, rec));
+
+        // Monthly management fee per unit
+        const monthlyFeePerUnit = avgRent * (recClamped / 100);
+        const monthlyRevenue = monthlyFeePerUnit * units;
+        const annualMgmt = monthlyRevenue * 12;
+
+        // Leasing fees (assume 40% annual turnover)
+        const turnovers = Math.round(units * 0.4);
+        let leaseFeePerUnit = 0;
+        if (leasingFee === 'half') leaseFeePerUnit = avgRent * 0.5;
+        else if (leasingFee === 'full') leaseFeePerUnit = avgRent;
+        else if (leasingFee === 'flat') leaseFeePerUnit = 750;
+        const annualLease = turnovers * leaseFeePerUnit;
+
+        // Late fees (5% of tenants, $50/occurrence, 3x/year avg)
+        const annualLate = Math.round(units * 0.05) * 50 * 3;
+
+        // Maintenance markup (10% on avg $150/unit/month spend)
+        const annualMaint = units * 150 * 12 * 0.10;
+
+        const totalAnnual = annualMgmt + annualLease + annualLate + annualMaint;
+
+        // Update UI
+        document.getElementById('recPercent').textContent = recClamped.toFixed(1) + '%';
+        document.getElementById('recPerUnit').textContent = '$' + monthlyFeePerUnit.toFixed(0) + ' per unit/month';
+        document.getElementById('monthlyRev').textContent = '$' + monthlyRevenue.toLocaleString('en-US', {maximumFractionDigits:0});
+        document.getElementById('unitCount').textContent = units;
+        document.getElementById('annualRev').textContent = '$' + annualMgmt.toLocaleString('en-US', {maximumFractionDigits:0});
+
+        document.getElementById('bkMgmt').textContent = '$' + annualMgmt.toLocaleString('en-US', {maximumFractionDigits:0});
+        document.getElementById('bkLease').textContent = '$' + annualLease.toLocaleString('en-US', {maximumFractionDigits:0});
+        document.getElementById('bkLate').textContent = '$' + annualLate.toLocaleString('en-US', {maximumFractionDigits:0});
+        document.getElementById('bkMaint').textContent = '$' + annualMaint.toLocaleString('en-US', {maximumFractionDigits:0});
+        document.getElementById('bkTotal').textContent = '$' + totalAnnual.toLocaleString('en-US', {maximumFractionDigits:0});
+
+        // Market comparison bars
+        const maxRate = high + 3;
+        document.getElementById('lowRate').textContent = low + '%';
+        document.getElementById('avgRate').textContent = mid + '%';
+        document.getElementById('recRate').textContent = recClamped.toFixed(1) + '%';
+        document.getElementById('highRate').textContent = high + '%+';
+        document.getElementById('barLow').style.width = (low / maxRate * 100) + '%';
+        document.getElementById('barAvg').style.width = (mid / maxRate * 100) + '%';
+        document.getElementById('barRec').style.width = (recClamped / maxRate * 100) + '%';
+        document.getElementById('barHigh').style.width = (high / maxRate * 100) + '%';
+
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>
