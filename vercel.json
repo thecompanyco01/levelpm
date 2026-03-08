@@ -12,6 +12,7 @@
         { "src": "robots.txt", "use": "@vercel/static" },
         { "src": "scaledoors.txt", "use": "@vercel/static" },
         { "src": "441c52c62505469dbefa20b2b0dc5d3f.txt", "use": "@vercel/static" },
+        { "src": "d8e3f2a1b4c5e6f7.txt", "use": "@vercel/static" },
         { "src": "api/**/*.js", "use": "@vercel/node" }
     ],
     "routes": [
