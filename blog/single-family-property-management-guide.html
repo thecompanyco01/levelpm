@@ -36,6 +36,12 @@
         .newsletter input[type="email"] { padding: 0.75rem 1rem; border: 1px solid #ddd; border-radius: 6px; width: 60%; max-width: 300px; margin-right: 0.5rem; }
         .newsletter button { padding: 0.75rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
         @media (max-width: 600px) { .header h1 { font-size: 1.6rem; } .newsletter input[type="email"] { width: 100%; margin-bottom: 0.5rem; } }
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
     <script type="application/ld+json">
     {
@@ -213,5 +219,31 @@
         <p><a href="/">ScaleDoors</a> · Property management training for scaling companies</p>
         <p style="margin-top:0.5rem"><a href="/blog">Blog</a> · <a href="/sops">Free SOPs</a> · <a href="/tools">Free Tools</a></p>
     </footer>
+    <script>
+    async function handleSubscribe(e) {
+        e.preventDefault();
+        const email = document.getElementById('subscribe-email').value;
+        const status = document.getElementById('subscribe-status');
+        status.textContent = 'Subscribing...';
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email, source: 'blog-newsletter'})
+            });
+            const data = await res.json();
+            if (data.success) {
+                status.textContent = '\u2705 You\'re in! Check your inbox.';
+                status.style.color = '#22c55e';
+            } else {
+                status.textContent = data.error || 'Something went wrong. Try again.';
+                status.style.color = '#ef4444';
+            }
+        } catch {
+            status.textContent = 'Network error. Please try again.';
+            status.style.color = '#ef4444';
+        }
+    }
+    </script>
 </body>
 </html>

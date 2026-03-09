@@ -14,6 +14,12 @@
     </script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}:root{--navy:#0f172a;--gold:#f59e0b;--gold-light:#fbbf24;--white:#fff;--gray-50:#f8fafc;--gray-200:#e2e8f0;--gray-400:#94a3b8;--gray-500:#64748b;--text:#0f172a;--radius:12px}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--white);line-height:1.8}a{color:var(--gold)}.nav{background:var(--navy);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}.nav a{color:var(--white);font-weight:700;font-size:1.1rem;text-decoration:none}.nav-links a{color:var(--gray-400);margin-left:24px;font-size:.9rem;font-weight:400}.article{max-width:720px;margin:0 auto;padding:48px 24px}.article h1{font-size:2rem;line-height:1.3;margin-bottom:16px}.meta{color:var(--gray-500);font-size:.9rem;margin-bottom:32px}.article h2{font-size:1.4rem;margin:32px 0 12px;color:var(--navy)}.article h3{font-size:1.15rem;margin:24px 0 8px}.article p{margin-bottom:16px}.article ul,.article ol{margin:0 0 16px 24px}.article li{margin-bottom:8px}.highlight{background:var(--gray-50);border-left:4px solid var(--gold);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{padding:12px;text-align:left;border-bottom:1px solid var(--gray-200)}th{background:var(--gray-50);font-weight:600}.cta-box{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);padding:32px;border-radius:var(--radius);text-align:center;margin:32px 0}.cta-box h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px}.cta-box p{color:var(--navy);margin-bottom:16px;opacity:.8}.cta-box a{display:inline-block;background:var(--navy);color:var(--white);padding:14px 28px;border-radius:8px;font-weight:700;text-decoration:none}.newsletter{background:var(--gray-50);padding:32px;border-radius:var(--radius);text-align:center;margin:32px 0}.newsletter h3{margin-bottom:8px}.newsletter p{color:var(--gray-500);margin-bottom:16px}.newsletter form{display:flex;gap:8px;max-width:400px;margin:0 auto}.newsletter input{flex:1;padding:12px;border:2px solid var(--gray-200);border-radius:8px}.newsletter button{background:var(--gold);color:var(--navy);border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer}.footer{text-align:center;padding:48px 24px;color:var(--gray-500);font-size:.85rem}@media(max-width:600px){.article h1{font-size:1.5rem}.newsletter form{flex-direction:column}}
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
 </head>
 <body>
@@ -199,6 +205,16 @@
                 <button type="submit">Subscribe</button>
             </form>
             <div id="subMsg" style="margin-top:8px;font-size:.85rem"></div>
+        </div>
+    
+        <div class="newsletter-box">
+            <h3>📬 Free Weekly PM Training</h3>
+            <p>Get one actionable property management lesson delivered to your inbox every week. No cost, no spam.</p>
+            <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
+                <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+            <p id="subscribe-status" style="margin-top:0.5rem;font-size:0.85rem;"></p>
         </div>
     </article>
 

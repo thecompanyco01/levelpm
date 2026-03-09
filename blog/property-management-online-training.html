@@ -51,6 +51,12 @@
         .newsletter button{background:#1a1a2e;color:#f0c040;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:700;cursor:pointer}
         footer{background:#1a1a2e;color:#ccc;text-align:center;padding:2rem;margin-top:3rem}
         footer a{color:#f0c040;text-decoration:none}
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
 </head>
 <body>
@@ -211,6 +217,16 @@
                 <button type="submit">Subscribe</button>
             </form>
             <p id="subscribe-msg" style="margin-top:.5rem;font-size:.85rem;color:#666"></p>
+        </div>
+    
+        <div class="newsletter-box">
+            <h3>📬 Free Weekly PM Training</h3>
+            <p>Get one actionable property management lesson delivered to your inbox every week. No cost, no spam.</p>
+            <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
+                <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+            <p id="subscribe-status" style="margin-top:0.5rem;font-size:0.85rem;"></p>
         </div>
     </article>
     <footer>

@@ -44,6 +44,12 @@
         .breadcrumb { max-width:800px; margin:1rem auto 0; padding:0 2rem; font-size:.85rem; }
         .breadcrumb a { color:#888; text-decoration:none; }
         footer { margin-top:4rem; padding:2rem; text-align:center; color:#666; font-size:.85rem; border-top:1px solid #222; }
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
 </head>
 <body>
@@ -217,5 +223,31 @@ document.getElementById('blog-nl-form')?.addEventListener('submit',async functio
     }catch(err){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Error — try again?';btn.textContent='Subscribe →';btn.disabled=false;}
 });
 </script>
+    <script>
+    async function handleSubscribe(e) {
+        e.preventDefault();
+        const email = document.getElementById('subscribe-email').value;
+        const status = document.getElementById('subscribe-status');
+        status.textContent = 'Subscribing...';
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email, source: 'blog-newsletter'})
+            });
+            const data = await res.json();
+            if (data.success) {
+                status.textContent = '\u2705 You\'re in! Check your inbox.';
+                status.style.color = '#22c55e';
+            } else {
+                status.textContent = data.error || 'Something went wrong. Try again.';
+                status.style.color = '#ef4444';
+            }
+        } catch {
+            status.textContent = 'Network error. Please try again.';
+            status.style.color = '#ef4444';
+        }
+    }
+    </script>
 </body>
 </html>

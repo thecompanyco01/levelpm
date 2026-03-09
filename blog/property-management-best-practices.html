@@ -39,6 +39,12 @@
         .cta-box a{color:#f0c040;font-weight:700;text-decoration:none;display:inline-block;margin-top:1rem;padding:.75rem 2rem;border:2px solid #f0c040;border-radius:8px}
         .footer{text-align:center;padding:3rem;background:#1a1a2e;color:#888;margin-top:4rem}
         .footer a{color:#f0c040;text-decoration:none}
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
 </head>
 <body>
@@ -191,6 +197,16 @@
             <h3>Implement These Best Practices Today</h3>
             <p>Our PM Scaling Kit includes SOPs, checklists, and templates that codify these best practices into actionable documents for your team.</p>
             <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01">Get the PM Scaling Kit — $147 →</a>
+        </div>
+    
+        <div class="newsletter-box">
+            <h3>📬 Free Weekly PM Training</h3>
+            <p>Get one actionable property management lesson delivered to your inbox every week. No cost, no spam.</p>
+            <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
+                <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+            <p id="subscribe-status" style="margin-top:0.5rem;font-size:0.85rem;"></p>
         </div>
     </article>
 

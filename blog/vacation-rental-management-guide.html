@@ -44,6 +44,12 @@
         .footer{background:#1a1a2e;color:#ccc;text-align:center;padding:2rem;margin-top:3rem;font-size:.85rem}
         .footer a{color:#f0c040;text-decoration:none}
         .highlight-box{background:#f8f4e8;border-left:4px solid #f0c040;padding:1.25rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+            .newsletter-box{background:#f8f6f0;border:2px solid #f0c040;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
+        .newsletter-box h3{color:#1a1a2e;margin-bottom:.5rem}
+        .newsletter-box p{color:#666;margin-bottom:1rem;font-size:.95rem}
+        .newsletter-box form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+        .newsletter-box input[type="email"]{padding:.6rem 1rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;min-width:250px}
+        .newsletter-box button{background:#f0c040;color:#1a1a2e;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.95rem}
     </style>
     <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
 </head>
@@ -203,6 +209,16 @@
 
         <h2>Bottom Line</h2>
         <p>Vacation rental management is higher-effort and higher-reward than traditional PM. The key differentiators: dynamic pricing, cleaning operations, guest communication speed, and review management. Get these four systems right and you can build a highly profitable business with 20-30% management fees on every property.</p>
+    
+        <div class="newsletter-box">
+            <h3>📬 Free Weekly PM Training</h3>
+            <p>Get one actionable property management lesson delivered to your inbox every week. No cost, no spam.</p>
+            <form id="subscribe-form" onsubmit="return handleSubscribe(event)">
+                <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+            <p id="subscribe-status" style="margin-top:0.5rem;font-size:0.85rem;"></p>
+        </div>
     </article>
 
     
