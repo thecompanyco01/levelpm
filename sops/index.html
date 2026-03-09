@@ -155,6 +155,23 @@
     </div>
 </div>
 
+<!-- EMAIL CAPTURE -->
+<div class="upsell">
+    <div class="upsell-box" style="background:linear-gradient(135deg,rgba(34,197,94,.04),rgba(34,197,94,.1));border-color:rgba(34,197,94,.2)">
+        <div class="upsell-icon">📬</div>
+        <div class="upsell-text">
+            <h2>Get Weekly PM Scaling Tips</h2>
+            <p>Join 50+ PM company owners getting one actionable tip every week — SOPs, growth strategies, and automation ideas to scale your portfolio. Free forever.</p>
+            <form id="newsletter-form" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+                <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:.75rem 1rem;border:2px solid var(--gray-200);border-radius:10px;font-size:.95rem;outline:none;transition:border .2s" onfocus="this.style.borderColor='#22c55e'" onblur="this.style.borderColor='var(--gray-200)'">
+                <button type="submit" style="background:#22c55e;color:white;border:none;padding:.75rem 1.75rem;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;white-space:nowrap" onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">Subscribe Free →</button>
+            </form>
+            <p id="nl-msg" style="display:none;margin-top:.75rem;font-size:.85rem;font-weight:600"></p>
+            <p style="margin-top:.5rem;font-size:.75rem;color:var(--gray-400)">No spam. Unsubscribe anytime. We respect your inbox.</p>
+        </div>
+    </div>
+</div>
+
 <!-- UPSELL -->
 <div class="upsell">
     <div class="upsell-box">
@@ -176,5 +193,19 @@
 <footer class="footer">
     <p>© 2026 <a href="/">ScaleDoors</a>. <a href="/blog">Blog</a> · <a href="/sops">SOPs</a> · <a href="/tools/rent-calculator">Tools</a> · <a href="/scaling-kit">Scaling Kit</a></p>
 </footer>
+<script>
+document.getElementById('newsletter-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    const email=document.getElementById('nl-email').value;
+    const msg=document.getElementById('nl-msg');
+    const btn=this.querySelector('button');
+    btn.textContent='Subscribing...';btn.disabled=true;
+    try{
+        const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'sops-page'})});
+        if(r.ok){msg.style.display='block';msg.style.color='#22c55e';msg.textContent='✓ You\'re in! Check your inbox for a welcome tip.';this.style.display='none';}
+        else{throw new Error();}
+    }catch(err){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Something went wrong. Try again?';btn.textContent='Subscribe Free →';btn.disabled=false;}
+});
+</script>
 </body>
 </html>
