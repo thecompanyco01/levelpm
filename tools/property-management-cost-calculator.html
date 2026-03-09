@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Property Management Cost Calculator | ScaleDoors</title>
+    <meta name="description" content="Calculate your total property management costs instantly. Free calculator shows fees, vacancy costs, maintenance reserves, and your net income after PM fees.">
+    <meta name="keywords" content="property management cost calculator, property management fees, rental property management fees, pm fee calculator">
+    <link rel="canonical" href="https://scaledoors.com/tools/property-management-cost-calculator">
+    <meta property="og:title" content="Free Property Management Cost Calculator | ScaleDoors">
+    <meta property="og:description" content="Calculate your total property management costs instantly. See fees, vacancy costs, maintenance reserves, and net income.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scaledoors.com/tools/property-management-cost-calculator">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Property Management Cost Calculator",
+        "url": "https://scaledoors.com/tools/property-management-cost-calculator",
+        "applicationCategory": "BusinessApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Free calculator to estimate total property management costs including management fees, leasing fees, vacancy costs, and maintenance reserves."
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .header { background: #0f172a; color: white; padding: 16px 0; }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #38bdf8; text-decoration: none; }
+        .logo span { color: white; }
+        .header-links a { color: #94a3b8; text-decoration: none; margin-left: 24px; font-size: 0.9rem; }
+        .header-links a:hover { color: white; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 60px 20px 50px; text-align: center; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 12px; }
+        .hero p { font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 900px; margin: -30px auto 40px; padding: 0 20px; position: relative; z-index: 2; }
+        .calc-card { background: white; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.1); padding: 40px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: #475569; }
+        .form-group .hint { font-size: 0.78rem; color: #94a3b8; margin-bottom: 4px; }
+        .form-group input, .form-group select { padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #38bdf8; }
+        .calculate-btn { background: #2563eb; color: white; border: none; padding: 16px 40px; font-size: 1.1rem; font-weight: 700; border-radius: 10px; cursor: pointer; width: 100%; transition: background 0.2s; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        .results { display: none; margin-top: 32px; }
+        .results.show { display: block; }
+        .results-header { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #0f172a; }
+        .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        @media (max-width: 640px) { .result-grid { grid-template-columns: 1fr; } }
+        .result-item { background: #f1f5f9; border-radius: 10px; padding: 20px; }
+        .result-item.highlight { background: #0f172a; color: white; }
+        .result-item .label { font-size: 0.85rem; color: #64748b; margin-bottom: 4px; }
+        .result-item.highlight .label { color: #94a3b8; }
+        .result-item .value { font-size: 1.6rem; font-weight: 800; }
+        .result-item.highlight .value { color: #38bdf8; }
+        .breakdown { margin-top: 24px; }
+        .breakdown h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: #475569; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .neg { color: #ef4444; }
+        .breakdown-row .pos { color: #22c55e; font-weight: 700; }
+        .cta-box { margin-top: 32px; background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%); border: 2px solid #bfdbfe; border-radius: 12px; padding: 28px; text-align: center; }
+        .cta-box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .cta-box p { font-size: 0.95rem; color: #475569; margin-bottom: 16px; }
+        .cta-box a { display: inline-block; background: #2563eb; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+        .cta-box a:hover { background: #1d4ed8; }
+        .content-section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .content-section h2 { font-size: 1.5rem; margin-bottom: 16px; color: #0f172a; }
+        .content-section h3 { font-size: 1.15rem; margin: 20px 0 10px; color: #1e293b; }
+        .content-section p { margin-bottom: 14px; color: #475569; }
+        .content-section ul { margin: 0 0 16px 24px; color: #475569; }
+        .content-section li { margin-bottom: 8px; }
+        .content-section table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .content-section th, .content-section td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; }
+        .content-section th { background: #f1f5f9; font-weight: 700; color: #0f172a; }
+        .faq-item { margin-bottom: 16px; }
+        .faq-item summary { font-weight: 600; cursor: pointer; padding: 12px 0; color: #1e293b; }
+        .faq-item p { padding: 0 0 12px 16px; color: #475569; }
+        .footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer a { color: #38bdf8; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">Scale<span>Doors</span></a>
+            <div class="header-links">
+                <a href="/blog">Blog</a>
+                <a href="/sops">Free SOPs</a>
+                <a href="/tools/property-management-cost-calculator">Tools</a>
+                <a href="/scaling-kit">PM Scaling Kit</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Property Management Cost Calculator</h1>
+        <p>Instantly calculate your total PM costs — management fees, leasing fees, vacancy loss, and maintenance reserves. Know your true numbers.</p>
+    </section>
+
+    <div class="container">
+        <div class="calc-card">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Monthly Rent per Unit</label>
+                    <div class="hint">Average rent across your portfolio</div>
+                    <input type="number" id="monthlyRent" value="1500" min="0" step="50">
+                </div>
+                <div class="form-group">
+                    <label>Number of Units</label>
+                    <div class="hint">Total doors you manage</div>
+                    <input type="number" id="numUnits" value="50" min="1" step="1">
+                </div>
+                <div class="form-group">
+                    <label>Management Fee (%)</label>
+                    <div class="hint">Industry avg: 8-12% of collected rent</div>
+                    <input type="number" id="mgmtFee" value="10" min="0" max="100" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label>Leasing/Placement Fee</label>
+                    <div class="hint">One-time fee per new tenant</div>
+                    <select id="leasingFee">
+                        <option value="50">50% of first month's rent</option>
+                        <option value="75">75% of first month's rent</option>
+                        <option value="100" selected>100% of first month's rent</option>
+                        <option value="0">No leasing fee</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Annual Tenant Turnover (%)</label>
+                    <div class="hint">% of tenants replaced each year (avg: 40-60%)</div>
+                    <input type="number" id="turnover" value="50" min="0" max="100" step="5">
+                </div>
+                <div class="form-group">
+                    <label>Vacancy Rate (%)</label>
+                    <div class="hint">Average vacancy across portfolio (avg: 5-8%)</div>
+                    <input type="number" id="vacancy" value="7" min="0" max="100" step="1">
+                </div>
+                <div class="form-group">
+                    <label>Maintenance Reserve (% of rent)</label>
+                    <div class="hint">Monthly reserve for repairs (avg: 1-2%)</div>
+                    <input type="number" id="maintenance" value="1.5" min="0" max="20" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label>Are you the PM company?</label>
+                    <div class="hint">Changes perspective to revenue vs cost</div>
+                    <select id="perspective">
+                        <option value="owner">I'm a property owner (this is my cost)</option>
+                        <option value="pm">I run a PM company (this is my revenue)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calculate-btn" onclick="calculate()">Calculate My PM Costs</button>
+
+            <div class="results" id="results">
+                <div class="results-header" id="resultsTitle">Your Annual Property Management Costs</div>
+                <div class="result-grid">
+                    <div class="result-item highlight">
+                        <div class="label">Total Annual PM Cost</div>
+                        <div class="value" id="totalAnnual">—</div>
+                    </div>
+                    <div class="result-item highlight">
+                        <div class="label">Monthly PM Cost</div>
+                        <div class="value" id="totalMonthly">—</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Cost Per Unit / Month</div>
+                        <div class="value" id="perUnit">—</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">PM Cost as % of Revenue</div>
+                        <div class="value" id="pctRevenue">—</div>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>Cost Breakdown (Annual)</h3>
+                    <div class="breakdown-row"><span>Gross Rental Income</span><span class="pos" id="bGross">—</span></div>
+                    <div class="breakdown-row"><span>Management Fees</span><span class="neg" id="bMgmt">—</span></div>
+                    <div class="breakdown-row"><span>Leasing/Placement Fees</span><span class="neg" id="bLease">—</span></div>
+                    <div class="breakdown-row"><span>Vacancy Loss</span><span class="neg" id="bVacancy">—</span></div>
+                    <div class="breakdown-row"><span>Maintenance Reserve</span><span class="neg" id="bMaint">—</span></div>
+                    <div class="breakdown-row" style="border-top:2px solid #0f172a;font-weight:700"><span>Net Income After PM</span><span class="pos" id="bNet">—</span></div>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Want to reduce these costs by 30-50%?</h3>
+                    <p>Our PM Scaling Kit includes SOPs, templates, and systems that help property managers cut operational costs and scale efficiently from 50 to 500+ doors.</p>
+                    <a href="/scaling-kit">Get the PM Scaling Kit — $147</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>How Property Management Fees Work</h2>
+        <p>Property management fees are the costs property owners pay to professional management companies for handling day-to-day operations of rental properties. Understanding these fees is crucial for both property owners evaluating PM services and PM company owners pricing their services competitively.</p>
+
+        <h3>Types of Property Management Fees</h3>
+        <table>
+            <thead>
+                <tr><th>Fee Type</th><th>Typical Range</th><th>When Charged</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Monthly Management Fee</td><td>8-12% of collected rent</td><td>Monthly, on collected rent only</td></tr>
+                <tr><td>Leasing/Placement Fee</td><td>50-100% of first month's rent</td><td>Per new tenant placement</td></tr>
+                <tr><td>Lease Renewal Fee</td><td>$150-300 or 25% of one month</td><td>Per lease renewal</td></tr>
+                <tr><td>Maintenance Markup</td><td>10-20% on vendor invoices</td><td>Per maintenance job</td></tr>
+                <tr><td>Eviction Fee</td><td>$200-500+ plus legal costs</td><td>Per eviction filing</td></tr>
+                <tr><td>Setup/Onboarding Fee</td><td>$0-500 per unit</td><td>One-time</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Property Management Fee Benchmarks by Market</h3>
+        <p>Fees vary significantly by market. Here are typical management fee percentages by region:</p>
+        <ul>
+            <li><strong>High-cost markets</strong> (NYC, SF, LA): 6-8% — lower percentage but higher dollar amount</li>
+            <li><strong>Mid-market</strong> (Phoenix, Dallas, Atlanta): 8-10% — industry sweet spot</li>
+            <li><strong>Smaller markets</strong> (college towns, rural): 10-12% — higher percentage to offset lower rents</li>
+            <li><strong>Short-term rentals</strong> (Airbnb/VRBO): 20-40% — much higher due to operational intensity</li>
+        </ul>
+
+        <h3>Hidden Costs Most Owners Miss</h3>
+        <p>The management fee percentage is just the beginning. Smart property owners factor in these often-overlooked costs:</p>
+        <ul>
+            <li><strong>Vacancy loss:</strong> Every vacant unit costs you the full monthly rent. A PM company with strong leasing reduces this significantly.</li>
+            <li><strong>Tenant turnover costs:</strong> Between cleaning, repairs, leasing fees, and vacancy — each turnover costs $3,000-$5,000 on average.</li>
+            <li><strong>Deferred maintenance:</strong> Poor maintenance processes lead to bigger, more expensive repairs down the road.</li>
+            <li><strong>Opportunity cost:</strong> Time you spend self-managing is time not spent growing your portfolio.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <details class="faq-item">
+            <summary>How much does property management cost on average?</summary>
+            <p>The average property management fee is 8-12% of monthly collected rent for residential properties. For a $1,500/month rental, that's $120-$180/month in management fees alone. However, total PM costs including leasing fees, vacancy, and maintenance typically add up to 15-20% of gross rental income annually.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Is property management worth the cost?</summary>
+            <p>For most investors with 3+ properties or who don't live near their rentals, yes. Professional PM companies typically reduce vacancy rates by 2-4%, handle maintenance more efficiently, and ensure legal compliance. The net cost after factoring in reduced vacancy and better tenant retention is often lower than self-management when you value your time.</p>
+        </details>
+        <details class="faq-item">
+            <summary>What's the most expensive part of property management?</summary>
+            <p>Tenant turnover is the single most expensive aspect. Each turnover costs $3,000-$5,000 including vacancy loss, cleaning, repairs, marketing, and leasing fees. A great PM company focuses on tenant retention to minimize this cost — which is why PM Scaling Kit includes detailed lease renewal SOPs.</p>
+        </details>
+        <details class="faq-item">
+            <summary>How can PM companies reduce operational costs?</summary>
+            <p>The most effective ways: (1) standardize processes with SOPs, (2) use technology for maintenance requests and rent collection, (3) build reliable vendor networks for competitive pricing, (4) focus on tenant retention over acquisition, (5) scale efficiently — most costs don't grow linearly with units.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Should I negotiate property management fees?</summary>
+            <p>Yes, especially if you have multiple properties. Most PM companies will discount their management fee by 1-2% for portfolios of 5+ units. However, don't just negotiate on price — negotiate on service quality, response times, and reporting frequency. A PM company at 10% that keeps vacancy at 3% is cheaper than one at 8% with 8% vacancy.</p>
+        </details>
+
+        <h2>For Property Management Companies: Pricing Your Services</h2>
+        <p>If you run a PM company, this calculator also shows your potential revenue at different fee structures. Use it to model your pricing strategy and understand how fee changes affect your bottom line.</p>
+        <p>The most successful PM companies we've studied price based on value delivered, not just market rate. Companies that can demonstrate lower vacancy rates, faster maintenance response, and better tenant retention can command premium fees.</p>
+        <p><strong>Want the complete playbook for scaling your PM company?</strong> Our <a href="/scaling-kit">PM Scaling Kit</a> includes 15+ SOPs, financial templates, and growth strategies used by companies managing 500+ doors.</p>
+    </div>
+
+    <footer class="footer">
+        <p><strong><a href="/">ScaleDoors</a></strong> — Training, SOPs, and playbooks for property managers scaling to 500+ doors.</p>
+        <p style="margin-top:12px">
+            <a href="/blog">Blog</a> · <a href="/sops">Free SOPs</a> · <a href="/scaling-kit">PM Scaling Kit</a> · <a href="/tools/property-management-cost-calculator">PM Cost Calculator</a>
+        </p>
+        <p style="margin-top:16px;font-size:0.8rem">© 2026 ScaleDoors. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
+    function calculate() {
+        const rent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+        const units = parseInt(document.getElementById('numUnits').value) || 0;
+        const mgmtPct = parseFloat(document.getElementById('mgmtFee').value) / 100;
+        const leasePct = parseFloat(document.getElementById('leasingFee').value) / 100;
+        const turnoverPct = parseFloat(document.getElementById('turnover').value) / 100;
+        const vacancyPct = parseFloat(document.getElementById('vacancy').value) / 100;
+        const maintPct = parseFloat(document.getElementById('maintenance').value) / 100;
+        const isPM = document.getElementById('perspective').value === 'pm';
+
+        const grossAnnual = rent * units * 12;
+        const mgmtAnnual = grossAnnual * mgmtPct;
+        const turnovers = Math.round(units * turnoverPct);
+        const leaseAnnual = turnovers * rent * leasePct;
+        const vacancyAnnual = grossAnnual * vacancyPct;
+        const maintAnnual = grossAnnual * maintPct;
+        const totalPM = mgmtAnnual + leaseAnnual + vacancyAnnual + maintAnnual;
+        const netIncome = grossAnnual - totalPM;
+
+        document.getElementById('totalAnnual').textContent = fmt(totalPM);
+        document.getElementById('totalMonthly').textContent = fmt(totalPM / 12);
+        document.getElementById('perUnit').textContent = fmt(totalPM / 12 / units);
+        document.getElementById('pctRevenue').textContent = (totalPM / grossAnnual * 100).toFixed(1) + '%';
+        document.getElementById('bGross').textContent = fmt(grossAnnual);
+        document.getElementById('bMgmt').textContent = '-' + fmt(mgmtAnnual);
+        document.getElementById('bLease').textContent = '-' + fmt(leaseAnnual);
+        document.getElementById('bVacancy').textContent = '-' + fmt(vacancyAnnual);
+        document.getElementById('bMaint').textContent = '-' + fmt(maintAnnual);
+        document.getElementById('bNet').textContent = fmt(netIncome);
+
+        if (isPM) {
+            document.getElementById('resultsTitle').textContent = 'Your Annual PM Revenue Potential';
+            document.querySelector('.result-item.highlight .label').textContent = 'Total Annual PM Revenue';
+            document.querySelectorAll('.result-item.highlight .label')[1].textContent = 'Monthly PM Revenue';
+        } else {
+            document.getElementById('resultsTitle').textContent = 'Your Annual Property Management Costs';
+            document.querySelector('.result-item.highlight .label').textContent = 'Total Annual PM Cost';
+            document.querySelectorAll('.result-item.highlight .label')[1].textContent = 'Monthly PM Cost';
+        }
+
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    </script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
