@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Growth Readiness Assessment — Free Tool | ScaleDoors</title>
+    <meta name="description" content="Take the free 2-minute Property Management Growth Readiness Assessment. Get a personalized score and actionable recommendations to scale from 50 to 500+ doors.">
+    <meta name="keywords" content="property management growth, PM scaling assessment, property management quiz, grow PM company">
+    <link rel="canonical" href="https://scaledoors.com/tools/growth-assessment">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PM Growth Readiness Assessment",
+        "description": "Free 2-minute assessment for property management companies looking to scale.",
+        "url": "https://scaledoors.com/tools/growth-assessment",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+        
+        /* Header */
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header a { color: #6366f1; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+        .header h1 { font-size: 2rem; margin: 1rem 0 0.5rem; color: #0f172a; }
+        .header p { color: #64748b; font-size: 1.1rem; }
+        .badge { display: inline-block; background: #eef2ff; color: #6366f1; padding: 0.25rem 0.75rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        
+        /* Progress bar */
+        .progress-container { background: #e2e8f0; border-radius: 1rem; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 1rem; transition: width 0.4s ease; }
+        .progress-text { text-align: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem; }
+        
+        /* Question card */
+        .question-card { background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        .question-card h2 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #0f172a; }
+        .question-card .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
+        
+        /* Options */
+        .options { display: flex; flex-direction: column; gap: 0.75rem; }
+        .option { display: flex; align-items: center; padding: 1rem 1.25rem; border: 2px solid #e2e8f0; border-radius: 0.75rem; cursor: pointer; transition: all 0.2s; font-size: 1rem; }
+        .option:hover { border-color: #6366f1; background: #f5f3ff; }
+        .option.selected { border-color: #6366f1; background: #eef2ff; }
+        .option .dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #cbd5e1; margin-right: 1rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .option.selected .dot { border-color: #6366f1; background: #6366f1; }
+        .option.selected .dot::after { content: ''; width: 8px; height: 8px; background: white; border-radius: 50%; }
+        
+        /* Buttons */
+        .btn-row { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+        .btn { padding: 0.75rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+        .btn-primary { background: #6366f1; color: white; }
+        .btn-primary:hover { background: #4f46e5; }
+        .btn-primary:disabled { background: #c7d2fe; cursor: not-allowed; }
+        .btn-back { background: transparent; color: #64748b; border: 2px solid #e2e8f0; }
+        .btn-back:hover { border-color: #94a3b8; }
+        
+        /* Results */
+        .results-card { background: white; border-radius: 1rem; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        .score-circle { width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 3rem; font-weight: 800; color: white; }
+        .score-circle span { font-size: 0.9rem; font-weight: 400; opacity: 0.9; }
+        .score-low { background: linear-gradient(135deg, #ef4444, #f97316); }
+        .score-mid { background: linear-gradient(135deg, #f59e0b, #eab308); }
+        .score-high { background: linear-gradient(135deg, #22c55e, #10b981); }
+        .score-label { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        
+        .breakdown { text-align: left; margin: 2rem 0; }
+        .breakdown h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #0f172a; }
+        .breakdown-item { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; }
+        .breakdown-item .label { font-weight: 500; }
+        .breakdown-bar { width: 120px; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+        .breakdown-fill { height: 100%; border-radius: 4px; }
+        
+        .recommendations { text-align: left; margin: 2rem 0; background: #f8fafc; padding: 1.5rem; border-radius: 0.75rem; }
+        .recommendations h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+        .recommendations ul { padding-left: 1.5rem; }
+        .recommendations li { margin-bottom: 0.75rem; }
+        .recommendations li strong { color: #6366f1; }
+        
+        .cta-box { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; border-radius: 1rem; padding: 2rem; margin-top: 2rem; }
+        .cta-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1rem; }
+        .cta-box .btn { background: white; color: #6366f1; font-size: 1.1rem; padding: 0.85rem 2.5rem; }
+        .cta-box .btn:hover { background: #f5f3ff; }
+        
+        /* Email capture */
+        .email-gate { margin-top: 1.5rem; }
+        .email-gate p { color: #64748b; margin-bottom: 1rem; }
+        .email-row { display: flex; gap: 0.75rem; }
+        .email-row input { flex: 1; padding: 0.75rem 1rem; border: 2px solid #e2e8f0; border-radius: 0.5rem; font-size: 1rem; outline: none; }
+        .email-row input:focus { border-color: #6366f1; }
+        
+        .share-row { margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+        .share-btn { padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+        .share-twitter { background: #1da1f2; color: white; }
+        .share-linkedin { background: #0a66c2; color: white; }
+        .share-copy { background: #e2e8f0; color: #475569; }
+        
+        .hidden { display: none; }
+        
+        @media (max-width: 640px) {
+            .container { padding: 1rem; }
+            .header h1 { font-size: 1.5rem; }
+            .question-card { padding: 1.5rem; }
+            .email-row { flex-direction: column; }
+            .score-circle { width: 130px; height: 130px; font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/">← ScaleDoors</a>
+            <div class="badge">⏱ 2-Minute Assessment</div>
+            <h1>PM Growth Readiness Assessment</h1>
+            <p>Answer 10 questions. Get your score + a personalized scaling roadmap.</p>
+        </div>
+
+        <div id="quiz-section">
+            <div class="progress-text" id="progress-text">Question 1 of 10</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar" style="width: 10%"></div>
+            </div>
+            
+            <div class="question-card" id="question-card">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+
+        <div id="email-section" class="hidden">
+            <div class="question-card">
+                <h2>Your results are ready! 🎉</h2>
+                <p class="subtitle">Enter your email to see your personalized Growth Readiness Score and recommendations.</p>
+                <div class="email-gate">
+                    <div class="email-row">
+                        <input type="email" id="email-input" placeholder="you@company.com" />
+                        <button class="btn btn-primary" onclick="submitEmail()">See My Score →</button>
+                    </div>
+                    <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.5rem;">No spam. Unsubscribe anytime. We'll send your results + a free PM scaling guide.</p>
+                </div>
+                <div style="margin-top:1rem;text-align:center;">
+                    <a href="#" onclick="skipEmail()" style="color:#94a3b8;font-size:0.85rem;text-decoration:underline;">Skip — show my results without email</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-section" class="hidden">
+            <!-- Dynamically filled -->
+        </div>
+    </div>
+
+    <script>
+    const questions = [
+        {
+            q: "How many doors does your company currently manage?",
+            sub: "This helps us benchmark your growth stage.",
+            category: "scale",
+            options: [
+                { text: "Under 50 doors", score: 1 },
+                { text: "50–100 doors", score: 2 },
+                { text: "100–250 doors", score: 3 },
+                { text: "250–500 doors", score: 4 },
+                { text: "500+ doors", score: 5 }
+            ]
+        },
+        {
+            q: "Do you have documented SOPs for your core workflows?",
+            sub: "Maintenance, leasing, inspections, owner reporting, etc.",
+            category: "systems",
+            options: [
+                { text: "Nothing documented — it's all in my head", score: 1 },
+                { text: "A few checklists, but nothing formal", score: 2 },
+                { text: "SOPs for some workflows, not all", score: 3 },
+                { text: "Comprehensive SOPs for most processes", score: 4 },
+                { text: "Full SOP library with regular updates", score: 5 }
+            ]
+        },
+        {
+            q: "How do you handle maintenance requests?",
+            sub: "From request to completion, what's your process?",
+            category: "systems",
+            options: [
+                { text: "Phone calls and texts — I handle most myself", score: 1 },
+                { text: "Email-based, I assign to vendors manually", score: 2 },
+                { text: "Basic PM software with work orders", score: 3 },
+                { text: "Automated triage + vendor dispatch system", score: 4 },
+                { text: "Full automation with tenant portal + SLAs", score: 5 }
+            ]
+        },
+        {
+            q: "What's your owner retention rate?",
+            sub: "Percentage of owners who stay year-over-year.",
+            category: "retention",
+            options: [
+                { text: "Under 70% — we lose a lot of owners", score: 1 },
+                { text: "70–80% — decent but room to improve", score: 2 },
+                { text: "80–90% — most stay, some churn", score: 3 },
+                { text: "90–95% — strong retention", score: 4 },
+                { text: "95%+ — owners rarely leave", score: 5 }
+            ]
+        },
+        {
+            q: "How do you acquire new owner clients?",
+            sub: "Your primary source of new management agreements.",
+            category: "growth",
+            options: [
+                { text: "Word of mouth only — no marketing", score: 1 },
+                { text: "Referrals + some networking", score: 2 },
+                { text: "Google/SEO + referrals", score: 3 },
+                { text: "Multi-channel: SEO, ads, referrals, outreach", score: 4 },
+                { text: "Dedicated sales process with pipeline tracking", score: 5 }
+            ]
+        },
+        {
+            q: "How many team members do you have?",
+            sub: "Full-time, part-time, and VAs all count.",
+            category: "team",
+            options: [
+                { text: "Just me (solo operator)", score: 1 },
+                { text: "2–3 people", score: 2 },
+                { text: "4–7 people", score: 3 },
+                { text: "8–15 people", score: 4 },
+                { text: "15+ people", score: 5 }
+            ]
+        },
+        {
+            q: "What does your financial reporting look like?",
+            sub: "For your company (not owner statements).",
+            category: "finance",
+            options: [
+                { text: "I barely track finances — just bank balance", score: 1 },
+                { text: "Basic bookkeeping, quarterly review", score: 2 },
+                { text: "Monthly P&L and balance sheet", score: 3 },
+                { text: "Monthly financials + KPI dashboard", score: 4 },
+                { text: "Real-time financial dashboard with forecasting", score: 5 }
+            ]
+        },
+        {
+            q: "What technology do you use for PM operations?",
+            sub: "Your core software stack.",
+            category: "tech",
+            options: [
+                { text: "Spreadsheets and paper", score: 1 },
+                { text: "Basic PM software (free tier)", score: 2 },
+                { text: "Full PM platform (AppFolio, Buildium, etc.)", score: 3 },
+                { text: "PM platform + CRM + accounting integration", score: 4 },
+                { text: "Fully integrated tech stack with automations", score: 5 }
+            ]
+        },
+        {
+            q: "How structured is your team training?",
+            sub: "For new hires and ongoing professional development.",
+            category: "team",
+            options: [
+                { text: "No training — sink or swim", score: 1 },
+                { text: "Shadowing existing team members", score: 2 },
+                { text: "Basic onboarding checklist + some training docs", score: 3 },
+                { text: "Structured training program with milestones", score: 4 },
+                { text: "Comprehensive training academy with certifications", score: 5 }
+            ]
+        },
+        {
+            q: "What's your biggest growth bottleneck right now?",
+            sub: "The #1 thing holding you back from scaling.",
+            category: "bottleneck",
+            options: [
+                { text: "I'm doing everything myself — no time", score: 1 },
+                { text: "Can't find or keep good employees", score: 2 },
+                { text: "Not enough new owner leads", score: 3 },
+                { text: "Systems break as we add doors", score: 4 },
+                { text: "Honestly, we're scaling well — need to optimize", score: 5 }
+            ]
+        }
+    ];
+
+    let currentQ = 0;
+    let answers = [];
+    let userEmail = '';
+
+    function renderQuestion() {
+        const q = questions[currentQ];
+        const selected = answers[currentQ];
+        
+        document.getElementById('progress-text').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+        document.getElementById('progress-bar').style.width = `${((currentQ + 1) / questions.length) * 100}%`;
+        
+        let optionsHTML = q.options.map((opt, i) => `
+            <div class="option ${selected === i ? 'selected' : ''}" onclick="selectOption(${i})">
+                <div class="dot"></div>
+                <span>${opt.text}</span>
+            </div>
+        `).join('');
+        
+        document.getElementById('question-card').innerHTML = `
+            <h2>${q.q}</h2>
+            <p class="subtitle">${q.sub}</p>
+            <div class="options">${optionsHTML}</div>
+            <div class="btn-row">
+                <button class="btn btn-back ${currentQ === 0 ? 'hidden' : ''}" onclick="prevQuestion()">← Back</button>
+                <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" ${selected === undefined ? 'disabled' : ''}>${currentQ === questions.length - 1 ? 'See Results →' : 'Next →'}</button>
+            </div>
+        `;
+    }
+
+    function selectOption(idx) {
+        answers[currentQ] = idx;
+        renderQuestion();
+    }
+
+    function nextQuestion() {
+        if (answers[currentQ] === undefined) return;
+        if (currentQ < questions.length - 1) {
+            currentQ++;
+            renderQuestion();
+        } else {
+            showEmailGate();
+        }
+    }
+
+    function prevQuestion() {
+        if (currentQ > 0) {
+            currentQ--;
+            renderQuestion();
+        }
+    }
+
+    function showEmailGate() {
+        document.getElementById('quiz-section').classList.add('hidden');
+        document.getElementById('email-section').classList.remove('hidden');
+    }
+
+    function submitEmail() {
+        const email = document.getElementById('email-input').value.trim();
+        if (!email || !email.includes('@')) {
+            document.getElementById('email-input').style.borderColor = '#ef4444';
+            return;
+        }
+        userEmail = email;
+        
+        // Send to subscribe API
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'growth-assessment' })
+        }).catch(() => {});
+        
+        showResults();
+    }
+
+    function skipEmail() {
+        showResults();
+    }
+
+    function showResults() {
+        document.getElementById('email-section').classList.add('hidden');
+        document.getElementById('results-section').classList.remove('hidden');
+        
+        // Calculate scores
+        const categories = {
+            systems: { label: 'Operations & Systems', scores: [], color: '#6366f1' },
+            retention: { label: 'Owner Retention', scores: [], color: '#22c55e' },
+            growth: { label: 'Growth & Marketing', scores: [], color: '#f59e0b' },
+            team: { label: 'Team & Training', scores: [], color: '#ec4899' },
+            finance: { label: 'Financial Management', scores: [], color: '#14b8a6' },
+            tech: { label: 'Technology', scores: [], color: '#8b5cf6' },
+            scale: { label: 'Current Scale', scores: [], color: '#64748b' },
+            bottleneck: { label: 'Growth Readiness', scores: [], color: '#ef4444' }
+        };
+        
+        let totalScore = 0;
+        let maxScore = questions.length * 5;
+        
+        questions.forEach((q, i) => {
+            const score = q.options[answers[i]].score;
+            totalScore += score;
+            if (categories[q.category]) {
+                categories[q.category].scores.push(score);
+            }
+        });
+        
+        const pct = Math.round((totalScore / maxScore) * 100);
+        
+        let scoreClass, scoreLabel, scoreDesc;
+        if (pct < 40) {
+            scoreClass = 'score-low';
+            scoreLabel = 'Foundation Stage';
+            scoreDesc = 'Your PM company has strong potential but needs foundational systems before scaling. Focus on documenting SOPs, implementing technology, and building your first team members. Scaling without these foundations leads to chaos.';
+        } else if (pct < 70) {
+            scoreClass = 'score-mid';
+            scoreLabel = 'Growth Ready';
+            scoreDesc = 'You have the basics in place and are positioned for significant growth. Your next moves should focus on filling specific gaps — whether that\'s owner acquisition, team training, or financial systems. You\'re closer than you think.';
+        } else {
+            scoreClass = 'score-high';
+            scoreLabel = 'Scale Mode';
+            scoreDesc = 'Your company is well-positioned for aggressive scaling. You have strong systems, team infrastructure, and growth channels. Focus on optimization, strategic hiring, and expanding your service territory.';
+        }
+        
+        // Build category breakdown
+        let breakdownHTML = '';
+        Object.entries(categories).forEach(([key, cat]) => {
+            if (cat.scores.length === 0) return;
+            const avg = cat.scores.reduce((a, b) => a + b, 0) / cat.scores.length;
+            const pctCat = Math.round((avg / 5) * 100);
+            breakdownHTML += `
+                <div class="breakdown-item">
+                    <span class="label">${cat.label}</span>
+                    <div style="display:flex;align-items:center;gap:0.75rem;">
+                        <div class="breakdown-bar">
+                            <div class="breakdown-fill" style="width:${pctCat}%;background:${cat.color};"></div>
+                        </div>
+                        <span style="font-weight:600;min-width:40px;text-align:right;">${pctCat}%</span>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // Generate recommendations based on weakest areas
+        let weakAreas = Object.entries(categories)
+            .filter(([k, v]) => v.scores.length > 0 && k !== 'bottleneck' && k !== 'scale')
+            .map(([k, v]) => ({ key: k, label: v.label, avg: v.scores.reduce((a, b) => a + b, 0) / v.scores.length }))
+            .sort((a, b) => a.avg - b.avg);
+        
+        const recs = {
+            systems: '<strong>Build your SOP library.</strong> Start with the top 5 workflows: maintenance triage, move-in/out, tenant screening, lease renewal, and owner reporting. Document each step so any team member can execute without you.',
+            retention: '<strong>Improve owner communication.</strong> Monthly owner reports, proactive maintenance updates, and annual business reviews keep owners loyal. A 5% improvement in retention equals 15-20% more profit.',
+            growth: '<strong>Diversify your lead sources.</strong> Relying on referrals alone caps your growth. Build a Google Business Profile, invest in local SEO, and create a referral incentive program for realtors.',
+            team: '<strong>Invest in structured training.</strong> Create a 30-day onboarding program with clear milestones. The "figure it out" approach leads to 40%+ turnover — which is more expensive than training.',
+            finance: '<strong>Get financial visibility.</strong> Track your per-door profitability monthly. Know your CAC (cost to acquire an owner) and LTV (lifetime value of an owner). These metrics drive every scaling decision.',
+            tech: '<strong>Upgrade your tech stack.</strong> If you\'re still on spreadsheets, a PM platform (AppFolio, Buildium, or Rent Manager) will give you 10-15 hours/week back. That time is worth more than the subscription.'
+        };
+        
+        let recsHTML = '';
+        weakAreas.slice(0, 3).forEach(area => {
+            if (recs[area.key]) {
+                recsHTML += `<li>${recs[area.key]}</li>`;
+            }
+        });
+        
+        if (!recsHTML) {
+            recsHTML = `<li><strong>Keep optimizing.</strong> You're in great shape — focus on expanding your territory and building leadership capacity in your team.</li>`;
+        }
+        
+        const shareText = encodeURIComponent(`I scored ${pct}% on the PM Growth Readiness Assessment. Where does your PM company stack up? 🏢`);
+        const shareUrl = encodeURIComponent('https://scaledoors.com/tools/growth-assessment');
+        
+        document.getElementById('results-section').innerHTML = `
+            <div class="results-card">
+                <div class="score-circle ${scoreClass}">
+                    ${pct}%
+                    <span>Growth Score</span>
+                </div>
+                <div class="score-label">${scoreLabel}</div>
+                <p style="color:#64748b;max-width:500px;margin:0 auto;">${scoreDesc}</p>
+                
+                <div class="breakdown">
+                    <h3>📊 Category Breakdown</h3>
+                    ${breakdownHTML}
+                </div>
+                
+                <div class="recommendations">
+                    <h3>🎯 Your Top 3 Priorities</h3>
+                    <ul>${recsHTML}</ul>
+                </div>
+                
+                <div class="share-row">
+                    <button class="share-btn share-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}', '_blank')">Share on X/Twitter</button>
+                    <button class="share-btn share-linkedin" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}', '_blank')">Share on LinkedIn</button>
+                    <button class="share-btn share-copy" onclick="navigator.clipboard.writeText('https://scaledoors.com/tools/growth-assessment');this.textContent='Copied!'">Copy Link</button>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Ready to level up? 🚀</h3>
+                    <p>The PM Scaling Kit includes 15 SOPs, training templates, and a growth playbook — everything you need to go from ${pct < 50 ? '50 to 200' : '200 to 500+'} doors without the chaos.</p>
+                    <button class="btn" onclick="window.open('https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01', '_blank')">Get the PM Scaling Kit — $147</button>
+                </div>
+                
+                <div style="margin-top:2rem;">
+                    <p style="color:#64748b;font-size:0.9rem;">Want free PM resources? Check out our <a href="/sops/" style="color:#6366f1;">free SOP templates</a> or browse <a href="/blog/property-management-training" style="color:#6366f1;">157+ training articles</a>.</p>
+                </div>
+            </div>
+        `;
+        
+        // Track completion
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'assessment_complete', { score: pct, label: scoreLabel });
+        }
+    }
+
+    // Initialize
+    renderQuestion();
+    </script>
+</body>
+</html>
