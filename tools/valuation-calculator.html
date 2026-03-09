@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management Company Valuation Calculator — ScaleDoors</title>
+    <meta name="description" content="Free property management company valuation calculator. Estimate what your PM company is worth based on door count, revenue, profit margins, and industry multiples.">
+    <link rel="canonical" href="https://scaledoors.com/tools/valuation-calculator.html">
+    <meta property="og:title" content="Free PM Company Valuation Calculator — ScaleDoors">
+    <meta property="og:description" content="Estimate your property management company's value in 60 seconds. Based on real industry data and multiples.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Property Management Company Valuation Calculator",
+        "description": "Free calculator to estimate property management company value based on door count, revenue, and profit margins.",
+        "url": "https://scaledoors.com/tools/valuation-calculator.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--gold:#f59e0b;--gold-light:#fbbf24;--white:#ffffff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--text:#0f172a;--radius:12px;--shadow:0 1px 3px rgba(0,0,0,.1)}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--gray-50);line-height:1.6}
+        a{color:var(--gold);text-decoration:none}
+        a:hover{text-decoration:underline}
+        .nav{background:var(--navy);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+        .nav a{color:var(--white);font-weight:700;font-size:1.1rem}
+        .nav-links a{color:var(--gray-400);margin-left:24px;font-size:.9rem;font-weight:400}
+        .nav-links a:hover{color:var(--white)}
+        .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);padding:48px 24px;text-align:center}
+        .hero h1{font-size:2rem;margin-bottom:8px}
+        .hero p{color:var(--gray-400);max-width:600px;margin:0 auto}
+        .container{max-width:800px;margin:0 auto;padding:32px 24px}
+        .card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);margin-bottom:24px}
+        .card h2{font-size:1.3rem;margin-bottom:16px;color:var(--navy)}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:.95rem}
+        .form-group .hint{font-size:.8rem;color:var(--gray-500);margin-bottom:6px}
+        .form-group input,.form-group select{width:100%;padding:12px 16px;border:2px solid var(--gray-200);border-radius:8px;font-size:1rem;transition:border .2s}
+        .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--gold)}
+        .input-prefix{position:relative}
+        .input-prefix::before{content:'$';position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gray-500);font-weight:600}
+        .input-prefix input{padding-left:28px}
+        .btn{background:var(--gold);color:var(--navy);border:none;padding:16px 32px;font-size:1.1rem;font-weight:700;border-radius:8px;cursor:pointer;width:100%;transition:background .2s}
+        .btn:hover{background:var(--gold-light)}
+        .results{display:none}
+        .results.show{display:block}
+        .valuation-range{text-align:center;padding:32px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:var(--radius);color:var(--white);margin-bottom:24px}
+        .valuation-range .label{font-size:.9rem;color:var(--gray-400);margin-bottom:8px}
+        .valuation-range .range{font-size:2.2rem;font-weight:800;color:var(--gold)}
+        .valuation-range .method{font-size:.85rem;color:var(--gray-400);margin-top:4px}
+        .breakdown{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .breakdown-item{padding:16px;background:var(--gray-50);border-radius:8px;text-align:center}
+        .breakdown-item .bi-label{font-size:.8rem;color:var(--gray-500);margin-bottom:4px}
+        .breakdown-item .bi-value{font-size:1.4rem;font-weight:700;color:var(--navy)}
+        .tips{margin-top:24px}
+        .tips h3{margin-bottom:12px}
+        .tips ul{list-style:none}
+        .tips li{padding:8px 0;padding-left:24px;position:relative;border-bottom:1px solid var(--gray-100)}
+        .tips li::before{content:'💡';position:absolute;left:0}
+        .cta-box{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);padding:32px;border-radius:var(--radius);text-align:center;margin-top:32px}
+        .cta-box h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px}
+        .cta-box p{color:var(--navy-light);margin-bottom:16px}
+        .cta-box a{display:inline-block;background:var(--navy);color:var(--white);padding:14px 28px;border-radius:8px;font-weight:700}
+        .footer{text-align:center;padding:48px 24px;color:var(--gray-500);font-size:.85rem}
+        @media(max-width:600px){.breakdown{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.valuation-range .range{font-size:1.6rem}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">ScaleDoors</a>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="/sops/">Free SOPs</a>
+            <a href="/tools/fee-calculator.html">Fee Calc</a>
+            <a href="/scaling-kit.html">Scaling Kit</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Property Management Company Valuation Calculator</h1>
+        <p>Estimate what your PM company is worth in 60 seconds — based on real industry multiples and your actual numbers.</p>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>📊 Enter Your Company Details</h2>
+            <div class="form-group">
+                <label>Total Doors Under Management</label>
+                <div class="hint">Include all residential units you manage</div>
+                <input type="number" id="doors" placeholder="e.g., 200" min="1">
+            </div>
+            <div class="form-group">
+                <label>Annual Gross Revenue</label>
+                <div class="hint">Total management fees + ancillary income (leasing fees, maintenance markup, etc.)</div>
+                <div class="input-prefix">
+                    <input type="number" id="revenue" placeholder="e.g., 480000" min="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Annual Net Profit (EBITDA)</label>
+                <div class="hint">Revenue minus all operating expenses (before owner compensation)</div>
+                <div class="input-prefix">
+                    <input type="number" id="profit" placeholder="e.g., 120000" min="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Average Monthly Management Fee per Door</label>
+                <div class="hint">Your typical monthly management fee</div>
+                <div class="input-prefix">
+                    <input type="number" id="feePerDoor" placeholder="e.g., 100" min="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Average Contract Length</label>
+                <select id="contractLength">
+                    <option value="month">Month-to-Month</option>
+                    <option value="1year" selected>1 Year</option>
+                    <option value="2year">2+ Years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Annual Owner Churn Rate</label>
+                <div class="hint">% of owners who leave per year</div>
+                <input type="number" id="churnRate" placeholder="e.g., 15" min="0" max="100" value="15">
+            </div>
+            <button class="btn" onclick="calculate()">Calculate My Company's Value →</button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="valuation-range">
+                <div class="label">ESTIMATED COMPANY VALUE</div>
+                <div class="range" id="valueRange">$0 — $0</div>
+                <div class="method">Based on blended industry multiples (revenue, EBITDA, and per-door)</div>
+            </div>
+            <div class="card">
+                <h2>Valuation Breakdown — Three Methods</h2>
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <div class="bi-label">Revenue Multiple (1.5x — 3x)</div>
+                        <div class="bi-value" id="revMultiple">—</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="bi-label">EBITDA Multiple (4x — 8x)</div>
+                        <div class="bi-value" id="ebitdaMultiple">—</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="bi-label">Per-Door Value ($200 — $600)</div>
+                        <div class="bi-value" id="perDoorValue">—</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="bi-label">Profit Margin</div>
+                        <div class="bi-value" id="profitMargin">—</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="bi-label">Revenue Per Door (Annual)</div>
+                        <div class="bi-value" id="revenuePerDoor">—</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="bi-label">Retention Score</div>
+                        <div class="bi-value" id="retentionScore">—</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Valuation Multiplier Adjustments</h2>
+                <div id="adjustments"></div>
+            </div>
+            <div class="card tips">
+                <h3>🚀 How to Increase Your Company's Value</h3>
+                <ul id="tips"></ul>
+            </div>
+            <div class="cta-box">
+                <h3>Ready to Scale Your Doors (and Your Valuation)?</h3>
+                <p>The PM Scaling Kit gives you the exact SOPs, systems, and playbooks to grow from 50 to 500+ doors — increasing both revenue and company value.</p>
+                <a href="/scaling-kit.html">Get the PM Scaling Kit — $147 →</a>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:32px">
+            <h2>How Property Management Companies Are Valued</h2>
+            <p>Property management companies are typically valued using three methods:</p>
+            <p><strong>1. Revenue Multiple (1.5x — 3x annual revenue):</strong> The most common method. Companies with recurring revenue, long contracts, and low churn command higher multiples. A company doing $500K/year in management fees might be worth $750K — $1.5M.</p>
+            <p style="margin-top:12px"><strong>2. EBITDA Multiple (4x — 8x):</strong> Preferred by sophisticated buyers. Higher margins = higher multiples. A company with $150K EBITDA might be worth $600K — $1.2M.</p>
+            <p style="margin-top:12px"><strong>3. Per-Door Value ($200 — $600 per door):</strong> Quick industry rule-of-thumb. A 300-door company might be worth $60K — $180K by this method alone. This method typically gives the lowest valuation and is used as a floor.</p>
+            <p style="margin-top:12px"><strong>Key value drivers:</strong> contract length, owner retention rate, profit margins, growth trajectory, systems/SOPs in place, market location, and management team quality.</p>
+            <p style="margin-top:12px"><strong>The #1 way to increase valuation:</strong> systematize everything. Buyers pay premium for companies that run on systems, not on the owner's personal relationships. <a href="/sops/">Download our free SOP templates →</a></p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="card" style="text-align:center;margin-top:24px">
+            <h2>📬 Get Weekly PM Growth Tips</h2>
+            <p style="margin-bottom:16px;color:var(--gray-500)">Join 500+ PM company owners scaling their portfolios.</p>
+            <form onsubmit="return subscribe(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto">
+                <input type="email" id="email" placeholder="you@company.com" required style="flex:1;padding:12px;border:2px solid var(--gray-200);border-radius:8px">
+                <button type="submit" style="background:var(--gold);color:var(--navy);border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer">Subscribe</button>
+            </form>
+            <div id="subMsg" style="margin-top:8px;font-size:.85rem"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 ScaleDoors. Property management growth systems.</p>
+        <p style="margin-top:8px"><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/sops/">Free SOPs</a> · <a href="/scaling-kit.html">PM Scaling Kit</a></p>
+    </footer>
+
+    <script>
+        function fmt(n){return '$'+n.toLocaleString('en-US',{maximumFractionDigits:0})}
+        function pct(n){return n.toFixed(1)+'%'}
+
+        function calculate(){
+            const doors=parseInt(document.getElementById('doors').value)||0;
+            const revenue=parseFloat(document.getElementById('revenue').value)||0;
+            const profit=parseFloat(document.getElementById('profit').value)||0;
+            const feePerDoor=parseFloat(document.getElementById('feePerDoor').value)||0;
+            const contractLength=document.getElementById('contractLength').value;
+            const churnRate=parseFloat(document.getElementById('churnRate').value)||15;
+
+            if(!doors||!revenue){alert('Please enter at least your door count and annual revenue.');return}
+
+            // Calculate base multiples
+            let revMultLow=1.5,revMultHigh=3.0;
+            let ebitdaMultLow=4,ebitdaMultHigh=8;
+            let perDoorLow=200,perDoorHigh=600;
+
+            // Adjustments
+            const adjustments=[];
+
+            // Contract length adjustment
+            if(contractLength==='2year'){
+                revMultLow+=0.3;revMultHigh+=0.5;
+                adjustments.push({text:'Long-term contracts (2+ years)',impact:'+0.3-0.5x revenue multiple',positive:true});
+            }else if(contractLength==='month'){
+                revMultLow-=0.3;revMultHigh-=0.3;
+                adjustments.push({text:'Month-to-month contracts',impact:'-0.3x revenue multiple',positive:false});
+            }
+
+            // Churn rate adjustment
+            if(churnRate<10){
+                revMultLow+=0.2;revMultHigh+=0.3;perDoorHigh+=100;
+                adjustments.push({text:'Excellent retention (<10% churn)',impact:'+0.2-0.3x multiple',positive:true});
+            }else if(churnRate>25){
+                revMultLow-=0.3;revMultHigh-=0.5;perDoorHigh-=100;
+                adjustments.push({text:'High churn (>25%)',impact:'-0.3-0.5x multiple',positive:false});
+            }
+
+            // Profit margin adjustment
+            const margin=revenue>0?profit/revenue:0;
+            if(margin>0.30){
+                ebitdaMultLow+=1;ebitdaMultHigh+=1;
+                adjustments.push({text:'Strong profit margins (>30%)',impact:'+1x EBITDA multiple',positive:true});
+            }else if(margin<0.15&&margin>0){
+                ebitdaMultLow-=1;ebitdaMultHigh-=1;
+                adjustments.push({text:'Low profit margins (<15%)',impact:'-1x EBITDA multiple',positive:false});
+            }
+
+            // Scale adjustment
+            if(doors>500){
+                revMultLow+=0.3;revMultHigh+=0.5;perDoorHigh+=100;
+                adjustments.push({text:'Scale (500+ doors)',impact:'Premium for size',positive:true});
+            }else if(doors<50){
+                revMultLow-=0.2;revMultHigh-=0.3;perDoorLow-=50;
+                adjustments.push({text:'Small portfolio (<50 doors)',impact:'Discount for size',positive:false});
+            }
+
+            // Revenue per door
+            const revPerDoor=doors>0?revenue/doors:0;
+            if(revPerDoor>2000){
+                perDoorHigh+=100;
+                adjustments.push({text:'High revenue per door (>$2k/yr)',impact:'Premium per-door value',positive:true});
+            }
+
+            // Calculate valuations
+            const revValLow=revenue*revMultLow;
+            const revValHigh=revenue*revMultHigh;
+            const ebitdaValLow=profit*ebitdaMultLow;
+            const ebitdaValHigh=profit*ebitdaMultHigh;
+            const doorValLow=doors*perDoorLow;
+            const doorValHigh=doors*perDoorHigh;
+
+            // Blended range
+            const vals=[revValLow,ebitdaValLow,doorValLow].filter(v=>v>0);
+            const valsHigh=[revValHigh,ebitdaValHigh,doorValHigh].filter(v=>v>0);
+            const low=vals.length?vals.reduce((a,b)=>a+b)/vals.length:0;
+            const high=valsHigh.length?valsHigh.reduce((a,b)=>a+b)/valsHigh.length:0;
+
+            // Display
+            document.getElementById('valueRange').textContent=fmt(low)+' — '+fmt(high);
+            document.getElementById('revMultiple').textContent=fmt(revValLow)+' — '+fmt(revValHigh);
+            document.getElementById('ebitdaMultiple').textContent=profit>0?fmt(ebitdaValLow)+' — '+fmt(ebitdaValHigh):'Need profit data';
+            document.getElementById('perDoorValue').textContent=fmt(doorValLow)+' — '+fmt(doorValHigh);
+            document.getElementById('profitMargin').textContent=revenue>0?pct(margin*100):'—';
+            document.getElementById('revenuePerDoor').textContent=doors>0?fmt(revPerDoor)+'/yr':'—';
+
+            // Retention score
+            let retScore='';
+            if(churnRate<10)retScore='🟢 Excellent';
+            else if(churnRate<20)retScore='🟡 Average';
+            else retScore='🔴 Needs Work';
+            document.getElementById('retentionScore').textContent=retScore;
+
+            // Adjustments
+            const adjHtml=adjustments.map(a=>`<div style="padding:10px 0;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between"><span>${a.positive?'✅':'⚠️'} ${a.text}</span><span style="font-weight:600;color:${a.positive?'#16a34a':'#dc2626'}">${a.impact}</span></div>`).join('');
+            document.getElementById('adjustments').innerHTML=adjHtml||'<p style="color:#94a3b8">No significant adjustments based on your inputs.</p>';
+
+            // Tips
+            const tips=[];
+            if(churnRate>15)tips.push('Reduce owner churn — every 5% reduction in churn increases valuation by 10-15%. Focus on proactive communication and quarterly business reviews.');
+            if(contractLength==='month')tips.push('Move to annual contracts — buyers pay 20-30% more for locked-in revenue. Offer a small discount for annual commitment.');
+            if(margin<0.25)tips.push('Improve profit margins — optimize staffing ratios, increase ancillary revenue (maintenance markup, leasing fees), and eliminate unprofitable accounts.');
+            if(doors<200)tips.push('Scale your door count — companies with 200+ doors are significantly more attractive to buyers. Our PM Scaling Kit shows you exactly how.');
+            tips.push('Systematize operations — buyers pay premium for companies that run on SOPs and systems, not on the owner. Document every process.');
+            tips.push('Build a management team — a company that depends on the owner is worth less. Develop a property manager and maintenance coordinator who can run day-to-day operations.');
+            if(revPerDoor<1500)tips.push('Increase revenue per door — add ancillary services like maintenance coordination, lease renewal fees, and owner reporting packages.');
+            document.getElementById('tips').innerHTML=tips.map(t=>`<li>${t}</li>`).join('');
+
+            document.getElementById('results').classList.add('show');
+            document.getElementById('results').scrollIntoView({behavior:'smooth'});
+        }
+
+        function subscribe(e){
+            e.preventDefault();
+            const email=document.getElementById('email').value;
+            fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'valuation-calculator'})})
+            .then(r=>r.json()).then(d=>{document.getElementById('subMsg').innerHTML='<span style="color:#16a34a">✅ You\'re in! Check your inbox.</span>';})
+            .catch(()=>{document.getElementById('subMsg').innerHTML='<span style="color:#dc2626">Something went wrong. Try again.</span>';});
+        }
+    </script>
+</body>
+</html>

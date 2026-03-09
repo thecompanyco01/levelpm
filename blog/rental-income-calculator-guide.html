@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Income Calculator: How to Calculate Rental Property Income (2025)</title>
+    <meta name="description" content="Free rental income calculator guide. Learn how to calculate gross rental income, net operating income, cash flow, and ROI for any rental property. Includes formulas and examples.">
+    <link rel="canonical" href="https://scaledoors.com/blog/rental-income-calculator-guide">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Rental Income Calculator: How to Calculate Rental Property Income",
+        "author": {"@type": "Organization", "name": "ScaleDoors"},
+        "publisher": {"@type": "Organization", "name": "ScaleDoors"},
+        "datePublished": "2026-03-09",
+        "dateModified": "2026-03-09"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; }
+        .header a { color: white; text-decoration: none; font-weight: 700; font-size: 1.3rem; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.2rem; max-width: 800px; margin: 0 auto 1rem; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .content { max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; }
+        .content h2 { font-size: 1.6rem; margin: 2rem 0 1rem; color: #1a1a2e; }
+        .content h3 { font-size: 1.3rem; margin: 1.5rem 0 0.8rem; color: #333; }
+        .content p { margin-bottom: 1rem; color: #444; }
+        .content ul, .content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+        .content li { margin-bottom: 0.5rem; }
+        .formula-box { background: #1a1a2e; color: #e0e0e0; padding: 1.5rem 2rem; border-radius: 8px; margin: 1.5rem 0; font-family: monospace; font-size: 1.1rem; }
+        .example-box { background: #e8f0fe; border-left: 4px solid #667eea; padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .calc-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .calc-table th, .calc-table td { padding: 0.8rem 1rem; border: 1px solid #ddd; text-align: left; }
+        .calc-table th { background: #667eea; color: white; }
+        .calc-table tr:nth-child(even) { background: #f5f5f5; }
+        .calc-table .total-row { font-weight: bold; background: #e8f0fe !important; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .cta-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-bottom: 0.5rem; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+        .newsletter-box { background: #f0f4ff; border: 2px solid #667eea; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+        .newsletter-box input[type="email"] { padding: 0.7rem 1rem; border: 1px solid #ddd; border-radius: 6px; width: 250px; margin-right: 0.5rem; }
+        .newsletter-box button { padding: 0.7rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .footer { background: #1a1a2e; color: #aaa; padding: 2rem; text-align: center; margin-top: 3rem; }
+        .footer a { color: #667eea; text-decoration: none; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.6rem; } .newsletter-box input[type="email"] { width: 100%; margin-bottom: 0.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="header"><a href="/">ScaleDoors</a></div>
+    <div class="hero">
+        <h1>Rental Income Calculator: How to Calculate Rental Property Income</h1>
+        <p>Step-by-step formulas and real examples to calculate gross income, NOI, cash flow, and ROI for any rental property.</p>
+    </div>
+    <div class="content">
+        <p>Calculating rental income accurately is the foundation of successful property management and real estate investing. Whether you're evaluating a potential purchase or optimizing an existing portfolio, these formulas tell you exactly how much money a property is (or will be) making.</p>
+
+        <h2>The 5 Key Rental Income Metrics</h2>
+        <ol>
+            <li><strong>Gross Rental Income</strong> — Total rent collected before any expenses</li>
+            <li><strong>Effective Gross Income (EGI)</strong> — Gross rent minus vacancy and credit losses</li>
+            <li><strong>Net Operating Income (NOI)</strong> — EGI minus operating expenses</li>
+            <li><strong>Cash Flow</strong> — NOI minus debt service (mortgage payments)</li>
+            <li><strong>Cash-on-Cash Return</strong> — Annual cash flow ÷ total cash invested</li>
+        </ol>
+
+        <h2>Step 1: Calculate Gross Rental Income</h2>
+        <div class="formula-box">
+            Gross Rental Income = Monthly Rent × 12 × Number of Units
+        </div>
+        <div class="example-box">
+            <strong>Example:</strong> A duplex where each unit rents for $1,500/month<br>
+            Gross Rental Income = $1,500 × 12 × 2 = <strong>$36,000/year</strong>
+        </div>
+        <p>Include all income sources: base rent, parking fees, laundry income, pet rent, storage fees, late fees, and application fees.</p>
+
+        <h2>Step 2: Calculate Effective Gross Income</h2>
+        <div class="formula-box">
+            EGI = Gross Rental Income − Vacancy Loss − Credit Loss + Other Income
+        </div>
+        <p>Industry standard is to assume <strong>5–8% vacancy rate</strong> for residential properties. Credit loss (tenants who don't pay) typically adds another 1–2%.</p>
+        <div class="example-box">
+            <strong>Example (continued):</strong><br>
+            Gross Rental Income: $36,000<br>
+            Vacancy loss (7%): −$2,520<br>
+            Credit loss (1%): −$360<br>
+            Other income (laundry, parking): +$1,200<br>
+            <strong>EGI = $34,320</strong>
+        </div>
+
+        <h2>Step 3: Calculate Net Operating Income (NOI)</h2>
+        <div class="formula-box">
+            NOI = EGI − Total Operating Expenses
+        </div>
+
+        <h3>Typical Operating Expenses</h3>
+        <table class="calc-table">
+            <tr><th>Expense Category</th><th>Typical % of Rent</th><th>Our Example</th></tr>
+            <tr><td>Property management fees</td><td>8–12%</td><td>$3,600</td></tr>
+            <tr><td>Property taxes</td><td>Varies</td><td>$3,200</td></tr>
+            <tr><td>Insurance</td><td>2–5%</td><td>$1,400</td></tr>
+            <tr><td>Repairs & maintenance</td><td>5–10%</td><td>$2,500</td></tr>
+            <tr><td>Capital expenditure reserve</td><td>5–10%</td><td>$1,800</td></tr>
+            <tr><td>Utilities (if owner-paid)</td><td>Varies</td><td>$1,200</td></tr>
+            <tr><td>Landscaping/snow removal</td><td>1–3%</td><td>$600</td></tr>
+            <tr><td>Legal & accounting</td><td>1–2%</td><td>$500</td></tr>
+            <tr class="total-row"><td>Total Operating Expenses</td><td>35–50%</td><td>$14,800</td></tr>
+        </table>
+
+        <div class="example-box">
+            <strong>NOI = $34,320 − $14,800 = $19,520/year</strong>
+        </div>
+
+        <div class="warning-box">
+            <strong>The 50% Rule:</strong> A quick back-of-the-envelope estimate says operating expenses will eat roughly 50% of gross rent. For our $36,000 gross income example, that would estimate NOI at ~$18,000. Not far from our detailed calculation of $19,520.
+        </div>
+
+        <h2>Step 4: Calculate Cash Flow</h2>
+        <div class="formula-box">
+            Cash Flow = NOI − Annual Debt Service (Mortgage Payments)
+        </div>
+        <div class="example-box">
+            <strong>Example:</strong><br>
+            NOI: $19,520<br>
+            Mortgage payment: $1,200/month × 12 = $14,400/year<br>
+            <strong>Annual Cash Flow = $19,520 − $14,400 = $5,120/year ($427/month)</strong>
+        </div>
+
+        <h2>Step 5: Calculate Cash-on-Cash Return</h2>
+        <div class="formula-box">
+            Cash-on-Cash Return = Annual Cash Flow ÷ Total Cash Invested × 100
+        </div>
+        <div class="example-box">
+            <strong>Example:</strong><br>
+            Annual cash flow: $5,120<br>
+            Down payment: $50,000<br>
+            Closing costs: $5,000<br>
+            Initial repairs: $8,000<br>
+            Total cash invested: $63,000<br>
+            <strong>Cash-on-Cash Return = $5,120 ÷ $63,000 = 8.1%</strong>
+        </div>
+
+        <h2>Other Important Rental Metrics</h2>
+
+        <h3>Cap Rate</h3>
+        <div class="formula-box">
+            Cap Rate = NOI ÷ Property Value × 100
+        </div>
+        <p>Cap rate measures return independent of financing. Our example: $19,520 ÷ $250,000 = <strong>7.8% cap rate</strong>. Generally, 5–10% is considered good for residential, though this varies by market.</p>
+
+        <h3>Gross Rent Multiplier (GRM)</h3>
+        <div class="formula-box">
+            GRM = Property Price ÷ Annual Gross Rent
+        </div>
+        <p>Our example: $250,000 ÷ $36,000 = <strong>GRM of 6.9</strong>. Lower is better. Under 8 is generally attractive.</p>
+
+        <h3>The 1% Rule</h3>
+        <p>Monthly rent should be at least 1% of the purchase price. Our duplex: $3,000/month ÷ $250,000 = 1.2%. <strong>Passes the 1% rule.</strong></p>
+
+        <h2>Common Rental Income Calculation Mistakes</h2>
+        <ul>
+            <li><strong>Ignoring vacancy:</strong> Assuming 100% occupancy year-round is unrealistic</li>
+            <li><strong>Forgetting capital expenditures:</strong> Roofs, HVAC, and appliances WILL need replacement</li>
+            <li><strong>Underestimating maintenance:</strong> Budget 10% of rent for properties over 20 years old</li>
+            <li><strong>Not accounting for PM fees:</strong> Even if you self-manage, your time has value</li>
+            <li><strong>Using asking rent, not market rent:</strong> Verify with comparable properties in the area</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3>Property Managers: Optimize Your Portfolio's Performance</h3>
+            <p>Our PM Scaling Kit includes financial analysis templates, KPI dashboards, and owner reporting frameworks for growing PM companies.</p>
+            <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01">Get the PM Scaling Kit — $147</a>
+        </div>
+
+        <h2>Rental Income Tax Considerations</h2>
+        <p>Your taxable rental income differs from your cash flow because of deductions:</p>
+        <ul>
+            <li><strong>Depreciation:</strong> Deduct the building value over 27.5 years (residential) — a non-cash deduction that reduces taxable income</li>
+            <li><strong>Mortgage interest:</strong> Deductible as an operating expense</li>
+            <li><strong>All operating expenses:</strong> Property management, repairs, insurance, taxes — all deductible</li>
+            <li><strong>Pass-through deduction:</strong> Qualified business income (QBI) deduction may give you an additional 20% deduction</li>
+        </ul>
+
+        <h2>Quick Reference: Rental Income Formulas</h2>
+        <table class="calc-table">
+            <tr><th>Metric</th><th>Formula</th><th>Good Target</th></tr>
+            <tr><td>Gross Income</td><td>Rent × 12 × Units</td><td>—</td></tr>
+            <tr><td>EGI</td><td>Gross − Vacancy − Credit + Other</td><td>93%+ of gross</td></tr>
+            <tr><td>NOI</td><td>EGI − Operating Expenses</td><td>50%+ of gross</td></tr>
+            <tr><td>Cash Flow</td><td>NOI − Mortgage</td><td>$100+/unit/month</td></tr>
+            <tr><td>Cash-on-Cash</td><td>Cash Flow ÷ Cash Invested</td><td>8%+</td></tr>
+            <tr><td>Cap Rate</td><td>NOI ÷ Property Value</td><td>5–10%</td></tr>
+            <tr><td>GRM</td><td>Price ÷ Annual Gross Rent</td><td>Under 8</td></tr>
+        </table>
+
+        <div class="newsletter-box">
+            <h3>📧 Free Property Management Financial Templates</h3>
+            <p>Get income calculation spreadsheets, KPI trackers, and owner reporting templates delivered to your inbox.</p>
+            <form onsubmit="event.preventDefault(); fetch('/api/subscribe', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:this.email.value,source:'blog-rental-income-calc'})}).then(r=>r.json()).then(d=>{if(d.success){this.innerHTML='<p style=color:#667eea;font-weight:600>✓ You\'re in! Check your inbox.</p>'}}).catch(()=>{this.innerHTML='<p style=color:red>Something went wrong. Try again.</p>'})">
+                <input type="email" name="email" placeholder="you@example.com" required>
+                <button type="submit">Get Free Templates</button>
+            </form>
+        </div>
+
+        <p><a href="/blog">← Back to all articles</a> | <a href="/sops">Free PM SOPs</a></p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 ScaleDoors. <a href="/blog">Blog</a> · <a href="/sops">Free SOPs</a> · <a href="/about">About</a></p>
+    </div>
+</body>
+</html>

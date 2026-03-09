@@ -3,235 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Value a Property Management Company (2026 Guide) | ScaleDoors</title>
-    <meta name="description" content="Learn exactly how to value a property management company. Covers revenue multiples, door-based valuation, EBITDA methods, and what buyers actually pay in 2026.">
-    <link rel="canonical" href="https://scaledoors.com/blog/how-to-value-property-management-company">
+    <title>How to Value a Property Management Company (2026 Guide + Free Calculator)</title>
+    <meta name="description" content="Learn exactly how to value a property management company using revenue multiples, EBITDA, and per-door methods. Includes a free valuation calculator.">
+    <link rel="canonical" href="https://scaledoors.com/blog/how-to-value-property-management-company.html">
+    <meta property="og:title" content="How to Value a Property Management Company (2026 Guide)">
+    <meta property="og:description" content="Three proven valuation methods, real industry multiples, and a free calculator to estimate your PM company's worth.">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "How to Value a Property Management Company (2026 Guide)",
+        "headline": "How to Value a Property Management Company (2026 Guide + Free Calculator)",
+        "description": "Learn exactly how to value a property management company using revenue multiples, EBITDA, and per-door methods.",
         "author": {"@type": "Organization", "name": "ScaleDoors"},
-        "datePublished": "2026-03-08",
-        "dateModified": "2026-03-08",
-        "publisher": {"@type": "Organization", "name": "ScaleDoors"}
+        "publisher": {"@type": "Organization", "name": "ScaleDoors"},
+        "datePublished": "2026-03-09",
+        "dateModified": "2026-03-09"
     }
     </script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.8;background:#fff}
-        .nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-        .nav a{color:#f0c040;text-decoration:none;font-weight:700;font-size:1.2rem}
-        .nav .nav-links a{color:#ccc;font-weight:400;font-size:.95rem;margin-left:1.5rem}
-        .article{max-width:780px;margin:0 auto;padding:3rem 1.5rem}
-        .article h1{font-size:2.2rem;line-height:1.2;margin-bottom:1rem;color:#1a1a2e}
-        .article .meta{color:#888;font-size:.9rem;margin-bottom:2rem}
-        .article h2{font-size:1.5rem;margin:2.5rem 0 1rem;color:#1a1a2e;border-bottom:2px solid #f0c040;padding-bottom:.5rem}
-        .article h3{font-size:1.2rem;margin:1.5rem 0 .75rem}
-        .article p{margin-bottom:1.25rem;font-size:1.05rem}
-        .article ul,.article ol{margin:1rem 0 1.5rem 1.5rem}
-        .article li{margin-bottom:.5rem}
-        .article table{width:100%;border-collapse:collapse;margin:1.5rem 0}
-        .article th,.article td{border:1px solid #ddd;padding:.75rem;text-align:left;font-size:.95rem}
-        .article th{background:#f0c040;color:#1a1a2e;font-weight:700}
-        .article tr:nth-child(even){background:#f9f9f9}
-        .cta-box{background:linear-gradient(135deg,#1a1a2e,#302b63);color:#fff;padding:2rem;border-radius:12px;margin:2rem 0;text-align:center}
-        .cta-box h3{color:#f0c040;margin-bottom:1rem}
-        .cta-box a{display:inline-block;background:#f0c040;color:#1a1a2e;padding:.75rem 2rem;border-radius:8px;font-weight:700;text-decoration:none;margin-top:.5rem}
-        .footer{background:#1a1a2e;color:#ccc;text-align:center;padding:2rem;margin-top:3rem;font-size:.85rem}
-        .footer a{color:#f0c040;text-decoration:none}
-        @media(max-width:600px){.article h1{font-size:1.6rem}.article{padding:2rem 1rem}}
+        :root{--navy:#0f172a;--navy-light:#1e293b;--gold:#f59e0b;--gold-light:#fbbf24;--white:#ffffff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-400:#94a3b8;--gray-500:#64748b;--text:#0f172a;--radius:12px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--white);line-height:1.8}
+        a{color:var(--gold)}
+        .nav{background:var(--navy);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+        .nav a{color:var(--white);font-weight:700;font-size:1.1rem;text-decoration:none}
+        .nav-links a{color:var(--gray-400);margin-left:24px;font-size:.9rem;font-weight:400}
+        .article{max-width:720px;margin:0 auto;padding:48px 24px}
+        .article h1{font-size:2rem;line-height:1.3;margin-bottom:16px}
+        .meta{color:var(--gray-500);font-size:.9rem;margin-bottom:32px}
+        .article h2{font-size:1.4rem;margin:32px 0 12px;color:var(--navy)}
+        .article h3{font-size:1.15rem;margin:24px 0 8px}
+        .article p{margin-bottom:16px}
+        .article ul,.article ol{margin:0 0 16px 24px}
+        .article li{margin-bottom:8px}
+        .highlight{background:var(--gray-50);border-left:4px solid var(--gold);padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0}
+        .cta-box{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);padding:32px;border-radius:var(--radius);text-align:center;margin:32px 0}
+        .cta-box h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px}
+        .cta-box p{color:var(--navy-light);margin-bottom:16px}
+        .cta-box a{display:inline-block;background:var(--navy);color:var(--white);padding:14px 28px;border-radius:8px;font-weight:700;text-decoration:none}
+        table{width:100%;border-collapse:collapse;margin:16px 0}
+        th,td{padding:12px;text-align:left;border-bottom:1px solid var(--gray-200)}
+        th{background:var(--gray-50);font-weight:600}
+        .tool-cta{background:var(--navy);color:var(--white);padding:24px;border-radius:var(--radius);text-align:center;margin:24px 0}
+        .tool-cta a{color:var(--gold);font-weight:700;font-size:1.1rem}
+        .newsletter{background:var(--gray-50);padding:32px;border-radius:var(--radius);text-align:center;margin:32px 0}
+        .newsletter h3{margin-bottom:8px}
+        .newsletter p{color:var(--gray-500);margin-bottom:16px}
+        .newsletter form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+        .newsletter input{flex:1;padding:12px;border:2px solid var(--gray-200);border-radius:8px}
+        .newsletter button{background:var(--gold);color:var(--navy);border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer}
+        .footer{text-align:center;padding:48px 24px;color:var(--gray-500);font-size:.85rem}
+        @media(max-width:600px){.article h1{font-size:1.5rem}.newsletter form{flex-direction:column}}
     </style>
-    <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
 </head>
 <body>
     <nav class="nav">
         <a href="/">ScaleDoors</a>
         <div class="nav-links">
-            <a href="/blog">Blog</a>
+            <a href="/blog/">Blog</a>
             <a href="/sops/">Free SOPs</a>
-            <a href="/scaling-kit">Scaling Kit</a>
+            <a href="/scaling-kit.html">Scaling Kit</a>
         </div>
     </nav>
 
     <article class="article">
-        <h1>How to Value a Property Management Company (2026 Guide)</h1>
-        <p class="meta">Published March 8, 2026 · 12 min read</p>
+        <h1>How to Value a Property Management Company (2026 Guide + Free Calculator)</h1>
+        <div class="meta">Updated March 2026 · 12 min read · By ScaleDoors Team</div>
 
-        <p>Whether you're buying, selling, or just curious what your PM company is worth, valuation is one of the most important (and misunderstood) topics in property management. Most owners either wildly overestimate their company's value or sell for far less than they should.</p>
+        <p>Whether you're thinking about selling your property management company, acquiring one, or simply want to know what your business is worth — understanding valuation is critical.</p>
 
-        <p>This guide breaks down every valuation method used in real PM acquisitions — with actual numbers, not theory.</p>
+        <p>The problem? Most PM owners have <strong>no idea</strong> what their company is actually worth. They either overestimate (because they built it from nothing) or underestimate (because they don't understand what buyers value).</p>
 
-        <h2>The 3 Main Valuation Methods</h2>
+        <p>This guide breaks down the three standard valuation methods used in PM acquisitions, shows you exactly what drives (and destroys) value, and includes a <strong>free calculator</strong> to estimate your company's worth right now.</p>
 
-        <h3>1. Revenue Multiple Method</h3>
-        <p>The most common approach. You take your annual recurring management fee revenue and multiply it by a factor, typically between 1.0x and 3.0x.</p>
+        <div class="tool-cta">
+            <p>Want the quick answer?</p>
+            <a href="/tools/valuation-calculator.html">→ Use Our Free PM Valuation Calculator</a>
+        </div>
 
-        <table>
-            <tr><th>Company Profile</th><th>Revenue Multiple</th><th>Example (at $500K revenue)</th></tr>
-            <tr><td>Small, owner-dependent, no systems</td><td>1.0x – 1.5x</td><td>$500K – $750K</td></tr>
-            <tr><td>Mid-size, some SOPs, mixed contracts</td><td>1.5x – 2.0x</td><td>$750K – $1M</td></tr>
-            <tr><td>Systemized, strong contracts, diverse portfolio</td><td>2.0x – 2.5x</td><td>$1M – $1.25M</td></tr>
-            <tr><td>Premium: brand, team, technology, growth</td><td>2.5x – 3.0x+</td><td>$1.25M – $1.5M+</td></tr>
-        </table>
+        <h2>The Three Methods for Valuing a PM Company</h2>
 
-        <p><strong>Key insight:</strong> Only management fee revenue counts. Maintenance markups, leasing fees, and one-time income are usually excluded or heavily discounted because they're not predictable.</p>
-
-        <h3>2. Per-Door Valuation</h3>
-        <p>A quick-and-dirty method that values the company based on the number of doors (units) under management.</p>
+        <h3>Method 1: Revenue Multiple (Most Common)</h3>
+        <p>The most widely used method in PM acquisitions. Your company is valued at a multiple of its annual gross revenue (management fees + ancillary income).</p>
 
         <table>
-            <tr><th>Market Type</th><th>Price Per Door</th><th>Example (200 doors)</th></tr>
-            <tr><td>Rural / low-rent markets</td><td>$200 – $400</td><td>$40K – $80K</td></tr>
-            <tr><td>Suburban / mid-market</td><td>$400 – $800</td><td>$80K – $160K</td></tr>
-            <tr><td>Urban / high-rent markets</td><td>$800 – $1,500</td><td>$160K – $300K</td></tr>
-            <tr><td>Premium metros (SF, NYC, LA)</td><td>$1,500 – $2,500+</td><td>$300K – $500K+</td></tr>
+            <tr><th>Company Profile</th><th>Revenue Multiple</th><th>Example ($500K revenue)</th></tr>
+            <tr><td>Small (<100 doors), month-to-month contracts, high churn</td><td>1.0x — 1.5x</td><td>$500K — $750K</td></tr>
+            <tr><td>Mid-size (100-300 doors), annual contracts, moderate churn</td><td>1.5x — 2.5x</td><td>$750K — $1.25M</td></tr>
+            <tr><td>Large (300+ doors), strong retention, good systems</td><td>2.5x — 3.5x</td><td>$1.25M — $1.75M</td></tr>
         </table>
 
-        <p>Per-door valuations are useful for quick comparisons but miss crucial factors like profitability, contract quality, and owner dependency.</p>
+        <div class="highlight">
+            <strong>Key insight:</strong> The difference between a 1.5x and 3x multiple on $500K revenue is $750,000. That gap is determined by contract length, retention rate, and how systematized your operations are. Investing in systems literally doubles your company's value.
+        </div>
 
-        <h3>3. EBITDA Multiple Method</h3>
-        <p>The most sophisticated approach. EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) reflects actual profitability.</p>
-
-        <p>Typical PM company EBITDA multiples range from 3x to 7x, depending on size, growth rate, and transferability.</p>
+        <h3>Method 2: EBITDA Multiple (Preferred by Sophisticated Buyers)</h3>
+        <p>EBITDA = Earnings Before Interest, Taxes, Depreciation, and Amortization. It's essentially your profit before accounting tricks.</p>
 
         <table>
-            <tr><th>EBITDA Range</th><th>Multiple</th><th>Who's Buying</th></tr>
-            <tr><td>&lt;$100K</td><td>3x – 4x</td><td>Individual buyers, small competitors</td></tr>
-            <tr><td>$100K – $500K</td><td>4x – 5x</td><td>Regional consolidators</td></tr>
-            <tr><td>$500K – $1M</td><td>5x – 6x</td><td>PE-backed platforms</td></tr>
-            <tr><td>$1M+</td><td>6x – 8x+</td><td>Large PE firms, public companies</td></tr>
+            <tr><th>Profit Margin</th><th>EBITDA Multiple</th><th>Example ($120K EBITDA)</th></tr>
+            <tr><td>Below 15%</td><td>3x — 4x</td><td>$360K — $480K</td></tr>
+            <tr><td>15% — 25%</td><td>4x — 6x</td><td>$480K — $720K</td></tr>
+            <tr><td>Above 25%</td><td>6x — 8x</td><td>$720K — $960K</td></tr>
         </table>
 
-        <h2>What Drives Value Up (Premium Factors)</h2>
+        <p>Why do higher-margin companies get higher multiples? Because they demonstrate operational efficiency. A company making 30% margins has proven it can scale without costs growing linearly.</p>
+
+        <h3>Method 3: Per-Door Value (Quick Rule of Thumb)</h3>
+        <p>The simplest method: each door under management has a dollar value.</p>
+
+        <table>
+            <tr><th>Portfolio Quality</th><th>Value Per Door</th><th>Example (300 doors)</th></tr>
+            <tr><td>Low (high churn, no systems)</td><td>$100 — $250</td><td>$30K — $75K</td></tr>
+            <tr><td>Average</td><td>$250 — $450</td><td>$75K — $135K</td></tr>
+            <tr><td>Premium (strong retention, systems)</td><td>$450 — $700</td><td>$135K — $210K</td></tr>
+        </table>
+
+        <p>This method typically gives the lowest valuation and is used as a floor. Most acquisitions settle between the revenue multiple and EBITDA multiple values.</p>
+
+        <h2>The 7 Factors That Drive PM Company Value</h2>
 
         <ol>
-            <li><strong>Documented SOPs and systems</strong> — If the business runs without the owner, it's worth significantly more. Buyers pay a premium for transferability.</li>
-            <li><strong>Long-term management agreements</strong> — 12+ month contracts with auto-renewal are gold. Month-to-month agreements reduce value by 20-40%.</li>
-            <li><strong>Diversified portfolio</strong> — No single owner should represent more than 10% of revenue. Concentration risk kills valuation.</li>
-            <li><strong>Low owner dependency</strong> — If you're doing property inspections yourself, that's a red flag for buyers.</li>
-            <li><strong>Clean financials</strong> — Separate trust accounts, clean P&L, tax returns that match stated revenue.</li>
-            <li><strong>Growth trajectory</strong> — Companies adding 3-5+ doors per month command premium multiples.</li>
-            <li><strong>Technology stack</strong> — Modern PM software (AppFolio, Buildium, Rent Manager) signals operational maturity.</li>
-            <li><strong>Strong online reputation</strong> — 4.5+ stars on Google with 50+ reviews matters more than you think.</li>
+            <li><strong>Owner retention rate</strong> — The #1 factor. Buyers pay premium for companies with <10% annual owner churn. If owners leave when you sell, the buyer is buying a deflating asset.</li>
+            <li><strong>Contract length</strong> — Annual or multi-year management agreements are worth 20-30% more than month-to-month arrangements.</li>
+            <li><strong>Systems and SOPs</strong> — Does the company run on documented processes, or does it run on the owner's head? Systematized = transferable = valuable. <a href="/sops/">Download free SOP templates →</a></li>
+            <li><strong>Revenue diversity</strong> — Companies with multiple revenue streams (management fees + leasing fees + maintenance markup + renewal fees) are more resilient and valuable.</li>
+            <li><strong>Growth trajectory</strong> — Are you growing? A company adding 5+ doors/month is worth significantly more than one that's flat or declining.</li>
+            <li><strong>Market location</strong> — PM companies in growing markets (Phoenix, Denver, Atlanta, DFW) command premium multiples over stagnant markets.</li>
+            <li><strong>Management team</strong> — Can the company operate without the owner? Companies with a strong #2 (operations manager or senior PM) are dramatically more valuable.</li>
         </ol>
 
-        <h2>What Kills Value (Discount Factors)</h2>
+        <h2>How to Increase Your Company's Valuation</h2>
 
+        <p>The good news: most of these value drivers are within your control. Here's the playbook:</p>
+
+        <h3>Quick wins (30-60 days)</h3>
         <ul>
-            <li><strong>Owner IS the business</strong> — If clients stay because of a personal relationship with the owner, expect 30-50% haircut</li>
-            <li><strong>Deferred maintenance</strong> — Portfolios with a backlog of unresolved maintenance issues scare buyers</li>
-            <li><strong>High churn rate</strong> — Losing more than 15% of doors per year signals underlying problems</li>
-            <li><strong>Pending lawsuits or compliance issues</strong> — Unresolved legal matters can tank a deal entirely</li>
-            <li><strong>Commingled trust accounts</strong> — This is an automatic disqualifier for serious buyers</li>
-            <li><strong>No written procedures</strong> — Buyers see chaos they'll need to fix, and they price that in</li>
+            <li>Document your top 10 processes as SOPs</li>
+            <li>Move month-to-month clients to annual contracts (offer a small fee discount)</li>
+            <li>Start tracking owner retention rate if you aren't already</li>
+            <li>Add at least one ancillary revenue stream (lease renewal fee, maintenance coordination fee)</li>
+        </ul>
+
+        <h3>Medium-term (3-6 months)</h3>
+        <ul>
+            <li>Hire or promote an operations manager who can run day-to-day</li>
+            <li>Implement a quarterly business review (QBR) program for owner retention</li>
+            <li>Build a new business development pipeline (5-10 leads/month)</li>
+            <li>Standardize your tech stack (AppFolio or Buildium + maintenance coordination tool)</li>
+        </ul>
+
+        <h3>Long-term (6-12 months)</h3>
+        <ul>
+            <li>Target 25%+ EBITDA margins through staffing optimization</li>
+            <li>Grow to 300+ doors (the inflection point where multiples increase significantly)</li>
+            <li>Build a management team that can operate independently for 2+ weeks without the owner</li>
         </ul>
 
         <div class="cta-box">
-            <h3>Build a Company Worth Acquiring</h3>
-            <p>Our PM Scaling Kit includes the SOPs, checklists, and systems that increase your company's transferability and valuation — whether you plan to sell or not.</p>
-            <a href="https://buy.stripe.com/4gM7sMgvH3KUbsvg7v3sI01">Get the PM Scaling Kit — $147</a>
+            <h3>Want the Complete Scaling Playbook?</h3>
+            <p>The PM Scaling Kit includes 25+ SOPs, staffing templates, owner retention strategies, and growth playbooks used by companies managing 500+ doors.</p>
+            <a href="/scaling-kit.html">Get the PM Scaling Kit — $147 →</a>
         </div>
-
-        <h2>The Acquisition Process: What to Expect</h2>
-
-        <h3>For Sellers</h3>
-        <ol>
-            <li><strong>Preparation (3-6 months before)</strong> — Clean up financials, document all SOPs, lock in management agreements, reduce owner dependency</li>
-            <li><strong>Valuation</strong> — Get 2-3 independent valuations. Use all three methods above and triangulate</li>
-            <li><strong>Finding buyers</strong> — Reach out to regional competitors, PM consolidators (like Evernest, Real Property Management), and business brokers who specialize in PM</li>
-            <li><strong>Due diligence</strong> — Expect buyers to review contracts, financials, trust accounts, maintenance logs, online reviews, and employee agreements</li>
-            <li><strong>Deal structure</strong> — Most PM acquisitions include an earn-out: 50-70% at close, remainder over 12-24 months based on door retention</li>
-        </ol>
-
-        <h3>For Buyers</h3>
-        <ol>
-            <li><strong>Define acquisition criteria</strong> — Market, size, property type, price range</li>
-            <li><strong>Source deals</strong> — NARPM conferences, business brokers, direct outreach to PM owners</li>
-            <li><strong>Due diligence checklist</strong>:
-                <ul>
-                    <li>Last 3 years of tax returns and P&L statements</li>
-                    <li>All management agreements (read every one)</li>
-                    <li>Trust account reconciliation reports</li>
-                    <li>Door count trend (monthly for last 24 months)</li>
-                    <li>Online reviews and reputation audit</li>
-                    <li>Employee contracts and non-compete agreements</li>
-                    <li>Technology and software licenses</li>
-                    <li>Pending maintenance requests</li>
-                </ul>
-            </li>
-            <li><strong>Retention risk assessment</strong> — Call a sample of owners to gauge satisfaction and likelihood of staying post-acquisition</li>
-        </ol>
 
         <h2>Real-World Valuation Examples</h2>
 
-        <h3>Example 1: Small PM Company</h3>
-        <p><strong>Profile:</strong> 80 doors, $120K management fee revenue, owner-operated, month-to-month contracts, basic PM software</p>
-        <p><strong>Valuation:</strong> 1.0x – 1.2x revenue = $120K – $144K. Per-door: $400 × 80 = $32K (indicates revenue method is more appropriate). Realistic value: <strong>~$130K</strong></p>
+        <h3>Example 1: 150-door company in Phoenix</h3>
+        <ul>
+            <li>Annual revenue: $270,000 (avg $150/door/month)</li>
+            <li>EBITDA: $67,500 (25% margin)</li>
+            <li>Annual contracts, 12% churn</li>
+            <li>Revenue method: $405K — $675K (1.5x — 2.5x)</li>
+            <li>EBITDA method: $270K — $405K (4x — 6x)</li>
+            <li><strong>Likely sale price: $350K — $500K</strong></li>
+        </ul>
 
-        <h3>Example 2: Mid-Size Systemized Company</h3>
-        <p><strong>Profile:</strong> 350 doors, $480K management fee revenue, 2 PMs + admin, SOPs documented, 12-month contracts, AppFolio, 4.7 stars</p>
-        <p><strong>Valuation:</strong> 2.0x – 2.3x revenue = $960K – $1.1M. EBITDA of ~$150K × 5 = $750K. Realistic value: <strong>~$900K – $1M</strong></p>
+        <h3>Example 2: 500-door company in Atlanta</h3>
+        <ul>
+            <li>Annual revenue: $900,000 (avg $150/door/month)</li>
+            <li>EBITDA: $270,000 (30% margin)</li>
+            <li>Multi-year contracts, 8% churn, strong ops team</li>
+            <li>Revenue method: $2.25M — $3.15M (2.5x — 3.5x)</li>
+            <li>EBITDA method: $1.62M — $2.16M (6x — 8x)</li>
+            <li><strong>Likely sale price: $1.8M — $2.5M</strong></li>
+        </ul>
 
-        <h3>Example 3: Premium Growth Company</h3>
-        <p><strong>Profile:</strong> 800 doors, $1.2M management fee revenue, full team, strong SOPs, 24-month contracts, 4.9 stars, adding 10 doors/month</p>
-        <p><strong>Valuation:</strong> 2.5x – 3.0x revenue = $3M – $3.6M. EBITDA of $400K × 7 = $2.8M. Realistic value: <strong>~$3M+</strong></p>
+        <div class="highlight">
+            <strong>Notice the difference:</strong> The 500-door company has 3.3x the revenue but 5x the valuation. Scale + systems + retention = exponentially higher value. That's why scaling your doors matters.
+        </div>
 
-        <h2>How to Increase Your Company's Value Starting Today</h2>
+        <h2>When to Sell vs. When to Scale</h2>
 
-        <ol>
-            <li><strong>Document everything</strong> — Start with your top 5 workflows. Maintenance triage, move-in/out, owner onboarding, lease renewal, tenant screening. Written SOPs make your company transferable.</li>
-            <li><strong>Lock in contracts</strong> — Move all owners from month-to-month to 12+ month management agreements with 60-90 day cancellation clauses.</li>
-            <li><strong>Reduce owner dependency</strong> — Stop being the single point of contact. Train your team to handle owner calls and property inspections.</li>
-            <li><strong>Clean your financials</strong> — Separate business and personal expenses completely. Use proper PM accounting with trust account reconciliation.</li>
-            <li><strong>Grow systematically</strong> — Add doors predictably. 3-5 per month shows a growth engine, not just opportunistic additions.</li>
-        </ol>
+        <p>Most PM owners consider selling too early. Here's a framework:</p>
 
-        <div class="cta-box">
-            <h3>Start Building Value Today</h3>
-            <p>Download our free SOP templates — the exact documents that make PM companies worth 2x more to buyers.</p>
-            <a href="/sops/">Download Free SOPs →</a>
+        <p><strong>Consider selling if:</strong></p>
+        <ul>
+            <li>You're burned out and can't find/develop a successor</li>
+            <li>Your market is contracting</li>
+            <li>You've received an unsolicited offer at 3x+ revenue</li>
+            <li>You want to retire or transition careers</li>
+        </ul>
+
+        <p><strong>Consider scaling instead if:</strong></p>
+        <ul>
+            <li>You're under 300 doors (your multiple will jump significantly at 300-500)</li>
+            <li>Your margins are under 20% (there's easy money on the table)</li>
+            <li>You haven't systematized operations yet (fix this first and your value jumps 50%+)</li>
+            <li>Your market is growing</li>
+        </ul>
+
+        <div class="tool-cta">
+            <p>Ready to see what your company is worth?</p>
+            <a href="/tools/valuation-calculator.html">→ Use Our Free PM Valuation Calculator</a>
         </div>
 
         <h2>Frequently Asked Questions</h2>
 
-        <h3>How much is a 100-door property management company worth?</h3>
-        <p>Typically $100K – $300K depending on revenue per door, contract quality, and systems. A systemized 100-door company with strong contracts can be worth 2-3x a disorganized one with the same door count.</p>
-
-        <h3>What's the most important factor in PM company valuation?</h3>
-        <p>Transferability. Can the business operate and retain clients without the current owner? Everything else — revenue, doors, reputation — is secondary to this question.</p>
-
         <h3>How long does it take to sell a PM company?</h3>
-        <p>Typically 6-12 months from decision to close. Well-prepared companies with clean financials and documented systems sell faster and at higher multiples.</p>
+        <p>Typically 6-12 months from listing to close. Companies with clean financials, strong retention, and documented SOPs sell faster.</p>
 
-        <h3>Should I use a broker to sell my PM company?</h3>
-        <p>For companies under 200 doors, you can likely sell directly to a local competitor or regional consolidator. For 200+ doors, a broker who specializes in PM transactions is worth the 8-12% commission because they'll attract more buyers and negotiate higher multiples.</p>
+        <h3>Who buys PM companies?</h3>
+        <p>Three main buyer types: (1) Other PM companies looking to expand, (2) Real estate investors wanting to vertically integrate, and (3) Private equity firms rolling up PM companies in a market.</p>
+
+        <h3>What's included in a PM company sale?</h3>
+        <p>Typically: management agreements, client relationships, brand/reputation, processes/SOPs, staff (sometimes), and sometimes the physical office lease. The management agreements are the core asset.</p>
+
+        <h3>Can I sell just part of my portfolio?</h3>
+        <p>Yes. Many PM owners sell a portion of their doors (e.g., a geographic area they want to exit) while keeping the rest. Per-door pricing is typically used for partial sales.</p>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h3>📬 Get Weekly PM Growth Tips</h3>
+            <p>Join PM company owners who are building more valuable, scalable businesses.</p>
+            <form onsubmit="return subscribe(event)">
+                <input type="email" id="email" placeholder="you@company.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div id="subMsg" style="margin-top:8px;font-size:.85rem"></div>
+        </div>
     </article>
 
-    
-    <!-- Newsletter Signup -->
-    <div style="background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(34,197,94,.12));border:2px solid rgba(34,197,94,.2);border-radius:16px;padding:2.5rem;margin:3rem 0 2rem;text-align:center">
-        <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:.5rem">📬 Get Weekly PM Scaling Tips</h3>
-        <p style="color:#64748b;margin-bottom:1.25rem;font-size:.95rem">One actionable tip every week — SOPs, growth strategies, and automation ideas. Join 50+ PM owners. Free forever.</p>
-        <form id="blog-nl-form" style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;max-width:500px;margin:0 auto">
-            <input type="email" id="blog-nl-email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:.7rem 1rem;border:2px solid #e2e8f0;border-radius:10px;font-size:.9rem;outline:none" onfocus="this.style.borderColor='#22c55e'" onblur="this.style.borderColor='#e2e8f0'">
-            <button type="submit" style="background:#22c55e;color:white;border:none;padding:.7rem 1.5rem;border-radius:10px;font-weight:700;font-size:.9rem;cursor:pointer;white-space:nowrap">Subscribe →</button>
-        </form>
-        <p id="blog-nl-msg" style="display:none;margin-top:.75rem;font-size:.85rem;font-weight:600"></p>
-        <p style="margin-top:.5rem;font-size:.7rem;color:#94a3b8">No spam. Unsubscribe anytime.</p>
-    </div>
     <footer class="footer">
-        <p><a href="/">ScaleDoors</a> — Property Management Training & SOPs</p>
-        <p style="margin-top:.5rem">© 2026 ScaleDoors. All rights reserved.</p>
+        <p>© 2026 ScaleDoors. Property management growth systems.</p>
+        <p style="margin-top:8px"><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/sops/">Free SOPs</a> · <a href="/scaling-kit.html">PM Scaling Kit</a></p>
     </footer>
 
-<script>
-document.getElementById('blog-nl-form')?.addEventListener('submit',async function(e){
-    e.preventDefault();const email=document.getElementById('blog-nl-email').value;const msg=document.getElementById('blog-nl-msg');const btn=this.querySelector('button');btn.textContent='...';btn.disabled=true;
-    try{const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'blog'})});
-    if(r.ok){msg.style.display='block';msg.style.color='#22c55e';msg.textContent='✓ You\'re in! Weekly tips incoming.';this.style.display='none';}else{throw new Error();}
-    }catch(err){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Error — try again?';btn.textContent='Subscribe →';btn.disabled=false;}
-});
-</script>
+    <script>
+        function subscribe(e){
+            e.preventDefault();
+            const email=document.getElementById('email').value;
+            fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'blog-valuation'})})
+            .then(r=>r.json()).then(d=>{document.getElementById('subMsg').innerHTML='<span style="color:#16a34a">✅ You\'re in!</span>';})
+            .catch(()=>{document.getElementById('subMsg').innerHTML='<span style="color:#dc2626">Error. Try again.</span>';});
+        }
+    </script>
 </body>
 </html>
