@@ -1,7 +1,7 @@
 // Vercel Serverless Function — newsletter/lead capture with Slack notification
 
 const SUPABASE_URL = 'https://gfibxfvaggsuhpbnvxnp.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmaWJ4ZnZhZ2dzdWhwYm52eG5wIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Mjc0MjI0NSwiZXhwIjoyMDg4MzE4MjQ1fQ.5O97DKP9uuZTJ2uYuroNx3UDOcigz3oqryq8y5qC_fc';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
 const SLACK_WEBHOOK = process.env.SLACK_LEAD_WEBHOOK;
 
 export default async function handler(req, res) {
