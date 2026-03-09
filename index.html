@@ -107,14 +107,17 @@
         .offering-link:hover{gap:.5rem}
 
         /* TESTIMONIALS */
-        .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-        .testimonial-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2rem}
-        .testimonial-stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:.1em}
-        .testimonial-card blockquote{font-size:.95rem;color:var(--gray-300);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
-        .testimonial-author{display:flex;align-items:center;gap:.75rem}
-        .testimonial-avatar{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:.9rem}
-        .testimonial-info .name{color:var(--white);font-weight:600;font-size:.9rem}
-        .testimonial-info .role{color:var(--gray-400);font-size:.8rem}
+        .trust-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem}
+        .trust-stat{text-align:center;padding:2rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg)}
+        .trust-stat-number{font-size:2.25rem;font-weight:800;color:var(--gold);margin-bottom:.5rem;letter-spacing:-.02em}
+        .trust-stat-label{font-size:.85rem;color:var(--gray-300);font-weight:500}
+        .trust-methodology{max-width:720px;margin:0 auto 3rem;text-align:center;padding:2rem;background:rgba(255,255,255,.03);border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,.06)}
+        .trust-methodology p{color:var(--gray-300);font-size:.95rem;line-height:1.8;margin-bottom:.75rem}
+        .trust-methodology p:last-child{margin-bottom:0}
+        .trust-signals{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+        .trust-signal{display:flex;align-items:center;gap:.5rem}
+        .trust-signal-icon{font-size:1.25rem}
+        .trust-signal-text{color:var(--gray-300);font-size:.85rem;font-weight:500}
 
         /* FEATURED BLOG */
         .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
@@ -167,7 +170,8 @@
             .hero-stats{justify-content:center}
             .hero-visual{display:none}
             .problems-grid{grid-template-columns:1fr}
-            .offerings-grid,.testimonials-grid,.blog-grid,.tools-grid{grid-template-columns:1fr}
+            .offerings-grid,.trust-stats,.blog-grid,.tools-grid{grid-template-columns:1fr}
+            .trust-signals{flex-direction:column;align-items:center;gap:1rem}
             .footer-inner{grid-template-columns:1fr 1fr}
         }
         @media(max-width:640px){
@@ -389,47 +393,57 @@
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- WHY TRUST SCALEDOORS -->
 <section class="section section-dark">
     <div class="container">
         <div class="section-header">
-            <div class="section-label">What PM Owners Say</div>
-            <h2 class="section-title" style="color:var(--white)">Trusted by Property Managers Across the Country</h2>
-            <p class="section-subtitle">Real results from PM company owners who used ScaleDoors to systematize and grow.</p>
+            <div class="section-label">Why Trust ScaleDoors</div>
+            <h2 class="section-title" style="color:var(--white)">Built on Industry Standards, Not Guesswork</h2>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"We went from 80 to 210 doors in 14 months using the SOPs from ScaleDoors. The maintenance triage SOP alone saved us 15 hours a week. Best $147 I ever spent."</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MR</div>
-                    <div class="testimonial-info">
-                        <div class="name">Marcus R.</div>
-                        <div class="role">Owner, Apex Property Group — 210 doors</div>
-                    </div>
-                </div>
+
+        <!-- Stats Bar -->
+        <div class="trust-stats">
+            <div class="trust-stat">
+                <div class="trust-stat-number">240+</div>
+                <div class="trust-stat-label">Expert Guides</div>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"I was stuck at 65 doors for two years. ScaleDoors showed me my cost-per-door was killing me. Restructured fees using their playbook — profit margin jumped 22% in 3 months."</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">JL</div>
-                    <div class="testimonial-info">
-                        <div class="name">Jessica L.</div>
-                        <div class="role">CEO, Keystone Management — 145 doors</div>
-                    </div>
-                </div>
+            <div class="trust-stat">
+                <div class="trust-stat-number">49</div>
+                <div class="trust-stat-label">State Licensing Guides</div>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <blockquote>"Hired my first PM using their job descriptions and onboarding checklist. She was productive in 5 days. Previously took me 6 weeks to train someone. Game changer."</blockquote>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">DW</div>
-                    <div class="testimonial-info">
-                        <div class="name">David W.</div>
-                        <div class="role">Founder, GreatNest PM — 320 doors</div>
-                    </div>
-                </div>
+            <div class="trust-stat">
+                <div class="trust-stat-number">15+</div>
+                <div class="trust-stat-label">Ready-to-Use SOP Templates</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-stat-number">NARPM & IREM</div>
+                <div class="trust-stat-label">Based on Industry Standards</div>
+            </div>
+        </div>
+
+        <!-- Methodology Block -->
+        <div class="trust-methodology">
+            <p>ScaleDoors resources are built from industry best practices — NARPM standards, IREM CPM frameworks, and analysis of how America's top property management companies scaled past 500 doors. Every SOP, template, and guide is designed for real PM operations, not theory.</p>
+            <p>We study what actually works at high-performing PM companies, document the systems and processes that drive results, and package them into actionable resources any PM owner can implement.</p>
+        </div>
+
+        <!-- Trust Signals -->
+        <div class="trust-signals">
+            <div class="trust-signal">
+                <span class="trust-signal-icon">💰</span>
+                <span class="trust-signal-text">30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="trust-signal">
+                <span class="trust-signal-icon">🔒</span>
+                <span class="trust-signal-text">Secure Stripe Payment</span>
+            </div>
+            <div class="trust-signal">
+                <span class="trust-signal-icon">📧</span>
+                <span class="trust-signal-text">Direct Founder Support</span>
+            </div>
+            <div class="trust-signal">
+                <span class="trust-signal-icon">⚡</span>
+                <span class="trust-signal-text">Instant Digital Delivery</span>
             </div>
         </div>
     </div>
