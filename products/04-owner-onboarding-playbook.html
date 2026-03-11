@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-72MVGQLLNF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-72MVGQLLNF");</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Owner Onboarding Playbook — ScaleDoors PM Scaling Kit</title>
+<style>
+  :root{--navy:#1a2744;--navy-light:#2d4a7a;--accent:#e8a838;--bg:#ffffff;--text:#2c3e50;--light-gray:#f4f6f8;--border:#d1d9e6;--green:#27ae60;--red:#c0392b;--orange:#e67e22;--yellow:#f39c12}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text);line-height:1.7;font-size:14px;background:var(--bg)}
+  .watermark-bar{background:var(--navy);color:#fff;text-align:center;padding:6px 0;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:60px 40px;text-align:center}
+  .cover h1{font-size:36px;font-weight:700;margin-bottom:12px;letter-spacing:-0.5px}
+  .cover .subtitle{font-size:18px;opacity:0.85;max-width:600px;margin:0 auto}
+  .container{max-width:820px;margin:0 auto;padding:40px 30px}
+  h2{color:var(--navy);font-size:22px;margin:40px 0 16px;padding-bottom:8px;border-bottom:3px solid var(--accent)}
+  h3{color:var(--navy-light);font-size:17px;margin:28px 0 12px}
+  h4{color:var(--navy);font-size:15px;margin:20px 0 8px}
+  p{margin-bottom:12px}
+  ul,ol{margin-left:20px;margin-bottom:12px}
+  li{margin-bottom:4px}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+  table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+  table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+  table tr:nth-child(even){background:var(--light-gray)}
+  .checklist{list-style:none;padding:0}
+  .checklist li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid var(--light-gray)}
+  .checklist li::before{content:'☐';position:absolute;left:4px;top:8px;font-size:16px;color:var(--navy)}
+  .callout{background:#fef9e7;border-left:4px solid var(--accent);padding:16px 20px;margin:16px 0;border-radius:0 6px 6px 0}
+  .callout-red{background:#fdf2f2;border-left:4px solid var(--red);padding:16px 20px;margin:16px 0;border-radius:0 6px 6px 0}
+  .callout-green{background:#f0fdf4;border-left:4px solid var(--green);padding:16px 20px;margin:16px 0;border-radius:0 6px 6px 0}
+  .form-box{border:2px solid var(--navy);border-radius:8px;padding:24px;margin:20px 0}
+  .form-row{display:flex;gap:16px;margin-bottom:12px}
+  .form-field{flex:1;border-bottom:1px solid var(--border);padding:6px 0;font-size:13px}
+  .form-field label{font-weight:600;font-size:11px;text-transform:uppercase;color:var(--navy-light);display:block;margin-bottom:4px}
+  .toc{background:var(--light-gray);padding:24px 30px;border-radius:8px;margin:20px 0}
+  .toc ol{margin-left:20px}
+  .toc li{margin-bottom:6px}
+  .toc a{color:var(--navy);text-decoration:none}
+  .timeline{position:relative;padding-left:40px;margin:20px 0}
+  .timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:3px;background:var(--accent)}
+  .timeline-item{position:relative;margin-bottom:24px;padding:16px 20px;background:var(--light-gray);border-radius:8px;border:1px solid var(--border)}
+  .timeline-item::before{content:'';position:absolute;left:-33px;top:20px;width:12px;height:12px;background:var(--accent);border-radius:50%;border:3px solid #fff}
+  .timeline-item h4{margin-top:0;color:var(--navy)}
+  .script-box{background:#f0f4ff;border:1px solid #c7d2fe;border-radius:8px;padding:20px;margin:16px 0;font-style:italic;color:#374151}
+  .script-box strong{font-style:normal;color:var(--navy)}
+  .download-btn{display:inline-block;background:var(--accent);color:var(--navy);padding:12px 28px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:none;margin:12px 0}
+  .download-btn:hover{background:#d4922e}
+  .footer{text-align:center;padding:30px;color:#999;font-size:11px;border-top:1px solid var(--border);margin-top:40px}
+  @media print{.watermark-bar,.download-btn{display:none!important}body{font-size:12px}.cover{padding:40px 30px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cover h1{font-size:28px}h2{page-break-after:avoid}.timeline-item,.form-box,table{page-break-inside:avoid}.container{padding:20px}}
+</style>
+</head>
+<body>
+
+<div class="watermark-bar">ScaleDoors PM Scaling Kit — Owner Onboarding Playbook</div>
+
+<div class="cover">
+  <h1>Owner Onboarding Playbook</h1>
+  <p class="subtitle">A 30-day onboarding system that transforms new property owners into long-term, satisfied clients. Reduce churn, set clear expectations, and deliver a white-glove first impression.</p>
+  <br>
+  <button class="download-btn" onclick="window.print()">📥 Download as PDF</button>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <h3 style="margin-top:0;">Table of Contents</h3>
+  <ol>
+    <li>Purpose &amp; Overview</li>
+    <li>30-Day Onboarding Timeline</li>
+    <li>Day 1: Welcome Call Script</li>
+    <li>Day 3: Property Assessment Form</li>
+    <li>Day 7: Maintenance Plan Review</li>
+    <li>Day 14: First Check-In Call</li>
+    <li>Day 30: First Monthly Report</li>
+    <li>Welcome Package Contents</li>
+    <li>Expectation Setting Questionnaire</li>
+    <li>Property Assessment Form Template</li>
+    <li>Onboarding Checklist</li>
+    <li>Common Onboarding Mistakes</li>
+  </ol>
+</div>
+
+<h2>1. Purpose &amp; Overview</h2>
+
+<p>Owner onboarding is the most critical 30 days in your relationship with a property owner. Research from PM industry surveys shows that <strong>60% of owner churn happens in the first 6 months</strong> — and the root cause is almost always misaligned expectations set (or not set) during onboarding.</p>
+
+<p>This playbook gives you a day-by-day system for turning a signed management agreement into a confident, informed owner who stays with you for years. Every step is designed to:</p>
+<ul>
+  <li>Set clear expectations before problems arise</li>
+  <li>Demonstrate competence through proactive communication</li>
+  <li>Document everything for legal and operational protection</li>
+  <li>Build the trust foundation that prevents churning to competitors</li>
+</ul>
+
+<div class="callout">
+  <strong>Key Metric:</strong> Companies using a structured onboarding process report 40-50% lower owner churn in the first year compared to companies that "wing it." This playbook pays for itself with the first owner it retains.
+</div>
+
+<h2>2. 30-Day Onboarding Timeline</h2>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <h4>Day 0 — Agreement Signed</h4>
+    <p>Management agreement executed. Send welcome email within 2 hours. Assign property to PM in software. Begin collecting keys, codes, vendor contacts, and lease copies from owner.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 1 — Welcome Call</h4>
+    <p>30-minute structured welcome call with owner. Cover communication preferences, emergency protocols, maintenance authority thresholds, and financial reporting expectations. Use the Welcome Call Script (Section 3).</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 2 — Owner Portal Setup</h4>
+    <p>Create owner portal access. Walk them through the dashboard (schedule a screen-share if needed). Upload the management agreement and any existing lease documents. Send login credentials with quick-start guide.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 3 — Property Assessment</h4>
+    <p>Complete property inspection using the Property Assessment Form (Section 4). Document condition with photos. Identify deferred maintenance and needed repairs. Create prioritized repair plan with cost estimates.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 5 — Tenant Introduction</h4>
+    <p>Send official transition letter to existing tenants introducing your company. Include: new payment instructions, maintenance request procedures, emergency contact numbers, and portal access setup.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 7 — Maintenance Plan Review</h4>
+    <p>Present the property assessment findings and recommended maintenance plan to the owner. Discuss budget, priorities, and timeline. Get approval on immediate repairs. Set ongoing maintenance expectations.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 10 — Financial Setup Confirmation</h4>
+    <p>Confirm owner payment method (ACH bank details). Verify rent amount and due date in system. Set up automatic owner disbursements. Confirm tax ID for 1099 reporting. Test owner portal financial views.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 14 — First Check-In Call</h4>
+    <p>15-minute check-in call. Ask about their experience so far. Address any concerns. Update on maintenance items. Confirm they can access the owner portal and understand the reports. Use the Check-In Call Script (Section 5).</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 21 — Rent Collection Update</h4>
+    <p>Brief email or portal update: rent collected, any delinquency status, maintenance updates. This is a preview of the monthly report format so the owner knows what to expect.</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Day 30 — First Monthly Report</h4>
+    <p>Deliver the first full monthly owner report. Schedule a 15-minute call to walk through it. Explain each section, how to read the financials, and when to expect future reports. Solicit feedback on the report format.</p>
+  </div>
+</div>
+
+<h2>3. Day 1: Welcome Call Script</h2>
+
+<p>The welcome call sets the tone for the entire relationship. It should feel professional but warm — not a sales pitch, not a checklist reading. Target: 25-30 minutes.</p>
+
+<div class="script-box">
+  <strong>Opening (2 min):</strong><br>
+  "Hi [Owner Name], this is [Your Name] from [Company]. I'm your dedicated property manager for [Property Address]. Thank you for trusting us with your investment — I wanted to kick things off with a quick call to make sure we're aligned on everything from day one."
+</div>
+
+<h4>Section A: Communication Preferences (5 min)</h4>
+<ul>
+  <li>"What's your preferred way to communicate — email, phone, text, or through the owner portal?"</li>
+  <li>"How often do you want to hear from us? Some owners like weekly updates, others prefer monthly unless something comes up."</li>
+  <li>"Is there a best time to reach you for non-emergency items?"</li>
+  <li>"Who else should be on our communication list? A spouse, partner, or accountant?"</li>
+</ul>
+
+<h4>Section B: Maintenance Authority (5 min)</h4>
+<div class="script-box">
+  <strong>Say:</strong> "For day-to-day maintenance, we handle everything within our standard process. For your comfort, I want to establish a dollar threshold — repairs under this amount, we handle automatically. Over this amount, we call you for approval first. Most of our owners set this between $300 and $500. What feels right for you?"
+</div>
+<ul>
+  <li>Record their threshold: $________</li>
+  <li>Ask: "For emergencies — water leaks, no heat in winter, safety hazards — we dispatch immediately regardless of cost. Are you comfortable with that?"</li>
+  <li>Ask about preferred vendors: "Do you have any vendors you've worked with that you'd like us to continue using?"</li>
+</ul>
+
+<h4>Section C: Financial Expectations (5 min)</h4>
+<ul>
+  <li>"Rent is collected on the [1st] and processed within [3-5] business days. Owner disbursements go out on the [10th-15th] of each month via ACH."</li>
+  <li>"You'll receive a monthly financial statement showing all income and expenses. We can walk through the first one together."</li>
+  <li>"For tax purposes, we'll send your 1099 by January 31st each year. Please confirm the tax ID and entity name you'd like on that."</li>
+</ul>
+
+<h4>Section D: Property Specifics (5 min)</h4>
+<ul>
+  <li>"I'll be doing a thorough property assessment within the next 3 days. Are there any known issues I should be aware of?"</li>
+  <li>"What's the current lease status? When does it expire?"</li>
+  <li>"Any history with the current tenant I should know about — late payments, maintenance issues, complaints?"</li>
+  <li>"Is this property in an HOA? If so, can you share the contact info and any rules that affect management?"</li>
+</ul>
+
+<h4>Section E: Closing (3 min)</h4>
+<div class="script-box">
+  <strong>Say:</strong> "Here's what happens next: I'll complete the property assessment by [Day 3], set up your owner portal access by [Day 2], and send the tenant transition letter by [Day 5]. I'll check in with you on [Day 14] to make sure everything's going smoothly. Any questions before we wrap up?"
+</div>
+
+<h2>4. Day 3: Property Assessment Form</h2>
+
+<p>The property assessment serves three purposes: (1) document the property's condition at the start of your management, (2) identify deferred maintenance and liability issues, and (3) demonstrate your thoroughness to the owner.</p>
+
+<div class="form-box">
+  <h3 style="margin-top:0;text-align:center;">Property Assessment Report</h3>
+  <div class="form-row">
+    <div class="form-field"><label>Property Address</label> ___________________________</div>
+    <div class="form-field"><label>Assessment Date</label> ___________________________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Assessed By</label> ___________________________</div>
+    <div class="form-field"><label>Owner Name</label> ___________________________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Property Type</label> SFR / Duplex / Condo / Multi-Family / Other</div>
+    <div class="form-field"><label>Year Built</label> ___________________________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Bedrooms / Bathrooms</label> ____ / ____</div>
+    <div class="form-field"><label>Square Footage</label> ___________________________</div>
+  </div>
+</div>
+
+<h4>Condition Rating Guide</h4>
+<table>
+  <thead>
+    <tr><th>Rating</th><th>Description</th><th>Action Required</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>5 — Excellent</strong></td><td>Like new, no issues</td><td>None — routine maintenance only</td></tr>
+    <tr><td><strong>4 — Good</strong></td><td>Minor cosmetic wear, fully functional</td><td>Address during next turnover</td></tr>
+    <tr><td><strong>3 — Fair</strong></td><td>Visible wear, functional but aging</td><td>Plan replacement within 12 months</td></tr>
+    <tr><td><strong>2 — Poor</strong></td><td>Significant wear, partially functional</td><td>Repair/replace within 3 months</td></tr>
+    <tr><td><strong>1 — Critical</strong></td><td>Non-functional, safety concern, or code violation</td><td>Immediate action required</td></tr>
+  </tbody>
+</table>
+
+<h4>Assessment Areas</h4>
+<table>
+  <thead>
+    <tr><th>Area / System</th><th>Rating (1-5)</th><th>Notes / Issues</th><th>Est. Repair Cost</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Roof / Gutters</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Exterior / Siding</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Foundation</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Windows / Doors</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>HVAC System</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Plumbing</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Electrical</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Water Heater</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Kitchen / Appliances</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Bathrooms</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Flooring</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Paint / Walls</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Smoke / CO Detectors</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Landscaping</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Garage / Parking</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+    <tr><td>Fencing / Gates</td><td>☐1 ☐2 ☐3 ☐4 ☐5</td><td></td><td>$________</td></tr>
+  </tbody>
+</table>
+
+<h4>Rent Optimization Analysis</h4>
+<div class="form-box">
+  <div class="form-row">
+    <div class="form-field"><label>Current Rent</label> $________/month</div>
+    <div class="form-field"><label>Market Rent Estimate</label> $________/month</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Comparable 1 (Address + Rent)</label> ___________________________</div>
+    <div class="form-field"><label>Comparable 2 (Address + Rent)</label> ___________________________</div>
+  </div>
+  <div class="form-row">
+    <div class="form-field"><label>Comparable 3 (Address + Rent)</label> ___________________________</div>
+    <div class="form-field"><label>Recommendation</label> ☐ Raise at renewal ☐ At market ☐ Below market (retain tenant)</div>
+  </div>
+</div>
+
+<h2>5. Day 7: Maintenance Plan Review</h2>
+
+<p>Present the assessment findings to the owner in a structured conversation. This is where you demonstrate expertise and build trust.</p>
+
+<h4>Recommended Presentation Structure</h4>
+<ol>
+  <li><strong>Overall Assessment Summary:</strong> "The property is in [good/fair/needs attention] condition overall. I identified [X] items that need attention."</li>
+  <li><strong>Safety-Critical Items (if any):</strong> "These items need immediate attention for habitability compliance: [list]"</li>
+  <li><strong>Priority Repairs (0-90 days):</strong> Items rated 1-2 that affect property value, tenant satisfaction, or legal compliance</li>
+  <li><strong>Planned Improvements (3-12 months):</strong> Items rated 3 that should be addressed proactively</li>
+  <li><strong>Capital Planning (1-3 years):</strong> Major systems approaching end-of-life (HVAC, roof, water heater)</li>
+  <li><strong>Budget Summary:</strong> Total estimated cost broken into immediate, 90-day, and annual categories</li>
+</ol>
+
+<div class="callout">
+  <strong>Pro Tip:</strong> Always present maintenance as "investment protection" not "spending money." Frame it as: "Replacing this $200 faucet now prevents the $3,000 water damage claim later." Owners respond to ROI language.
+</div>
+
+<h2>6. Day 14: First Check-In Call</h2>
+
+<p>A brief, structured call to verify the onboarding is going smoothly and catch any concerns before they become complaints.</p>
+
+<div class="script-box">
+  <strong>Opening:</strong> "Hi [Owner], it's been two weeks since we started managing [Property Address]. I wanted to check in and make sure everything is meeting your expectations."
+</div>
+
+<h4>Check-In Questions</h4>
+<ul class="checklist">
+  <li>"Have you been able to access the owner portal? Any questions about navigating it?"</li>
+  <li>"Did you receive the property assessment report? Any questions about the recommendations?"</li>
+  <li>"How is the communication frequency working for you — too much, too little, or about right?"</li>
+  <li>"Have you heard from the tenant about the transition? Any feedback?"</li>
+  <li>"Anything else on your mind or any concerns I should know about?"</li>
+</ul>
+
+<div class="callout-green">
+  <strong>If they raise a concern:</strong> Thank them for the feedback. Commit to a specific action and timeline. Follow up in writing within 24 hours confirming what you'll do and when. Never get defensive — every concern is an opportunity to demonstrate responsiveness.
+</div>
+
+<h2>7. Day 30: First Monthly Report</h2>
+
+<p>The first monthly report is the most important one you'll ever send this owner. It establishes the format, detail level, and professionalism they'll expect going forward.</p>
+
+<h4>First Report Delivery Protocol</h4>
+<ol>
+  <li>Send the report via email AND post in the owner portal</li>
+  <li>Schedule a 15-minute call to walk through it together</li>
+  <li>Explain each section: income summary, expense breakdown, net disbursement, maintenance summary, occupancy status</li>
+  <li>Highlight: "You received $[amount] deposited to your account on [date]"</li>
+  <li>Ask: "Is this level of detail what you're looking for, or would you like more/less?"</li>
+  <li>Confirm reporting schedule going forward: "[reports go out by the 10th of each month]"</li>
+</ol>
+
+<h2>8. Welcome Package Contents</h2>
+
+<p>Send within 24 hours of agreement signing. Digital delivery (email + portal) is standard; printed welcome packages are a premium touch.</p>
+
+<ul class="checklist">
+  <li>Welcome letter with your direct contact information and team introductions</li>
+  <li>Copy of the signed management agreement</li>
+  <li>Owner portal login instructions with quick-start guide</li>
+  <li>Communication policy: when and how you'll reach out, expected response times</li>
+  <li>Maintenance authority confirmation: approved threshold amount</li>
+  <li>Emergency procedures: how emergencies are handled, who is called, how owner is notified</li>
+  <li>Financial overview: disbursement schedule, fee structure summary, 1099 information needed</li>
+  <li>Key contacts list: your number, office number, after-hours emergency line</li>
+  <li>FAQ document: answers to the 10 most common new owner questions</li>
+  <li>30-day onboarding timeline: what happens when, so they know what to expect</li>
+</ul>
+
+<h2>9. Expectation Setting Questionnaire</h2>
+
+<p>Send this as a form (Google Forms, JotForm, or built into your PM software) within 24 hours of signing. The owner's answers configure how you manage their property.</p>
+
+<div class="form-box">
+  <h3 style="margin-top:0;text-align:center;">Owner Preference Questionnaire</h3>
+
+  <h4>Communication Preferences</h4>
+  <div class="form-field"><label>Preferred contact method</label> ☐ Email ☐ Phone ☐ Text ☐ Portal only</div>
+  <div class="form-field"><label>Communication frequency</label> ☐ Weekly updates ☐ Monthly (unless urgent) ☐ Only when something needs my attention</div>
+  <div class="form-field"><label>Best time to reach you</label> ☐ Morning ☐ Afternoon ☐ Evening ☐ Anytime</div>
+  <div class="form-field"><label>Additional contacts (spouse, partner, accountant)</label> ___________________________</div>
+
+  <h4>Maintenance Preferences</h4>
+  <div class="form-field"><label>Maintenance approval threshold</label> $________ (auto-approve below this amount)</div>
+  <div class="form-field"><label>Preferred vendors to keep using</label> ___________________________</div>
+  <div class="form-field"><label>Cosmetic upgrade tolerance</label> ☐ Minimal (functional only) ☐ Moderate (improve when vacant) ☐ Proactive (invest in property value)</div>
+
+  <h4>Financial Preferences</h4>
+  <div class="form-field"><label>Disbursement method</label> ☐ ACH (preferred) ☐ Check ☐ Other</div>
+  <div class="form-field"><label>Reserve fund amount</label> $________ (recommended: 1 month's rent)</div>
+  <div class="form-field"><label>Tax entity name</label> ___________________________</div>
+  <div class="form-field"><label>Tax ID / SSN</label> ___________________________</div>
+
+  <h4>Lease & Tenant Preferences</h4>
+  <div class="form-field"><label>Pet policy</label> ☐ No pets ☐ Cats only ☐ Dogs (under ___lbs) ☐ All pets with deposit</div>
+  <div class="form-field"><label>Smoking policy</label> ☐ No smoking anywhere ☐ Outside only</div>
+  <div class="form-field"><label>Lease term preference</label> ☐ 12 months ☐ Month-to-month ☐ Flexible</div>
+  <div class="form-field"><label>Target rent (if vacant)</label> $________/month</div>
+
+  <h4>Long-Term Goals</h4>
+  <div class="form-field"><label>Investment horizon</label> ☐ Hold long-term (5+ years) ☐ May sell within 1-3 years ☐ Undecided</div>
+  <div class="form-field"><label>Renovation appetite</label> ☐ Maintain as-is ☐ Improve to increase rent ☐ Full renovation if needed</div>
+</div>
+
+<h2>10. Onboarding Master Checklist</h2>
+
+<p>Use this checklist for every new owner onboarding. Assign tasks to team members with deadlines.</p>
+
+<h4>Pre-Onboarding (Day 0)</h4>
+<ul class="checklist">
+  <li>Management agreement signed and filed</li>
+  <li>Owner contact information entered in PM software</li>
+  <li>Property created in PM software with correct address, unit count, and details</li>
+  <li>Collect from owner: keys, access codes, gate remotes, garage openers</li>
+  <li>Collect from owner: current lease copies, tenant contact info</li>
+  <li>Collect from owner: existing vendor contacts and preferred vendors</li>
+  <li>Collect from owner: HOA contact, rules, and access credentials (if applicable)</li>
+  <li>Collect from owner: utility account information (if owner-paid)</li>
+  <li>Send welcome email with owner portal setup instructions</li>
+  <li>Send Expectation Setting Questionnaire</li>
+</ul>
+
+<h4>Week 1 (Days 1-7)</h4>
+<ul class="checklist">
+  <li>Welcome call completed (use script — Section 3)</li>
+  <li>Owner portal access confirmed — owner can log in</li>
+  <li>Property assessment completed with photos (Section 4)</li>
+  <li>Tenant transition letter sent to existing tenants</li>
+  <li>Rent collection redirected to your company's system</li>
+  <li>Insurance verification: owner has landlord policy, your company is additionally insured</li>
+  <li>Maintenance plan review call with owner completed (Section 5)</li>
+  <li>Emergency contact info verified and entered in system</li>
+</ul>
+
+<h4>Week 2-3 (Days 8-21)</h4>
+<ul class="checklist">
+  <li>ACH/disbursement setup confirmed with bank details</li>
+  <li>Tax ID and entity information collected for 1099</li>
+  <li>Day 14 check-in call completed (Section 6)</li>
+  <li>All approved maintenance items dispatched</li>
+  <li>Tenant rent payment received through new system</li>
+  <li>Owner questionnaire responses entered into PM software notes</li>
+  <li>Day 21 rent collection update sent</li>
+</ul>
+
+<h4>Week 4 (Days 22-30)</h4>
+<ul class="checklist">
+  <li>First monthly report generated and sent</li>
+  <li>First monthly report walk-through call completed</li>
+  <li>First owner disbursement processed</li>
+  <li>Owner satisfaction confirmed — no outstanding concerns</li>
+  <li>Onboarding marked complete in system — transition to standard management</li>
+</ul>
+
+<h2>11. Common Onboarding Mistakes</h2>
+
+<div class="callout-red">
+  <strong>Mistake 1: No structured process.</strong> "Winging it" guarantees inconsistency. Every owner gets a different experience, concerns fall through cracks, and you spend more time fixing problems than preventing them. Use this playbook — every time, every owner.
+</div>
+
+<div class="callout-red">
+  <strong>Mistake 2: Skipping the welcome call.</strong> An email is not a substitute for a conversation. The welcome call builds personal connection, surfaces concerns the owner won't put in writing, and sets you apart from competitors who just send a form.
+</div>
+
+<div class="callout-red">
+  <strong>Mistake 3: Not setting the maintenance threshold.</strong> This is the #1 source of owner complaints: "Why did you spend $400 without asking me?" Set the threshold in writing during the welcome call. Reference it in the management agreement.
+</div>
+
+<div class="callout-red">
+  <strong>Mistake 4: Delayed first report.</strong> If the owner signed on March 1st and doesn't hear about their money until April 15th, they're already worried. Even if the first month is partial, send something by the 10th. Proactive financial communication builds trust faster than anything else.
+</div>
+
+<div class="callout-red">
+  <strong>Mistake 5: Forgetting the tenant.</strong> The tenant is also transitioning to a new management company. A professional transition letter with clear instructions prevents confusion, missed rent payments, and maintenance request gaps.
+</div>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — Owner Onboarding Playbook</p>
+  <p>© 2026 ScaleDoors. All rights reserved. This document is licensed for use by the purchaser only. Do not distribute.</p>
+</div>
+
+</div>
+</body>
+</html>

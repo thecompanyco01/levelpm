@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-72MVGQLLNF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-72MVGQLLNF");</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
+<title>KPI Dashboard Template — ScaleDoors PM Scaling Kit</title>
+<style>
+  :root{--navy:#1a2744;--navy-light:#2d4a7a;--accent:#e8a838;--bg:#fff;--text:#2c3e50;--light-gray:#f4f6f8;--border:#d1d9e6;--green:#27ae60;--red:#c0392b;--orange:#e67e22;--yellow:#f39c12}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text);line-height:1.7;font-size:14px;background:var(--bg)}
+  .watermark-bar{background:var(--navy);color:#fff;text-align:center;padding:6px 0;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:60px 40px;text-align:center}.cover h1{font-size:36px;font-weight:700;margin-bottom:12px}.cover .subtitle{font-size:18px;opacity:0.85;max-width:600px;margin:0 auto}
+  .container{max-width:820px;margin:0 auto;padding:40px 30px}
+  h2{color:var(--navy);font-size:22px;margin:40px 0 16px;padding-bottom:8px;border-bottom:3px solid var(--accent)}h3{color:var(--navy-light);font-size:17px;margin:28px 0 12px}h4{color:var(--navy);font-size:15px;margin:20px 0 8px}
+  p{margin-bottom:12px}ul,ol{margin-left:20px;margin-bottom:12px}li{margin-bottom:4px}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600}table td{padding:10px 14px;border-bottom:1px solid var(--border)}table tr:nth-child(even){background:var(--light-gray)}
+  .callout{background:#fef9e7;border-left:4px solid var(--accent);padding:16px 20px;margin:16px 0;border-radius:0 6px 6px 0}
+  .toc{background:var(--light-gray);padding:24px 30px;border-radius:8px;margin:20px 0}.toc ol{margin-left:20px}.toc li{margin-bottom:6px}
+  .kpi-card{border:2px solid var(--border);border-radius:8px;padding:24px;margin:20px 0}
+  .kpi-card h3{margin-top:0;border-bottom:2px solid var(--accent);padding-bottom:8px}
+  .formula{background:var(--light-gray);padding:12px 16px;border-radius:6px;font-family:monospace;font-size:13px;margin:12px 0}
+  .status-green{color:var(--green);font-weight:700}.status-yellow{color:var(--orange);font-weight:700}.status-red{color:var(--red);font-weight:700}
+  .form-box{border:2px solid var(--navy);border-radius:8px;padding:24px;margin:20px 0}
+  .download-btn{display:inline-block;background:var(--accent);color:var(--navy);padding:12px 28px;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer;border:none;margin:12px 0}.download-btn:hover{background:#d4922e}
+  .footer{text-align:center;padding:30px;color:#999;font-size:11px;border-top:1px solid var(--border);margin-top:40px}
+  @media print{.watermark-bar,.download-btn{display:none!important}body{font-size:12px}.cover{padding:40px 30px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.cover h1{font-size:28px}h2{page-break-after:avoid}.kpi-card,.form-box,table{page-break-inside:avoid}.container{padding:20px}}
+</style>
+</head>
+<body>
+<div class="watermark-bar">ScaleDoors PM Scaling Kit — KPI Dashboard Template</div>
+<div class="cover">
+  <h1>KPI Dashboard Template</h1>
+  <p class="subtitle">Track the 12 key property management metrics that drive profitability. Formulas, benchmarks by portfolio size, color-coded thresholds, and a weekly review framework.</p>
+  <br><button class="download-btn" onclick="window.print()">📥 Download as PDF</button>
+</div>
+<div class="container">
+
+<div class="toc">
+  <h3 style="margin-top:0;">Table of Contents</h3>
+  <ol>
+    <li>The 12 Key PM Metrics</li>
+    <li>Metric Deep-Dives (Formula + Benchmarks)</li>
+    <li>Benchmarks by Portfolio Size</li>
+    <li>Monthly Tracking Dashboard</li>
+    <li>Quarterly Trend Analysis</li>
+    <li>Red / Yellow / Green Thresholds</li>
+    <li>Weekly Review Framework</li>
+  </ol>
+</div>
+
+<h2>1. The 12 Key PM Metrics</h2>
+
+<table>
+  <thead><tr><th>#</th><th>Metric</th><th>Category</th><th>Frequency</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Occupancy Rate</td><td>Revenue</td><td>Monthly</td></tr>
+    <tr><td>2</td><td>Days-to-Lease</td><td>Leasing</td><td>Per vacancy</td></tr>
+    <tr><td>3</td><td>Cost-per-Door</td><td>Operations</td><td>Monthly</td></tr>
+    <tr><td>4</td><td>Owner Retention Rate</td><td>Retention</td><td>Annually</td></tr>
+    <tr><td>5</td><td>Tenant Retention Rate</td><td>Retention</td><td>Annually</td></tr>
+    <tr><td>6</td><td>Maintenance Response Time</td><td>Operations</td><td>Monthly</td></tr>
+    <tr><td>7</td><td>Rent Collection Rate</td><td>Revenue</td><td>Monthly</td></tr>
+    <tr><td>8</td><td>Delinquency Rate</td><td>Revenue</td><td>Monthly</td></tr>
+    <tr><td>9</td><td>Revenue per Door</td><td>Revenue</td><td>Monthly</td></tr>
+    <tr><td>10</td><td>Profit Margin per Door</td><td>Profitability</td><td>Monthly</td></tr>
+    <tr><td>11</td><td>Work Order Completion Rate</td><td>Operations</td><td>Monthly</td></tr>
+    <tr><td>12</td><td>Owner Satisfaction Score</td><td>Retention</td><td>Quarterly</td></tr>
+  </tbody>
+</table>
+
+<h2>2. Metric Deep-Dives</h2>
+
+<div class="kpi-card">
+  <h3>1. Occupancy Rate</h3>
+  <p><strong>What it measures:</strong> The percentage of your portfolio that is occupied and generating rent.</p>
+  <div class="formula">Occupancy Rate = (Occupied Units ÷ Total Units) × 100</div>
+  <p><strong>Example:</strong> 145 occupied units ÷ 150 total units = <strong>96.7% occupancy</strong></p>
+  <table>
+    <tr><th>Status</th><th>Threshold</th><th>Action</th></tr>
+    <tr><td class="status-green">🟢 Green</td><td>≥ 95%</td><td>Healthy. Maintain current leasing practices.</td></tr>
+    <tr><td class="status-yellow">🟡 Yellow</td><td>90-94%</td><td>Attention needed. Review marketing and pricing. Are you priced above market?</td></tr>
+    <tr><td class="status-red">🔴 Red</td><td>&lt; 90%</td><td>Critical. Immediate pricing analysis, increased marketing spend, assess turnover causes.</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>2. Days-to-Lease</h3>
+  <p><strong>What it measures:</strong> Average number of days from a unit becoming vacant to a new lease being signed.</p>
+  <div class="formula">Days-to-Lease = Average(Move-Out Date → New Lease Signed Date) across all vacancies in period</div>
+  <p><strong>Example:</strong> 5 vacancies this quarter with fill times of 18, 22, 14, 28, 15 days = <strong>19.4 average DTL</strong></p>
+  <table>
+    <tr><th>Status</th><th>Threshold</th><th>Action</th></tr>
+    <tr><td class="status-green">🟢 Green</td><td>≤ 21 days</td><td>Excellent leasing performance.</td></tr>
+    <tr><td class="status-yellow">🟡 Yellow</td><td>22-35 days</td><td>Review listing quality, photos, pricing. Are showings converting?</td></tr>
+    <tr><td class="status-red">🔴 Red</td><td>&gt; 35 days</td><td>Major issue. Pricing too high, poor listings, or turnover condition problems.</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>3. Cost-per-Door</h3>
+  <p><strong>What it measures:</strong> Your total operating cost to manage one door, excluding direct property expenses.</p>
+  <div class="formula">Cost-per-Door = Total Company Operating Expenses ÷ Total Doors Managed</div>
+  <p><strong>Example:</strong> $45,000 monthly operating costs ÷ 200 doors = <strong>$225/door/month</strong></p>
+  <p>Include: payroll, software, office, marketing, insurance, vehicle costs. Exclude: owner-paid expenses, maintenance vendor costs.</p>
+  <table>
+    <tr><th>Status</th><th>Threshold</th><th>Action</th></tr>
+    <tr><td class="status-green">🟢 Green</td><td>≤ $200/door</td><td>Efficient operation. Scalable.</td></tr>
+    <tr><td class="status-yellow">🟡 Yellow</td><td>$200-300/door</td><td>Review staffing ratios and overhead. Where can you cut?</td></tr>
+    <tr><td class="status-red">🔴 Red</td><td>&gt; $300/door</td><td>Unsustainable. Either grow door count or cut expenses aggressively.</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>4. Owner Retention Rate</h3>
+  <div class="formula">Owner Retention = (Owners at End of Year - New Owners Added) ÷ Owners at Start of Year × 100</div>
+  <p><strong>Example:</strong> Started with 80 owners, ended with 90, added 15 new = (90-15)÷80 = <strong>93.75% retention</strong></p>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 90%</td><td class="status-yellow">🟡 80-89%</td><td class="status-red">🔴 &lt; 80%</td></tr>
+  </table>
+  <p><strong>If below 90%:</strong> Conduct exit interviews with every departing owner. Common causes: poor communication, hidden fees, maintenance quality, responsiveness.</p>
+</div>
+
+<div class="kpi-card">
+  <h3>5. Tenant Retention Rate</h3>
+  <div class="formula">Tenant Retention = Lease Renewals ÷ Leases Eligible for Renewal × 100</div>
+  <p><strong>Example:</strong> 40 leases expired this year, 30 renewed = <strong>75% retention</strong></p>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 65%</td><td class="status-yellow">🟡 50-64%</td><td class="status-red">🔴 &lt; 50%</td></tr>
+  </table>
+  <p>Each turnover costs $1,500-3,000+ (vacancy loss + turnover costs + leasing fees). A 10% improvement in retention at 200 doors saves $30,000-60,000/year.</p>
+</div>
+
+<div class="kpi-card">
+  <h3>6. Maintenance Response Time</h3>
+  <div class="formula">Avg Response Time = Average(Time Request Received → First Response/Action) across all work orders in period</div>
+  <table>
+    <tr><th>Priority</th><th>🟢 Green</th><th>🟡 Yellow</th><th>🔴 Red</th></tr>
+    <tr><td>Emergency</td><td>≤ 1 hour</td><td>1-4 hours</td><td>&gt; 4 hours</td></tr>
+    <tr><td>Urgent</td><td>≤ 4 hours</td><td>4-24 hours</td><td>&gt; 24 hours</td></tr>
+    <tr><td>Routine</td><td>≤ 24 hours</td><td>24-48 hours</td><td>&gt; 48 hours</td></tr>
+  </tbody>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>7. Rent Collection Rate</h3>
+  <div class="formula">Collection Rate = Total Rent Collected ÷ Total Rent Charged × 100</div>
+  <p><strong>Example:</strong> $250,000 charged, $247,500 collected = <strong>99.0%</strong></p>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 98%</td><td class="status-yellow">🟡 95-97%</td><td class="status-red">🔴 &lt; 95%</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>8. Delinquency Rate</h3>
+  <div class="formula">Delinquency Rate = Units with Past-Due Rent ÷ Total Occupied Units × 100</div>
+  <table>
+    <tr><td class="status-green">🟢 ≤ 3%</td><td class="status-yellow">🟡 3-8%</td><td class="status-red">🔴 &gt; 8%</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>9. Revenue per Door</h3>
+  <div class="formula">Revenue/Door = Total Management Revenue ÷ Total Doors</div>
+  <p>Includes: management fees, leasing fees, maintenance markup, admin fees. This is YOUR revenue, not rent collected.</p>
+  <table>
+    <tr><td class="status-green">🟢 ≥ $200/door/mo</td><td class="status-yellow">🟡 $150-199</td><td class="status-red">🔴 &lt; $150</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>10. Profit Margin per Door</h3>
+  <div class="formula">Profit/Door = (Revenue/Door - Cost/Door) = Net Profit per Door per Month</div>
+  <p><strong>Example:</strong> $210 revenue/door - $195 cost/door = <strong>$15/door/month</strong> (7.1% margin)</p>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 20% margin</td><td class="status-yellow">🟡 10-19%</td><td class="status-red">🔴 &lt; 10%</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>11. Work Order Completion Rate</h3>
+  <div class="formula">Completion Rate = Work Orders Completed Within SLA ÷ Total Work Orders × 100</div>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 90%</td><td class="status-yellow">🟡 80-89%</td><td class="status-red">🔴 &lt; 80%</td></tr>
+  </table>
+</div>
+
+<div class="kpi-card">
+  <h3>12. Owner Satisfaction Score</h3>
+  <div class="formula">Send quarterly survey (1-10 NPS-style): "How likely are you to recommend us to another property owner?"</div>
+  <table>
+    <tr><td class="status-green">🟢 ≥ 8.5 avg</td><td class="status-yellow">🟡 7.0-8.4</td><td class="status-red">🔴 &lt; 7.0</td></tr>
+  </table>
+  <p>Any owner scoring ≤ 6 gets a personal call from the PM within 48 hours to address concerns. This is your early warning system for churn.</p>
+</div>
+
+<h2>3. Benchmarks by Portfolio Size</h2>
+
+<table>
+  <thead><tr><th>Metric</th><th>50 Doors</th><th>100 Doors</th><th>200 Doors</th><th>500 Doors</th></tr></thead>
+  <tbody>
+    <tr><td>Occupancy Rate</td><td>93-95%</td><td>94-96%</td><td>95-97%</td><td>96-98%</td></tr>
+    <tr><td>Days-to-Lease</td><td>25-35</td><td>20-28</td><td>18-25</td><td>14-21</td></tr>
+    <tr><td>Cost-per-Door</td><td>$250-350</td><td>$200-280</td><td>$170-230</td><td>$140-200</td></tr>
+    <tr><td>Owner Retention</td><td>85-90%</td><td>88-93%</td><td>90-95%</td><td>92-96%</td></tr>
+    <tr><td>Revenue/Door</td><td>$170-220</td><td>$180-240</td><td>$190-260</td><td>$200-280</td></tr>
+    <tr><td>Profit Margin</td><td>5-12%</td><td>10-18%</td><td>15-22%</td><td>18-28%</td></tr>
+    <tr><td>Collection Rate</td><td>96-98%</td><td>97-99%</td><td>98-99%</td><td>98-99.5%</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Key insight:</strong> Profitability scales with door count. At 50 doors, margins are thin (5-12%). At 200+ doors, fixed costs are spread across more units and margins double. This is why growth is existential — staying small means staying unprofitable.
+</div>
+
+<h2>4. Monthly Tracking Dashboard</h2>
+
+<div class="form-box">
+  <h3 style="margin-top:0;text-align:center;">Monthly KPI Dashboard — <span style="border-bottom:1px solid var(--border);padding:0 40px;">[Month/Year]</span></h3>
+  <table>
+    <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>Status</th><th>Trend (vs Last Month)</th></tr></thead>
+    <tbody>
+      <tr><td>Occupancy Rate</td><td>______%</td><td>______%</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Days-to-Lease (avg)</td><td>______ days</td><td>______ days</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Cost-per-Door</td><td>$______</td><td>$______</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Rent Collection Rate</td><td>______%</td><td>______%</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Delinquency Rate</td><td>______%</td><td>______%</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Revenue per Door</td><td>$______</td><td>$______</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Profit Margin</td><td>______%</td><td>______%</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>Maint. Response (avg)</td><td>______ hrs</td><td>______ hrs</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>WO Completion Rate</td><td>______%</td><td>______%</td><td>🟢 🟡 🔴</td><td>↑ ↓ →</td></tr>
+      <tr><td>New Doors Added</td><td>______</td><td>______</td><td>—</td><td>↑ ↓ →</td></tr>
+      <tr><td>Doors Lost</td><td>______</td><td>______</td><td>—</td><td>↑ ↓ →</td></tr>
+      <tr><td>Total Doors</td><td>______</td><td>______</td><td>—</td><td>↑ ↓ →</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:12px"><strong>Notes / Action Items:</strong></p>
+  <p style="border-bottom:1px solid var(--border);padding:8px 0;">1. ___________________________</p>
+  <p style="border-bottom:1px solid var(--border);padding:8px 0;">2. ___________________________</p>
+  <p style="border-bottom:1px solid var(--border);padding:8px 0;">3. ___________________________</p>
+</div>
+
+<h2>5. Quarterly Trend Analysis</h2>
+
+<div class="form-box">
+  <h3 style="margin-top:0;text-align:center;">Quarterly Trend — Q__ 20__</h3>
+  <table>
+    <thead><tr><th>Metric</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Quarterly Avg</th><th>QoQ Change</th></tr></thead>
+    <tbody>
+      <tr><td>Occupancy</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td></tr>
+      <tr><td>Revenue/Door</td><td>$______</td><td>$______</td><td>$______</td><td>$______</td><td>______%</td></tr>
+      <tr><td>Cost/Door</td><td>$______</td><td>$______</td><td>$______</td><td>$______</td><td>______%</td></tr>
+      <tr><td>Profit Margin</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td></tr>
+      <tr><td>Collection Rate</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td><td>______%</td></tr>
+      <tr><td>Net Doors Added</td><td>______</td><td>______</td><td>______</td><td>______</td><td>______</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Quarterly Questions to Answer:</h4>
+  <ul>
+    <li>Which metrics improved? Why? Can we replicate it?</li>
+    <li>Which metrics declined? Root cause? Corrective action?</li>
+    <li>Are we on track for our annual door count and revenue goals?</li>
+    <li>What's the #1 metric to focus on next quarter for maximum impact?</li>
+  </ul>
+</div>
+
+<h2>6. Weekly Review Framework</h2>
+
+<p>A 30-minute weekly review keeps you on top of your KPIs before they become problems. Recommended: Monday morning.</p>
+
+<h4>Weekly Review Agenda (30 min)</h4>
+<ol>
+  <li><strong>Occupancy snapshot</strong> (2 min) — Any new vacancies? Leasing pipeline status?</li>
+  <li><strong>Collection check</strong> (3 min) — Who hasn't paid? Are follow-ups happening? Escalation needed?</li>
+  <li><strong>Maintenance pipeline</strong> (5 min) — Open work orders count, aging items, any owner approval pending?</li>
+  <li><strong>Leasing pipeline</strong> (5 min) — Active showings, applications in screening, upcoming move-ins?</li>
+  <li><strong>Owner concerns</strong> (5 min) — Any owner complaints or requests from last week? Status?</li>
+  <li><strong>One red metric</strong> (5 min) — Pick the worst-performing metric. What's the plan to fix it?</li>
+  <li><strong>Wins</strong> (2 min) — What went well? Celebrate something.</li>
+  <li><strong>Action items</strong> (3 min) — 3 specific actions for the week, assigned with deadlines</li>
+</ol>
+
+<div class="callout">
+  <strong>The #1 rule of KPI tracking:</strong> Don't just collect data — ACT on it. A dashboard is worthless if you review it monthly and shrug. Every red metric needs a plan. Every yellow metric needs a watchlist. Every green metric needs protection. Measure → Analyze → Act → Repeat.
+</div>
+
+<div class="footer">
+  <p>ScaleDoors PM Scaling Kit — KPI Dashboard Template</p>
+  <p>© 2026 ScaleDoors. All rights reserved. Licensed for purchaser use only.</p>
+</div>
+</div>
+</body>
+</html>
